@@ -55,6 +55,24 @@ function TopDownStrat(_colliders) constructor {
 			_this.spd.x = lengthdir_x(abs(move_dir.x), point) * _this.max_spd;
 			_this.spd.y = lengthdir_y(abs(move_dir.y), point) * _this.max_spd;
 		}
+		with(_this.owner) {
+			var ths = other._this;
+			for(col = 0; col < array_length(ths.colliders); col++) {
+				if(place_meeting(x + ths.spd.x, y, ths.colliders[col])) {
+					while(!place_meeting(x + sign(ths.spd.x), y, ths.colliders[col])) {
+						x += sign(ths.spd.x);
+					}
+					ths.spd.x = 0;
+				}
+				
+				if(place_meeting(x, y + ths.spd.y, ths.colliders[col])) {
+					while(!place_meeting(x, y + sign(ths.spd.y), ths.colliders[col])) {
+						y += sign(ths.spd.y);
+					}
+					ths.spd.y = 0;
+				}
+			}
+		}
 		
 		/*for(col = 0; col < array_length(_this.colliders); col++) {
 			if(place_meeting(_this.owner.x + _this.spd.x, _this.owner.y, _this.colliders[col])) {
