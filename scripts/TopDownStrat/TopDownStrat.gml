@@ -1,4 +1,4 @@
-/// @func TopDownStrat([is_complex])
+/// @func TopDownStrat(colliders, [is_complex], [accel], [frict])
 /// @param	{obj}	colliders			the colliders this object collides with
 /// @param	{bool}	[is_complex]		whether to use simple or complex movement
 /// @param	{int}	[accel]				accel to use if movement is complex
