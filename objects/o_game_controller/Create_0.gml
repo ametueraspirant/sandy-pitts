@@ -13,7 +13,24 @@ instance_create_layer(0, 0, _entity_layer, o_menu_controller);
 #endregion
 
 #region // set up state machine
+// make new state machine object
+game = new SnowState("logos");
 
+// define default variables
+game.event_set_default_function("step", function() {});
+game.event_set_default_function("draw", function() { draw_self() });
+
+game.add("logos", {
+	enter: function() {
+		game.change("menu");
+	}
+});
+
+game.add("menu", {
+	enter: function() {
+		
+	}
+});
 #endregion
 
 randomise();
