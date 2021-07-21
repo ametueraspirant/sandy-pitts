@@ -107,7 +107,7 @@
     {"id":{"name":"input_gamepad_check_pressed","path":"scripts/input_gamepad_check_pressed/input_gamepad_check_pressed.yy",},"order":1,},
     {"id":{"name":"input_direction","path":"scripts/input_direction/input_direction.yy",},"order":0,},
     {"id":{"name":"__input_class_cursor","path":"scripts/__input_class_cursor/__input_class_cursor.yy",},"order":4,},
-    {"id":{"name":"TopDown","path":"scripts/TopDown/TopDown.yy",},"order":3,},
+    {"id":{"name":"TopDownStrat","path":"scripts/TopDownStrat/TopDownStrat.yy",},"order":3,},
     {"id":{"name":"input_cursor_verbs","path":"scripts/input_cursor_verbs/input_cursor_verbs.yy",},"order":7,},
     {"id":{"name":"input_source_is_available","path":"scripts/input_source_is_available/input_source_is_available.yy",},"order":5,},
     {"id":{"name":"__input_fix_config_struct","path":"scripts/__input_fix_config_struct/__input_fix_config_struct.yy",},"order":10,},
@@ -172,7 +172,7 @@
     {"folderPath":"folders/Scripts/Input/Players.yy","order":10,"resourceVersion":"1.0","name":"Players","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Input/Source Assignment.yy","order":11,"resourceVersion":"1.0","name":"Source Assignment","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/SnowState.yy","order":0,"resourceVersion":"1.0","name":"SnowState","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Scripts/MotionMachine.yy","order":2,"resourceVersion":"1.0","name":"MotionMachine","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Scripts/MotionStrat.yy","order":2,"resourceVersion":"1.0","name":"MotionStrat","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
