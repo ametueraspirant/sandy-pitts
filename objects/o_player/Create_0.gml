@@ -6,7 +6,7 @@ frict = 0.5;
 
 #region // set up motion strat
 // define strat
-strat = new TopDownStrat();
+strat = new TopDownStrat([o_wall, o_obstacle_test]);
 #endregion
 
 #region // set up state machine
@@ -14,7 +14,7 @@ strat = new TopDownStrat();
 player = new SnowState("idle");
 
 // define default events
-player.event_set_default_function("step", function() {});
+player.event_set_default_function("step", function() { depth = -y });
 player.event_set_default_function("draw", function() { draw_self() });
 
 // define states

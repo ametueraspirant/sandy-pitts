@@ -1,1 +1,1 @@
-draw_self();
+player.draw();
