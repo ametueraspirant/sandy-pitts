@@ -6,7 +6,7 @@ frict = 0.5;
 
 #region // set up motion strat
 // define strat
-strat = new TopDownStrat([o_wall, o_obstacle_test]);
+strat = new TopDownStrat([o_wall, o_obstacle_test], true, accel, frict);
 #endregion
 
 #region // set up state machine
