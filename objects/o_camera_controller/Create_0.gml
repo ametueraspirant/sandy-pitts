@@ -15,10 +15,10 @@ camera_set_view_size(_main_camera, camera.w, camera.h);
 #endregion
 
 #region // set up state machine
-// make new state machine object
+// define new state machine
 cam = new SnowState("following");
 
-// define events
+// define default events
 cam.event_set_default_function("endstep", function() {});
 
 // define states

@@ -13,10 +13,10 @@ instance_create_layer(0, 0, _entity_layer, o_menu_controller);
 #endregion
 
 #region // set up state machine
-// make new state machine object
+// define new state machine
 game = new SnowState("test");
 
-// define events
+// define default events
 game.event_set_default_function("step", function() {});
 game.event_set_default_function("drawGUI", function() {});
 
