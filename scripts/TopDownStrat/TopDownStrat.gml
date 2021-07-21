@@ -1,11 +1,3 @@
-/*
-
-
-*/
-
-
-
-
 function TopDownStrat() constructor {
 	
 }
