@@ -15,15 +15,18 @@ strat = new TopDownStrat([o_wall, o_obstacle_test], true, accel, frict, max_spd)
 player = new SnowState("idle");
 
 // define default events
-player.event_set_default_function("step", function() { depth = -y });
+player.event_set_default_function("step", function() {});
+player.event_set_default_function("gstep", function() {
+	depth = -y;
+	move_dir.x = input_check(Verb.right) - input_check(Verb.left);
+	move_dir.y = input_check(Verb.down) - input_check(Verb.up);
+	strat.move_and_slide(move_dir);
+});
 player.event_set_default_function("draw", function() { draw_self() });
 
 player.add("idle", {
 	step: function() {
-		depth = -y;
-		move_dir.x = input_check(Verb.right) - input_check(Verb.left);
-		move_dir.y = input_check(Verb.down) - input_check(Verb.up);
-		strat.move_and_slide(move_dir);
+		
 	}
 });
 

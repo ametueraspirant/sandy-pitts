@@ -1,1 +1,2 @@
+player.gstep();
 player.step();
