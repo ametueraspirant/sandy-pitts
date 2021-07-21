@@ -6,7 +6,7 @@
     "path": "folders/Scripts/MotionStrat.yy",
   },
   "resourceVersion": "1.0",
-  "name": "AIMachines",
+  "name": "AI",
   "tags": [],
   "resourceType": "GMScript",
 }

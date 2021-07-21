@@ -93,7 +93,7 @@
     {"id":{"name":"input_history_clear","path":"scripts/input_history_clear/input_history_clear.yy",},"order":0,},
     {"id":{"name":"input_history_start","path":"scripts/input_history_start/input_history_start.yy",},"order":4,},
     {"id":{"name":"input_binding_get","path":"scripts/input_binding_get/input_binding_get.yy",},"order":0,},
-    {"id":{"name":"AIMachines","path":"scripts/AIMachines/AIMachines.yy",},"order":4,},
+    {"id":{"name":"AI","path":"scripts/AI/AI.yy",},"order":4,},
     {"id":{"name":"Todo","path":"notes/Todo/Todo.yy",},"order":0,},
     {"id":{"name":"s_wall_test","path":"sprites/s_wall_test/s_wall_test.yy",},"order":1,},
     {"id":{"name":"input_default_key","path":"scripts/input_default_key/input_default_key.yy",},"order":3,},
