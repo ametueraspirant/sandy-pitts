@@ -25,6 +25,7 @@
     {"id":{"name":"input_binding_get_collisions","path":"scripts/input_binding_get_collisions/input_binding_get_collisions.yy",},"order":1,},
     {"id":{"name":"__input_config","path":"scripts/__input_config/__input_config.yy",},"order":12,},
     {"id":{"name":"input_player_source_set","path":"scripts/input_player_source_set/input_player_source_set.yy",},"order":4,},
+    {"id":{"name":"o_menu_controller","path":"objects/o_menu_controller/o_menu_controller.yy",},"order":3,},
     {"id":{"name":"input_axis_threshold_get","path":"scripts/input_axis_threshold_get/input_axis_threshold_get.yy",},"order":0,},
     {"id":{"name":"input_xy","path":"scripts/input_xy/input_xy.yy",},"order":3,},
     {"id":{"name":"input_rebind_undo_legacy","path":"scripts/input_rebind_undo_legacy/input_rebind_undo_legacy.yy",},"order":4,},
