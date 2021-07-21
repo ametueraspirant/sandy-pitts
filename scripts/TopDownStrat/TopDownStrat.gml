@@ -73,22 +73,6 @@ function TopDownStrat(_colliders) constructor {
 				}
 			}
 		}
-		
-		/*for(col = 0; col < array_length(_this.colliders); col++) {
-			if(place_meeting(_this.owner.x + _this.spd.x, _this.owner.y, _this.colliders[col])) {
-				while(!place_meeting(_this.owner.x + sign(_this.spd.x), _this.owner.y, _this.colliders[col])) {
-					_this.owner.x += sign(_this.spd.x);
-				}
-				_this.spd.x = 0;
-			}
-			
-			if(place_meeting(_this.owner.x, _this.owner.y + _this.spd.y, _this.colliders[col])) {
-				while(!place_meeting(_this.owner.x, _this.owner.y + sign(_this.spd.y), _this.colliders[col])) {
-					_this.owner.y += sign(_this.spd.y);
-				}
-				_this.spd.y = 0;
-			}
-		}*/
 		_this.owner.x += _this.spd.x;
 		_this.owner.y += _this.spd.y;
 	};
