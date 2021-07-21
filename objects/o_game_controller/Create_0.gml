@@ -24,7 +24,7 @@ game.event_set_default_function("drawGUI", function() {});
 game.add("test", {
 	enter: function() {
 		if(!instance_exists(o_player)) {
-			instance_create_layer(500, 500, _entity_layer, o_player);
+			instance_create_layer(1000, 500, _entity_layer, o_player);
 			show_debug_message("player spawned");
 		}
 	},

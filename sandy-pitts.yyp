@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"input_cursor_prev_y","path":"scripts/input_cursor_prev_y/input_cursor_prev_y.yy",},"order":6,},
     {"id":{"name":"s_player_test","path":"sprites/s_player_test/s_player_test.yy",},"order":4,},
+    {"id":{"name":"o_floor","path":"objects/o_floor/o_floor.yy",},"order":0,},
     {"id":{"name":"__input_gamepad_find_in_sdl2_database","path":"scripts/__input_gamepad_find_in_sdl2_database/__input_gamepad_find_in_sdl2_database.yy",},"order":11,},
     {"id":{"name":"input_source_detect_any","path":"scripts/input_source_detect_any/input_source_detect_any.yy",},"order":3,},
     {"id":{"name":"input_async_system_event","path":"scripts/input_async_system_event/input_async_system_event.yy",},"order":2,},
@@ -19,6 +20,7 @@
     {"id":{"name":"input_hotswap_tick","path":"scripts/input_hotswap_tick/input_hotswap_tick.yy",},"order":1,},
     {"id":{"name":"input_cursor_x","path":"scripts/input_cursor_x/input_cursor_x.yy",},"order":8,},
     {"id":{"name":"input_check_press_most_recent","path":"scripts/input_check_press_most_recent/input_check_press_most_recent.yy",},"order":4,},
+    {"id":{"name":"o_wall","path":"objects/o_wall/o_wall.yy",},"order":1,},
     {"id":{"name":"input_player_connected","path":"scripts/input_player_connected/input_player_connected.yy",},"order":0,},
     {"id":{"name":"input_history_end","path":"scripts/input_history_end/input_history_end.yy",},"order":1,},
     {"id":{"name":"snap_to_csv","path":"scripts/snap_to_csv/snap_to_csv.yy",},"order":21,},
@@ -72,6 +74,7 @@
     {"id":{"name":"__input_key_get_name","path":"scripts/__input_key_get_name/__input_key_get_name.yy",},"order":15,},
     {"id":{"name":"Wikis and Resources","path":"notes/Wikis and Resources/Wikis and Resources.yy",},"order":2,},
     {"id":{"name":"input_default_gamepad_swap_ab","path":"scripts/input_default_gamepad_swap_ab/input_default_gamepad_swap_ab.yy",},"order":2,},
+    {"id":{"name":"o_obstacle_test","path":"objects/o_obstacle_test/o_obstacle_test.yy",},"order":3,},
     {"id":{"name":"input_history_global_include","path":"scripts/input_history_global_include/input_history_global_include.yy",},"order":3,},
     {"id":{"name":"input_tick","path":"scripts/input_tick/input_tick.yy",},"order":13,},
     {"id":{"name":"input_players_connected","path":"scripts/input_players_connected/input_players_connected.yy",},"order":5,},
@@ -117,6 +120,7 @@
     {"id":{"name":"input_ignore_key_add","path":"scripts/input_ignore_key_add/input_ignore_key_add.yy",},"order":3,},
     {"id":{"name":"input_source_get_name","path":"scripts/input_source_get_name/input_source_get_name.yy",},"order":4,},
     {"id":{"name":"input_check_double_released","path":"scripts/input_check_double_released/input_check_double_released.yy",},"order":3,},
+    {"id":{"name":"o_door","path":"objects/o_door/o_door.yy",},"order":2,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -174,6 +178,7 @@
     {"folderPath":"folders/Scripts/Input/Source Assignment.yy","order":11,"resourceVersion":"1.0","name":"Source Assignment","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/SnowState.yy","order":0,"resourceVersion":"1.0","name":"SnowState","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/MotionStrat.yy","order":2,"resourceVersion":"1.0","name":"MotionStrat","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Background.yy","order":3,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

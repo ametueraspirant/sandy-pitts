@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_player_test",
-    "path": "sprites/s_player_test/s_player_test.yy",
+    "name": "s_floor_test",
+    "path": "sprites/s_floor_test/s_floor_test.yy",
   },
   "solid": false,
   "visible": true,
@@ -22,17 +22,15 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Entities",
-    "path": "folders/Objects/Entities.yy",
+    "name": "Background",
+    "path": "folders/Objects/Background.yy",
   },
   "resourceVersion": "1.0",
-  "name": "o_player",
+  "name": "o_floor",
   "tags": [],
   "resourceType": "GMObject",
 }
