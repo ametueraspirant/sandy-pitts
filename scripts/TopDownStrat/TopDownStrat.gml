@@ -34,6 +34,24 @@ function TopDownStrat(_colliders) constructor {
 		_this.max_spd = _input;
 	};
 	
+	add_collider = function(_coll) {
+		var arr = (is_array(_coll)) ? _coll : [_coll];
+		for(int = 0; int < array_length(arr); int++) {
+			array_push(_this.colliders, arr[int]);
+		}
+	};
+	
+	delete_collider = function(_coll) {
+		var arr = (is_array(_coll)) ? _coll : [_coll];
+		for(var c = 0; c < array_length(arr); c++) {
+			for(var int = 0; int < array_length(_this.colliders); int++) {
+				if(arr[c] == _this.colliders[int]) {
+					array_delete(_this.colliders, int, 1);
+				}
+			}
+		}
+	}
+	
 	move_and_slide = function(move_dir) {
 		var point = point_direction(0, 0, move_dir.x, move_dir.y);
 		if(_this.is_complex) {
