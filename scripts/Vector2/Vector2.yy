@@ -6,7 +6,7 @@
     "path": "folders/Scripts/MotionStrat.yy",
   },
   "resourceVersion": "1.0",
-  "name": "AI",
+  "name": "Vector2",
   "tags": [],
   "resourceType": "GMScript",
 }
