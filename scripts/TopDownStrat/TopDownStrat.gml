@@ -8,7 +8,7 @@ function TopDownStrat(_colliders) constructor {
 	var _accel = (argument_count > 2) ? argument[2] : sprite_width * 0.1;
 	var _frict = (argument_count > 3) ? argument[3] : sprite_width * 0.05;
 	var _max_spd = (argument_count > 4) ? argument[4] : floor(sprite_width * 0.5);
-	var _owner = other;
+	var _owner = other.id;
 	
 	_this = {};
 	
@@ -56,10 +56,21 @@ function TopDownStrat(_colliders) constructor {
 			_this.spd.y = lengthdir_y(abs(move_dir.y), point) * _this.max_spd;
 		}
 		
-		for(col = 0; col < array_length(_this.colliders); col++) {
+		/*for(col = 0; col < array_length(_this.colliders); col++) {
+			if(place_meeting(_this.owner.x + _this.spd.x, _this.owner.y, _this.colliders[col])) {
+				while(!place_meeting(_this.owner.x + sign(_this.spd.x), _this.owner.y, _this.colliders[col])) {
+					_this.owner.x += sign(_this.spd.x);
+				}
+				_this.spd.x = 0;
+			}
 			
-		}
-		
+			if(place_meeting(_this.owner.x, _this.owner.y + _this.spd.y, _this.colliders[col])) {
+				while(!place_meeting(_this.owner.x, _this.owner.y + sign(_this.spd.y), _this.colliders[col])) {
+					_this.owner.y += sign(_this.spd.y);
+				}
+				_this.spd.y = 0;
+			}
+		}*/
 		_this.owner.x += _this.spd.x;
 		_this.owner.y += _this.spd.y;
 	};
