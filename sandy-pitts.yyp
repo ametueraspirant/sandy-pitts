@@ -6,6 +6,7 @@
     {"id":{"name":"input_source_detect_any","path":"scripts/input_source_detect_any/input_source_detect_any.yy",},"order":3,},
     {"id":{"name":"input_async_system_event","path":"scripts/input_async_system_event/input_async_system_event.yy",},"order":2,},
     {"id":{"name":"input_binding_get_name","path":"scripts/input_binding_get_name/input_binding_get_name.yy",},"order":2,},
+    {"id":{"name":"o_player","path":"objects/o_player/o_player.yy",},"order":0,},
     {"id":{"name":"__input_class_binding","path":"scripts/__input_class_binding/__input_class_binding.yy",},"order":3,},
     {"id":{"name":"input_verb_set","path":"scripts/input_verb_set/input_verb_set.yy",},"order":5,},
     {"id":{"name":"__input_binding_get_source","path":"scripts/__input_binding_get_source/__input_binding_get_source.yy",},"order":2,},

@@ -16,13 +16,17 @@ instance_create_layer(0, 0, _entity_layer, o_menu_controller);
 // make new state machine object
 game = new SnowState("test");
 
-// define default variables
+// define events
 game.event_set_default_function("step", function() {});
 game.event_set_default_function("drawGUI", function() {});
 
+// define states
 game.add("test", {
 	enter: function() {
-		
+		if(!instance_exists(o_player)) {
+			instance_create_layer(500, 500, _entity_layer, o_player);
+			show_debug_message("player spawned");
+		}
 	},
 	step: function() {
 		
