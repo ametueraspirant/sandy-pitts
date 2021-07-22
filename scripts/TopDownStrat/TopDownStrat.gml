@@ -1,4 +1,4 @@
-/// @func TopDownStrat(colliders, [is_complex], [accel], [frict])
+/// @func	TopDownStrat(colliders, [is_complex], [accel], [frict])
 /// @param	{obj}	colliders			the colliders this object collides with
 /// @param	{bool}	[is_complex]		whether to use simple or complex movement
 /// @param	{int}	[accel]				accel to use if movement is complex
@@ -22,18 +22,26 @@ function TopDownStrat(_colliders) constructor {
 		spd = new Vector2(0, 0);
 	}
 	
+	///	@func	set_acel(_input);
+	/// @param	{int}	_input	the number to change accel to
 	set_accel = function(_input) {
 		_this.accel = _input;
 	};
 	
+	///	@func	set_frict(_input)
+	/// @param	{int}	_input	the number to change frict to
 	set_frict = function(_input) {
 		_this.frict = _input;
 	};
 	
+	///	@func	set_max_spd(_input);
+	/// @param	{int}	_input	the number to change max_speed to
 	set_max_spd = function(_input) {
 		_this.max_spd = _input;
 	};
 	
+	///	@func	add_collider(_coll);
+	/// @param	{arr}	_coll	an object or array of objects desired to add to the colliders list
 	add_collider = function(_coll) {
 		var arr = (is_array(_coll)) ? _coll : [_coll];
 		for(int = 0; int < array_length(arr); int++) {
@@ -41,6 +49,8 @@ function TopDownStrat(_colliders) constructor {
 		}
 	};
 	
+	///	@func	delete_collider(_coll);
+	/// @param	{arr}	_coll	an object or array of objects desired to delete from the colliders list
 	delete_collider = function(_coll) {
 		var arr = (is_array(_coll)) ? _coll : [_coll];
 		for(var c = 0; c < array_length(arr); c++) {
@@ -52,6 +62,8 @@ function TopDownStrat(_colliders) constructor {
 		}
 	}
 	
+	///	@func	move_and_slide(move_dir);
+	///	@param	{Vec2}	move_dir	a Vector2 containing the x and y movement inputs
 	move_and_slide = function(move_dir) {
 		var point = point_direction(0, 0, move_dir.x, move_dir.y);
 		if(_this.is_complex) {
