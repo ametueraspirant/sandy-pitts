@@ -22,7 +22,7 @@ function TopDownStrat(_colliders) constructor {
 		spd = new Vector2(0, 0);
 	}
 	
-	///	@func	set_acel(_input);
+	///	@func	set_accel(_input);
 	/// @param	{int}	_input	the number to change accel to
 	set_accel = function(_input) {
 		_this.accel = _input;
