@@ -17,7 +17,7 @@ function TopDownStrat() constructor {
 		owner = _owner;
 		accel =_accel;
 		frict =_frict;
-		colliders = [];
+		colliders = []; // #TODO change name to something more appropriate
 		max_spd = _max_spd;
 		spd = new Vector2(0, 0);
 	}
@@ -43,23 +43,43 @@ function TopDownStrat() constructor {
 	#endregion
 	
 	#region // functions for modifying colliders
-	/// @func add_collider();
-	add_collider = function() {
-		
+	/// @func	add_collider();
+	/// @param	{obj}	the collider object
+	/// @param	{bool}	whether it is solid
+	/// @param	{bool}	whether it is bouncy
+	/// @param	{bool}	whether it will slide
+	/// @param	{bool}	whether it is sticky
+	add_collider = function(_obj, _can_collide, _can_bounce, _can_slide, _can_stick) {
+		var col = (is_array(_obj)) ? _obj : [_obj];
+		for(var int = 0; int < array_length(col); int++) {
+			_add_to_array(new collider(col, _can_collide, _can_bounce, _can_slide, _can_stick) , _this.colliders);
+		}
 	}
 	
 	/// @func delete_collider
-	delete_collider = function() {
-		
+	delete_collider = function(_obj) {
+		var col = (is_array(_obj)) ? _obj : [_obj];
+		for(var int = 0; int < array_length(col); int++) {
+			_delete_from_array(_obj, _this.colliders);
+		}
 	}
 	
 	/// @func modify_collider();
-	modify_collider = function() {
-		
+	/// @param	{obj}	the collider object
+	/// @param	{bool}	whether it is solid
+	/// @param	{bool}	whether it is bouncy
+	/// @param	{bool}	whether it will slide
+	/// @param	{bool}	whether it is sticky
+	modify_collider = function(_obj, _can_collide, _can_bounce, _can_slide, _can_stick) {
+		var col = (is_array(_obj)) ? _obj : [_obj];
+		for(var int = 0; int < array_length(col); int++) {
+			_delete_from_array(_obj, _this.colliders);
+			_add_to_array(new collider(col, _can_collide, _can_bounce, _can_slide, _can_stick) , _this.colliders);
+		}
 	}
 	#endregion
 	
-	#region /// #Internal Functions, Not meant to be called externally
+	#region /// internal functions, not meant to be called externally
 	///	@func	_add_to_array(_col, _arr);
 	/// @param	{arr}	_col	the item to add to the array
 	/// @param	{arr}	_arr	the array to add to
@@ -83,6 +103,15 @@ function TopDownStrat() constructor {
 		}
 		if(exists)return show_debug_message("you haven't added a collider with that name");
 	}
+	
+	/// @func _modify_items_in_aray(_col, _arr);
+	_modify_items_in_array = function(_col, _arr) {
+		
+	}
+	#endregion
+	
+	#region /// movement helper functions
+	
 	#endregion
 	
 	///	@func	move(move_dir);
@@ -130,12 +159,10 @@ function TopDownStrat() constructor {
 		}
 		_this.owner.x += _this.spd.x;
 		_this.owner.y += _this.spd.y;
-	};
-	
-	
+	}
 }
 
-/// @func	new collider(_obj, _collide, _bounce, _slide, _stick);
+/// @func	collider(_obj, _collide, _bounce, _slide, _stick);
 /// @param	{obj}	the collider object
 /// @param	{bool}	whether it is solid
 /// @param	{bool}	whether it is bouncy
