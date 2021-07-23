@@ -41,7 +41,13 @@ function TopDownStrat() constructor {
 	#endregion
 	
 	#region /// timer system #TODO
+	add_timer = function() {
+		
+	}
 	
+	check_timers = function() {
+		
+	}
 	#endregion
 	
 	#region // functions for changing base stats after creation

@@ -4,9 +4,9 @@ move_dir = new Vector2(0, 0);
 #endregion
 
 #region // set up motion strat
-// define strat
-strat = new TopDownStrat(true);
-strat.add_collider([o_wall, o_obstacle_test], true, false, true, true);
+// define motion strat
+mstrat = new TopDownStrat(true);
+mstrat.add_collider([o_wall, o_obstacle_test], true, false, true, true);
 #endregion
 
 #region // set up state machine
@@ -19,7 +19,8 @@ player.event_set_default_function("gstep", function() {
 	depth = -y;
 	move_dir.x = input_check(Verb.right) - input_check(Verb.left);
 	move_dir.y = input_check(Verb.down) - input_check(Verb.up);
-	strat.move(move_dir);
+	mstrat.move(move_dir);
+	mstrat.check_timers();
 });
 player.event_set_default_function("draw", function() { draw_self() });
 
