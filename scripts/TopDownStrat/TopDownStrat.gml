@@ -135,7 +135,6 @@ function TopDownStrat() constructor {
 		for(var int = 0; int < array_length(_this.timers); int++) {
 			if(_this.timers[int].time + _this.timers[int].dur <= current_time) {
 				_this.timers[int].func();
-				show_debug_message("timer ended");
 				array_delete(_this.timers, int, 1);
 			}
 		}
