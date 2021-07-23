@@ -186,11 +186,11 @@ function TopDownStrat() constructor {
 	_dash = function() {
 		
 	}
-	#endregion
-	
+		
 	///	@func	move(move_dir);
 	///	@param	{Vec2}	move_dir	a Vector2 containing the x and y movement inputs
-	move = function(move_dir) {
+	move = function(x_dir, y_dir) {
+		var move_dir = new Vector2(x_dir, y_dir);
 		var point = point_direction(0, 0, move_dir.x, move_dir.y);
 		if(_this.is_complex) {
 			if(abs(_this.owner.spd.x) < abs(lengthdir_x(abs(move_dir.x), point) * _this.owner.max_spd)) {
@@ -223,6 +223,7 @@ function TopDownStrat() constructor {
 		_this.owner.x += _this.owner.spd.x;
 		_this.owner.y += _this.owner.spd.y;
 	}
+	#endregion
 }
 
 /// @func	collider(_obj, _collide, _bounce, _slide, _stick);
