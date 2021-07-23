@@ -1,5 +1,43 @@
-in the desired player or enemy object, first call set_base_stats() and add in desired base stats.
+in the create event of the player or enemy object, first call set_base_stats() and add in desired base stats.
 
-create a variable eg: mstrat and set it = to new TopDownStrat(); optionally specify true or false if you want movement to be complex and include accelleration. default true.
+create a variable eg: mstrat and set it = to new TopDownStrat();
+optionally specify true or false if you want movement to be complex and include accelleration. default true.
 
-add some colliders using mstrat.add_collider(); the specified objects can be input as a single object or an array of objects
+add some colliders using mstrat.add_collider();
+the specified objects can be input as a single object or an array of objects.
+collider type must be a string including: "collide", "bounce", "slide", or "stick".
+
+in the step event, create a variable that stores the total value of the x input normalized to 1, 0, or -1
+do the same for the y input variable.
+
+then simply call mstrat.move(x_input, y_input);
+
+additional functions:
+
+set_accel(int); change default acceleration after creation.
+set_frict(int); change default friction after creation.
+set_max_spd(int); change default max speed after creation.
+
+set_input_true(); enable movement inputs.
+set_input_false(); disable movement inputs.
+
+add_collider(collider, "type"); add a new collider to the array.
+delete_collider(collider); delete the specified collider object from the array. can also be an array of objects.
+modify_collider(collider, "type"); set the collider to a new collider type, follows the same rules as add_collider.
+
+set_timer(duration, function()); creates a timer that will run the function in the second argument after the duration in milliseconds. 1,000 is one second.
+
+example code:
+set_timer(300, function() {
+	set_input_true();
+});
+
+this will set input to true after a delay of 300ms.
+
+check_timers(); if mstrat.move() is being called, then this function is being called by default, but it can be called separately if needed.
+
+move(); input an x and y dir and you're off to the races. handles all collision and collision types under the hood.
+
+dash(); briefly disables input and dashes the player at 2x specified xdir and ydir.
+
+and more to come...

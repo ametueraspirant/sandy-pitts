@@ -40,26 +40,6 @@ function TopDownStrat() constructor {
 	 
 	#endregion
 	
-	#region /// timer system
-	/// @func	set_timer(_dur, _func);
-	/// @param	{int}	_dur	the duration of the timer to set
-	/// @param	{func}	_func	the function to run when the timer runs out
-	set_timer = function(_dur, _func) {
-		array_push(_this.timers, new timer(_dur, _func));
-	}
-	
-	/// @func	check_timers();
-	check_timers = function() {
-		for(var int = 0; int < array_length(_this.timers); int++) {
-			if(_this.timers[int].time + _this.timers[int].dur <= current_time) {
-				_this.timers[int].func();
-				show_debug_message("timer ended");
-				array_delete(_this.timers, int, 1);
-			}
-		}
-	}
-	#endregion
-	
 	#region // functions for changing base stats after creation
 	///	@func	set_accel(_input);
 	/// @param	{int}	_input	the number to change accel to
@@ -139,6 +119,26 @@ function TopDownStrat() constructor {
 	modify_collider = function(_obj, _collider_type) {
 		delete_collider(_obj);
 		add_collider(_obj, _collider_type);
+	}
+	#endregion
+	
+	#region /// timer system
+	/// @func	set_timer(_dur, _func);
+	/// @param	{int}	_dur	the duration of the timer to set
+	/// @param	{func}	_func	the function to run when the timer runs out
+	set_timer = function(_dur, _func) {
+		array_push(_this.timers, new timer(_dur, _func));
+	}
+	
+	/// @func	check_timers();
+	check_timers = function() {
+		for(var int = 0; int < array_length(_this.timers); int++) {
+			if(_this.timers[int].time + _this.timers[int].dur <= current_time) {
+				_this.timers[int].func();
+				show_debug_message("timer ended");
+				array_delete(_this.timers, int, 1);
+			}
+		}
 	}
 	#endregion
 	
