@@ -35,7 +35,7 @@ function set_base_stats(_owner, _hp, _damage, _max_spd, _accel, _frict){
 		frict = _frict;
 		base_frict = _frict;
 		is_colliding = false;
-		is_bounced = false;
+		input = true;
 		spd = new Vector2(0, 0);
 	}
 }

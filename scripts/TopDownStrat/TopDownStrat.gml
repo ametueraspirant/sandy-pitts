@@ -160,9 +160,9 @@ function TopDownStrat() constructor {
 			if(place_meeting(x + spd.x, y + spd.y, _col)) {
 				spd.x = -spd.x * 0.4;
 				spd.y = -spd.y * 0.4;
-				is_bounced = true;
+				input = false;
 				other.set_timer(300, function() {
-					is_bounced = false;
+					input = true;
 				});
 			}
 		}
@@ -173,7 +173,6 @@ function TopDownStrat() constructor {
 	_slide = function(_col) {
 		with(_this.owner) {
 			if(is_colliding)return;
-			if(is_bounced)return;
 			if(place_meeting(x, y, _col)) {
 				frict = 0;
 				accel = base_accel * 0.5;
@@ -192,7 +191,6 @@ function TopDownStrat() constructor {
 	_stick = function(_col) {
 		with(_this.owner) {
 			if(is_colliding)return;
-			if(is_bounced)return;
 			if(place_meeting(x, y, _col)) {
 				max_spd = base_max_spd * 0.6;
 				accel = base_accel * 0.5;
@@ -218,7 +216,7 @@ function TopDownStrat() constructor {
 	move = function(x_dir, y_dir) {
 		var move_dir = new Vector2(x_dir, y_dir);
 		var point = point_direction(0, 0, move_dir.x, move_dir.y);
-		if(!_this.owner.is_bounced) {
+		if(_this.owner.input) {
 			if(_this.is_complex) {
 				if(abs(_this.owner.spd.x) < abs(lengthdir_x(abs(move_dir.x), point) * _this.owner.max_spd)) {
 					_this.owner.spd.x += lengthdir_x(abs(move_dir.x) * _this.owner.accel, point) - sign(_this.owner.spd.x) * _this.owner.frict;
