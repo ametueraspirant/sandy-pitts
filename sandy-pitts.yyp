@@ -4,6 +4,7 @@
     {"id":{"name":"s_player_test","path":"sprites/s_player_test/s_player_test.yy",},"order":4,},
     {"id":{"name":"o_floor","path":"objects/o_floor/o_floor.yy",},"order":0,},
     {"id":{"name":"__input_gamepad_find_in_sdl2_database","path":"scripts/__input_gamepad_find_in_sdl2_database/__input_gamepad_find_in_sdl2_database.yy",},"order":11,},
+    {"id":{"name":"set_base_stats","path":"scripts/set_base_stats/set_base_stats.yy",},"order":8,},
     {"id":{"name":"input_source_detect_any","path":"scripts/input_source_detect_any/input_source_detect_any.yy",},"order":3,},
     {"id":{"name":"input_async_system_event","path":"scripts/input_async_system_event/input_async_system_event.yy",},"order":2,},
     {"id":{"name":"input_binding_get_name","path":"scripts/input_binding_get_name/input_binding_get_name.yy",},"order":2,},
