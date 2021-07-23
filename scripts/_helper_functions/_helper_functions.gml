@@ -23,8 +23,8 @@ function timer(_dur, _func) constructor {
 
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function set_base_stats(_owner, _hp, _damage, _max_spd, _accel, _frict){
-	with(_owner) {
+function set_base_stats(_hp, _damage, _max_spd, _accel, _frict){
+	with(other) {
 		has_base_stats = true;
 		hp = _hp;
 		dam = _damage;
@@ -47,5 +47,5 @@ function Vector2(_x, _y) constructor{
 }
 
 function YSort(){
-
+	
 }

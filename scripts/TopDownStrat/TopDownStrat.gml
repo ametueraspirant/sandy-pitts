@@ -223,9 +223,12 @@ function TopDownStrat() constructor {
 	///	@param	{int}	x_dir	the x direction of inputs
 	/// @param	{int}	y_dir	the y direction of inputs
 	dash = function(x_dir, y_dir) {
-		move(x_dir * 2, y_dir * 2);
+		with(_this.owner) {
+			spd.x = x_dir;
+			spd.y = y_dir;
+		}
 		set_input_false();
-		set_timer(300, function() {
+		set_timer(150, function() {
 			set_input_true();
 		});
 	}

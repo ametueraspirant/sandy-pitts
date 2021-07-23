@@ -1,5 +1,5 @@
 #region // set base stats
-set_base_stats(self, 100, 10, 5, 0.6, 0.3);
+set_base_stats(100, 10, 5, 0.6, 0.3);
 #endregion
 
 #region // set up motion strat
