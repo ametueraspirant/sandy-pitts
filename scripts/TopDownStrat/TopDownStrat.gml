@@ -75,15 +75,32 @@ function TopDownStrat() constructor {
 	
 	#region // functions for modifying colliders
 	/// @func	add_collider();
-	/// @param	{obj}	_obj		the collider object
-	/// @param	{bool}	_collide	whether it is solid
-	/// @param	{bool}	_bounce		whether it is bouncy
-	/// @param	{bool}	_slide		whether it will slide
-	/// @param	{bool}	_stick		whether it is sticky
-	add_collider = function(_obj, _can_collide, _can_bounce, _can_slide, _can_stick) {
+	/// @param	{obj}		_obj				the collider object
+	/// @param	{string}	_collider_type		the type of collider to set it to
+	add_collider = function(_obj, _collider_type) {
 		var col = (is_array(_obj)) ? _obj : [_obj];
 		for(var int = 0; int < array_length(col); int++) {
-			_add_to_array(new collider(col[int], _can_collide, _can_bounce, _can_slide, _can_stick) , _this.colliders);
+			switch(_collider_type) {
+				case "collide":
+				_add_to_array(new collider(col[int], true, false, false, false) , _this.colliders);
+				break;
+				
+				case "bounce":
+				_add_to_array(new collider(col[int], false, true, false, false) , _this.colliders);
+				break;
+				
+				case "slide":
+				_add_to_array(new collider(col[int], false, false, true, false) , _this.colliders);
+				break;
+				
+				case "stick":
+				_add_to_array(new collider(col[int], false, false, false, true) , _this.colliders);
+				break;
+				
+				default:
+				show_debug_message("That's not a valid collider type, please enter: collide, bounce, slide, or stick as a string.");
+				break;
+			}
 		}
 	}
 	
@@ -97,17 +114,11 @@ function TopDownStrat() constructor {
 	}
 	
 	/// @func modify_collider();
-	/// @param	{obj}	_obj		the collider object
-	/// @param	{bool}	_collide	whether it is solid
-	/// @param	{bool}	_bounce		whether it is bouncy
-	/// @param	{bool}	_slide		whether it will slide
-	/// @param	{bool}	_stick		whether it is sticky
-	modify_collider = function(_obj, _can_collide, _can_bounce, _can_slide, _can_stick) {
-		var col = (is_array(_obj)) ? _obj : [_obj];
-		for(var int = 0; int < array_length(col); int++) {
-			_delete_from_array(col[int], _this.colliders);
-			_add_to_array(new collider(col[int], _can_collide, _can_bounce, _can_slide, _can_stick) , _this.colliders);
-		}
+	/// @param	{obj}		_obj				the collider object
+	/// @param	{string}	_collider_type		the type of collider to set it to
+	modify_collider = function(_obj, _collider_type) {
+		delete_collider(_obj);
+		add_collider(_obj, _collider_type);
 	}
 	#endregion
 	
@@ -144,9 +155,7 @@ function TopDownStrat() constructor {
 			if(place_meeting(x, y, _col)) {
 				frict = 0;
 				accel = base_accel * 0.5;
-			} else {
-				frict = base_frict;
-				accel = base_accel;
+				max_spd = base_max_spd;
 			}
 		}
 	}
@@ -158,10 +167,17 @@ function TopDownStrat() constructor {
 			if(place_meeting(x, y, _col)) {
 				max_spd = base_max_spd * 0.6;
 				accel = base_accel * 0.5;
-			} else {
-				max_spd = base_max_spd;
-				accel = base_accel;
+				frict = base_frict;
 			}
+		}
+	}
+	
+	/// @func	_default();
+	_default = function() {
+		with(_this.owner) {
+			max_spd = base_max_spd;
+			accel = base_accel;
+			frict = base_frict;
 		}
 	}
 	#endregion
@@ -198,9 +214,10 @@ function TopDownStrat() constructor {
 		for(var int = 0; int < array_length(_this.colliders); int++) {
 			var _col = _this.colliders[int];
 			if(_col.collide)_collide(_col.obj);
-			if(_col.bounce)_bounce(_col.obj);
-			if(_col.slide)_slide(_col.obj);
-			if(_col.stick)_stick(_col.obj);
+			else if(_col.bounce)_bounce(_col.obj);
+			else if(_col.slide)_slide(_col.obj);
+			else if(_col.stick)_stick(_col.obj);
+			else _default();
 		}
 		
 		_this.owner.x += _this.owner.spd.x;

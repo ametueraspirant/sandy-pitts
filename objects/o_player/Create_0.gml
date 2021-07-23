@@ -6,7 +6,7 @@ move_dir = new Vector2(0, 0);
 #region // set up motion strat
 // define motion strat
 mstrat = new TopDownStrat(true);
-mstrat.add_collider([o_wall, o_obstacle_test], true, false, true, true);
+mstrat.add_collider([o_wall, o_obstacle_test], "collide");
 #endregion
 
 #region // set up state machine
