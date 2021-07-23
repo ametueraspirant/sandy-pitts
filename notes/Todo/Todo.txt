@@ -3,3 +3,5 @@ look into state machine agnostic state machine changing. change_state(condition,
 add sliding to move/collide function
 
 fix drifting issues after directly modifying spd values.
+
+extract player from walls when colliding.
