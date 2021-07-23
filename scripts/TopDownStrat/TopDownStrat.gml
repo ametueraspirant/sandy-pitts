@@ -220,6 +220,9 @@ function TopDownStrat() constructor {
 	#endregion
 	
 	#region // movement helper functions
+	///	@func	dash(x_dir, y_dir);
+	///	@param	{int}	x_dir	the x direction of inputs
+	/// @param	{int}	y_dir	the y direction of inputs
 	dash = function(x_dir, y_dir) {
 		move(x_dir * 2, y_dir * 2);
 		set_input_false();
