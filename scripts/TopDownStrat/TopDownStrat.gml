@@ -150,14 +150,14 @@ function TopDownStrat() constructor {
 	move = function(move_dir) {
 		var point = point_direction(0, 0, move_dir.x, move_dir.y);
 		if(_this.is_complex) {
-			if(abs(_this.spd.x) < _this.max_spd) {
+			if(abs(_this.spd.x) < abs(lengthdir_x(abs(move_dir.x), point) * _this.max_spd)) {
 				_this.spd.x += lengthdir_x(abs(move_dir.x) * _this.accel, point) - sign(_this.spd.x) * _this.frict;
 			} else {
 				_this.spd.x -= sign(_this.spd.x) * _this.frict;
 			}
 			if(move_dir.x = 0 && abs(_this.spd.x) < 0.1)_this.spd.x = 0;
 			
-			if(abs(_this.spd.y) < _this.max_spd) {
+			if(abs(_this.spd.y) < abs(lengthdir_y(abs(move_dir.y), point) * _this.max_spd)) {
 				_this.spd.y += lengthdir_y(abs(move_dir.y) * _this.accel, point) - sign(_this.spd.y) * _this.frict;
 			} else {
 				_this.spd.y -= sign(_this.spd.y) * _this.frict;
