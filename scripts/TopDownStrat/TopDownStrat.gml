@@ -3,11 +3,11 @@
 /// @param	{bool}	[is_complex]		whether to use simple or complex movement
 /// @param	{int}	[accel]				accel to use if movement is complex
 /// @param	{int}	[frict]				frict to use if movement is complex
-function TopDownStrat(_colliders) constructor {
-	var _is_complex = (argument_count > 1) ? argument[1] : true;
-	var _accel = (argument_count > 2) ? argument[2] : sprite_width * 0.1;
-	var _frict = (argument_count > 3) ? argument[3] : sprite_width * 0.05;
-	var _max_spd = (argument_count > 4) ? argument[4] : floor(sprite_width * 0.5);
+function TopDownStrat() constructor {
+	var _is_complex = (argument_count > 0) ? argument[0] : true;
+	var _accel = (argument_count > 1) ? argument[1] : sprite_width * 0.1;
+	var _frict = (argument_count > 2) ? argument[2] : sprite_width * 0.05;
+	var _max_spd = (argument_count > 3) ? argument[3] : floor(sprite_width * 0.5);
 	var _owner = other.id;
 	
 	_this = {};
@@ -17,11 +17,12 @@ function TopDownStrat(_colliders) constructor {
 		owner = _owner;
 		accel =_accel;
 		frict =_frict;
-		colliders = (is_array(_colliders)) ? _colliders : [_colliders];
+		colliders = [];
 		max_spd = _max_spd;
 		spd = new Vector2(0, 0);
 	}
 	
+	#region // functions for changing base stats after creation
 	///	@func	set_accel(_input);
 	/// @param	{int}	_input	the number to change accel to
 	set_accel = function(_input) {
@@ -39,32 +40,54 @@ function TopDownStrat(_colliders) constructor {
 	set_max_spd = function(_input) {
 		_this.max_spd = _input;
 	};
+	#endregion
 	
-	///	@func	add_collider(_coll);
-	/// @param	{arr}	_coll	an object or array of objects desired to add to the colliders list
-	add_collider = function(_coll) {
-		var arr = (is_array(_coll)) ? _coll : [_coll];
-		for(int = 0; int < array_length(arr); int++) {
-			array_push(_this.colliders, arr[int]);
-		}
-	};
-	
-	///	@func	delete_collider(_coll);
-	/// @param	{arr}	_coll	an object or array of objects desired to delete from the colliders list
-	delete_collider = function(_coll) {
-		var arr = (is_array(_coll)) ? _coll : [_coll];
-		for(var c = 0; c < array_length(arr); c++) {
-			for(var int = 0; int < array_length(_this.colliders); int++) {
-				if(arr[c] == _this.colliders[int]) {
-					array_delete(_this.colliders, int, 1);
-				}
-			}
-		}
+	#region // functions for modifying colliders
+	/// @func add_collider();
+	add_collider = function() {
+		
 	}
 	
-	///	@func	move_and_slide(move_dir);
+	/// @func delete_collider
+	delete_collider = function() {
+		
+	}
+	
+	/// @func modify_collider();
+	modify_collider = function() {
+		
+	}
+	#endregion
+	
+	#region /// #Internal Functions, Not meant to be called externally
+	///	@func	_add_to_array(_col, _arr);
+	/// @param	{arr}	_col	the item to add to the array
+	/// @param	{arr}	_arr	the array to add to
+	_add_to_array = function(_col, _arr) {
+		for(var int = 0; int < array_length(_arr); int++) {
+			if(_arr[int] == _col)return show_debug_message("that collider already exists. did you mean to modify?");
+		}
+		array_push(_arr, _col);
+	}
+	
+	///	@func	_delete_from_array(_col, _arr);
+	/// @param	{arr}	_col	the item to delete from the array
+	/// @param	{arr}	_arr	the array to delete from
+	_delete_from_array = function(_col, _arr) {
+		var exists = false;
+		for(var int = 0; int < array_length(_arr); int++) {
+			if(_arr[int] == _col) {
+				array_delete(_arr, int, 1);
+				exists = true;
+			}
+		}
+		if(exists)return show_debug_message("you haven't added a collider with that name");
+	}
+	#endregion
+	
+	///	@func	move(move_dir);
 	///	@param	{Vec2}	move_dir	a Vector2 containing the x and y movement inputs
-	move_and_slide = function(move_dir) {
+	move = function(move_dir) {
 		var point = point_direction(0, 0, move_dir.x, move_dir.y);
 		if(_this.is_complex) {
 			if(abs(_this.spd.x) < _this.max_spd) {
@@ -102,10 +125,26 @@ function TopDownStrat(_colliders) constructor {
 					ths.spd.y = 0;
 				}
 			}
+			
+			
 		}
 		_this.owner.x += _this.spd.x;
 		_this.owner.y += _this.spd.y;
 	};
 	
 	
+}
+
+/// @func	new collider(_obj, _collide, _bounce, _slide, _stick);
+/// @param	{obj}	the collider object
+/// @param	{bool}	whether it is solid
+/// @param	{bool}	whether it is bouncy
+/// @param	{bool}	whether it will slide
+/// @param	{bool}	whether it is sticky
+function collider(_obj, _collide, _bounce, _slide, _stick) constructor {
+	obj = _obj;
+	collide = _collide;
+	bounce = _bounce;
+	slide = _slide;
+	stick = _stick;
 }
