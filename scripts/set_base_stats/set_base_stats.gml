@@ -11,6 +11,7 @@ function set_base_stats(_owner, _hp, _damage, _max_spd, _accel, _frict){
 		base_accel = _accel;
 		frict = _frict;
 		base_frict = _frict;
+		is_colliding = false;
 		spd = new Vector2(0, 0);
 	}
 }

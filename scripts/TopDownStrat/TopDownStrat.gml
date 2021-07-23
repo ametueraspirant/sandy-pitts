@@ -152,10 +152,16 @@ function TopDownStrat() constructor {
 	/// @param	{obj}	_col	the object collider to check for
 	_slide = function(_col) {
 		with(_this.owner) {
+			if(is_colliding)return;
 			if(place_meeting(x, y, _col)) {
 				frict = 0;
 				accel = base_accel * 0.5;
 				max_spd = base_max_spd;
+				is_colliding = true;
+			} else {
+				max_spd = base_max_spd;
+				accel = base_accel;
+				frict = base_frict;
 			}
 		}
 	}
@@ -164,20 +170,17 @@ function TopDownStrat() constructor {
 	/// @param	{obj}	_col	the object collider to check for
 	_stick = function(_col) {
 		with(_this.owner) {
+			if(is_colliding)return;
 			if(place_meeting(x, y, _col)) {
 				max_spd = base_max_spd * 0.6;
 				accel = base_accel * 0.5;
 				frict = base_frict;
+				is_colliding = true;
+			} else {
+				max_spd = base_max_spd;
+				accel = base_accel;
+				frict = base_frict;
 			}
-		}
-	}
-	
-	/// @func	_default();
-	_default = function() {
-		with(_this.owner) {
-			max_spd = base_max_spd;
-			accel = base_accel;
-			frict = base_frict;
 		}
 	}
 	#endregion
@@ -214,12 +217,11 @@ function TopDownStrat() constructor {
 		for(var int = 0; int < array_length(_this.colliders); int++) {
 			var _col = _this.colliders[int];
 			if(_col.collide)_collide(_col.obj);
-			else if(_col.bounce)_bounce(_col.obj);
-			else if(_col.slide)_slide(_col.obj);
-			else if(_col.stick)_stick(_col.obj);
-			else _default();
+			if(_col.bounce)_bounce(_col.obj);
+			if(_col.slide)_slide(_col.obj);
+			if(_col.stick)_stick(_col.obj);
 		}
-		
+		_this.owner.is_colliding = false;
 		_this.owner.x += _this.owner.spd.x;
 		_this.owner.y += _this.owner.spd.y;
 	}

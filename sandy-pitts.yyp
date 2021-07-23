@@ -78,6 +78,7 @@
     {"id":{"name":"__input_key_get_name","path":"scripts/__input_key_get_name/__input_key_get_name.yy",},"order":15,},
     {"id":{"name":"Wikis and Resources","path":"notes/Wikis and Resources/Wikis and Resources.yy",},"order":2,},
     {"id":{"name":"input_default_gamepad_swap_ab","path":"scripts/input_default_gamepad_swap_ab/input_default_gamepad_swap_ab.yy",},"order":2,},
+    {"id":{"name":"!readme","path":"notes/!readme/!readme.yy",},"order":9,},
     {"id":{"name":"o_obstacle_test","path":"objects/o_obstacle_test/o_obstacle_test.yy",},"order":3,},
     {"id":{"name":"input_history_global_include","path":"scripts/input_history_global_include/input_history_global_include.yy",},"order":3,},
     {"id":{"name":"input_tick","path":"scripts/input_tick/input_tick.yy",},"order":13,},

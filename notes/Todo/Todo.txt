@@ -1,4 +1,1 @@
-change collision interactions so _default always runs if there is nothing colliding.
-
-work on if multiple collider types are in range.
-
+look into state machine agnostic state machine changing. change_state(condition, change_state_function) perhaps?
