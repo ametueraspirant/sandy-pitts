@@ -6,7 +6,7 @@ set_base_stats(self, 100, 10, 5, 0.6, 0.3);
 // define motion strat
 mstrat = new TopDownStrat(true);
 mstrat.add_collider(o_wall, "collide");
-mstrat.add_collider(o_obstacle_test, "stick");
+mstrat.add_collider(o_obstacle_test, "bounce");
 //mstrat.add_collider(o_floor, "slide");
 
 #endregion
@@ -22,7 +22,6 @@ player.event_set_default_function("gstep", function() {
 	var x_dir = input_check(Verb.right) - input_check(Verb.left);
 	var y_dir = input_check(Verb.down) - input_check(Verb.up);
 	mstrat.move(x_dir, y_dir);
-	mstrat.check_timers();
 });
 player.event_set_default_function("draw", function() { draw_self() });
 

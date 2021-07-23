@@ -40,13 +40,23 @@ function TopDownStrat() constructor {
 	 
 	#endregion
 	
-	#region /// timer system #TODO
-	add_timer = function() {
-		
+	#region /// timer system
+	/// @func	set_timer(_dur, _func);
+	/// @param	{int}	_dur	the duration of the timer to set
+	/// @param	{func}	_func	the function to run when the timer runs out
+	set_timer = function(_dur, _func) {
+		array_push(_this.timers, new timer(_dur, _func));
 	}
 	
+	/// @func	check_timers();
 	check_timers = function() {
-		
+		for(var int = 0; int < array_length(_this.timers); int++) {
+			if(_this.timers[int].time + _this.timers[int].dur <= current_time) {
+				_this.timers[int].func();
+				show_debug_message("timer ended");
+				array_delete(_this.timers, int, 1);
+			}
+		}
 	}
 	#endregion
 	
@@ -145,7 +155,17 @@ function TopDownStrat() constructor {
 	/// @func	_bounce(_col);
 	/// @param	{obj}	_col	the object collider to check for
 	_bounce = function(_col) {
-		
+		with(_this.owner) {
+			if(is_colliding)return;
+			if(place_meeting(x + spd.x, y + spd.y, _col)) {
+				spd.x = -spd.x * 0.4;
+				spd.y = -spd.y * 0.4;
+				is_bounced = true;
+				other.set_timer(300, function() {
+					is_bounced = false;
+				});
+			}
+		}
 	}
 	
 	/// @func	_slide(_col);
@@ -153,6 +173,7 @@ function TopDownStrat() constructor {
 	_slide = function(_col) {
 		with(_this.owner) {
 			if(is_colliding)return;
+			if(is_bounced)return;
 			if(place_meeting(x, y, _col)) {
 				frict = 0;
 				accel = base_accel * 0.5;
@@ -171,6 +192,7 @@ function TopDownStrat() constructor {
 	_stick = function(_col) {
 		with(_this.owner) {
 			if(is_colliding)return;
+			if(is_bounced)return;
 			if(place_meeting(x, y, _col)) {
 				max_spd = base_max_spd * 0.6;
 				accel = base_accel * 0.5;
@@ -191,27 +213,30 @@ function TopDownStrat() constructor {
 	}
 		
 	///	@func	move(move_dir);
-	///	@param	{Vec2}	move_dir	a Vector2 containing the x and y movement inputs
+	///	@param	{int}	x_dir	the x direction of inputs
+	/// @param	{int}	y_dir	the y direction of inputs
 	move = function(x_dir, y_dir) {
 		var move_dir = new Vector2(x_dir, y_dir);
 		var point = point_direction(0, 0, move_dir.x, move_dir.y);
-		if(_this.is_complex) {
-			if(abs(_this.owner.spd.x) < abs(lengthdir_x(abs(move_dir.x), point) * _this.owner.max_spd)) {
-				_this.owner.spd.x += lengthdir_x(abs(move_dir.x) * _this.owner.accel, point) - sign(_this.owner.spd.x) * _this.owner.frict;
+		if(!_this.owner.is_bounced) {
+			if(_this.is_complex) {
+				if(abs(_this.owner.spd.x) < abs(lengthdir_x(abs(move_dir.x), point) * _this.owner.max_spd)) {
+					_this.owner.spd.x += lengthdir_x(abs(move_dir.x) * _this.owner.accel, point) - sign(_this.owner.spd.x) * _this.owner.frict;
+				} else {
+					_this.owner.spd.x -= sign(_this.owner.spd.x) * _this.owner.frict;
+				}
+				if(move_dir.x = 0 && abs(_this.owner.spd.x) < 0.1)_this.owner.spd.x = 0;
+				
+				if(abs(_this.owner.spd.y) < abs(lengthdir_y(abs(move_dir.y), point) * _this.owner.max_spd)) {
+					_this.owner.spd.y += lengthdir_y(abs(move_dir.y) * _this.owner.accel, point) - sign(_this.owner.spd.y) * _this.owner.frict;
+				} else {
+					_this.owner.spd.y -= sign(_this.owner.spd.y) * _this.owner.frict;
+				}			
+				if(move_dir.y = 0 && abs(_this.owner.spd.y) < 0.1)_this.owner.spd.y = 0;
 			} else {
-				_this.owner.spd.x -= sign(_this.owner.spd.x) * _this.owner.frict;
+				_this.owner.spd.x = lengthdir_x(abs(move_dir.x), point) * _this.owner.max_spd;
+				_this.owner.spd.y = lengthdir_y(abs(move_dir.y), point) * _this.owner.max_spd;
 			}
-			if(move_dir.x = 0 && abs(_this.owner.spd.x) < 0.1)_this.owner.spd.x = 0;
-			
-			if(abs(_this.owner.spd.y) < abs(lengthdir_y(abs(move_dir.y), point) * _this.owner.max_spd)) {
-				_this.owner.spd.y += lengthdir_y(abs(move_dir.y) * _this.owner.accel, point) - sign(_this.owner.spd.y) * _this.owner.frict;
-			} else {
-				_this.owner.spd.y -= sign(_this.owner.spd.y) * _this.owner.frict;
-			}			
-			if(move_dir.y = 0 && abs(_this.owner.spd.y) < 0.1)_this.owner.spd.y = 0;
-		} else {
-			_this.owner.spd.x = lengthdir_x(abs(move_dir.x), point) * _this.owner.max_spd;
-			_this.owner.spd.y = lengthdir_y(abs(move_dir.y), point) * _this.owner.max_spd;
 		}
 		
 		for(var int = 0; int < array_length(_this.colliders); int++) {
@@ -222,22 +247,10 @@ function TopDownStrat() constructor {
 			if(_col.stick)_stick(_col.obj);
 		}
 		_this.owner.is_colliding = false;
+		check_timers();
 		_this.owner.x += _this.owner.spd.x;
 		_this.owner.y += _this.owner.spd.y;
 	}
 	#endregion
 }
 
-/// @func	collider(_obj, _collide, _bounce, _slide, _stick);
-/// @param	{obj}	_obj		the collider object
-/// @param	{bool}	_collide	whether it is solid
-/// @param	{bool}	_bounce		whether it is bouncy
-/// @param	{bool}	_slide		whether it will slide
-/// @param	{bool}	_stick		whether it is sticky
-function collider(_obj, _collide, _bounce, _slide, _stick) constructor {
-	obj = _obj;
-	collide = _collide;
-	bounce = _bounce;
-	slide = _slide;
-	stick = _stick;
-}
