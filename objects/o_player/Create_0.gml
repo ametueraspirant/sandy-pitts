@@ -1,13 +1,11 @@
 #region // set base stats
-max_spd = 5;
-accel = 0.6;
-frict = 0.3;
+set_base_stats(self, 100, 10, 5, 0.6, 0.3);
 move_dir = new Vector2(0, 0);
 #endregion
 
 #region // set up motion strat
 // define strat
-strat = new TopDownStrat(true, accel, frict, max_spd);
+strat = new TopDownStrat(true);
 strat.add_collider([o_wall, o_obstacle_test], true, false, true, true);
 #endregion
 

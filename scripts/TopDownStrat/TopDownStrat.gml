@@ -1,13 +1,7 @@
 /// @func	TopDownStrat(colliders, [is_complex], [accel], [frict])
-/// @param	{obj}	colliders			the colliders this object collides with
 /// @param	{bool}	[is_complex]		whether to use simple or complex movement
-/// @param	{int}	[accel]				accel to use if movement is complex
-/// @param	{int}	[frict]				frict to use if movement is complex
 function TopDownStrat() constructor {
 	var _is_complex = (argument_count > 0) ? argument[0] : true;
-	var _accel = (argument_count > 1) ? argument[1] : sprite_width * 0.1;
-	var _frict = (argument_count > 2) ? argument[2] : sprite_width * 0.05;
-	var _max_spd = (argument_count > 3) ? argument[3] : floor(sprite_width * 0.5);
 	var _owner = other.id;
 	
 	_this = {};
@@ -15,15 +9,8 @@ function TopDownStrat() constructor {
 	with(_this) {
 		is_complex = _is_complex;
 		owner = _owner;
-		base_accel = _accel;
-		accel =_accel;
-		base_frict = _frict;
-		frict =_frict;
-		base_max_spd = _max_spd;
-		max_spd = _max_spd;
 		colliders = [];
 		timers = [];
-		spd = new Vector2(0, 0);
 	}
 	
 	#region /// internal functions, not meant to be used externally
@@ -61,22 +48,22 @@ function TopDownStrat() constructor {
 	///	@func	set_accel(_input);
 	/// @param	{int}	_input	the number to change accel to
 	set_accel = function(_input) {
-		_this.accel = _input;
-		_this.base_accel = _input;
+		_this.owner.accel = _input;
+		_this.owner.base_accel = _input;
 	};
 	
 	///	@func	set_frict(_input)
 	/// @param	{int}	_input	the number to change frict to
 	set_frict = function(_input) {
-		_this.frict = _input;
-		_this.base_frict = _input;
+		_this.owner.frict = _input;
+		_this.owner.base_frict = _input;
 	};
 	
 	///	@func	set_max_spd(_input);
 	/// @param	{int}	_input	the number to change max_speed to
 	set_max_spd = function(_input) {
-		_this.max_spd = _input;
-		_this.base_max_spd = _input;
+		_this.owner.max_spd = _input;
+		_this.owner.base_max_spd = _input;
 	};
 	#endregion
 	
@@ -123,18 +110,17 @@ function TopDownStrat() constructor {
 	/// @param	{obj}	_col	the object collider to check for
 	_collide = function(_col) {
 		with(_this.owner) {
-			var ths = other._this;
-			if(place_meeting(x + ths.spd.x, y, _col)) {
-				while(!place_meeting(x + sign(ths.spd.x), y, _col)) {
-					x += sign(ths.spd.x);
+			if(place_meeting(x + spd.x, y, _col)) {
+				while(!place_meeting(x + sign(spd.x), y, _col)) {
+					x += sign(spd.x);
 				}
-				ths.spd.x = 0;
+				spd.x = 0;
 			}
-			if(place_meeting(x, y + ths.spd.y, _col)) {
-				while(!place_meeting(x, y + sign(ths.spd.y), _col)) {
-					y += sign(ths.spd.y);
+			if(place_meeting(x, y + spd.y, _col)) {
+				while(!place_meeting(x, y + sign(spd.y), _col)) {
+					y += sign(spd.y);
 				}
-				ths.spd.y = 0;
+				spd.y = 0;
 			}
 		}
 	}
@@ -149,13 +135,12 @@ function TopDownStrat() constructor {
 	/// @param	{obj}	_col	the object collider to check for
 	_slide = function(_col) {
 		with(_this.owner) {
-			var ths = other._this;
 			if(place_meeting(x, y, _col)) {
-				ths.frict = 0;
-				ths.accel = ths.base_accel * 0.5;
+				frict = 0;
+				accel = base_accel * 0.5;
 			} else {
-				ths.frict = ths.base_frict;
-				ths.accel = ths.base_accel;
+				frict = base_frict;
+				accel = base_accel;
 			}
 		}
 	}
@@ -164,13 +149,12 @@ function TopDownStrat() constructor {
 	/// @param	{obj}	_col	the object collider to check for
 	_stick = function(_col) {
 		with(_this.owner) {
-			var ths = other._this;
 			if(place_meeting(x, y, _col)) {
-				ths.max_spd = ths.base_max_spd * 0.6;
-				ths.accel = ths.base_accel * 0.5;
+				max_spd = base_max_spd * 0.6;
+				accel = base_accel * 0.5;
 			} else {
-				ths.max_spd = ths.base_max_spd;
-				ths.accel = ths.base_accel;
+				max_spd = base_max_spd;
+				accel = base_accel;
 			}
 		}
 	}
@@ -187,22 +171,22 @@ function TopDownStrat() constructor {
 	move = function(move_dir) {
 		var point = point_direction(0, 0, move_dir.x, move_dir.y);
 		if(_this.is_complex) {
-			if(abs(_this.spd.x) < abs(lengthdir_x(abs(move_dir.x), point) * _this.max_spd)) {
-				_this.spd.x += lengthdir_x(abs(move_dir.x) * _this.accel, point) - sign(_this.spd.x) * _this.frict;
+			if(abs(_this.owner.spd.x) < abs(lengthdir_x(abs(move_dir.x), point) * _this.owner.max_spd)) {
+				_this.owner.spd.x += lengthdir_x(abs(move_dir.x) * _this.owner.accel, point) - sign(_this.owner.spd.x) * _this.owner.frict;
 			} else {
-				_this.spd.x -= sign(_this.spd.x) * _this.frict;
+				_this.owner.spd.x -= sign(_this.owner.spd.x) * _this.owner.frict;
 			}
-			if(move_dir.x = 0 && abs(_this.spd.x) < 0.1)_this.spd.x = 0;
+			if(move_dir.x = 0 && abs(_this.owner.spd.x) < 0.1)_this.owner.spd.x = 0;
 			
-			if(abs(_this.spd.y) < abs(lengthdir_y(abs(move_dir.y), point) * _this.max_spd)) {
-				_this.spd.y += lengthdir_y(abs(move_dir.y) * _this.accel, point) - sign(_this.spd.y) * _this.frict;
+			if(abs(_this.owner.spd.y) < abs(lengthdir_y(abs(move_dir.y), point) * _this.owner.max_spd)) {
+				_this.owner.spd.y += lengthdir_y(abs(move_dir.y) * _this.owner.accel, point) - sign(_this.owner.spd.y) * _this.owner.frict;
 			} else {
-				_this.spd.y -= sign(_this.spd.y) * _this.frict;
+				_this.owner.spd.y -= sign(_this.owner.spd.y) * _this.owner.frict;
 			}			
-			if(move_dir.y = 0 && abs(_this.spd.y) < 0.1)_this.spd.y = 0;
+			if(move_dir.y = 0 && abs(_this.owner.spd.y) < 0.1)_this.owner.spd.y = 0;
 		} else {
-			_this.spd.x = lengthdir_x(abs(move_dir.x), point) * _this.max_spd;
-			_this.spd.y = lengthdir_y(abs(move_dir.y), point) * _this.max_spd;
+			_this.owner.spd.x = lengthdir_x(abs(move_dir.x), point) * _this.owner.max_spd;
+			_this.owner.spd.y = lengthdir_y(abs(move_dir.y), point) * _this.owner.max_spd;
 		}
 		
 		for(var int = 0; int < array_length(_this.colliders); int++) {
@@ -213,8 +197,8 @@ function TopDownStrat() constructor {
 			if(_col.stick)_stick(_col.obj);
 		}
 		
-		_this.owner.x += _this.spd.x;
-		_this.owner.y += _this.spd.y;
+		_this.owner.x += _this.owner.spd.x;
+		_this.owner.y += _this.owner.spd.y;
 	}
 }
 
