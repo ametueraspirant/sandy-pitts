@@ -1,1 +1,4 @@
-change collision interactions so _default always runs if there is nothing colliding
+change collision interactions so _default always runs if there is nothing colliding.
+
+work on if multiple collider types are in range.
+
