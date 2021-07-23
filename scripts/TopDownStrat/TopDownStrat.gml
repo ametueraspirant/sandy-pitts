@@ -81,6 +81,16 @@ function TopDownStrat() constructor {
 		_this.owner.max_spd = _input;
 		_this.owner.base_max_spd = _input;
 	};
+	
+	/// @func set_input_true();
+	set_input_true = function() {
+		_this.owner.input = true;
+	}
+	
+	/// @func set_input_false();
+	set_input_false = function() {
+		_this.owner.input = false;
+	}
 	#endregion
 	
 	#region // functions for modifying colliders
@@ -209,12 +219,16 @@ function TopDownStrat() constructor {
 	
 	#endregion
 	
-	#region // movement helper functions #TODO
-	_dash = function() {
-		
+	#region // movement helper functions
+	dash = function(x_dir, y_dir) {
+		move(x_dir * 2, y_dir * 2);
+		set_input_false();
+		set_timer(300, function() {
+			set_input_true();
+		});
 	}
 		
-	///	@func	move(move_dir);
+	///	@func	move(x_dir, y_dir);
 	///	@param	{int}	x_dir	the x direction of inputs
 	/// @param	{int}	y_dir	the y direction of inputs
 	move = function(x_dir, y_dir) {
