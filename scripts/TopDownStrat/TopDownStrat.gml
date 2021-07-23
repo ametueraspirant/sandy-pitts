@@ -15,10 +15,14 @@ function TopDownStrat() constructor {
 	with(_this) {
 		is_complex = _is_complex;
 		owner = _owner;
+		base_accel = _accel;
 		accel =_accel;
+		base_frict = _frict;
 		frict =_frict;
-		colliders = []; // #TODO change name to something more appropriate
+		base_max_spd = _max_spd;
 		max_spd = _max_spd;
+		colliders = [];
+		timers = [];
 		spd = new Vector2(0, 0);
 	}
 	
@@ -49,23 +53,30 @@ function TopDownStrat() constructor {
 	 
 	#endregion
 	
+	#region /// timer system #TODO
+	
+	#endregion
+	
 	#region // functions for changing base stats after creation
 	///	@func	set_accel(_input);
 	/// @param	{int}	_input	the number to change accel to
 	set_accel = function(_input) {
 		_this.accel = _input;
+		_this.base_accel = _input;
 	};
 	
 	///	@func	set_frict(_input)
 	/// @param	{int}	_input	the number to change frict to
 	set_frict = function(_input) {
 		_this.frict = _input;
+		_this.base_frict = _input;
 	};
 	
 	///	@func	set_max_spd(_input);
 	/// @param	{int}	_input	the number to change max_speed to
 	set_max_spd = function(_input) {
 		_this.max_spd = _input;
+		_this.base_max_spd = _input;
 	};
 	#endregion
 	
@@ -107,7 +118,7 @@ function TopDownStrat() constructor {
 	}
 	#endregion
 	
-	#region /// movement helper functions, not meant to be used externally
+	#region /// collision functions, not meant to be used externally
 	/// @func	_collide(_col);
 	/// @param	{obj}	_col	the object collider to check for
 	_collide = function(_col) {
@@ -128,15 +139,45 @@ function TopDownStrat() constructor {
 		}
 	}
 	
-	_bounce = function() {
+	/// @func	_bounce(_col);
+	/// @param	{obj}	_col	the object collider to check for
+	_bounce = function(_col) {
 		
 	}
 	
-	_slide = function() {
-		
+	/// @func	_slide(_col);
+	/// @param	{obj}	_col	the object collider to check for
+	_slide = function(_col) {
+		with(_this.owner) {
+			var ths = other._this;
+			if(place_meeting(x, y, _col)) {
+				ths.frict = 0;
+				ths.accel = ths.base_accel * 0.5;
+			} else {
+				ths.frict = ths.base_frict;
+				ths.accel = ths.base_accel;
+			}
+		}
 	}
 	
-	_stick = function() {
+	/// @func	_stick(_col);
+	/// @param	{obj}	_col	the object collider to check for
+	_stick = function(_col) {
+		with(_this.owner) {
+			var ths = other._this;
+			if(place_meeting(x, y, _col)) {
+				ths.max_spd = ths.base_max_spd * 0.6;
+				ths.accel = ths.base_accel * 0.5;
+			} else {
+				ths.max_spd = ths.base_max_spd;
+				ths.accel = ths.base_accel;
+			}
+		}
+	}
+	#endregion
+	
+	#region // movement helper functions #TODO
+	_dash = function() {
 		
 	}
 	#endregion
