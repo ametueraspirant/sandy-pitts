@@ -22,6 +22,33 @@ function TopDownStrat() constructor {
 		spd = new Vector2(0, 0);
 	}
 	
+	#region /// internal functions, not meant to be used externally
+	///	@func	_add_to_array(_col, _arr);
+	/// @param	{arr}	_col	the item to add to the array
+	/// @param	{arr}	_arr	the array to add to
+	_add_to_array = function(_col, _arr) {
+		for(var int = 0; int < array_length(_arr); int++) {
+			if(_arr[int] == _col)return show_debug_message("that collider already exists. did you mean to modify?");
+		}
+		array_push(_arr, _col);
+	}
+	
+	///	@func	_delete_from_array(_col, _arr);
+	/// @param	{arr}	_col	the item to delete from the array
+	/// @param	{arr}	_arr	the array to delete from
+	_delete_from_array = function(_col, _arr) {
+		var exists = false;
+		for(var int = 0; int < array_length(_arr); int++) {
+			if(_arr[int] == _col) {
+				array_delete(_arr, int, 1);
+				exists = true;
+			}
+		}
+		if(exists)return show_debug_message("you haven't added a collider with that name");
+	}
+	 
+	#endregion
+	
 	#region // functions for changing base stats after creation
 	///	@func	set_accel(_input);
 	/// @param	{int}	_input	the number to change accel to
@@ -77,37 +104,6 @@ function TopDownStrat() constructor {
 			_delete_from_array(col[int], _this.colliders);
 			_add_to_array(new collider(col[int], _can_collide, _can_bounce, _can_slide, _can_stick) , _this.colliders);
 		}
-	}
-	#endregion
-	
-	#region /// internal functions, not meant to be used externally
-	///	@func	_add_to_array(_col, _arr);
-	/// @param	{arr}	_col	the item to add to the array
-	/// @param	{arr}	_arr	the array to add to
-	_add_to_array = function(_col, _arr) {
-		for(var int = 0; int < array_length(_arr); int++) {
-			if(_arr[int] == _col)return show_debug_message("that collider already exists. did you mean to modify?");
-		}
-		array_push(_arr, _col);
-	}
-	
-	///	@func	_delete_from_array(_col, _arr);
-	/// @param	{arr}	_col	the item to delete from the array
-	/// @param	{arr}	_arr	the array to delete from
-	_delete_from_array = function(_col, _arr) {
-		var exists = false;
-		for(var int = 0; int < array_length(_arr); int++) {
-			if(_arr[int] == _col) {
-				array_delete(_arr, int, 1);
-				exists = true;
-			}
-		}
-		if(exists)return show_debug_message("you haven't added a collider with that name");
-	}
-	
-	/// @func _modify_items_in_aray(_col, _arr);
-	_modify_items_in_array = function(_col, _arr) {
-		
 	}
 	#endregion
 	
