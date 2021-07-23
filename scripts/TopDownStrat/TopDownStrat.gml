@@ -44,42 +44,43 @@ function TopDownStrat() constructor {
 	
 	#region // functions for modifying colliders
 	/// @func	add_collider();
-	/// @param	{obj}	the collider object
-	/// @param	{bool}	whether it is solid
-	/// @param	{bool}	whether it is bouncy
-	/// @param	{bool}	whether it will slide
-	/// @param	{bool}	whether it is sticky
+	/// @param	{obj}	_obj		the collider object
+	/// @param	{bool}	_collide	whether it is solid
+	/// @param	{bool}	_bounce		whether it is bouncy
+	/// @param	{bool}	_slide		whether it will slide
+	/// @param	{bool}	_stick		whether it is sticky
 	add_collider = function(_obj, _can_collide, _can_bounce, _can_slide, _can_stick) {
 		var col = (is_array(_obj)) ? _obj : [_obj];
 		for(var int = 0; int < array_length(col); int++) {
-			_add_to_array(new collider(col, _can_collide, _can_bounce, _can_slide, _can_stick) , _this.colliders);
+			_add_to_array(new collider(col[int], _can_collide, _can_bounce, _can_slide, _can_stick) , _this.colliders);
 		}
 	}
 	
 	/// @func delete_collider
+	/// @param	{obj}	the collider object
 	delete_collider = function(_obj) {
 		var col = (is_array(_obj)) ? _obj : [_obj];
 		for(var int = 0; int < array_length(col); int++) {
-			_delete_from_array(_obj, _this.colliders);
+			_delete_from_array(col[int], _this.colliders);
 		}
 	}
 	
 	/// @func modify_collider();
-	/// @param	{obj}	the collider object
-	/// @param	{bool}	whether it is solid
-	/// @param	{bool}	whether it is bouncy
-	/// @param	{bool}	whether it will slide
-	/// @param	{bool}	whether it is sticky
+	/// @param	{obj}	_obj		the collider object
+	/// @param	{bool}	_collide	whether it is solid
+	/// @param	{bool}	_bounce		whether it is bouncy
+	/// @param	{bool}	_slide		whether it will slide
+	/// @param	{bool}	_stick		whether it is sticky
 	modify_collider = function(_obj, _can_collide, _can_bounce, _can_slide, _can_stick) {
 		var col = (is_array(_obj)) ? _obj : [_obj];
 		for(var int = 0; int < array_length(col); int++) {
-			_delete_from_array(_obj, _this.colliders);
-			_add_to_array(new collider(col, _can_collide, _can_bounce, _can_slide, _can_stick) , _this.colliders);
+			_delete_from_array(col[int], _this.colliders);
+			_add_to_array(new collider(col[int], _can_collide, _can_bounce, _can_slide, _can_stick) , _this.colliders);
 		}
 	}
 	#endregion
 	
-	#region /// internal functions, not meant to be called externally
+	#region /// internal functions, not meant to be used externally
 	///	@func	_add_to_array(_col, _arr);
 	/// @param	{arr}	_col	the item to add to the array
 	/// @param	{arr}	_arr	the array to add to
@@ -110,8 +111,36 @@ function TopDownStrat() constructor {
 	}
 	#endregion
 	
-	#region /// movement helper functions
+	#region /// movement helper functions, not meant to be used externally
+	_collide = function(_col) {
+		with(_this.owner) {
+			var ths = other._this;
+			if(place_meeting(x + ths.spd.x, y, _col)) {
+				while(!place_meeting(x + sign(ths.spd.x), y, _col)) {
+					x += sign(ths.spd.x);
+				}
+				ths.spd.x = 0;
+			}
+			if(place_meeting(x, y + ths.spd.y, _col)) {
+				while(!place_meeting(x, y + sign(ths.spd.y), _col)) {
+					y += sign(ths.spd.y);
+				}
+				ths.spd.y = 0;
+			}
+		}
+	}
 	
+	_bounce = function() {
+		
+	}
+	
+	_slide = function() {
+		
+	}
+	
+	_stick = function() {
+		
+	}
 	#endregion
 	
 	///	@func	move(move_dir);
@@ -132,42 +161,30 @@ function TopDownStrat() constructor {
 				_this.spd.y -= sign(_this.spd.y) * _this.frict;
 			}			
 			if(move_dir.y = 0 && abs(_this.spd.y) < 0.1)_this.spd.y = 0;
-			
 		} else {
 			_this.spd.x = lengthdir_x(abs(move_dir.x), point) * _this.max_spd;
 			_this.spd.y = lengthdir_y(abs(move_dir.y), point) * _this.max_spd;
 		}
-		with(_this.owner) {
-			var ths = other._this;
-			for(col = 0; col < array_length(ths.colliders); col++) {
-				if(place_meeting(x + ths.spd.x, y, ths.colliders[col])) {
-					while(!place_meeting(x + sign(ths.spd.x), y, ths.colliders[col])) {
-						x += sign(ths.spd.x);
-					}
-					ths.spd.x = 0;
-				}
-				
-				if(place_meeting(x, y + ths.spd.y, ths.colliders[col])) {
-					while(!place_meeting(x, y + sign(ths.spd.y), ths.colliders[col])) {
-						y += sign(ths.spd.y);
-					}
-					ths.spd.y = 0;
-				}
-			}
-			
-			
+		
+		for(var int = 0; int < array_length(_this.colliders); int++) {
+			var _col = _this.colliders[int];
+			if(_col.collide)_collide(_col.obj);
+			if(_col.bounce)_bounce(_col.obj);
+			if(_col.slide)_slide(_col.obj);
+			if(_col.stick)_stick(_col.obj);
 		}
+		
 		_this.owner.x += _this.spd.x;
 		_this.owner.y += _this.spd.y;
 	}
 }
 
 /// @func	collider(_obj, _collide, _bounce, _slide, _stick);
-/// @param	{obj}	the collider object
-/// @param	{bool}	whether it is solid
-/// @param	{bool}	whether it is bouncy
-/// @param	{bool}	whether it will slide
-/// @param	{bool}	whether it is sticky
+/// @param	{obj}	_obj		the collider object
+/// @param	{bool}	_collide	whether it is solid
+/// @param	{bool}	_bounce		whether it is bouncy
+/// @param	{bool}	_slide		whether it will slide
+/// @param	{bool}	_stick		whether it is sticky
 function collider(_obj, _collide, _bounce, _slide, _stick) constructor {
 	obj = _obj;
 	collide = _collide;
