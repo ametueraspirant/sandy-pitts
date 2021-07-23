@@ -5,7 +5,7 @@ set_base_stats(self, 100, 10, 5, 0.6, 0.3);
 #region // set up motion strat
 // define motion strat
 mstrat = new TopDownStrat(true);
-mstrat.add_collider([o_wall, o_obstacle_test], "collide");
+mstrat.add_collider([o_wall, o_obstacle_test], "slide");
 #endregion
 
 #region // set up state machine

@@ -1,1 +1,1 @@
-change input checking so that it doesn't only apply to the last in the group.
+change collision interactions so _default always runs if there is nothing colliding
