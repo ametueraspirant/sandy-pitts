@@ -1,0 +1,5 @@
+in the desired player or enemy object, first call set_base_stats() and add in desired base stats.
+
+create a variable eg: mstrat and set it = to new TopDownStrat(); optionally specify true or false if you want movement to be complex and include accelleration. default true.
+
+add some colliders using mstrat.add_collider(); the specified objects can be input as a single object or an array of objects

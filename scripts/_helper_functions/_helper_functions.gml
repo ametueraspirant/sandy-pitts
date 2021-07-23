@@ -40,3 +40,12 @@ function set_base_stats(_owner, _hp, _damage, _max_spd, _accel, _frict){
 		spd = new Vector2(0, 0);
 	}
 }
+
+function Vector2(_x, _y) constructor{
+	x = _x;
+	y = _y;
+}
+
+function YSort(){
+
+}
