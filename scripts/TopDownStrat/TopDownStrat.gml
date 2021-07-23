@@ -205,6 +205,10 @@ function TopDownStrat() constructor {
 	}
 	#endregion
 	
+	#region /// state machine integration and functions #TODO
+	
+	#endregion
+	
 	#region // movement helper functions #TODO
 	_dash = function() {
 		
