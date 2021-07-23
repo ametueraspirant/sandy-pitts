@@ -112,6 +112,8 @@ function TopDownStrat() constructor {
 	#endregion
 	
 	#region /// movement helper functions, not meant to be used externally
+	/// @func	_collide(_col);
+	/// @param	{obj}	_col	the object collider to check for
 	_collide = function(_col) {
 		with(_this.owner) {
 			var ths = other._this;
