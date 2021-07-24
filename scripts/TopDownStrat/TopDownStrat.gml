@@ -13,6 +13,11 @@ function TopDownStrat() constructor {
 		timers = [];
 	}
 	
+	if(!_this.owner.has_base_stats) {
+		with(_this.owner)set_base_stats(100, 10, sprite_width * 0.25, sprite_width * 0.025, sprite_width * 0.0125);
+		show_debug_message("base stats have been automatically set to default");
+	}
+	
 	#region /// internal functions, not meant to be used externally
 	///	@func	_add_to_array(_col, _arr);
 	/// @param	{arr}	_col	the item to add to the array
