@@ -1,4 +1,5 @@
 in the create event of the player or enemy object, first call set_base_stats() and add in desired base stats.
+this step is optional, but recommended for finer control of movement.
 
 create a variable eg: mstrat and set it = to new TopDownStrat();
 optionally specify true or false if you want movement to be complex and include accelleration. default true.
