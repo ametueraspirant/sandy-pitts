@@ -41,25 +41,25 @@ function TopDownStrat() constructor {
 	#endregion
 	
 	#region // functions for changing base stats after creation
-	///	@func	set_accel(_input);
-	/// @param	{int}	_input	the number to change accel to
-	set_accel = function(_input) {
-		_this.owner.accel = _input;
-		_this.owner.base_accel = _input;
+	///	@func	set_accel(_accel);
+	/// @param	{int}	_accel		the accel value to set
+	set_accel = function(_accel) {
+		_this.owner.accel = _accel;
+		_this.owner.base_accel = _accel;
 	};
 	
-	///	@func	set_frict(_input)
-	/// @param	{int}	_input	the number to change frict to
-	set_frict = function(_input) {
-		_this.owner.frict = _input;
-		_this.owner.base_frict = _input;
+	///	@func	set_frict(_frict)
+	/// @param	{int}	_frict		the frict value to set
+	set_frict = function(_frict) {
+		_this.owner.frict = _frict;
+		_this.owner.base_frict = _frict;
 	};
 	
-	///	@func	set_max_spd(_input);
-	/// @param	{int}	_input	the number to change max_speed to
-	set_max_spd = function(_input) {
-		_this.owner.max_spd = _input;
-		_this.owner.base_max_spd = _input;
+	///	@func	set_max_spd(_max_spd);
+	/// @param	{int}	_max_spd	the max_spd value to set
+	set_max_spd = function(_max_spd) {
+		_this.owner.max_spd = _max_spd;
+		_this.owner.base_max_spd = _max_spd;
 	};
 	
 	/// @func set_input_true();
@@ -70,6 +70,24 @@ function TopDownStrat() constructor {
 	/// @func set_input_false();
 	set_input_false = function() {
 		_this.owner.input = false;
+	}
+		
+	/// @func	set_hp(_hp);
+	/// @param	{int}	_hp		the hp value to add or subtract.
+	set_hp = function(_hp) {
+		_this.owner.hp = clamp(_this.owner.hp + _hp, 0, _this.owner.max_hp);
+	}
+	
+	/// @func	set_max_hp(_max_hp);
+	/// @param	{int}	_max_hp		the max_hp value to set
+	set_max_hp = function(_max_hp) {
+		_this.owner.max_hp = _max_hp;
+	}
+	
+	/// @func	set_damage(_damage);
+	/// @param	{int}	_damage		the damage value to set
+	set_damage = function(_damage) {
+		_this.owner.dam = _damage;
 	}
 	#endregion
 	

@@ -14,17 +14,26 @@ then simply call mstrat.move(x_input, y_input);
 
 additional functions:
 
+** setting base stats **
 set_accel(int); change default acceleration after creation.
 set_frict(int); change default friction after creation.
 set_max_spd(int); change default max speed after creation.
 
+** setting combat stats **
+set_hp(int); change the hp value after creation. mostly for applying damage and healing. 5 will heal 5 and -5 will damage 5.
+set_max_hp(int); change max hp after creation.
+set_damage(int); change damage after creation.
+
+** enable or disable input **
 set_input_true(); enable movement inputs.
 set_input_false(); disable movement inputs.
 
+** add, modify, and delete colliders **
 add_collider(collider, "type"); add a new collider to the array.
 delete_collider(collider); delete the specified collider object from the array. can also be an array of objects.
 modify_collider(collider, "type"); set the collider to a new collider type, follows the same rules as add_collider.
 
+** set and manage timers **
 set_timer(duration, function()); creates a timer that will run the function in the second argument after the duration in milliseconds. 1,000 is one second.
 
 example code:
@@ -36,8 +45,7 @@ this will set input to true after a delay of 300ms.
 
 check_timers(); if mstrat.move() is being called, then this function is being called by default, but it can be called separately if needed.
 
+** default movement scripts **
 move(); input an x and y dir and you're off to the races. handles all collision and collision types under the hood.
 
 dash(); briefly disables input and dashes the player at 2x specified xdir and ydir.
-
-and more to come...
