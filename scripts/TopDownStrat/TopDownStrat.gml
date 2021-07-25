@@ -221,12 +221,32 @@ function TopDownStrat() constructor {
 				while(!place_meeting(x + sign(spd.x), y, _col)) {
 					x += sign(spd.x);
 				}
+				
+				var _sign = 1;
+				repeat(2) {
+					if(!place_meeting(x + sign(spd.x), y + max_spd*_sign, _col)) {
+						y += abs(spd.x) * _sign;
+						return;
+					}
+				_sign = -1;
+				}
+				
 				spd.x = 0;
 			}
 			if(place_meeting(x + spd.x, y + spd.y, _col)) {
 				while(!place_meeting(x + spd.x, y + sign(spd.y), _col)) {
 					y += sign(spd.y);
 				}
+				
+				var _sign = 1;
+				repeat(2) {
+					if(!place_meeting(x + spd.x + 10*_sign, y + sign(spd.y), _col)) {
+						x += abs(spd.y) * _sign;
+						return;
+					}
+				_sign = -1;
+				}
+				
 				spd.y = 0;
 			}
 			colliding = true;
@@ -390,10 +410,10 @@ function TopDownStrat() constructor {
 		
 		for(var int = 0; int < array_length(_this.colliders); int++) {
 			var _col = _this.colliders[int];
-			if(_col.collide)_collide(_col.obj);
 			if(_col.bounce)_bounce(_col.obj);
 			if(_col.slide)_slide(_col.obj);
 			if(_col.stick)_stick(_col.obj);
+			if(_col.collide)_collide(_col.obj);
 		}
 		_this.owner.x += _this.owner.spd.x;
 		_this.owner.y += _this.owner.spd.y;
