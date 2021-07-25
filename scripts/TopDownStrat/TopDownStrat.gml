@@ -365,25 +365,25 @@ function TopDownStrat() constructor {
 	/// @param	{int}	y_dir	the y direction of inputs
 	move = function(x_dir, y_dir) {
 		var move_dir = new Vector2(x_dir, y_dir);
-		var point = point_direction(0, 0, move_dir.x, move_dir.y);
+		var _point = point_direction(0, 0, move_dir.x, move_dir.y);
 		if(_this.owner.input) {
 			if(_this.is_complex) {
-				if(abs(_this.owner.spd.x) < abs(lengthdir_x(abs(move_dir.x), point) * _this.owner.max_spd)) {
-					_this.owner.spd.x += lengthdir_x(abs(move_dir.x) * _this.owner.accel, point) - sign(_this.owner.spd.x) * _this.owner.frict;
+				if(abs(_this.owner.spd.x) < abs(lengthdir_x(abs(move_dir.x), _point) * _this.owner.max_spd)) {
+					_this.owner.spd.x += lengthdir_x(abs(move_dir.x) * _this.owner.accel, _point) - sign(_this.owner.spd.x) * _this.owner.frict;
 				} else {
 					_this.owner.spd.x -= sign(_this.owner.spd.x) * _this.owner.frict;
 				}
 				if(move_dir.x = 0 && abs(_this.owner.spd.x) < 0.1)_this.owner.spd.x = 0;
 				
-				if(abs(_this.owner.spd.y) < abs(lengthdir_y(abs(move_dir.y), point) * _this.owner.max_spd)) {
-					_this.owner.spd.y += lengthdir_y(abs(move_dir.y) * _this.owner.accel, point) - sign(_this.owner.spd.y) * _this.owner.frict;
+				if(abs(_this.owner.spd.y) < abs(lengthdir_y(abs(move_dir.y), _point) * _this.owner.max_spd)) {
+					_this.owner.spd.y += lengthdir_y(abs(move_dir.y) * _this.owner.accel, _point) - sign(_this.owner.spd.y) * _this.owner.frict;
 				} else {
 					_this.owner.spd.y -= sign(_this.owner.spd.y) * _this.owner.frict;
 				}			
 				if(move_dir.y = 0 && abs(_this.owner.spd.y) < 0.1)_this.owner.spd.y = 0;
 			} else {
-				_this.owner.spd.x = lengthdir_x(abs(move_dir.x), point) * _this.owner.max_spd;
-				_this.owner.spd.y = lengthdir_y(abs(move_dir.y), point) * _this.owner.max_spd;
+				_this.owner.spd.x = lengthdir_x(abs(move_dir.x), _point) * _this.owner.max_spd;
+				_this.owner.spd.y = lengthdir_y(abs(move_dir.y), _point) * _this.owner.max_spd;
 			}
 		}
 		
