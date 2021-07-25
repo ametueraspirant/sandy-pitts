@@ -162,7 +162,7 @@ function TopDownStrat() constructor {
 			}
 		}
 	}
-		
+	
 	/// @func	get_timer(_name);
 	/// @param	{str}	_name	the name of the timer
 	get_timer = function(_name) {
@@ -194,12 +194,12 @@ function TopDownStrat() constructor {
 	/// @func	timer_exists(_name);
 	/// @param	{str}	_name	the name of the timer
 	timer_exists = function(_name) {
-		var _timer = get_timer(_name);
+		/*var _timer = get_timer(_name);
 		if(is_struct(_timer)) {
 			return true;
 		} else {
 			return false;
-		}
+		}*/
 	}
 	#endregion
 	
@@ -227,7 +227,6 @@ function TopDownStrat() constructor {
 	/// @param	{obj}	_col	the object collider to check for
 	_bounce = function(_col) {
 		with(_this.owner) {
-			if(is_colliding)return;
 			if(place_meeting(x + spd.x, y + spd.y, _col)) {
 				spd.x = -spd.x * 0.4;
 				spd.y = -spd.y * 0.4;
@@ -323,8 +322,6 @@ function TopDownStrat() constructor {
 		&& !is_bouncing()
 		&& !is_sliding()
 		&& !is_sticking()
-		&& !is_attacking()
-		&& !is_hurting()
 		&& !is_dashing()){
 			return true;
 		} else {
