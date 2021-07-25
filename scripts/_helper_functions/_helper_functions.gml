@@ -35,7 +35,8 @@ function set_base_stats(_hp, _damage, _max_spd, _accel, _frict){
 		base_accel = _accel;
 		frict = _frict;
 		base_frict = _frict;
-		is_colliding = false;
+		sliding = false;
+		sticking = false;
 		input = true;
 		uses_state_machine = false;
 		spd = new Vector2(0, 0);

@@ -207,16 +207,18 @@ function TopDownStrat() constructor {
 	/// @param	{obj}	_col	the object collider to check for
 	_slide = function(_col) {
 		with(_this.owner) {
-			if(is_colliding)return;
+			if(sticking)return false;
 			if(place_meeting(x, y, _col)) {
 				frict = 0;
 				accel = base_accel * 0.5;
 				max_spd = base_max_spd;
-				is_colliding = true;
+				sliding = true;
+				return true;
 			} else {
 				max_spd = base_max_spd;
 				accel = base_accel;
 				frict = base_frict;
+				return false;
 			}
 		}
 	}
@@ -225,16 +227,19 @@ function TopDownStrat() constructor {
 	/// @param	{obj}	_col	the object collider to check for
 	_stick = function(_col) {
 		with(_this.owner) {
-			if(is_colliding)return;
+			if(sliding)return false;
 			if(place_meeting(x, y, _col)) {
 				max_spd = base_max_spd * 0.6;
 				accel = base_accel * 0.5;
 				frict = base_frict;
-				is_colliding = true;
+				sticking = true;
+				return true;
 			} else {
 				max_spd = base_max_spd;
 				accel = base_accel;
 				frict = base_frict;
+				sticking = false;
+				return false;
 			}
 		}
 	}
@@ -252,22 +257,22 @@ function TopDownStrat() constructor {
 	
 	/// @func	is_colliding();
 	is_colliding = function() {
-		
+		return _collide();
 	}
 	
 	/// @func	is_bouncing();
 	is_bouncing = function() {
-		
+		return _bounce();
 	}
 	
 	/// @func	is_sliding();
 	is_sliding = function() {
-	
+		return _slide();
 	}
 	
 	/// @func	is_sticking();
 	is_sticking = function() {
-		
+		return _stick();
 	}
 	
 	/// @func	is_attacking();
@@ -287,7 +292,18 @@ function TopDownStrat() constructor {
 	
 	/// @func is_idle();
 	is_idle = function() {
-		
+		if(!is_moving() 
+		&& !is_colliding()
+		&& !is_bouncing()
+		&& !is_sliding()
+		&& !is_sticking()
+		&& !is_attacking()
+		&& !is_hurting()
+		&& !is_dashing()){
+			return true;
+		} else {
+			return false;
+		}
 	}
 	#endregion
 	
@@ -344,10 +360,10 @@ function TopDownStrat() constructor {
 			if(_col.slide)_slide(_col.obj);
 			if(_col.stick)_stick(_col.obj);
 		}
-		_this.owner.is_colliding = false;
-		check_timers();
 		_this.owner.x += _this.owner.spd.x;
 		_this.owner.y += _this.owner.spd.y;
+		
+		check_timers();
 	}
 	#endregion
 }
