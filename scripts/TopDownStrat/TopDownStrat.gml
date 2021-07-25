@@ -144,7 +144,7 @@ function TopDownStrat() constructor {
 	}
 	#endregion
 	
-	#region /// timer system
+	#region /// timer system functions
 	/// @func	timer_set(_dur, _func);
 	/// @param	{int}	_dur	the duration of the timer to set
 	/// @param	{str}	_name	the name of the timer
