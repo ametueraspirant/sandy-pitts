@@ -1,1 +1,3 @@
 add sliding to move/collide function
+
+move set damage/hp/maxhp to the combatstrat
