@@ -6,7 +6,7 @@ set_base_stats(100, 10, 5, 0.6, 0.3);
 // define motion strat
 mstrat = new TopDownStrat();
 mstrat.add_collider(o_wall, "collide");
-mstrat.add_collider(o_obstacle_test, "bounce");
+mstrat.add_collider(o_obstacle_test, "stick");
 //mstrat.add_collider(o_floor, "slide");
 
 #endregion
