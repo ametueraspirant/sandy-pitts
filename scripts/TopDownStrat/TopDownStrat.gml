@@ -240,7 +240,7 @@ function TopDownStrat() constructor {
 				
 				var _sign = 1;
 				repeat(2) {
-					if(!place_meeting(x + spd.x + 10*_sign, y + sign(spd.y), _col)) {
+					if(!place_meeting(x + spd.x + max_spd*_sign, y + sign(spd.y), _col)) {
 						x += abs(spd.y) * _sign;
 						return;
 					}
