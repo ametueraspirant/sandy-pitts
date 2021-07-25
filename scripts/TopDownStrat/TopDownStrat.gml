@@ -275,19 +275,9 @@ function TopDownStrat() constructor {
 		return _stick();
 	}
 	
-	/// @func	is_attacking();
-	is_attacking = function() {
-		
-	}
-	
-	/// @func	is_hurting();
-	is_hurting = function() {
-		
-	}
-	
 	/// @func	is_dashing();
 	is_dashing = function() {
-		
+		return dash();
 	}
 	
 	/// @func is_idle();
