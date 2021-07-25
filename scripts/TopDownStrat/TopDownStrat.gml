@@ -236,8 +236,52 @@ function TopDownStrat() constructor {
 	}
 	#endregion
 	
-	#region /// state machine integration and functions #TODO
+	#region /// state change listener functions #IN PROGRESS
+	/// @func	is_moving();
+	is_moving = function() {
+		if(_this.owner.spd.x != 0 || _this.owner.spd.y != 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
+	/// @func is_idle();
+	is_idle = function() {
+		if(_this.owner.spd.x == 0 && _this.owner.spd.y == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	is_colliding = function() {
+		
+	}
+	
+	is_sliding = function() {
+	
+	}
+	
+	is_sticking = function() {
+		
+	}
+	
+	is_bouncing = function() {
+		
+	}
+	
+	is_attacking = function() {
+		
+	}
+	
+	is_hurt = function() {
+		
+	}
+	
+	is_dashing = function() {
+		
+	}
 	#endregion
 	
 	#region // movement helper functions
