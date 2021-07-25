@@ -2,4 +2,4 @@ add sliding to move/collide function
 
 fix drifting issues after directly modifying spd values.
 
-extract player from walls when colliding.
+corners occasionally get stuck in walls, happens more often with angled walls.
