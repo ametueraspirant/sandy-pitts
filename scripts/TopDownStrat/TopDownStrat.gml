@@ -221,7 +221,7 @@ function TopDownStrat() constructor {
 				spd.x = 0;
 			}
 			if(place_meeting(x + spd.x, y + spd.y, _col)) {
-				while(!place_meeting(x + sign(spd.x), y + sign(spd.y), _col)) {
+				while(!place_meeting(x + spd.x, y + sign(spd.y), _col)) {
 					y += sign(spd.y);
 				}
 				spd.y = 0;

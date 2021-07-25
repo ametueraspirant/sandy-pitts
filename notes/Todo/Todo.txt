@@ -1,5 +1,3 @@
 add sliding to move/collide function
 
 fix drifting issues after directly modifying spd values.
-
-corners occasionally get stuck in walls, causing strange freezing and/or teleportation issues, happens more often with angled walls.
