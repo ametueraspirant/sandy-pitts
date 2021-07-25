@@ -225,6 +225,7 @@ function TopDownStrat() constructor {
 				}
 				spd.y = 0;
 			}
+			
 		} // end of with this.owner
 	}
 	

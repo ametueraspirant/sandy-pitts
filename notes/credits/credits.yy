@@ -4,7 +4,7 @@
     "path": "folders/Scripts/MotionStrat.yy",
   },
   "resourceVersion": "1.1",
-  "name": "!readme",
+  "name": "credits",
   "tags": [],
   "resourceType": "GMNotes",
 }

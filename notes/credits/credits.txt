@@ -1,0 +1,6 @@
+Author and creator: Amet - discord Amet#3132
+
+thanks to:
+Sahaun - discord Sahaun#1172 - helping troubleshoot and getting a lot of things to work.
+cecil - discord cecil#2015 - general assistance with bugs and other issues.
+Zen00 - discord Zen00#3444 - fixing a bug with collision code.
