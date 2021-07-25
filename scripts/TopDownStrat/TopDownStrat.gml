@@ -215,7 +215,7 @@ function TopDownStrat() constructor {
 		with(_this.owner) {
 			if(!place_meeting(x + spd.x, y + spd.y, _col)) {
 				colliding = false;
-				return;
+				return false;
 			}
 			if(place_meeting(x + spd.x, y, _col)) {
 				while(!place_meeting(x + sign(spd.x), y, _col)) {
@@ -364,8 +364,11 @@ function TopDownStrat() constructor {
 	///	@param	{int}	x_dir	the x direction of inputs
 	/// @param	{int}	y_dir	the y direction of inputs
 	move = function(x_dir, y_dir) {
+		if(x_dir == 0 || y_dir == 0)return false;
+		
 		var move_dir = new Vector2(x_dir, y_dir);
 		var _point = point_direction(0, 0, move_dir.x, move_dir.y);
+		
 		if(_this.owner.input) {
 			if(_this.is_complex) {
 				if(abs(_this.owner.spd.x) < abs(lengthdir_x(abs(move_dir.x), _point) * _this.owner.max_spd)) {
@@ -398,6 +401,8 @@ function TopDownStrat() constructor {
 		_this.owner.y += _this.owner.spd.y;
 		
 		check_timers();
+		
+		return true;
 	}
 	#endregion
 }
