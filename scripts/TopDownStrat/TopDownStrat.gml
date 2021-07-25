@@ -215,7 +215,7 @@ function TopDownStrat() constructor {
 		with(_this.owner) {
 			if(!place_meeting(x + spd.x, y + spd.y, _col)) {
 				colliding = false;
-				return false;
+				return;
 			}
 			if(place_meeting(x + spd.x, y, _col)) {
 				while(!place_meeting(x + sign(spd.x), y, _col)) {
