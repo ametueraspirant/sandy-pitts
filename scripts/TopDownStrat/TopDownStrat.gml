@@ -145,27 +145,17 @@ function TopDownStrat() constructor {
 	#endregion
 	
 	#region /// timer system
-	/// @func	set_timer(_dur, _func);
+	/// @func	timer_set(_dur, _func);
 	/// @param	{int}	_dur	the duration of the timer to set
 	/// @param	{str}	_name	the name of the timer
 	/// @param	{func}	_func	the function to run when the timer runs out
-	set_timer = function(_dur, _name, _func) {
+	timer_set = function(_dur, _name, _func) {
 		array_push(_this.timers, new timer(_dur, _name, _func));
 	}
 	
-	/// @func	check_timers();
-	check_timers = function() {
-		for(var int = 0; int < array_length(_this.timers); int++) {
-			if(_this.timers[int].time + _this.timers[int].dur <= current_time) {
-				_this.timers[int].func();
-				array_delete(_this.timers, int, 1);
-			}
-		}
-	}
-	
-	/// @func	get_timer(_name);
+	/// @func	timer_get(_name);
 	/// @param	{str}	_name	the name of the timer
-	get_timer = function(_name) {
+	timer_get = function(_name) {
 		if(!is_string(_name))return show_debug_message("make sure the name is a string");
 		for(var int = 0; int < array_length(_this.timers); int++) {
 			if(_this.timers[int].name == _name) {
@@ -177,9 +167,9 @@ function TopDownStrat() constructor {
 		}
 	}
 	
-	/// @func	execute_timer_early(_name);
+	/// @func	timer_execute_early(_name);
 	/// @param	{str}	_name	the name of the timer
-	execute_timer_early = function(_name) {
+	timer_execute_early = function(_name) {
 		for(var int = 0; int < array_length(_this.timers); int++) {
 			if(_this.timers[int].name == _name) {
 				_this.timers[int].func();
@@ -194,12 +184,22 @@ function TopDownStrat() constructor {
 	/// @func	timer_exists(_name);
 	/// @param	{str}	_name	the name of the timer
 	timer_exists = function(_name) {
-		/*var _timer = get_timer(_name);
+		var _timer = timer_get(_name);
 		if(is_struct(_timer)) {
 			return true;
 		} else {
 			return false;
-		}*/
+		}
+	}
+		
+	/// @func	check_timers();
+	check_timers = function() {
+		for(var int = 0; int < array_length(_this.timers); int++) {
+			if(_this.timers[int].time + _this.timers[int].dur <= current_time) {
+				_this.timers[int].func();
+				array_delete(_this.timers, int, 1);
+			}
+		}
 	}
 	#endregion
 	
@@ -231,7 +231,7 @@ function TopDownStrat() constructor {
 				spd.x = -spd.x * 0.4;
 				spd.y = -spd.y * 0.4;
 				input = false;
-				other.set_timer(300, "bounce", function() {
+				other.timer_set(300, "bounce", function() {
 					input = true;
 				});
 			}
@@ -297,7 +297,7 @@ function TopDownStrat() constructor {
 	
 	/// @func	is_bouncing();
 	is_bouncing = function() {
-		return _bounce();
+		return timer_exists("bounce");
 	}
 	
 	/// @func	is_sliding();
@@ -312,7 +312,7 @@ function TopDownStrat() constructor {
 	
 	/// @func	is_dashing();
 	is_dashing = function() {
-		return dash();
+		return timer_exists("dash");
 	}
 	
 	/// @func is_idle();
@@ -340,7 +340,7 @@ function TopDownStrat() constructor {
 			spd.y = y_dir * 15;
 		}
 		set_input_false();
-		set_timer(150, "dash", function() {
+		timer_set(150, "dash", function() {
 			with(_this.owner) {
 				spd.x = sign(spd.x) * 4;
 				spd.y = sign(spd.y) * 4;
