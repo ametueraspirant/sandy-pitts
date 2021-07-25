@@ -238,10 +238,12 @@ function TopDownStrat() constructor {
 	_bounce = function(_col) {
 		with(_this.owner) {
 			if(place_meeting(x + spd.x, y + spd.y, _col)) {
-				spd.x = -spd.x * 0.4;
-				spd.y = -spd.y * 0.4;
+				spd.x = -spd.x * 0.5;
+				spd.y = -spd.y * 0.5;
 				input = false;
 				other.timer_set(300, "bounce", function() {
+					spd.x = 0;
+					spd.y = 0;
 					input = true;
 				});
 			}
