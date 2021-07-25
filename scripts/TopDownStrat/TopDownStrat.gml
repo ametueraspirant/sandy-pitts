@@ -161,6 +161,10 @@ function TopDownStrat() constructor {
 			}
 		}
 	}
+		
+	get_timer = function() {
+		
+	}
 	#endregion
 	
 	#region /// collision functions, not meant to be used externally
@@ -246,40 +250,43 @@ function TopDownStrat() constructor {
 		}
 	}
 	
-	/// @func is_idle();
-	is_idle = function() {
-		if(_this.owner.spd.x == 0 && _this.owner.spd.y == 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
+	/// @func	is_colliding();
 	is_colliding = function() {
 		
 	}
 	
-	is_sliding = function() {
-	
-	}
-	
-	is_sticking = function() {
-		
-	}
-	
+	/// @func	is_bouncing();
 	is_bouncing = function() {
 		
 	}
 	
+	/// @func	is_sliding();
+	is_sliding = function() {
+	
+	}
+	
+	/// @func	is_sticking();
+	is_sticking = function() {
+		
+	}
+	
+	/// @func	is_attacking();
 	is_attacking = function() {
 		
 	}
 	
-	is_hurt = function() {
+	/// @func	is_hurting();
+	is_hurting = function() {
 		
 	}
 	
+	/// @func	is_dashing();
 	is_dashing = function() {
+		
+	}
+	
+	/// @func is_idle();
+	is_idle = function() {
 		
 	}
 	#endregion
