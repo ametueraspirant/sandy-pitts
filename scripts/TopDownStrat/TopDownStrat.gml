@@ -213,6 +213,7 @@ function TopDownStrat() constructor {
 	/// @param	{obj}	_col	the object collider to check for
 	_collide = function(_col) {
 		with(_this.owner) {
+			if(!place_meeting(x + spd.x, y + spd.y, _col))return false;
 			if(place_meeting(x + spd.x, y, _col)) {
 				while(!place_meeting(x + sign(spd.x), y, _col)) {
 					x += sign(spd.x);
@@ -225,7 +226,7 @@ function TopDownStrat() constructor {
 				}
 				spd.y = 0;
 			}
-			
+			return true;
 		} // end of with this.owner
 	}
 	
