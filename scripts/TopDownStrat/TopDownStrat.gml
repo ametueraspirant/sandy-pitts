@@ -150,6 +150,11 @@ function TopDownStrat() constructor {
 	/// @param	{str}	_name	the name of the timer
 	/// @param	{func}	_func	the function to run when the timer runs out
 	timer_set = function(_dur, _name, _func) {
+		for(var int = 0; int < array_length(_this.timers); int++) {
+			if(_this.timers[int].name == _name) {
+				return show_debug_message("a timer with this name already exists.");
+			}
+		}
 		array_push(_this.timers, new timer(_dur, _name, _func));
 	}
 	

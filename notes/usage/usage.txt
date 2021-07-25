@@ -35,16 +35,17 @@ delete_collider(collider); delete the specified collider object from the array. 
 modify_collider(collider, "type"); set the collider to a new collider type, follows the same rules as add_collider.
 
 ** set and manage timers **
-set_timer(duration, function()); creates a timer that will run the function in the second argument after the duration in milliseconds. 1,000 is one second.
+timer_set(duration, name, function()); creates a timer that will run the function in the second argument after the duration in milliseconds. 1,000 is one second.
 
 example code:
-set_timer(300, function() {
+set_timer(300, "input_true", function() {
 	set_input_true();
 });
 
 this will set input to true after a delay of 300ms.
 
 check_timers(); if mstrat.move() is being called, then this function is being called by default, but it can be called separately if needed.
+
 
 ** default movement scripts **
 move(); input an x and y dir and you're off to the races. handles all collision and collision types under the hood.
