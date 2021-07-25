@@ -14,8 +14,7 @@ function TopDownStrat() constructor {
 	}
 	
 	if(!_this.owner.has_base_stats) {
-		with(_this.owner)set_base_stats(100, 10, sprite_width * 0.25, sprite_width * 0.025, sprite_width * 0.0125);
-		show_debug_message("base stats have been automatically set to default");
+		show_debug_message("you haven't set your stats up. consider using the set_base_stats function to initialize all of the stats this object will use.");
 	}
 	
 	#region /// internal functions, not meant to be used externally
