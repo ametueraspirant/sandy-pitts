@@ -225,7 +225,7 @@ function TopDownStrat() constructor {
 				}
 				spd.y = 0;
 			}
-		}
+		} // end of with this.owner
 	}
 	
 	/// @func	_bounce(_col);
@@ -285,7 +285,7 @@ function TopDownStrat() constructor {
 	}
 	#endregion
 	
-	#region /// state change listener functions #IN PROGRESS
+	#region /// state change listener functions
 	/// @func	is_moving();
 	is_moving = function() {
 		if(_this.owner.spd.x != 0 || _this.owner.spd.y != 0) {
@@ -295,7 +295,7 @@ function TopDownStrat() constructor {
 		}
 	}
 	
-	/// @func	is_colliding();
+	/// @func	is_colliding(); #IN PROGRESS
 	is_colliding = function() {
 		return _collide();
 	}
