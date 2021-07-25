@@ -44,6 +44,10 @@ set_timer(300, "input_true", function() {
 
 this will set input to true after a delay of 300ms.
 
+timer_get(name); this will check through the array of timers and return the struct whose name matches with the input.
+timer_execute_early(name); this will check through the array of timers and execute and delete the timer whose name matches with the input.
+timer_exists(name); this will check through the timer array and return true if a matching timer exists, else it will return false.
+
 check_timers(); if mstrat.move() is being called, then this function is being called by default, but it can be called separately if needed.
 
 
