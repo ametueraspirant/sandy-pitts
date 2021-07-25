@@ -250,7 +250,7 @@ function TopDownStrat() constructor {
 				spd.y = 0;
 			}
 			colliding = true;
-		} // end of with this.owner
+		}
 	}
 	
 	/// @func	_bounce(_col);
