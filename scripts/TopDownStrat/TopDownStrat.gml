@@ -222,13 +222,15 @@ function TopDownStrat() constructor {
 					x += sign(spd.x);
 				}
 				
-				var _sign = 1;
-				repeat(2) {
-					if(!place_meeting(x + sign(spd.x), y + max_spd*_sign, _col)) {
-						y += abs(spd.x) * _sign;
-						return;
+				for(var _spd = 0; _spd <= max_spd; _spd++) {
+					var _sign = 1;
+					repeat(2) {
+						if(!place_meeting(x + sign(spd.x), y + _spd*_sign, _col)) {
+							y += abs(spd.x) * _sign;
+							return;
+						}
+					_sign = -1;
 					}
-				_sign = -1;
 				}
 				
 				spd.x = 0;
@@ -238,13 +240,15 @@ function TopDownStrat() constructor {
 					y += sign(spd.y);
 				}
 				
-				var _sign = 1;
-				repeat(2) {
-					if(!place_meeting(x + spd.x + max_spd*_sign, y + sign(spd.y), _col)) {
-						x += abs(spd.y) * _sign;
-						return;
+				for(var _spd = 0; _spd <= max_spd; _spd++) {
+					var _sign = 1;
+					repeat(2) {
+						if(!place_meeting(x + spd.x + _spd*_sign, y + sign(spd.y), _col)) {
+							x += abs(spd.y) * _sign;
+							return;
+						}
+					_sign = -1;
 					}
-				_sign = -1;
 				}
 				
 				spd.y = 0;
