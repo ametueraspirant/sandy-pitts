@@ -424,5 +424,24 @@ function TopDownStrat() constructor {
 		
 		check_timers();
 	}
+	
+	new_move = function(x_dir, y_dir) {
+		var mv_dir = point_direction(0, 0, x_dir, y_dir);
+		
+		for(var int = 0; int < array_length(_this.colliders); int++) {
+			var _col = _this.colliders[int];
+			if(_col.slide)_slide(_col.obj);
+			if(_col.stick)_stick(_col.obj);
+			// use new collide and bounce functions. maybe not here but hopefully.
+		}
+		
+		if(_this.owner.input) {
+			if(_this.is_complex) {
+				
+			} else {
+				
+			}
+		}
+	}
 	#endregion
 }

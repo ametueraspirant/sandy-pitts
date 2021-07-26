@@ -1,5 +1,7 @@
 #region // set base stats
 set_base_stats(100, 10, 5, 0.6, 0.3);
+
+speeed = 5; // #TEST
 #endregion
 
 #region // set up motion strat
