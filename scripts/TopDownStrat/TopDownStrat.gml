@@ -209,6 +209,7 @@ function TopDownStrat() constructor {
 	#endregion
 	
 	#region /// collision functions, not meant to be used externally
+	
 	/// @func	_collide(_col);
 	/// @param	{obj}	_col	the object collider to check for
 	_collide = function(_col) {
@@ -221,39 +222,16 @@ function TopDownStrat() constructor {
 				while(!place_meeting(x + sign(spd.x), y, _col)) {
 					x += sign(spd.x);
 				}
-				
-				for(var _spd = 0; _spd <= max_spd; _spd++) {
-					var _sign = 1;
-					repeat(2) {
-						if(!place_meeting(x + sign(spd.x), y + _spd*_sign, _col)) {
-							y += abs(spd.x) * _sign;
-							return;
-						}
-					_sign = -1;
-					}
-				}
-				
 				spd.x = 0;
 			}
 			if(place_meeting(x + spd.x, y + spd.y, _col)) {
 				while(!place_meeting(x + spd.x, y + sign(spd.y), _col)) {
 					y += sign(spd.y);
 				}
-				
-				for(var _spd = 0; _spd <= max_spd; _spd++) {
-					var _sign = 1;
-					repeat(2) {
-						if(!place_meeting(x + spd.x + _spd*_sign, y + sign(spd.y), _col)) {
-							x += abs(spd.y) * _sign;
-							return;
-						}
-					_sign = -1;
-					}
-				}
-				
 				spd.y = 0;
 			}
 			colliding = true;
+			return true;
 		}
 	}
 	
@@ -273,6 +251,8 @@ function TopDownStrat() constructor {
 			}
 		}
 	}
+	
+	
 	
 	/// @func	_slide(_col);
 	/// @param	{obj}	_col	the object collider to check for
@@ -388,8 +368,9 @@ function TopDownStrat() constructor {
 	///	@param	{int}	x_dir	the x direction of inputs
 	/// @param	{int}	y_dir	the y direction of inputs
 	move = function(x_dir, y_dir) {
+		check_timers();
 		var mv_dir = point_direction(0, 0, x_dir, y_dir);
-				
+		
 		if(_this.owner.input) {
 			if(_this.is_complex) {
 				if(abs(_this.owner.spd.x) < abs(lengthdir_x(abs(x_dir), mv_dir) * _this.owner.max_spd)) {
@@ -411,19 +392,16 @@ function TopDownStrat() constructor {
 			}
 		}
 		
-		var mv_spd = point_distance(0, 0, _this.owner.spd.x, _this.owner.spd.y);
-		
 		for(var int = 0; int < array_length(_this.colliders); int++) {
 			var _col = _this.colliders[int];
-			if(_col.bounce)_bounce(_col.obj);
 			if(_col.slide)_slide(_col.obj);
 			if(_col.stick)_stick(_col.obj);
+			if(_col.bounce)_bounce(_col.obj);
 			if(_col.collide)_collide(_col.obj);
 		}
+		
 		_this.owner.x += _this.owner.spd.x;
 		_this.owner.y += _this.owner.spd.y;
-		
-		check_timers();
 	}
 	#endregion
 }
