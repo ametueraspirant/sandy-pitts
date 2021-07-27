@@ -53,6 +53,7 @@
     {"id":{"name":"s_door_test","path":"sprites/s_door_test/s_door_test.yy",},"order":2,},
     {"id":{"name":"__input_load_blacklist_csv","path":"scripts/__input_load_blacklist_csv/__input_load_blacklist_csv.yy",},"order":17,},
     {"id":{"name":"__input_load_type_csv","path":"scripts/__input_load_type_csv/__input_load_type_csv.yy",},"order":18,},
+    {"id":{"name":"Sliding Code Notes","path":"notes/Sliding Code Notes/Sliding Code Notes.yy",},"order":3,},
     {"id":{"name":"input_gamepad_check","path":"scripts/input_gamepad_check/input_gamepad_check.yy",},"order":0,},
     {"id":{"name":"input_rebind_tick_legacy","path":"scripts/input_rebind_tick_legacy/input_rebind_tick_legacy.yy",},"order":3,},
     {"id":{"name":"input_bindings_reset","path":"scripts/input_bindings_reset/input_bindings_reset.yy",},"order":2,},

@@ -1,0 +1,33 @@
+jon's code works as such.
+
+take in a target movement direction and speed.
+
+return immediately if there is no input direction, speed is 0, or there have been too many movement iterations.
+
+create a virtual x and y to run all movement calculations with first without altering x and y.
+
+check if there is no wall in the way, and if there isn't, simply alter x and y without doing anything else.
+
+create a signed version of speed inputs to increment the virtual x and y until they come just within contact of a wall.
+
+scan 4 angles to either side of the movement vector for openings.
+
+if an angle returns empty, call the function in recursion incrementing the count once.
+
+if no angles are found open, simply hit the wall.
+
+jon's code does not handle acelleration computations, all of that is done externally, freeing up the script to focus solely on movement within parameters.
+
+
+
+notes:
+would my inputs work better as a set of vectors of speed and direction?
+
+how would I handle movement inputs? still they would need to be calculated internally but if I want to call recursively I would need to imput speed.
+
+maybe have an optional speed input and just override the default calculations if that's called?
+
+how would I avoid using a bunch of for loops to loop through the collider array?
+
+how much of the code can I put into the _collide script?
+
