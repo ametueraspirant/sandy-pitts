@@ -407,7 +407,7 @@ function TopDownStrat() constructor {
 			if(_col.stick)_stick(_col.obj);
 			if(_col.bounce)_bounce(_col.obj);
 			with(_this.owner) {
-				if(_col.collide)other._collide(_col.obj);
+				if(place_meeting(_vx, _vy, _col.obj) && _col.collide)other._collide(_col.obj);
 			}
 		}
 		
