@@ -1,7 +1,5 @@
 #region // set base stats
 set_base_stats(100, 10, 5, 0.6, 0.3);
-
-speeed = 5; // #TEST
 #endregion
 
 #region // set up motion strat
@@ -23,7 +21,7 @@ player.event_set_default_function("gstep", function() {
 	depth = -y;
 	var x_dir = input_check(Verb.right) - input_check(Verb.left);
 	var y_dir = input_check(Verb.down) - input_check(Verb.up);
-	mstrat.move(x_dir, y_dir);
+	mstrat.new_move(x_dir, y_dir);
 });
 player.event_set_default_function("draw", function() { draw_self() });
 

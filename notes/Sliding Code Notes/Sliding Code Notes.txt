@@ -31,3 +31,6 @@ how would I avoid using a bunch of for loops to loop through the collider array?
 
 how much of the code can I put into the _collide script?
 
+can't put incrementing of distnace inside _collide, because if there's no collider the player still needs to be able to move.
+
+could I condense it down into 2-3 for loops perhaps?
