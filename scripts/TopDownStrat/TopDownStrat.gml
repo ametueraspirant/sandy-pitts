@@ -212,32 +212,26 @@ function TopDownStrat() constructor {
 	
 	/// @func	_collide(_col);
 	/// @param	{obj}	_col	the object collider to check for
-	_collide = function(_col, _vx, _vy, mv_dir, mv_spd, _count) {
+	_collide = function(_col) {
 		with(_this.owner) {
-			while(!place_meeting(_vx, _vy, _col)) {
-				//if(point_distance(x, y, _vx + sign(spd.x), _vy + sign(spd.y)) > mv_spd) break;
-				_vx += sign(spd.x);
-				_vy += sign(spd.y);
+			if(!place_meeting(x + spd.x, y + spd.y, _col)) {
+				colliding = false;
+				return false;
 			}
-			
-			var _dist = 0;
-			var ts_dir = mv_dir;
-			while(abs(angle_difference(mv_dir, ts_dir) <= 75)) {
-				_dist++;
-				var _sign = 1;
-				repeat(2) {
-					var _tx = _vx + lengthdir_x(_dist, mv_dir + 90 * _sign);
-					var _ty = _vy + lengthdir_y(_dist, mv_dir + 90 * _sign);
-					ts_dir = point_direction(x, y, _tx, _ty);
-					if(!place_meeting(_tx, _ty, _col))return other.move(ts_dir, mv_spd, _count);
-					_sign = -1;
+			if(place_meeting(x + spd.x, y, _col)) {
+				while(!place_meeting(x + sign(spd.x), y, _col)) {
+					x += sign(spd.x);
 				}
+				spd.x = 0;
 			}
-			
-			while(!place_meeting(x + sign(spd.x), y + sign(spd.y), _col)) {
-				x += sign(spd.x);
-				y += sign(spd.y);
+			if(place_meeting(x + spd.x, y + spd.y, _col)) {
+				while(!place_meeting(x + spd.x, y + sign(spd.y), _col)) {
+					y += sign(spd.y);
+				}
+				spd.y = 0;
 			}
+			colliding = true;
+			return true;
 		}
 	}
 	
