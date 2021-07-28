@@ -366,10 +366,10 @@ function TopDownStrat() constructor {
 	
 	/// @func	move(mv_dir);
 	///	@param	{int}	mv_dir	the direction of the movement vector
-	/// @param	{int}	mv_spd	the magnitude of the movement vector
-	move = function(mv_dir, mv_spd) {
-		var x_dir = lengthdir_x(mv_spd, mv_dir);
-		var y_dir = lengthdir_y(mv_spd, mv_dir);
+	/// @param	{int}	mv_mag	the magnitude of the movement vector
+	move = function(mv_dir, mv_mag) {
+		var x_dir = lengthdir_x(mv_mag, mv_dir);
+		var y_dir = lengthdir_y(mv_mag, mv_dir);
 		
 		check_timers();
 		
