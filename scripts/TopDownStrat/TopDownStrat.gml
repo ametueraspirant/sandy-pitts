@@ -403,13 +403,15 @@ function TopDownStrat() constructor {
 		
 		for(var int = 0; int < array_length(_this.colliders); int++) {
 			var _col = _this.colliders[int];
-			if(_col.slide)_slide(_col.obj);
-			if(_col.stick)_stick(_col.obj);
-			if(_col.bounce)_bounce(_col.obj);
 			with(_this.owner) {
-				if(place_meeting(_vx, _vy, _col.obj) && _col.collide) {
-					other._collide(_col.obj);
-					return;
+				if(place_meeting(_vx, _vy, _col.obj)) {
+					if(_col.slide)_slide(_col.obj);
+					if(_col.stick)_stick(_col.obj);
+					if(_col.bounce)_bounce(_col.obj);
+					if(_col.collide) {
+						other._collide(_col.obj);
+						return;
+					}
 				}
 			}
 		}
