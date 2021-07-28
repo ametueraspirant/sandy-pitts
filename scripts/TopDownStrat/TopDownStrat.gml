@@ -212,31 +212,33 @@ function TopDownStrat() constructor {
 	
 	/// @func	_collide(_col);
 	/// @param	{obj}	_col	the object collider to check for
-	_collide = function(_col) {
+	_collide = function(_col, _vx, _vy, mv_dir, mv_spd, _count) {
 		with(_this.owner) {
-			if(!place_meeting(x + spd.x, y + spd.y, _col)) {
-				colliding = false;
-				return false;
+			while(!place_meeting(_vx, _vy, _col)) {
+				//if(point_distance(x, y, _vx + sign(spd.x), _vy + sign(spd.y)) > mv_spd) break;
+				_vx += sign(spd.x);
+				_vy += sign(spd.y);
 			}
-			if(place_meeting(x + spd.x, y, _col)) {
-				while(!place_meeting(x + sign(spd.x), y, _col)) {
-					x += sign(spd.x);
+			
+			var _dist = 0;
+			var ts_dir = mv_dir;
+			while(abs(angle_difference(mv_dir, ts_dir) <= 75)) {
+				_dist++;
+				var _sign = 1;
+				repeat(2) {
+					var _tx = _vx + lengthdir_x(_dist, mv_dir + 90 * _sign);
+					var _ty = _vy + lengthdir_y(_dist, mv_dir + 90 * _sign);
+					ts_dir = point_direction(x, y, _tx, _ty);
+					if(!place_meeting(_tx, _ty, _col))return other.move(ts_dir, mv_spd, _count);
+					_sign = -1;
 				}
-				spd.x = 0;
 			}
-			if(place_meeting(x + spd.x, y + spd.y, _col)) {
-				while(!place_meeting(x + spd.x, y + sign(spd.y), _col)) {
-					y += sign(spd.y);
-				}
-				spd.y = 0;
+			
+			while(!place_meeting(x + sign(spd.x), y + sign(spd.y), _col)) {
+				x += sign(spd.x);
+				y += sign(spd.y);
 			}
-			colliding = true;
-			return true;
 		}
-	}
-	
-	_new_collide = function(_col) {
-		
 	}
 	
 	/// @func	_bounce(_col);
@@ -370,11 +372,13 @@ function TopDownStrat() constructor {
 	
 	/// @func	move(mv_dir);
 	///	@param	{int}	mv_dir	the direction of the movement vector
-	/// @param	{int}	mv_mag	the magnitude of the movement vector
-	move = function(mv_dir, mv_mag) {
-		var x_dir = lengthdir_x(mv_mag, mv_dir);
-		var y_dir = lengthdir_y(mv_mag, mv_dir);
+	/// @param	{int}	mv_spd	the magnitude of the movement vector
+	move = function(mv_dir, mv_spd) {
+		var x_dir = lengthdir_x(mv_spd, mv_dir);
+		var y_dir = lengthdir_y(mv_spd, mv_dir);
 		var _count = (argument_count > 2) ? argument[2] + 1 : 1;
+		
+		if(_count > 4)return;
 		
 		check_timers();
 		
@@ -410,7 +414,7 @@ function TopDownStrat() constructor {
 					if(_col.stick)_stick(_col.obj);
 					if(_col.bounce)_bounce(_col.obj);
 					if(_col.collide) {
-						other._collide(_col.obj);
+						other._collide(_col.obj, _vx, _vy, mv_dir, mv_spd, _count);
 						return;
 					}
 				}
