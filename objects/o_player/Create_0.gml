@@ -24,8 +24,14 @@ player.event_set_default_function("gstep", function() {
 	var mv_dir = point_direction(0, 0, x_dir, y_dir);
 	var mv_mag = point_distance(0, 0, x_dir, y_dir);
 	mstrat.move(mv_dir, mv_mag);
+	
+	if(!instance_exists(o_spear))instance_create_layer(x, x, _entity_layer, o_spear);
 });
-player.event_set_default_function("draw", function() { draw_self() });
+player.event_set_default_function("draw", function() {
+	draw_self();
+	draw_sprite(s_heavy_helm, 0, x, y);
+	draw_sprite(s_heavy_bod, 0, x, y);
+});
 
 player.add("idle", {
 	step: function() {

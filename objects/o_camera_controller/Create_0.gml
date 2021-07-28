@@ -2,9 +2,9 @@
 #macro _main_camera view_camera[0]
 
 camera = {
-	w: 1920/3,
-	h: 1080/3,
-	scale: 2
+	w: 1920/4,
+	h: 1080/4,
+	scale: 3
 }
 
 // set window and camera size to desired parameters
