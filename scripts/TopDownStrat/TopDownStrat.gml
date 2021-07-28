@@ -235,6 +235,10 @@ function TopDownStrat() constructor {
 		}
 	}
 	
+	_new_collide = function(_col) {
+		
+	}
+	
 	/// @func	_bounce(_col);
 	/// @param	{obj}	_col	the object collider to check for
 	_bounce = function(_col) {
@@ -365,16 +369,16 @@ function TopDownStrat() constructor {
 	}
 	
 	/// @func	move(mv_dir);
-	///	@param	{int}	x_dir	the x direction of inputs
-	/// @param	{int}	y_dir	the y direction of inputs
-	move = function(x_dir, y_dir) {
-		var mv_dir = point_direction(0, 0, x_dir, y_dir);
-		var mv_spd = (argument_count > 2) ? argument[2] : 0;
-		var _count = (argument_count > 3) ? argument[3] + 1 : 1;
+	///	@param	{int}	mv_dir	the direction of the movement vector
+	/// @param	{int}	mv_mag	the magnitude of the movement vector
+	move = function(mv_dir, mv_mag) {
+		var x_dir = lengthdir_x(mv_mag, mv_dir);
+		var y_dir = lengthdir_y(mv_mag, mv_dir);
+		var _count = (argument_count > 2) ? argument[2] + 1 : 1;
 		
 		check_timers();
 		
-		if(_this.owner.input && mv_spd == 0 && mv_dir != noone) {
+		if(_this.owner.input) {
 			if(_this.is_complex) {
 				if(abs(_this.owner.spd.x) < abs(lengthdir_x(abs(x_dir), mv_dir) * _this.owner.max_spd)) {
 					_this.owner.spd.x += lengthdir_x(abs(x_dir) * _this.owner.accel, mv_dir) - sign(_this.owner.spd.x) * _this.owner.frict;
@@ -393,9 +397,6 @@ function TopDownStrat() constructor {
 				_this.owner.spd.x = lengthdir_x(abs(x_dir), mv_dir) * _this.owner.max_spd;
 				_this.owner.spd.y = lengthdir_y(abs(y_dir), mv_dir) * _this.owner.max_spd;
 			}
-			
-			mv_spd = point_distance(0, 0, _this.owner.spd.x, _this.owner.spd.y);
-			show_debug_message(mv_spd);
 		}
 		
 		var _vx = _this.owner.x + _this.owner.spd.x;

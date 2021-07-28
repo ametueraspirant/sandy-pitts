@@ -21,7 +21,9 @@ player.event_set_default_function("gstep", function() {
 	depth = -y;
 	var x_dir = input_check(Verb.right) - input_check(Verb.left);
 	var y_dir = input_check(Verb.down) - input_check(Verb.up);
-	mstrat.move(x_dir, y_dir);
+	var mv_dir = point_direction(0, 0, x_dir, y_dir);
+	var mv_mag = point_distance(0, 0, x_dir, y_dir);
+	mstrat.move(mv_dir, mv_mag);
 });
 player.event_set_default_function("draw", function() { draw_self() });
 
