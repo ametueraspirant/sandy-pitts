@@ -393,6 +393,11 @@ function TopDownStrat() constructor {
 				_this.owner.spd.y = lengthdir_y(abs(y_dir), mv_dir) * _this.owner.max_spd;
 			}
 		}
+		
+		if(mv_mag == 0) {
+			if(abs(_this.owner.spd.x) < 0.2)_this.owner.spd.x = 0;
+			if(abs(_this.owner.spd.y) < 0.2)_this.owner.spd.y = 0;
+		}
 
 		for(var int = 0; int < array_length(_this.colliders); int++) {
 			var _col = _this.colliders[int];
