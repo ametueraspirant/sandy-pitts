@@ -370,9 +370,6 @@ function TopDownStrat() constructor {
 	move = function(mv_dir, mv_spd) {
 		var x_dir = lengthdir_x(mv_spd, mv_dir);
 		var y_dir = lengthdir_y(mv_spd, mv_dir);
-		var _count = (argument_count > 2) ? argument[2] + 1 : 1;
-		
-		if(_count > 4)return;
 		
 		check_timers();
 		
@@ -404,13 +401,10 @@ function TopDownStrat() constructor {
 			var _col = _this.colliders[int];
 			with(_this.owner) {
 				if(place_meeting(_vx, _vy, _col.obj)) {
-					if(_col.slide)_slide(_col.obj);
-					if(_col.stick)_stick(_col.obj);
-					if(_col.bounce)_bounce(_col.obj);
-					if(_col.collide) {
-						other._collide(_col.obj, _vx, _vy, mv_dir, mv_spd, _count);
-						return;
-					}
+					if(_col.slide)other._slide(_col.obj);
+					if(_col.stick)other._stick(_col.obj);
+					if(_col.bounce)other._bounce(_col.obj);
+					if(_col.collide)other._collide(_col.obj);
 				}
 			}
 		}
