@@ -35,6 +35,8 @@ player.event_set_default_function("gstep", function() {
 	else mv_sign = 1;
 
 	if(!instance_exists(curr_weapon))instance_create_layer(x, x, _entity_layer, curr_weapon);
+	
+	if(mouse_check_button_pressed(mb_left))player.change("attack");
 });
 player.event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
@@ -63,6 +65,23 @@ player.add("moving", {
 		var mv_spd = point_distance(0, 0, spd.x, spd.y) + 1;
 		image_speed = ((mv_spd + 1) / max_spd) * sign(mv_sign * spd.x + 1); // I don't know why this works but it does.
 		if(!mstrat.is_moving())player.change("idle");
+	}
+});
+
+player.add("attack", {
+	enter: function() {
+		mstrat.set_input_false();
+		
+		show_debug_message("swoooosh!");
+		mstrat.timer_set(300, "attack", function() {
+			player.change("idle");
+		});
+	},
+	step: function() {
+		
+	},
+	leave: function() {
+		mstrat.set_input_true();
 	}
 });
 

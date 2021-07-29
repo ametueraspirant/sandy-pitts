@@ -16,13 +16,21 @@ then simply call mstrat.move(x_input, y_input);
 additional functions:
 
 ** setting base stats **
-set_accel(int); change default acceleration after creation.
-set_frict(int); change default friction after creation.
-set_max_spd(int); change default max speed after creation.
+accel_set(int); change default acceleration after creation.
+accel_set_temp(int); change current acceleration after creation.
+accel_reset(); reset accel to base acceleration from using accel_set_temp.
+
+frict_set(int); change default friction after creation.
+frict_set_temp(int); change current friction after creation.
+frict_reset(); reset frict to base friction from using frict_set_temp.
+
+max_spd_set(int); change default max speed after creation.
+max_spd_set_temp(int); change current max speed after creation.
+max_spd_reset(); reset max speed to base max speed from  using max_spd_set_temp.
 
 ** setting combat stats **
-set_hp(int); change the hp value after creation. mostly for applying damage and healing. 5 will heal 5 and -5 will damage 5.
-set_max_hp(int); change max hp after creation.
+hp_set(int); change the hp value after creation. mostly for applying damage and healing. 5 will heal 5 and -5 will damage 5.
+hp_set_max(int); change max hp after creation.
 set_damage(int); change damage after creation.
 
 ** enable or disable input **

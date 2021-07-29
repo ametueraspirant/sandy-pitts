@@ -47,26 +47,59 @@ function TopDownStrat() constructor {
 	#endregion
 	
 	#region // functions for changing base stats after creation
-	///	@func	set_accel(_accel);
+	///	@func	accel_set(_accel);
 	/// @param	{int}	_accel		the accel value to set
-	set_accel = function(_accel) {
+	accel_set = function(_accel) {
 		_this.owner.accel = _accel;
 		_this.owner.base_accel = _accel;
-	};
+	}
 	
-	///	@func	set_frict(_frict)
+	/// @func	accel_set_temp(_accel);
+	/// @param	{int}	_accel	the accel value to temporarily change to
+	accel_set_temp = function(_accel) {
+		_this.owner.accel = _accel;
+	}
+	
+	/// @func	accel_reset();
+	accel_reset = function() {
+		_this.owner.accel = this.owner.base_accel;
+	}
+	
+	///	@func	frict_set(_frict)
 	/// @param	{int}	_frict		the frict value to set
-	set_frict = function(_frict) {
+	frict_set = function(_frict) {
 		_this.owner.frict = _frict;
 		_this.owner.base_frict = _frict;
-	};
+	}
 	
-	///	@func	set_max_spd(_max_spd);
+	/// @func	frict_set_temp(_frict);
+	/// @param	{int}	_frict	the frict value to temporarily change to
+	frict_set_temp = function(_frict) {
+		_this.owner.frict = _frict;
+	}
+	
+	/// @func frict_reset();
+	frict_reset = function(_frict) {
+		_this.owner.frict = _this.owner.base_frict;
+	}
+	
+	///	@func	max_spd_set(_max_spd);
 	/// @param	{int}	_max_spd	the max_spd value to set
-	set_max_spd = function(_max_spd) {
+	max_spd_set = function(_max_spd) {
 		_this.owner.max_spd = _max_spd;
 		_this.owner.base_max_spd = _max_spd;
 	};
+	
+	/// @func	max_spd_set_temp(_max_spd);
+	/// @param	{int}	_max_spd	the max_spd value to temporarily change to
+	max_spd_set_temp = function(_max_spd) {
+		_this.owner.max_spd = _max_spd;
+	}
+	
+	/// @func	max_spd_reset();
+	max_spd_reset = function() {
+		_this.owner.max_spd = _this.owner.base_max_spd;
+	}
 	
 	/// @func set_input_true();
 	set_input_true = function() {
@@ -78,15 +111,15 @@ function TopDownStrat() constructor {
 		_this.owner.input = false;
 	}
 		
-	/// @func	set_hp(_hp);
+	/// @func	hp_set(_hp);
 	/// @param	{int}	_hp		the hp value to add or subtract.
-	set_hp = function(_hp) {
+	hp_set = function(_hp) {
 		_this.owner.hp = clamp(_this.owner.hp + _hp, 0, _this.owner.max_hp);
 	}
 	
-	/// @func	set_max_hp(_max_hp);
+	/// @func	hp_set_max(_max_hp);
 	/// @param	{int}	_max_hp		the max_hp value to set
-	set_max_hp = function(_max_hp) {
+	hp_set_max = function(_max_hp) {
 		_this.owner.max_hp = _max_hp;
 	}
 	
