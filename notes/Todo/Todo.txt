@@ -1,3 +1,6 @@
 add sliding to move/collide function
 
 move set damage/hp/maxhp to the combatstrat
+
+make with the  ysort system maybe instance_find will help you
+
