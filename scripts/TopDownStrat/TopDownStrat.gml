@@ -101,13 +101,13 @@ function TopDownStrat() constructor {
 		_this.owner.max_spd = _this.owner.base_max_spd;
 	}
 	
-	/// @func set_input_true();
-	set_input_true = function() {
+	/// @func input_enable();
+	input_enable = function() {
 		_this.owner.input = true;
 	}
 	
-	/// @func set_input_false();
-	set_input_false = function() {
+	/// @func input_disable();
+	input_disable = function() {
 		_this.owner.input = false;
 	}
 		
@@ -389,13 +389,13 @@ function TopDownStrat() constructor {
 			spd.x = x_dir * 15;
 			spd.y = y_dir * 15;
 		}
-		set_input_false();
+		input_disable();
 		timer_set(150, "dash", function() {
 			with(_this.owner) {
 				spd.x = sign(spd.x) * 4;
 				spd.y = sign(spd.y) * 4;
 			}
-			set_input_true();
+			input_enable();
 		});
 	}
 	

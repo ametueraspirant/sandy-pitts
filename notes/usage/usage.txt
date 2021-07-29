@@ -34,8 +34,8 @@ hp_set_max(int); change max hp after creation.
 set_damage(int); change damage after creation.
 
 ** enable or disable input **
-set_input_true(); enable movement inputs.
-set_input_false(); disable movement inputs.
+input_enable(); enable movement inputs.
+input_disable(); disable movement inputs.
 
 ** add, modify, and delete colliders **
 add_collider(collider, "type"); add a new collider to the array.

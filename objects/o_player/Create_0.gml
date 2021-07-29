@@ -70,18 +70,17 @@ player.add("moving", {
 
 player.add("attack", {
 	enter: function() {
-		mstrat.set_input_false();
-		
-		show_debug_message("swoooosh!");
-		mstrat.timer_set(300, "attack", function() {
+		if(!mstrat.timer_exists("attack")) {
+			show_debug_message("swoooosh!");
+			mstrat.timer_set(300, "attack", function() {
+				player.change("idle");
+			});
+		} else {
 			player.change("idle");
-		});
+		}
 	},
 	step: function() {
 		
-	},
-	leave: function() {
-		mstrat.set_input_true();
 	}
 });
 
