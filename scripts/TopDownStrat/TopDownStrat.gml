@@ -1,3 +1,5 @@
+/// @author	Amet
+/// @desc	a constructor containing many functions. It is state machine and input system agnostic, and works well with most existing ones that I know of.
 /// @func	TopDownStrat(colliders, [is_complex], [accel], [frict])
 /// @param	{bool}	[is_complex]		whether to use simple or complex movement
 function TopDownStrat() constructor {
