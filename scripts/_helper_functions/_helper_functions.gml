@@ -25,12 +25,9 @@ function timer(_dur, _name, _func) constructor {
 
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function set_base_stats(_hp, _damage, _max_spd, _accel, _frict){
+function set_base_stats(_max_spd, _accel, _frict){
 	with(other) {
 		has_base_stats = true;
-		hp = _hp;
-		max_hp = _hp;
-		dam = _damage;
 		max_spd = _max_spd;
 		base_max_spd = _max_spd;
 		accel = _accel;

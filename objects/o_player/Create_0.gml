@@ -1,5 +1,5 @@
 #region // set base stats
-set_base_stats(100, 10, 5, 0.6, 0.3);
+set_base_stats(5, 0.6, 0.3);
 curr_helm = s_heavy_helm;
 curr_bod = s_heavy_bod;
 curr_weapon = o_sword;
@@ -13,6 +13,10 @@ mstrat.add_collider(o_wall, "collide");
 mstrat.add_collider(o_obstacle_test, "collide");
 //mstrat.add_collider(o_floor, "slide");
 
+#endregion
+
+#region // set up combat strat
+cstrat = new CombatStrat();
 #endregion
 
 #region // set up state machine
@@ -40,8 +44,8 @@ player.event_set_default_function("gstep", function() {
 });
 player.event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	draw_sprite_ext(curr_helm, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	draw_sprite_ext(curr_bod, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
+	if(curr_helm != noone)draw_sprite_ext(curr_helm, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
+	if(curr_bod != noone)draw_sprite_ext(curr_bod, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
 });
 
 // idle state
@@ -68,19 +72,20 @@ player.add("moving", {
 	}
 });
 
+// attack state
 player.add("attack", {
 	enter: function() {
 		if(!mstrat.timer_exists("attack")) {
 			show_debug_message("swoooosh!");
-			mstrat.timer_set(300, "attack", function() {
+			mstrat.timer_set(1000, "attack", function() {
 				player.change("idle");
 			});
 		} else {
 			player.change("idle");
 		}
 	},
-	step: function() {
-		
+	draw: function() {
+		draw_sprite(s_sword_swoosh, 0, x+15, y -1);
 	}
 });
 
