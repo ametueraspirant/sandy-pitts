@@ -181,6 +181,7 @@ function TopDownStrat() constructor {
 	/// @param	{func}	_func	the function to run when the timer runs out
 	timer_set = function(_dur, _name, _func) {
 		if(!is_array(timer_get(_name)))array_push(_this.timers, new timer(_dur, _name, _func));
+		return true;
 	}
 	
 	/// @func	timer_execute_early(_name);
@@ -190,9 +191,11 @@ function TopDownStrat() constructor {
 		if(is_array(_timer)) {
 			_timer[0].func();
 			array_delete(_this.timers, _timer[1], 1);
-			return show_debug_message("timer has been executed early and deleted from the list.");
+			show_debug_message("timer has been executed early and deleted from the list.");
+			return true;
 		} else {
-			return show_debug_message("no timer exists with this name.");
+			show_debug_message("no timer exists with this name.");
+			return false;
 		};
 	}
 	
@@ -203,6 +206,18 @@ function TopDownStrat() constructor {
 		if(is_array(_timer)) {
 			return true;
 		} else {
+			return false;
+		}
+	}
+	
+	/// @func	timer_get_remaining_time(_name);
+	/// @param	{str}	_name	the name of the timer
+	timer_get_remaining_time = function(_name) {
+		var _timer = timer_get(_name);
+		if(is_array(_timer)) {
+			return _timer[0].time + _timer[0].dur - current_time;
+		} else {
+			show_debug_message("no timer exists with this name.");
 			return false;
 		}
 	}
@@ -367,8 +382,8 @@ function TopDownStrat() constructor {
 		input_disable();
 		timer_set(150, "dash", function() {
 			with(_this.owner) {
-				spd.x = sign(spd.x) * 4;
-				spd.y = sign(spd.y) * 4;
+				spd.x = sign(spd.x) * max_spd;
+				spd.y = sign(spd.y) * max_spd;
 			}
 			input_enable();
 			timer_set(850, "dash-cooldown", function() {
