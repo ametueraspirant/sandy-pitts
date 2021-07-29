@@ -15,15 +15,17 @@ then simply call mstrat.move(x_input, y_input);
 
 additional functions:
 
-** setting base stats **
+** setting acceleration **
 accel_set(int); change default acceleration after creation.
 accel_set_temp(int); change current acceleration after creation.
 accel_reset(); reset accel to base acceleration from using accel_set_temp.
 
+** setting friction **
 frict_set(int); change default friction after creation.
 frict_set_temp(int); change current friction after creation.
 frict_reset(); reset frict to base friction from using frict_set_temp.
 
+** setting max speed **
 max_spd_set(int); change default max speed after creation.
 max_spd_set_temp(int); change current max speed after creation.
 max_spd_reset(); reset max speed to base max speed from  using max_spd_set_temp.
@@ -55,9 +57,9 @@ check_timers(); if mstrat.move() is being called, then this function is being ca
 
 
 ** default movement scripts **
-move(); input an x and y dir and you're off to the races. handles all collision and collision types under the hood.
+move(); input a movement direction and magnitude and you're off to the races. handles all collision and collision types under the hood.
 
-dash(); briefly disables input and dashes the player at 2x specified xdir and ydir.
+dash(); briefly disables input and dashes the player at 2x specified movement magnitude.
 
 ** common event listeners, made to be used with a state machine **
 is_moving(); will return true if the player is moving, and false otherwise.

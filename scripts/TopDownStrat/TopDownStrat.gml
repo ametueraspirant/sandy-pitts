@@ -25,7 +25,7 @@ function TopDownStrat() constructor {
 	/// @param	{arr}	_arr	the array to add to
 	_add_to_array = function(_obj, _arr) {
 		for(var int = 0; int < array_length(_arr); int++) {
-			if(_arr[int] == _col)return show_debug_message("that collider already exists. did you mean to modify?");
+			if(_arr[int] == _obj)return show_debug_message("that collider already exists. did you mean to modify?");
 		}
 		array_push(_arr, _obj);
 	}
@@ -366,10 +366,9 @@ function TopDownStrat() constructor {
 	///	@func	dash(x_dir, y_dir);
 	///	@param	{int}	x_dir	the x direction of inputs
 	/// @param	{int}	y_dir	the y direction of inputs
-	dash = function(x_dir, y_dir) {
+	dash = function(mv_dir, mv_mag) {
 		with(_this.owner) {
-			spd.x = x_dir * 15;
-			spd.y = y_dir * 15;
+			other.move(mv_dir, mv_mag * 15);
 		}
 		input_disable();
 		timer_set(150, "dash", function() {
