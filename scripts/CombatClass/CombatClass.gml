@@ -30,6 +30,14 @@ function CombatClass() constructor {
 		_this.owner.dam = _damage;
 	}
 	#endregion
+	
+	#region // gear changing functions
+	
+	#endregion
+	
+	#region // attacking functions
+	
+	#endregion
 }
 
 /// @func	set_combat_stats(_hp, _dam, _act_spd, _size);

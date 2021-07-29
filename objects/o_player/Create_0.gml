@@ -1,6 +1,7 @@
 #region // set stats
 set_base_stats(5, 0.6, 0.3);
-set_combat_stats();
+set_combat_stats(5, 1, 1, 1);
+show_debug_message(hp);
 curr_helm = s_heavy_helm;
 curr_bod = s_heavy_bod;
 curr_weapon = o_sword;
