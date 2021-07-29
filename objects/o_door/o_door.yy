@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Background",
-    "path": "folders/Objects/Background.yy",
+    "path": "folders/Background.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_door",

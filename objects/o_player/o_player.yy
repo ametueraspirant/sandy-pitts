@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Entities",
-    "path": "folders/Objects/Entities.yy",
+    "name": "Player",
+    "path": "folders/Entities/Player.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_player",

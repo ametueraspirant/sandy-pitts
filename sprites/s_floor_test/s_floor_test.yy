@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "test",
-    "path": "folders/Sprites/test.yy",
+    "path": "folders/test.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_floor_test",

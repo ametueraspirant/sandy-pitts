@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "weapons",
-    "path": "folders/Sprites/Items/weapons.yy",
+    "name": "Spear",
+    "path": "folders/Entities/Weapons/Spear.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_spear",

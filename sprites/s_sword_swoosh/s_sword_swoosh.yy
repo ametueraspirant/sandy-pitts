@@ -81,8 +81,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "weapons",
-    "path": "folders/Sprites/Items/weapons.yy",
+    "name": "Sword",
+    "path": "folders/Entities/Weapons/Sword.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_sword_swoosh",

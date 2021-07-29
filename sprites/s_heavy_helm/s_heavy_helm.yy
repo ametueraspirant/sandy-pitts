@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "metal armour",
-    "path": "folders/Sprites/Items/metal armour.yy",
+    "name": "Metal",
+    "path": "folders/Entities/Armour/Metal.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_heavy_helm",

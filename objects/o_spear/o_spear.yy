@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Entities",
-    "path": "folders/Objects/Entities.yy",
+    "name": "Spear",
+    "path": "folders/Entities/Weapons/Spear.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_spear",

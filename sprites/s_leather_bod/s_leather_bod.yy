@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "leather armour",
-    "path": "folders/Sprites/Items/leather armour.yy",
+    "name": "Leather",
+    "path": "folders/Entities/Armour/Leather.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_leather_bod",

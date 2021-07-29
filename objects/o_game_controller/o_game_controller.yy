@@ -26,7 +26,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "System",
-    "path": "folders/Objects/System.yy",
+    "path": "folders/System.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_game_controller",
