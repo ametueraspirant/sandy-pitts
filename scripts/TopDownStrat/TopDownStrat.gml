@@ -162,52 +162,45 @@ function TopDownStrat() constructor {
 	#endregion
 	
 	#region /// timer system functions
-	/// @func	timer_set(_dur, _func);
-	/// @param	{int}	_dur	the duration of the timer to set
-	/// @param	{str}	_name	the name of the timer
-	/// @param	{func}	_func	the function to run when the timer runs out
-	timer_set = function(_dur, _name, _func) {
-		for(var int = 0; int < array_length(_this.timers); int++) {
-			if(_this.timers[int].name == _name) {
-				return show_debug_message("a timer with this name already exists.");
-			}
-		}
-		array_push(_this.timers, new timer(_dur, _name, _func));
-	}
-	
 	/// @func	timer_get(_name);
 	/// @param	{str}	_name	the name of the timer
 	timer_get = function(_name) {
 		if(!is_string(_name))return show_debug_message("make sure the name is a string");
 		for(var int = 0; int < array_length(_this.timers); int++) {
 			if(_this.timers[int].name == _name) {
-				return _this.timers[int];
-			} else {
-				show_debug_message("no timer exists with this name.");
-				return false;
+				return [_this.timers[int], int];
 			}
 		}
+		//show_debug_message("no timer exists with this name."); removed because this annoyed me in circumstances when the false return was the desirable outcome.
+		return false;
+	}
+	
+	/// @func	timer_set(_dur, _func);
+	/// @param	{int}	_dur	the duration of the timer to set
+	/// @param	{str}	_name	the name of the timer
+	/// @param	{func}	_func	the function to run when the timer runs out
+	timer_set = function(_dur, _name, _func) {
+		if(!is_array(timer_get(_name)))array_push(_this.timers, new timer(_dur, _name, _func));
 	}
 	
 	/// @func	timer_execute_early(_name);
 	/// @param	{str}	_name	the name of the timer
 	timer_execute_early = function(_name) {
-		for(var int = 0; int < array_length(_this.timers); int++) {
-			if(_this.timers[int].name == _name) {
-				_this.timers[int].func();
-				array_delete(_this.timers, int, 1);
-				return show_debug_message("timer has been executed early and deleted from the list.");
-			} else {
-				return show_debug_message("no timer exists with this name.");
-			}
-		}
+		var _timer = timer_get(_name);
+		if(is_array(_timer)) {
+			_timer[0].func();
+			array_delete(_this.timers, _timer[1], 1);
+			return show_debug_message("timer has been executed early and deleted from the list.");
+		} else {
+			return show_debug_message("no timer exists with this name.");
+		};
 	}
 	
 	/// @func	timer_exists(_name);
 	/// @param	{str}	_name	the name of the timer
 	timer_exists = function(_name) {
 		var _timer = timer_get(_name);
-		if(is_struct(_timer)) {
+		if(is_array(_timer)) {
 			return true;
 		} else {
 			return false;
@@ -367,6 +360,7 @@ function TopDownStrat() constructor {
 	///	@param	{int}	x_dir	the x direction of inputs
 	/// @param	{int}	y_dir	the y direction of inputs
 	dash = function(mv_dir, mv_mag) {
+		if(timer_exists("dash") || timer_exists("dash-cooldown"))return;
 		with(_this.owner) {
 			other.move(mv_dir, mv_mag * 15);
 		}
@@ -377,6 +371,9 @@ function TopDownStrat() constructor {
 				spd.y = sign(spd.y) * 4;
 			}
 			input_enable();
+			timer_set(850, "dash-cooldown", function() {
+				// nothing here, timer just needs to exist.
+			});
 		});
 	}
 	
