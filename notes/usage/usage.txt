@@ -66,7 +66,7 @@ dash(); briefly disables input and dashes the player at 2x specified xdir and yd
 
 ** common event listeners, made to be used with a state machine **
 is_moving(); will return true if the player is moving, and false otherwise.
-is_colliding(); will return true if the player is_colliding with a collider, and false otherwise.
+is_colliding(); will return true if the player is colliding with a collider, and false otherwise.
 is_bouncing(); will return true if the player is bouncing off a collider, and false otherwise.
 is_sliding(); will return true if the player is sliding on a collider, and false otherwise.
 is_sticking(); will return true if the player is sticking to a collider, and false otherwise.
