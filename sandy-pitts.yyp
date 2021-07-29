@@ -137,7 +137,7 @@
     {"id":{"name":"MotionStratDemo","path":"rooms/MotionStratDemo/MotionStratDemo.yy",},"order":0,},
     {"id":{"name":"input_gamepad_check_pressed","path":"scripts/input_gamepad_check_pressed/input_gamepad_check_pressed.yy",},"order":1,},
     {"id":{"name":"input_direction","path":"scripts/input_direction/input_direction.yy",},"order":0,},
-    {"id":{"name":"CombatStrat","path":"scripts/CombatStrat/CombatStrat.yy",},"order":3,},
+    {"id":{"name":"CombatClass","path":"scripts/CombatClass/CombatClass.yy",},"order":3,},
     {"id":{"name":"__input_class_cursor","path":"scripts/__input_class_cursor/__input_class_cursor.yy",},"order":4,},
     {"id":{"name":"TopDownStrat","path":"scripts/TopDownStrat/TopDownStrat.yy",},"order":0,},
     {"id":{"name":"input_cursor_verbs","path":"scripts/input_cursor_verbs/input_cursor_verbs.yy",},"order":7,},

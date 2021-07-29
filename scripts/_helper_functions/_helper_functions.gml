@@ -23,9 +23,11 @@ function timer(_dur, _name, _func) constructor {
 	func = _func;
 }
 
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function set_base_stats(_max_spd, _accel, _frict){
+/// @func	set_base_stats(_max_spd, _accel, _frict);
+/// @param	{int}	_max_spd	max movement speed
+/// @param	{int}	_accel		acceleration
+/// @param	{int}	_frict		friction
+function set_base_stats(_max_spd, _accel, _frict) {
 	with(other) {
 		has_base_stats = true;
 		max_spd = _max_spd;
@@ -48,6 +50,6 @@ function Vector2(_x, _y) constructor{
 	y = _y;
 }
 
-function YSort(){
+function YSort(){ // #TODO? PERHAPS?
 	
 }

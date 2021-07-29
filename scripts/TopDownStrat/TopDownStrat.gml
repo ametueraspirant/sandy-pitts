@@ -9,8 +9,8 @@ function TopDownStrat() constructor {
 	_this = {};
 	
 	with(_this) {
-		is_complex = _is_complex;
 		owner = _owner;
+		is_complex = _is_complex;
 		colliders = [];
 		timers = [];
 	}
@@ -20,23 +20,23 @@ function TopDownStrat() constructor {
 	}
 	
 	#region /// internal functions, not meant to be used externally
-	///	@func	_add_to_array(_col, _arr);
-	/// @param	{arr}	_col	the item to add to the array
+	///	@func	_add_to_array(_obj, _arr);
+	/// @param	{arr}	_obj	the item to add to the array
 	/// @param	{arr}	_arr	the array to add to
-	_add_to_array = function(_col, _arr) {
+	_add_to_array = function(_obj, _arr) {
 		for(var int = 0; int < array_length(_arr); int++) {
 			if(_arr[int] == _col)return show_debug_message("that collider already exists. did you mean to modify?");
 		}
-		array_push(_arr, _col);
+		array_push(_arr, _obj);
 	}
 	
-	///	@func	_delete_from_array(_col, _arr);
-	/// @param	{arr}	_col	the item to delete from the array
+	///	@func	_delete_from_array(_obj, _arr);
+	/// @param	{arr}	_obj	the item to delete from the array
 	/// @param	{arr}	_arr	the array to delete from
-	_delete_from_array = function(_col, _arr) {
+	_delete_from_array = function(_obj, _arr) {
 		var exists = false;
 		for(var int = 0; int < array_length(_arr); int++) {
-			if(_arr[int] == _col) {
+			if(_arr[int] == _obj) {
 				array_delete(_arr, int, 1);
 				exists = true;
 			}
@@ -109,24 +109,6 @@ function TopDownStrat() constructor {
 	/// @func input_disable();
 	input_disable = function() {
 		_this.owner.input = false;
-	}
-		
-	/// @func	hp_set(_hp);
-	/// @param	{int}	_hp		the hp value to add or subtract.
-	hp_set = function(_hp) {
-		_this.owner.hp = clamp(_this.owner.hp + _hp, 0, _this.owner.max_hp);
-	}
-	
-	/// @func	hp_set_max(_max_hp);
-	/// @param	{int}	_max_hp		the max_hp value to set
-	hp_set_max = function(_max_hp) {
-		_this.owner.max_hp = _max_hp;
-	}
-	
-	/// @func	set_damage(_damage);
-	/// @param	{int}	_damage		the damage value to set
-	set_damage = function(_damage) {
-		_this.owner.dam = _damage;
 	}
 	#endregion
 	

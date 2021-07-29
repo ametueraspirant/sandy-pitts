@@ -1,5 +1,6 @@
-#region // set base stats
+#region // set stats
 set_base_stats(5, 0.6, 0.3);
+set_combat_stats();
 curr_helm = s_heavy_helm;
 curr_bod = s_heavy_bod;
 curr_weapon = o_sword;
@@ -16,7 +17,7 @@ mstrat.add_collider(o_obstacle_test, "collide");
 #endregion
 
 #region // set up combat strat
-cstrat = new CombatStrat();
+class = new CombatClass();
 #endregion
 
 #region // set up state machine
@@ -40,7 +41,7 @@ player.event_set_default_function("gstep", function() {
 
 	if(!instance_exists(curr_weapon))instance_create_layer(x, x, _entity_layer, curr_weapon);
 	
-	if(mouse_check_button_pressed(mb_left))player.change("attack");
+	if(mouse_check_button_pressed(mb_left) && player.get_current_state() != "attack")player.change("attack");
 });
 player.event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
@@ -84,9 +85,6 @@ player.add("attack", {
 			player.change("idle");
 		}
 	},
-	draw: function() {
-		draw_sprite(s_sword_swoosh, 0, x+15, y -1);
-	}
 });
 
 // define states

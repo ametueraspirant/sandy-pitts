@@ -28,11 +28,6 @@ max_spd_set(int); change default max speed after creation.
 max_spd_set_temp(int); change current max speed after creation.
 max_spd_reset(); reset max speed to base max speed from  using max_spd_set_temp.
 
-** setting combat stats **
-hp_set(int); change the hp value after creation. mostly for applying damage and healing. 5 will heal 5 and -5 will damage 5.
-hp_set_max(int); change max hp after creation.
-set_damage(int); change damage after creation.
-
 ** enable or disable input **
 input_enable(); enable movement inputs.
 input_disable(); disable movement inputs.
