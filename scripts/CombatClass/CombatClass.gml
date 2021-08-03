@@ -11,6 +11,10 @@ function CombatClass() constructor {
 		items = [];
 	}
 	
+	if(!_this.owner.has_combat_stats) {
+		show_debug_message("you haven't set your stats up. consider using the set_combat_stats function to initialize all of the stats this object will use.");
+	}
+	
 	#region // functions for changing base stats after creation
 	/// @func	hp_set(_hp);
 	/// @param	{int}	_hp		the hp value to add or subtract.
