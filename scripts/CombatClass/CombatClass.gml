@@ -42,6 +42,10 @@ function CombatClass() constructor {
 	#region // attacking functions
 	
 	#endregion
+	
+	#region // i-frame functions
+	
+	#endregion
 }
 
 /// @func	set_combat_stats(_hp, _dam, _act_spd, _size);
