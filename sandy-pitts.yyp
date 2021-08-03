@@ -55,7 +55,6 @@
     {"id":{"name":"s_door_test","path":"sprites/s_door_test/s_door_test.yy",},"order":2,},
     {"id":{"name":"__input_load_blacklist_csv","path":"scripts/__input_load_blacklist_csv/__input_load_blacklist_csv.yy",},"order":17,},
     {"id":{"name":"s_sword","path":"sprites/s_sword/s_sword.yy",},"order":1,},
-    {"id":{"name":"AnimationCurve1","path":"animcurves/AnimationCurve1/AnimationCurve1.yy",},"order":20,},
     {"id":{"name":"__input_load_type_csv","path":"scripts/__input_load_type_csv/__input_load_type_csv.yy",},"order":18,},
     {"id":{"name":"s_leather_bod","path":"sprites/s_leather_bod/s_leather_bod.yy",},"order":0,},
     {"id":{"name":"Sliding Code Notes","path":"notes/Sliding Code Notes/Sliding Code Notes.yy",},"order":3,},
