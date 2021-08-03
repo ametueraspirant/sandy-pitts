@@ -4,3 +4,6 @@ move set damage/hp/maxhp to the combatstrat
 
 make with the  ysort system maybe instance_find will help you
 
+can timer system work with enums?
+
+remember to use var = instance_create to save the instance id.
