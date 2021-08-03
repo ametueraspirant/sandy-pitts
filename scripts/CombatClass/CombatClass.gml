@@ -52,7 +52,7 @@ function CombatClass() constructor {
 function set_combat_stats(_hp, _dam, _act_spd, _size) {
 	with(other) {
 		has_combat_stats = true;
-		hp = _hp;
+		cur_hp = _hp;
 		max_hp = _hp;
 		dam = _dam;
 		act_spd = _act_spd;
