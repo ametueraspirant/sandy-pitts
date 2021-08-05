@@ -173,9 +173,8 @@
   "configs": {
     "name": "Default",
     "children": [
-      {"name":"Testing","children":[
-          {"name":"Release","children":[],},
-        ],},
+      {"name":"Testing","children":[],},
+      {"name":"Release","children":[],},
     ],
   },
   "RoomOrderNodes": [
