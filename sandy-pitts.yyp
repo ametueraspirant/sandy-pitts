@@ -172,7 +172,11 @@
   "tutorialPath": "",
   "configs": {
     "name": "Default",
-    "children": [],
+    "children": [
+      {"name":"Testing","children":[
+          {"name":"Release","children":[],},
+        ],},
+    ],
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
