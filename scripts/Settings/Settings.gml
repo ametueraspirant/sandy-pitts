@@ -1,5 +1,7 @@
-enum TDSTIMERS {
+enum TDS_TIMERS {
 	BOUNCE,
 	DASH,
 	DASH_COOLDOWN
 }
+
+#macro TDS_DEFAULT_COMPLEXITY true

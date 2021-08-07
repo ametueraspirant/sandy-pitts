@@ -3,7 +3,7 @@
 /// @func	TopDownStrat(colliders, [is_complex], [accel], [frict])
 /// @param	{bool}	[is_complex]		whether to use simple or complex movement
 function TopDownStrat() constructor {
-	var _is_complex = (argument_count > 0) ? argument[0] : true;
+	var _is_complex = (argument_count > 0) ? argument[0] : TDS_DEFAULT_COMPLEXITY;
 	var _owner = other.id;
 	
 	_this = {};
@@ -266,7 +266,7 @@ function TopDownStrat() constructor {
 				spd.x = -spd.x * 0.5;
 				spd.y = -spd.y * 0.5;
 				input = false;
-				other.timer_set(300, TDSTIMERS.BOUNCE, function() {
+				other.timer_set(300, TDS_TIMERS.BOUNCE, function() {
 					spd.x = 0;
 					spd.y = 0;
 					input = true;
@@ -335,7 +335,7 @@ function TopDownStrat() constructor {
 	
 	/// @func	is_bouncing();
 	is_bouncing = function() {
-		return timer_exists(TDSTIMERS.BOUNCE);
+		return timer_exists(TDS_TIMERS.BOUNCE);
 	}
 	
 	/// @func	is_sliding();
@@ -350,7 +350,7 @@ function TopDownStrat() constructor {
 	
 	/// @func	is_dashing();
 	is_dashing = function() {
-		return timer_exists(TDSTIMERS.DASH);
+		return timer_exists(TDS_TIMERS.DASH);
 	}
 	
 	/// @func is_idle();
@@ -373,18 +373,18 @@ function TopDownStrat() constructor {
 	///	@param	{int}	x_dir	the x direction of inputs
 	/// @param	{int}	y_dir	the y direction of inputs
 	dash = function(mv_dir, mv_mag) {
-		if(timer_exists(TDSTIMERS.DASH) || timer_exists(TDSTIMERS.DASH_COOLDOWN))return;
+		if(timer_exists(TDS_TIMERS.DASH) || timer_exists(TDS_TIMERS.DASH_COOLDOWN))return;
 		with(_this.owner) {
 			other.move(mv_dir, mv_mag * 15);
 		}
 		input_disable();
-		timer_set(150, TDSTIMERS.DASH, function() {
+		timer_set(150, TDS_TIMERS.DASH, function() {
 			with(_this.owner) {
 				spd.x = sign(spd.x) * max_spd;
 				spd.y = sign(spd.y) * max_spd;
 			}
 			input_enable();
-			timer_set(850, TDSTIMERS.DASH_COOLDOWN, function() {
+			timer_set(850, TDS_TIMERS.DASH_COOLDOWN, function() {
 				// nothing here, timer just needs to exist.
 			});
 		});
