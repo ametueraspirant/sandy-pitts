@@ -171,7 +171,6 @@ function TopDownStrat() constructor {
 				return [_this.timers[int], int];
 			}
 		}
-		//show_debug_message("no timer exists with this name."); removed because this annoyed me in circumstances when the false return was the desirable outcome.
 		return false;
 	}
 	
