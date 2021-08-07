@@ -34,14 +34,14 @@ function TopDownStrat() constructor {
 	/// @param	{arr}	_obj	the item to delete from the array
 	/// @param	{arr}	_arr	the array to delete from
 	_delete_from_array = function(_obj, _arr) {
-		var exists = false;
+		var exists = true;
 		for(var int = 0; int < array_length(_arr); int++) {
 			if(_arr[int] == _obj) {
 				array_delete(_arr, int, 1);
-				exists = true;
+				exists = false;
 			}
 		}
-		if(exists)return show_debug_message("you haven't added a collider with that name");
+		if(!exists)return show_debug_message("you haven't added a collider with that name");
 	}
 	 
 	#endregion
