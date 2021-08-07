@@ -42,6 +42,7 @@ function TopDownStrat() constructor {
 			if(_arr[int] == _obj) {
 				array_delete(_arr, int, 1);
 				exists = false;
+				return;
 			}
 		}
 		if(!exists) {
