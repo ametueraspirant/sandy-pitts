@@ -165,7 +165,6 @@ function TopDownStrat() constructor {
 	/// @func	timer_get(_name);
 	/// @param	{str}	_name	the name of the timer
 	timer_get = function(_name) {
-		if(!is_string(_name))return show_debug_message("make sure the name is a string");
 		for(var int = 0; int < array_length(_this.timers); int++) {
 			if(_this.timers[int].name == _name) {
 				return [_this.timers[int], int];
