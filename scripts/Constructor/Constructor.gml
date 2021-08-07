@@ -266,7 +266,7 @@ function TopDownStrat() constructor {
 				spd.x = -spd.x * 0.5;
 				spd.y = -spd.y * 0.5;
 				input = false;
-				other.timer_set(300, "bounce", function() {
+				other.timer_set(300, TDSTIMERS.BOUNCE, function() {
 					spd.x = 0;
 					spd.y = 0;
 					input = true;
@@ -335,7 +335,7 @@ function TopDownStrat() constructor {
 	
 	/// @func	is_bouncing();
 	is_bouncing = function() {
-		return timer_exists("bounce");
+		return timer_exists(TDSTIMERS.BOUNCE);
 	}
 	
 	/// @func	is_sliding();
@@ -350,7 +350,7 @@ function TopDownStrat() constructor {
 	
 	/// @func	is_dashing();
 	is_dashing = function() {
-		return timer_exists("dash");
+		return timer_exists(TDSTIMERS.DASH);
 	}
 	
 	/// @func is_idle();
@@ -373,18 +373,18 @@ function TopDownStrat() constructor {
 	///	@param	{int}	x_dir	the x direction of inputs
 	/// @param	{int}	y_dir	the y direction of inputs
 	dash = function(mv_dir, mv_mag) {
-		if(timer_exists("dash") || timer_exists("dash-cooldown"))return;
+		if(timer_exists(TDSTIMERS.DASH) || timer_exists(TDSTIMERS.DASH_COOLDOWN))return;
 		with(_this.owner) {
 			other.move(mv_dir, mv_mag * 15);
 		}
 		input_disable();
-		timer_set(150, "dash", function() {
+		timer_set(150, TDSTIMERS.DASH, function() {
 			with(_this.owner) {
 				spd.x = sign(spd.x) * max_spd;
 				spd.y = sign(spd.y) * max_spd;
 			}
 			input_enable();
-			timer_set(850, "dash-cooldown", function() {
+			timer_set(850, TDSTIMERS.DASH_COOLDOWN, function() {
 				// nothing here, timer just needs to exist.
 			});
 		});
