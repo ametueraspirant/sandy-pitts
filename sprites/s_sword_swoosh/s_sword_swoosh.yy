@@ -41,7 +41,7 @@
     "spriteId": {"name":"s_sword_swoosh","path":"sprites/s_sword_swoosh/s_sword_swoosh.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 30.0,
+    "playbackSpeed": 15.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
