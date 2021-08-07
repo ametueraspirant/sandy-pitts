@@ -50,8 +50,8 @@
   "eventToFunction": {},
   "eventStubScript": null,
   "parent": {
-    "name": "Player Attacks",
-    "path": "folders/Sequences/Player Attacks.yy",
+    "name": "Sword",
+    "path": "folders/Entities/Weapons/Sword.yy",
   },
   "resourceVersion": "1.3",
   "name": "q_sword_1",
