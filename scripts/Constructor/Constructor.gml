@@ -25,7 +25,10 @@ function TopDownStrat() constructor {
 	/// @param	{arr}	_arr	the array to add to
 	_add_to_array = function(_obj, _arr) {
 		for(var int = 0; int < array_length(_arr); int++) {
-			if(_arr[int] == _obj)return show_debug_message("that collider already exists. did you mean to modify?");
+			if(_arr[int] == _obj) {
+				show_debug_message("that collider already exists. did you mean to modify?");
+				return;
+			}
 		}
 		array_push(_arr, _obj);
 	}
@@ -41,7 +44,10 @@ function TopDownStrat() constructor {
 				exists = false;
 			}
 		}
-		if(!exists)return show_debug_message("you haven't added a collider with that name");
+		if(!exists) {
+			show_debug_message("you haven't added a collider with that name");
+			return;
+		}
 	}
 	 
 	#endregion
