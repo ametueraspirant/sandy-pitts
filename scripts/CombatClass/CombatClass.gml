@@ -40,11 +40,11 @@ function CombatClass() constructor {
 	#endregion
 	
 	#region // attacking functions
-	play_attack = function(_seq) {
+	attack = function(_seq) {
 		
 	}
 	
-	a_step = function() {
+	acheck = function() {
 		
 	}
 	#endregion
