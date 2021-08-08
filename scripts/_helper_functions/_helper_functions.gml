@@ -34,7 +34,7 @@ function set_base_stats(_max_spd, _accel, _frict) {
 	}
 }
 
-function Vector2(_x, _y) constructor{
+function Vector2(_x, _y) constructor {
 	x = _x;
 	y = _y;
 }
