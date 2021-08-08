@@ -49,6 +49,10 @@ function CombatClass() constructor {
 	}
 	#endregion
 	
+	#region /// timer system
+	timer = new TimerSystem();
+	#endregion
+	
 	#region // i-frame functions
 	
 	#endregion

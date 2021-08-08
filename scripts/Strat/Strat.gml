@@ -168,7 +168,7 @@ function TopDownStrat() constructor {
 	#endregion
 	
 	#region /// timer system
-	timer = new timer_system();
+	timer = new TimerSystem();
 	#endregion
 	
 	#region /// collision functions, not meant to be used externally

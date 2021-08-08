@@ -20,6 +20,10 @@ mstrat.add_collider(o_obstacle_test, "collide");
 class = new CombatClass();
 #endregion
 
+#region // set up timer
+timer = new TimerSystem();
+#endregion
+
 #region // set up state machine
 // define new state machine
 player = new SnowState("idle");
@@ -28,6 +32,9 @@ player = new SnowState("idle");
 player.event_set_default_function("step", function() {});
 player.event_set_default_function("gstep", function() {
 	depth = -y;
+	
+	timer.check();
+	
 	var x_dir = input_check(Verb.right) - input_check(Verb.left);
 	var y_dir = input_check(Verb.down) - input_check(Verb.up);
 	var mv_dir = point_direction(0, 0, x_dir, y_dir);
@@ -76,9 +83,9 @@ player.add("moving", {
 // attack state
 player.add("attack", {
 	enter: function() {
-		if(!mstrat.timer.exists("attack")) {
+		if(!timer.exists("attack")) {
 			show_debug_message("swoooosh!");
-			mstrat.timer.set(1000, "attack", function() {
+			timer.set(1000, "attack", function() {
 				player.change("idle");
 			});
 		} else {

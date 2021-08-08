@@ -1,9 +1,10 @@
-function timer_system() constructor {
+function TimerSystem() constructor {
 	var _owner = other.id;
 	
 	_this = {};
 	
 	with(_this) {
+		owner = _owner;
 		timers = [];
 		name = "__timersystem__";
 	}
