@@ -40,7 +40,13 @@ function CombatClass() constructor {
 	#endregion
 	
 	#region // attacking functions
+	play_attack = function(_seq) {
+		
+	}
 	
+	a_step = function() {
+		
+	}
 	#endregion
 	
 	#region // i-frame functions
