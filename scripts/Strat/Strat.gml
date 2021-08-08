@@ -378,4 +378,3 @@ function TopDownStrat() constructor {
 	}
 	#endregion
 }
-

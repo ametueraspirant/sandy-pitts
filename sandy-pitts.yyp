@@ -118,7 +118,7 @@
     {"id":{"name":"input_ignore_key_remove","path":"scripts/input_ignore_key_remove/input_ignore_key_remove.yy",},"order":4,},
     {"id":{"name":"__input_gamepad_set_mapping","path":"scripts/__input_gamepad_set_mapping/__input_gamepad_set_mapping.yy",},"order":12,},
     {"id":{"name":"input_source_detect","path":"scripts/input_source_detect/input_source_detect.yy",},"order":2,},
-    {"id":{"name":"_timer_functions","path":"scripts/_timer_functions/_timer_functions.yy",},"order":3,},
+    {"id":{"name":"timer_system","path":"scripts/timer_system/timer_system.yy",},"order":3,},
     {"id":{"name":"s_heavy_bod","path":"sprites/s_heavy_bod/s_heavy_bod.yy",},"order":0,},
     {"id":{"name":"__input_csv_to_array","path":"scripts/__input_csv_to_array/__input_csv_to_array.yy",},"order":8,},
     {"id":{"name":"s_spear","path":"sprites/s_spear/s_spear.yy",},"order":0,},

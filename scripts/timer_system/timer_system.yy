@@ -6,7 +6,7 @@
     "path": "folders/Scripts/MotionStrat/Functions.yy",
   },
   "resourceVersion": "1.0",
-  "name": "_timer_functions",
+  "name": "timer_system",
   "tags": [],
   "resourceType": "GMScript",
 }
