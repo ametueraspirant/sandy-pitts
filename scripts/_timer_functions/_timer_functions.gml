@@ -5,7 +5,7 @@ function timer_system() constructor {
 	
 	with(_this) {
 		timers = [];
-		
+		name = "__timersystem__";
 	}
 	/// @func	get(_name);
 	/// @param	{any}	_name	the name of the timer

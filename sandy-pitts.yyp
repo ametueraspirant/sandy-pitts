@@ -142,7 +142,7 @@
     {"id":{"name":"input_direction","path":"scripts/input_direction/input_direction.yy",},"order":0,},
     {"id":{"name":"CombatClass","path":"scripts/CombatClass/CombatClass.yy",},"order":1,},
     {"id":{"name":"__input_class_cursor","path":"scripts/__input_class_cursor/__input_class_cursor.yy",},"order":4,},
-    {"id":{"name":"Constructor","path":"scripts/Constructor/Constructor.yy",},"order":0,},
+    {"id":{"name":"Strat","path":"scripts/Strat/Strat.yy",},"order":0,},
     {"id":{"name":"input_cursor_verbs","path":"scripts/input_cursor_verbs/input_cursor_verbs.yy",},"order":7,},
     {"id":{"name":"s_demo_floor","path":"sprites/s_demo_floor/s_demo_floor.yy",},"order":1,},
     {"id":{"name":"o_room_generator","path":"objects/o_room_generator/o_room_generator.yy",},"order":5,},
