@@ -12,17 +12,6 @@ function collider(_obj, _collide, _bounce, _slide, _stick) constructor {
 	stick = _stick;
 }
 
-/// @func	timer(_dur, _func);
-/// @param	{int}	_dur	the duration of the timer in frames
-/// @param	{str}	_name	the name of the timer
-/// @aparam	{func}	_func	the function to run when the timer duration runs out
-function timer(_dur, _name, _func) constructor {
-	time = current_time;
-	name = _name;
-	dur = _dur;
-	func = _func;
-}
-
 /// @func	set_base_stats(_max_spd, _accel, _frict);
 /// @param	{int}	_max_spd	max movement speed
 /// @param	{int}	_accel		acceleration
