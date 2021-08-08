@@ -23,14 +23,14 @@ function timer_system() constructor {
 	/// @param	{any}	_name	the name of the timer
 	/// @param	{func}	_func	the function to run when the timer runs out
 	set = function(_dur, _name, _func) {
-		if(!is_array(timer_get(_name)))array_push(_this.timers, new timer(_dur, _name, _func));
+		if(!is_array(get(_name)))array_push(_this.timers, new __timer(_dur, _name, _func));
 		return true;
 	}
 	
 	/// @func	execute(_name);
 	/// @param	{any}	_name	the name of the timer
 	execute = function(_name) {
-		var _timer = timer_get(_name);
+		var _timer = get(_name);
 		if(is_array(_timer)) {
 			_timer[0].func();
 			array_delete(_this.timers, _timer[1], 1);
@@ -45,7 +45,7 @@ function timer_system() constructor {
 	/// @func	exists(_name);
 	/// @param	{any}	_name	the name of the timer
 	exists = function(_name) {
-		var _timer = timer_get(_name);
+		var _timer = get(_name);
 		if(is_array(_timer)) {
 			return true;
 		} else {
@@ -56,7 +56,7 @@ function timer_system() constructor {
 	/// @func	time(_name);
 	/// @param	{any}	_name	the name of the timer
 	time = function(_name) {
-		var _timer = timer_get(_name);
+		var _timer = get(_name);
 		if(is_array(_timer)) {
 			return _timer[0].time + _timer[0].dur - current_time;
 		} else {
@@ -76,11 +76,11 @@ function timer_system() constructor {
 	}
 }
 
-/// @func	timer(_dur, _func);
+/// @func	__timer(_dur, _func);
 /// @param	{int}	_dur	the duration of the timer in frames
 /// @param	{str}	_name	the name of the timer
 /// @aparam	{func}	_func	the function to run when the timer duration runs out
-function timer(_dur, _name, _func) constructor {
+function __timer(_dur, _name, _func) constructor {
 	time = current_time;
 	name = _name;
 	dur = _dur;

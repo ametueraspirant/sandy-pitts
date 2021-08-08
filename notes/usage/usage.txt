@@ -39,24 +39,6 @@ add_collider(collider, "type"); add a new collider to the array.
 delete_collider(collider); delete the specified collider object from the array. can also be an array of objects.
 modify_collider(collider, "type"); set the collider to a new collider type, follows the same rules as add_collider.
 
-** set and manage timers **
-timer_set(duration, name, function()); creates a timer that will run the function in the second argument after the duration in milliseconds. 1,000 is one second.
-
-example code:
-set_timer(300, "input_true", function() {
-	set_input_true();
-});
-
-this will set input to true after a delay of 300ms.
-
-timer_get(name); this will check through the array of timers and return the struct whose name matches with the input.
-timer_execute_early(name); this will check through the array of timers and execute and delete the timer whose name matches with the input.
-timer_exists(name); this will check through the timer array and return true if a matching timer exists, else it will return false.
-timer_get_remaining_time(name); this will return the remaining time until the timer of the same name ends, else it will return false.
-
-check_timers(); if mstrat.move() is being called, then this function is being called by default, but it can be called separately if needed.
-
-
 ** default movement scripts **
 move(); input a movement direction and magnitude and you're off to the races. handles all collision and collision types under the hood.
 

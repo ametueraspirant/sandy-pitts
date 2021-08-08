@@ -76,9 +76,9 @@ player.add("moving", {
 // attack state
 player.add("attack", {
 	enter: function() {
-		if(!mstrat.timer_exists("attack")) {
+		if(!mstrat.timer.exists("attack")) {
 			show_debug_message("swoooosh!");
-			mstrat.timer_set(1000, "attack", function() {
+			mstrat.timer.set(1000, "attack", function() {
 				player.change("idle");
 			});
 		} else {

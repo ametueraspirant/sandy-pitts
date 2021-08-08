@@ -12,7 +12,6 @@ function TopDownStrat() constructor {
 		owner = _owner;
 		is_complex = _is_complex;
 		colliders = [];
-		timers = [];
 	}
 	
 	if(!_this.owner.has_base_stats) {
@@ -168,74 +167,8 @@ function TopDownStrat() constructor {
 	}
 	#endregion
 	
-	#region /// timer system functions
-	/// @func	timer_get(_name);
-	/// @param	{str}	_name	the name of the timer
-	timer_get = function(_name) {
-		for(var int = 0; int < array_length(_this.timers); int++) {
-			if(_this.timers[int].name == _name) {
-				return [_this.timers[int], int];
-			}
-		}
-		return false;
-	}
-	
-	/// @func	timer_set(_dur, _func);
-	/// @param	{int}	_dur	the duration of the timer to set
-	/// @param	{str}	_name	the name of the timer
-	/// @param	{func}	_func	the function to run when the timer runs out
-	timer_set = function(_dur, _name, _func) {
-		if(!is_array(timer_get(_name)))array_push(_this.timers, new timer(_dur, _name, _func));
-		return true;
-	}
-	
-	/// @func	timer_execute_early(_name);
-	/// @param	{str}	_name	the name of the timer
-	timer_execute_early = function(_name) {
-		var _timer = timer_get(_name);
-		if(is_array(_timer)) {
-			_timer[0].func();
-			array_delete(_this.timers, _timer[1], 1);
-			show_debug_message("timer has been executed early and deleted from the list.");
-			return true;
-		} else {
-			show_debug_message("no timer exists with this name.");
-			return false;
-		};
-	}
-	
-	/// @func	timer_exists(_name);
-	/// @param	{str}	_name	the name of the timer
-	timer_exists = function(_name) {
-		var _timer = timer_get(_name);
-		if(is_array(_timer)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	/// @func	timer_get_remaining_time(_name);
-	/// @param	{str}	_name	the name of the timer
-	timer_get_remaining_time = function(_name) {
-		var _timer = timer_get(_name);
-		if(is_array(_timer)) {
-			return _timer[0].time + _timer[0].dur - current_time;
-		} else {
-			show_debug_message("no timer exists with this name.");
-			return false;
-		}
-	}
-		
-	/// @func	check_timers();
-	check_timers = function() {
-		for(var int = 0; int < array_length(_this.timers); int++) {
-			if(_this.timers[int].time + _this.timers[int].dur <= current_time) {
-				_this.timers[int].func();
-				array_delete(_this.timers, int, 1);
-			}
-		}
-	}
+	#region /// timer system
+	timer = new timer_system();
 	#endregion
 	
 	#region /// collision functions, not meant to be used externally
@@ -273,7 +206,7 @@ function TopDownStrat() constructor {
 				spd.x = -spd.x * 0.5;
 				spd.y = -spd.y * 0.5;
 				input = false;
-				other.timer_set(300, TDS_TIMERS.BOUNCE, function() {
+				other.timer.set(300, TDS_TIMERS.BOUNCE, function() {
 					spd.x = 0;
 					spd.y = 0;
 					input = true;
@@ -342,7 +275,7 @@ function TopDownStrat() constructor {
 	
 	/// @func	is_bouncing();
 	is_bouncing = function() {
-		return timer_exists(TDS_TIMERS.BOUNCE);
+		return timer.exists(TDS_TIMERS.BOUNCE);
 	}
 	
 	/// @func	is_sliding();
@@ -357,7 +290,7 @@ function TopDownStrat() constructor {
 	
 	/// @func	is_dashing();
 	is_dashing = function() {
-		return timer_exists(TDS_TIMERS.DASH);
+		return timer.exists(TDS_TIMERS.DASH);
 	}
 	
 	/// @func is_idle();
@@ -380,18 +313,18 @@ function TopDownStrat() constructor {
 	///	@param	{int}	x_dir	the x direction of inputs
 	/// @param	{int}	y_dir	the y direction of inputs
 	dash = function(mv_dir, mv_mag) {
-		if(timer_exists(TDS_TIMERS.DASH) || timer_exists(TDS_TIMERS.DASH_COOLDOWN))return;
+		if(timer.exists(TDS_TIMERS.DASH) || timer.exists(TDS_TIMERS.DASH_COOLDOWN))return;
 		with(_this.owner) {
 			other.move(mv_dir, mv_mag * 15);
 		}
 		input_disable();
-		timer_set(150, TDS_TIMERS.DASH, function() {
+		timer.set(150, TDS_TIMERS.DASH, function() {
 			with(_this.owner) {
 				spd.x = sign(spd.x) * max_spd;
 				spd.y = sign(spd.y) * max_spd;
 			}
 			input_enable();
-			timer_set(850, TDS_TIMERS.DASH_COOLDOWN, function() {
+			timer.set(850, TDS_TIMERS.DASH_COOLDOWN, function() {
 				// nothing here, timer just needs to exist.
 			});
 		});
@@ -404,7 +337,7 @@ function TopDownStrat() constructor {
 		var x_dir = lengthdir_x(mv_mag, mv_dir);
 		var y_dir = lengthdir_y(mv_mag, mv_dir);
 		
-		check_timers();
+		timer.check();
 		
 		if(_this.owner.input) {
 			if(_this.is_complex) {
