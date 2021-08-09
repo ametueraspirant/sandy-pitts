@@ -6,7 +6,7 @@
     "path": "folders/Scripts/MotionStrat/Functions/TopDownStrat.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Strat",
+  "name": "Constructor",
   "tags": [],
   "resourceType": "GMScript",
 }
