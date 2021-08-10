@@ -85,6 +85,7 @@ player.add("attack", {
 	enter: function() {
 		if(!timer.exists("attack")) {
 			show_debug_message("swoooosh!");
+			class.attack(q_sword_1);
 			timer.set(1000, "attack", function() {
 				player.change("idle");
 			});

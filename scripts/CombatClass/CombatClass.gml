@@ -9,6 +9,9 @@ function CombatClass() constructor {
 		attacks = [];
 		gear = { cur_helm: noone, cur_bod: noone, cur_weapon: noone, cur_shield: noone };
 		items = [];
+		cur_attack = noone;
+		cur_layer = noone;
+		cur_seq = noone;
 	}
 	
 	if(!_this.owner.has_combat_stats) {
@@ -41,11 +44,27 @@ function CombatClass() constructor {
 	
 	#region // attacking functions
 	attack = function(_seq) {
-		
+		with(_this) {
+			cur_attack = _seq;
+			cur_layer = layer_create(owner.depth);
+			cur_seq = layer_sequence_create(cur_layer, owner.x, owner.y, cur_attack);
+			layer_sequence_angle(cur_seq, point_direction(owner.x, owner.y, mouse_x, mouse_y));
+		}
 	}
 	
 	acheck = function() {
-		
+		with(_this) {
+			if(cur_seq == noone)return;
+			
+			if(layer_sequence_is_finished(cur_seq)) {
+				layer_sequence_destroy(cur_seq);
+				layer_destroy(cur_layer);
+				
+				cur_attack = noone;
+				cur_layer = noone;
+				cur_seq = noone;
+			}
+		}
 	}
 	#endregion
 	
