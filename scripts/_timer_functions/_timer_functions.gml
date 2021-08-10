@@ -1,5 +1,5 @@
 function TimerSystem() constructor {
-	var _owner = other.id;
+	var _owner = other;
 	
 	_this = {};
 	

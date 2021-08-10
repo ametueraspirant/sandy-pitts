@@ -4,7 +4,7 @@
 /// @param	{bool}	[is_complex]		whether to use simple or complex movement
 function TopDownStrat() constructor {
 	var _is_complex = (argument_count > 0) ? argument[0] : TDS_DEFAULT_COMPLEXITY;
-	var _owner = other.id;
+	var _owner = other;
 	
 	_this = {};
 	

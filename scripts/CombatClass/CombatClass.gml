@@ -1,6 +1,6 @@
 /// @func	CombatClass();
 function CombatClass() constructor {
-	var _owner = other.id;
+	var _owner = other;
 	
 	_this = {};
 	
@@ -12,6 +12,7 @@ function CombatClass() constructor {
 		cur_attack = noone;
 		cur_layer = noone;
 		cur_seq = noone;
+		is_attacking = false;
 	}
 	
 	if(!_this.owner.has_combat_stats) {
@@ -74,6 +75,13 @@ function CombatClass() constructor {
 	
 	#region // i-frame functions
 	
+	#endregion
+	
+	#region // state change listener functions
+	/// @func	is_attacking();
+	is_attacking = function() {
+		return _this.is_attacking;
+	}
 	#endregion
 }
 
