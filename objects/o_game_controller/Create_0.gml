@@ -29,9 +29,7 @@ game.add("test", {
 		}
 	},
 	step: function() {
-		with(all) {
-			depth = -bbox_bottom - layer_get_depth(layer); // #TEST this fuckin breaks shit
-		}
+		
 	}
 });
 #endregion
