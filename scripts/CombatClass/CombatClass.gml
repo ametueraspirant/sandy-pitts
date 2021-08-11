@@ -52,9 +52,8 @@ function CombatClass() constructor {
 		with(_this) {
 			cur_attack = _seq;
 			cur_layer = layer_create(owner.depth);
-			//sequence_get_objects(cur_attack)[0].damage = 5;
 			cur_seq = layer_sequence_create(cur_layer, owner.x, owner.y, cur_attack);
-			timer.set(1, "set damage", function() {sequence_get_objects(cur_attack)[0].damage = 12});
+			other.timer.set(1, "set damage", function() {sequence_get_objects(cur_attack)[0].damage = 12}); // #TEST Test damage, set to actual damage.
 			layer_sequence_angle(cur_seq, point_direction(owner.x, owner.y, mouse_x, mouse_y));
 			attacking = true;
 		}
@@ -68,7 +67,7 @@ function CombatClass() constructor {
 			layer_sequence_y(cur_seq, owner.y);
 			layer_depth(cur_layer, owner.depth);
 			
-			show_debug_message(sequence_get_objects(cur_attack)[0].damage);
+			other.timer.check();
 			
 			if(layer_sequence_is_finished(cur_seq)) {
 				layer_sequence_destroy(cur_seq);
