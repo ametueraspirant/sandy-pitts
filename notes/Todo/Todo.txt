@@ -1,5 +1,7 @@
-add sliding to move/collide function
+add sliding to move/collide function.
 
-make with the  ysort system maybe instance_find will help you
+make with the  ysort system maybe instance_find will help you.
 
 remember to use var = instance_create to save the instance id.
+
+look into function chaining for timers using return self or something like that.
