@@ -95,7 +95,4 @@ player.add("attack", {
 		}
 	},
 });
-
-// define states
-
 #endregion
