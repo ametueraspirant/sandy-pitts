@@ -53,9 +53,14 @@ function CombatClass() constructor {
 			cur_attack = _seq;
 			cur_layer = layer_create(owner.depth);
 			cur_seq = layer_sequence_create(cur_layer, owner.x, owner.y, cur_attack);
-			other.timer.set(1, "set damage", function() {sequence_get_objects(cur_attack)[0].damage = 12}); // #TEST Test damage, set to actual damage.
-			layer_sequence_angle(cur_seq, point_direction(owner.x, owner.y, mouse_x, mouse_y));
-			attacking = true;
+			other.timer.set(1, "set attack", function() {
+				sequence_get_objects(cur_attack)[0].damage = owner.damage;
+				layer_sequence_angle(cur_seq, point_direction(owner.x, owner.y, mouse_x, mouse_y));
+				layer_sequence_speedscale(cur_seq, 0.9 + owner.act_spd * 0.1);
+				layer_sequence_xscale(cur_seq, 0.9 + owner.size * 0.1);
+				layer_sequence_yscale(cur_seq, 0.9 + owner.size * 0.1);
+				attacking = true;
+			});
 		}
 	}
 	
@@ -104,7 +109,7 @@ function set_combat_stats(_hp, _dam, _act_spd, _size) {
 		has_combat_stats = true;
 		cur_hp = _hp;
 		max_hp = _hp;
-		dam = _dam;
+		damage = _dam;
 		act_spd = _act_spd;
 		size = _size;
 	}
