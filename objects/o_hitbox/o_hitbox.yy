@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "s_hitbox",
+    "path": "sprites/s_hitbox/s_hitbox.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -21,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Sword",
-    "path": "folders/Entities/Weapons/Sword.yy",
+    "name": "Weapons",
+    "path": "folders/Entities/Weapons.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_hitbox",
