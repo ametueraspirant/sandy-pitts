@@ -2,8 +2,4 @@ add sliding to move/collide function
 
 make with the  ysort system maybe instance_find will help you
 
-can timer system work with enums?
-
 remember to use var = instance_create to save the instance id.
-
-can timer system be external? maybe auto-init on creation of any system that requires it to the player object or allow for manual init?

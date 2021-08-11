@@ -1,0 +1,1 @@
+if(instance_exists(o_player) && !o_player.class.is_attacking())draw_self();

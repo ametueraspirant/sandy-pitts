@@ -34,6 +34,7 @@ player.event_set_default_function("gstep", function() {
 	depth = -y;
 	
 	timer.check();
+	class.acheck();
 	
 	var x_dir = input_check(Verb.right) - input_check(Verb.left);
 	var y_dir = input_check(Verb.down) - input_check(Verb.up);

@@ -12,7 +12,7 @@ function CombatClass() constructor {
 		cur_attack = noone;
 		cur_layer = noone;
 		cur_seq = noone;
-		is_attacking = false;
+		attacking = false;
 	}
 	
 	if(!_this.owner.has_combat_stats) {
@@ -50,12 +50,16 @@ function CombatClass() constructor {
 			cur_layer = layer_create(owner.depth);
 			cur_seq = layer_sequence_create(cur_layer, owner.x, owner.y, cur_attack);
 			layer_sequence_angle(cur_seq, point_direction(owner.x, owner.y, mouse_x, mouse_y));
+			attacking = true;
 		}
 	}
 	
 	acheck = function() {
 		with(_this) {
 			if(cur_seq == noone)return;
+			
+			layer_sequence_x(cur_seq, owner.x);
+			layer_sequence_y(cur_seq, owner.y);
 			
 			if(layer_sequence_is_finished(cur_seq)) {
 				layer_sequence_destroy(cur_seq);
@@ -64,6 +68,7 @@ function CombatClass() constructor {
 				cur_attack = noone;
 				cur_layer = noone;
 				cur_seq = noone;
+				attacking = false;
 			}
 		}
 	}
@@ -80,7 +85,7 @@ function CombatClass() constructor {
 	#region // state change listener functions
 	/// @func	is_attacking();
 	is_attacking = function() {
-		return _this.is_attacking;
+		return _this.attacking;
 	}
 	#endregion
 }
