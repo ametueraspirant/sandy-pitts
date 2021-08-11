@@ -36,6 +36,7 @@
     {"id":{"name":"o_game_controller","path":"objects/o_game_controller/o_game_controller.yy",},"order":0,},
     {"id":{"name":"input_binding_get_collisions","path":"scripts/input_binding_get_collisions/input_binding_get_collisions.yy",},"order":1,},
     {"id":{"name":"_helper_functions","path":"scripts/_helper_functions/_helper_functions.yy",},"order":2,},
+    {"id":{"name":"o_hitbox","path":"objects/o_hitbox/o_hitbox.yy",},"order":4,},
     {"id":{"name":"o_demo_obstacle","path":"objects/o_demo_obstacle/o_demo_obstacle.yy",},"order":2,},
     {"id":{"name":"__input_config","path":"scripts/__input_config/__input_config.yy",},"order":12,},
     {"id":{"name":"input_player_source_set","path":"scripts/input_player_source_set/input_player_source_set.yy",},"order":4,},
