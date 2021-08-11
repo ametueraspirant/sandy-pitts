@@ -43,6 +43,20 @@ function TimerSystem() constructor {
 		}
 	}
 	
+	/// @func	cancel(_name);
+	/// @param	{any}	_name	the name of the timer
+	cancel = function(_name) {
+		var _timer = get(_name);
+		if(is_array(_timer)) {
+			array_delete(_this.timers, _timer[1], 1);
+			show_debug_message("timer has been cancelled, it will not execute.");
+			return true;
+		} else {
+			show_debug_message("no timer exists with this name.");
+			return false;
+		}
+	}
+	
 	/// @func	exists(_name);
 	/// @param	{any}	_name	the name of the timer
 	exists = function(_name) {
