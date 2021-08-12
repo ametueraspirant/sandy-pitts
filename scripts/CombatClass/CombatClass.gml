@@ -53,12 +53,18 @@ function CombatClass() constructor {
 			cur_attack = _seq;
 			cur_layer = layer_create(owner.depth);
 			cur_seq = layer_sequence_create(cur_layer, owner.x, owner.y, cur_attack);
+			
 			other.timer.set(1, "set attack", function() {
-				sequence_get_objects(cur_attack)[0].damage = owner.damage;
 				layer_sequence_angle(cur_seq, point_direction(owner.x, owner.y, mouse_x, mouse_y));
 				layer_sequence_speedscale(cur_seq, 0.9 + owner.act_spd * 0.1);
 				layer_sequence_xscale(cur_seq, 0.9 + owner.size * 0.1);
 				layer_sequence_yscale(cur_seq, 0.9 + owner.size * 0.1);
+				
+				var _box = instance_create_layer(-1000, -1000, cur_layer, o_hitbox);
+				_box.damage = owner.damage;
+				_box.image_angle = point_direction(owner.x, owner.y, mouse_x, mouse_y);
+				sequence_instance_override_object(layer_sequence_get_instance(cur_seq), o_hitbox, _box);
+				
 				attacking = true;
 			});
 		}
