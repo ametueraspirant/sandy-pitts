@@ -7,7 +7,8 @@ enum Verb {
 	defend,
 	esc,
 	f2,
-	f3
+	f3,
+	ctrl
 }
 
 #region // input keys

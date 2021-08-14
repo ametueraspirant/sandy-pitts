@@ -1,11 +1,11 @@
 {
-  "spriteId": {
+  "spriteId": null,
+  "solid": false,
+  "visible": true,
+  "spriteMaskId": {
     "name": "s_hitbox",
     "path": "sprites/s_hitbox/s_hitbox.yy",
   },
-  "solid": false,
-  "visible": true,
-  "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,
