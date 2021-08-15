@@ -28,5 +28,5 @@ input_default_gamepad_button(gp_start, Verb.menu);
 input_default_gamepad_button(gp_select, Verb.swap_complex); // #TEST
 
 // input player source
-//input_player_source_set(INPUT_SOURCE.KEYBOARD_AND_MOUSE);
+input_player_source_set(INPUT_SOURCE.KEYBOARD_AND_MOUSE);
 #endregion
