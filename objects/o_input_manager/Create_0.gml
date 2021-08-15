@@ -1,7 +1,7 @@
 enum Verb {
 	up, down, left, right,
 	dash, attack, defend,
-	menu, unbind
+	menu, swap_complex
 }
 
 #region // set default inputs
@@ -14,7 +14,7 @@ input_default_key(vk_space, Verb.dash);
 input_default_mouse_button(mb_left, Verb.attack);
 input_default_mouse_button(mb_right, Verb.defend);
 input_default_key(vk_escape, Verb.menu);
-input_default_key(vk_lcontrol, Verb.unbind);
+input_default_key(vk_lcontrol, Verb.swap_complex); // #TEST
 
 // set default controller inputs
 input_default_gamepad_axis(gp_axislv, 1, Verb.up);
@@ -25,9 +25,8 @@ input_default_gamepad_button(gp_face2, Verb.dash);
 input_default_gamepad_button(gp_face1, Verb.attack);
 input_default_gamepad_button(gp_shoulderr, Verb.defend);
 input_default_gamepad_button(gp_start, Verb.menu);
-input_default_gamepad_button(gp_select, Verb.unbind);
+input_default_gamepad_button(gp_select, Verb.swap_complex); // #TEST
 
 // input player source
-input_player_source_set(INPUT_SOURCE.KEYBOARD_AND_MOUSE, 0);
-//input_player_source_set(INPUT_SOURCE.GAMEPAD, 1);
+//input_player_source_set(INPUT_SOURCE.KEYBOARD_AND_MOUSE);
 #endregion

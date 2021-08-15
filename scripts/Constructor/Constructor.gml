@@ -116,6 +116,11 @@ function TopDownStrat() constructor {
 	input_disable = function() {
 		_this.owner.input = false;
 	}
+	
+	/// @func is_complex_toggle();
+	is_complex_toggle = function() {
+		_this.is_complex = !_this.is_complex;
+	}
 	#endregion
 	
 	#region // functions for modifying colliders
