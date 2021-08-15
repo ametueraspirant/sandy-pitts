@@ -31,7 +31,7 @@ player = new SnowState("idle");
 // define default events
 player.event_set_default_function("step", function() {});
 player.event_set_default_function("gstep", function() {
-	depth = -y;
+	depth = -bbox_bottom;
 	
 	timer.check();
 	class.acheck();
@@ -43,15 +43,16 @@ player.event_set_default_function("gstep", function() {
 	
 	mstrat.move(mv_dir, mv_mag);
 	
+	// #TEST pretty much all of this is going to be replaced with something better.
 	var mouse_dir = point_direction(x, y, mouse_x, mouse_y);
 	if(mouse_dir > 90 && mouse_dir <= 270)mv_sign = -1;
 	else mv_sign = 1;
 
-	if(!instance_exists(curr_weapon))instance_create_layer(x, x, _entity_layer, curr_weapon);
+	if(!instance_exists(curr_weapon))instance_create_layer(x, x, _entity_layer, curr_weapon); // #TEST
 	
-	if(input_check_pressed(Verb.attack) && player.get_current_state() != "attack")player.change("attack");
+	if(input_check_pressed(Verb.attack) && player.get_current_state() != "attack")player.change("attack"); // #TODO flesh out attack system
 	
-	if(input_check_pressed(Verb.swap_complex))mstrat.is_complex_toggle();
+	if(input_check_pressed(Verb.swap_complex))mstrat.is_complex_toggle(); // #TEST
 });
 player.event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);

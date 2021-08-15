@@ -34,6 +34,9 @@ max_spd_reset(); reset max speed to base max speed from  using max_spd_set_temp.
 input_enable(); enable movement inputs.
 input_disable(); disable movement inputs.
 
+** misc **
+is_complex_toggle(); toggles whether the strat uses complex movement or not.
+
 ** add, modify, and delete colliders **
 add_collider(collider, "type"); add a new collider to the array.
 delete_collider(collider); delete the specified collider object from the array. can also be an array of objects.
