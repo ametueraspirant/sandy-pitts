@@ -36,8 +36,8 @@ player.event_set_default_function("gstep", function() {
 	timer.check();
 	class.acheck();
 	
-	var x_dir = input_check(Verb.kb_right) - input_check(Verb.kb_left);
-	var y_dir = input_check(Verb.kb_down) - input_check(Verb.kb_up);
+	var x_dir = input_value(Verb.right) - input_value(Verb.left);
+	var y_dir = input_value(Verb.down) - input_value(Verb.up);
 	var mv_dir = point_direction(0, 0, x_dir, y_dir);
 	var mv_mag = point_distance(0, 0, x_dir, y_dir);
 	

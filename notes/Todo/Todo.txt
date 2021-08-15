@@ -6,15 +6,10 @@ remember to use var = instance_create to save the instance id.
 
 look into function chaining for timers using return self or something like that.
 
+movement compatability with controller inputs which do not max out to 1.
+
 item #1: attacking.
 make attacks more concise.
 make combo system.
 make sword match with sequences.
 make sword circle player better.
-
-item #2: input.
-add controller input.
-controller rebinding?
-multi controller support.
-test with parsec.
-controller drop in / drop out?
