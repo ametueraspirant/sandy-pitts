@@ -48,6 +48,8 @@ function CombatClass() constructor {
 	#endregion
 	
 	#region // attacking functions
+	/// @func	attack(_seq);
+	/// @param	{sequence}	_seq	the input sequence
 	attack = function(_seq) {
 		with(_this) {
 			cur_attack = _seq;
@@ -70,6 +72,7 @@ function CombatClass() constructor {
 		}
 	}
 	
+	/// @func	acheck();
 	acheck = function() {
 		with(_this) {
 			if(cur_seq == noone)return;

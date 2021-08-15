@@ -1,36 +1,32 @@
 enum Verb {
-	up,
-	down,
-	left,
-	right,
-	attack,
-	defend,
-	esc,
-	f2,
-	f3,
-	ctrl
+	kb_up, kb_down, kb_left, kb_right,
+	gp_lr, gp_ud,
+	dash, attack, defend,
+	menu, unbind
 }
 
-#region // input keys
-// input default keys
-input_default_key(vk_up, Verb.up);
-input_default_key(vk_down, Verb.down);
-input_default_key(vk_left, Verb.left);
-input_default_key(vk_right, Verb.right);
-input_default_key(ord("J"), Verb.attack);
-input_default_key(ord("k"), Verb.defend);
-input_default_key(vk_escape, Verb.esc);
-input_default_key(vk_f2, Verb.f2);
-input_default_key(vk_f3, Verb.f3);
+#region // set default inputs
+// set default keyboard inputs
+input_default_key(ord("W"), Verb.kb_up);
+input_default_key(ord("S"), Verb.kb_down);
+input_default_key(ord("A"), Verb.kb_left);
+input_default_key(ord("D"), Verb.kb_right);
+input_default_key(vk_space, Verb.dash);
+input_default_mouse_button(mb_left, Verb.attack);
+input_default_mouse_button(mb_right, Verb.defend);
+input_default_key(vk_escape, Verb.menu);
+input_default_key(vk_lcontrol, Verb.unbind);
 
-// input alternate keys
-input_default_key(ord("W"), Verb.up, 1);
-input_default_key(ord("S"), Verb.down, 1);
-input_default_key(ord("A"), Verb.left, 1);
-input_default_key(ord("D"), Verb.right, 1);
-input_default_key(ord("Z"), Verb.attack, 1);
-input_default_key(ord("X"), Verb.defend, 1);
+// set default controller inputs
+input_default_gamepad_axis(gp_axislh, 1, Verb.gp_lr);
+input_default_gamepad_axis(gp_axislv, 1, Verb.gp_ud);
+input_default_gamepad_button(gp_face2, Verb.dash);
+input_default_gamepad_button(gp_face1, Verb.attack);
+input_default_gamepad_button(gp_shoulderr, Verb.defend);
+input_default_gamepad_button(gp_start, Verb.menu);
+input_default_gamepad_button(gp_select, Verb.unbind);
 
 // input player source
-input_player_source_set(INPUT_SOURCE.KEYBOARD_AND_MOUSE);
+input_player_source_set(INPUT_SOURCE.KEYBOARD_AND_MOUSE, 0);
+input_player_source_set(INPUT_SOURCE.GAMEPAD, 1);
 #endregion
