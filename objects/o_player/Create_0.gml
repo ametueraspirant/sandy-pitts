@@ -40,16 +40,12 @@ player.event_set_default_function("gstep", function() {
 	//var y_dir = input_value(Verb.down) - input_value(Verb.up);
 	//var mv_dir = point_direction(0, 0, x_dir, y_dir); input_direction
 	//var mv_mag = point_distance(0, 0, x_dir, y_dir);
-	var mv_dir = input_direction(input_value(Verb.left),
-								input_value(Verb.right),
-								input_value(Verb.up),
-								input_value(Verb.down));
+	var mv_dir = input_direction(Verb.left,	Verb.right, Verb.up, Verb.down);
 	if(mv_dir == undefined)mv_dir = 0;
-	var mv_mag = input_distance(input_value(Verb.left),
-								input_value(Verb.right),
-								input_value(Verb.up),
-								input_value(Verb.down));
+	var mv_mag = input_distance(Verb.left,	Verb.right, Verb.up, Verb.down);
 	if(mv_mag == undefined)mv_mag = 0;
+	show_debug_message(mv_dir);
+	show_debug_message(mv_mag);
 	
 	mstrat.move(mv_dir, mv_mag);
 	
