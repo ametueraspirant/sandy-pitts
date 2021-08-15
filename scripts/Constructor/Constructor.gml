@@ -119,7 +119,7 @@ function TopDownStrat() constructor {
 	#endregion
 	
 	#region // functions for modifying colliders
-	/// @func	add_collider();
+	/// @func	add_collider(_obj, _collider_type);
 	/// @param	{object}		_obj				the collider object
 	/// @param	{string}	_collider_type		the type of collider to set it to
 	add_collider = function(_obj, _collider_type) {
@@ -149,7 +149,7 @@ function TopDownStrat() constructor {
 		}
 	}
 	
-	/// @func delete_collider
+	/// @func delete_collider(_obj);
 	/// @param	{object}	the collider object
 	delete_collider = function(_obj) {
 		var col = (is_array(_obj)) ? _obj : [_obj];
@@ -365,8 +365,6 @@ function TopDownStrat() constructor {
 				_this.owner.spd.x = 0;
 				_this.owner.spd.y = 0;
 			}
-			show_debug_message(x_dir);
-			show_debug_message(y_dir);
 		}
 		
 		if(mv_mag == 0) {
