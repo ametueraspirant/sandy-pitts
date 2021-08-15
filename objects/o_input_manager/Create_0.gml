@@ -29,5 +29,5 @@ input_default_gamepad_button(gp_select, Verb.unbind);
 
 // input player source
 input_player_source_set(INPUT_SOURCE.KEYBOARD_AND_MOUSE, 0);
-input_player_source_set(INPUT_SOURCE.GAMEPAD, 1);
+//input_player_source_set(INPUT_SOURCE.GAMEPAD, 1);
 #endregion
