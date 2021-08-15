@@ -143,7 +143,7 @@ function TopDownStrat() constructor {
 				break;
 				
 				default:
-				show_debug_message("That's not a valid collider type, please enter: collide, bounce, slide, or stick as a string.");
+				show_debug_message(string(_obj) + " is not a valid collider type, please enter: collide, bounce, slide, or stick as a string.");
 				break;
 			}
 		}
@@ -340,7 +340,7 @@ function TopDownStrat() constructor {
 		timer.check();
 		
 		if(_this.owner.input) {
-			if(_this.is_complex) {
+			/*if(_this.is_complex) {
 				if(abs(_this.owner.spd.x) < abs(lengthdir_x(abs(x_dir), mv_dir) * _this.owner.max_spd)) {
 					_this.owner.spd.x += lengthdir_x(abs(x_dir) * _this.owner.accel, mv_dir) - sign(_this.owner.spd.x) * _this.owner.frict;
 				} else {
@@ -357,7 +357,16 @@ function TopDownStrat() constructor {
 			} else {
 				_this.owner.spd.x = lengthdir_x(abs(x_dir), mv_dir) * _this.owner.max_spd;
 				_this.owner.spd.y = lengthdir_y(abs(y_dir), mv_dir) * _this.owner.max_spd;
+			}*/
+			if(_this.is_complex) {
+				_this.owner.spd.x = 0;
+				_this.owner.spd.y = 0;
+			} else {
+				_this.owner.spd.x = 0;
+				_this.owner.spd.y = 0;
 			}
+			show_debug_message(x_dir);
+			show_debug_message(y_dir);
 		}
 		
 		if(mv_mag == 0) {
