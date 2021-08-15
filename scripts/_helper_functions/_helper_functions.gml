@@ -1,5 +1,5 @@
 /// @func	collider(_obj, _collide, _bounce, _slide, _stick);
-/// @param	{obj}	_obj		the collider object
+/// @param	{object}	_obj		the collider object
 /// @param	{bool}	_collide	whether it is solid
 /// @param	{bool}	_bounce		whether it is bouncy
 /// @param	{bool}	_slide		whether it will slide

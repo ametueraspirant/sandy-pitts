@@ -20,8 +20,8 @@ function TopDownStrat() constructor {
 	
 	#region /// internal functions, not meant to be used externally
 	///	@func	_add_to_array(_obj, _arr);
-	/// @param	{arr}	_obj	the item to add to the array
-	/// @param	{arr}	_arr	the array to add to
+	/// @param	{array}	_obj	the item to add to the array
+	/// @param	{array}	_arr	the array to add to
 	_add_to_array = function(_obj, _arr) {
 		for(var int = 0; int < array_length(_arr); int++) {
 			if(_arr[int] == _obj) {
@@ -33,8 +33,8 @@ function TopDownStrat() constructor {
 	}
 	
 	///	@func	_delete_from_array(_obj, _arr);
-	/// @param	{arr}	_obj	the item to delete from the array
-	/// @param	{arr}	_arr	the array to delete from
+	/// @param	{array}	_obj	the item to delete from the array
+	/// @param	{array}	_arr	the array to delete from
 	_delete_from_array = function(_obj, _arr) {
 		var exists = true;
 		for(var int = 0; int < array_length(_arr); int++) {
@@ -174,7 +174,7 @@ function TopDownStrat() constructor {
 	#region /// collision functions, not meant to be used externally
 	
 	/// @func	_collide(_col);
-	/// @param	{obj}	_col	the object collider to check for
+	/// @param	{object}	_col	the object collider to check for
 	_collide = function(_col) {
 		with(_this.owner) {
 			if(!place_meeting(x + spd.x, y + spd.y, _col)) {
@@ -199,7 +199,7 @@ function TopDownStrat() constructor {
 	}
 	
 	/// @func	_bounce(_col);
-	/// @param	{obj}	_col	the object collider to check for
+	/// @param	{object}	_col	the object collider to check for
 	_bounce = function(_col) {
 		with(_this.owner) {
 			if(place_meeting(x + spd.x, y + spd.y, _col)) {
@@ -218,7 +218,7 @@ function TopDownStrat() constructor {
 	
 	
 	/// @func	_slide(_col);
-	/// @param	{obj}	_col	the object collider to check for
+	/// @param	{object}	_col	the object collider to check for
 	_slide = function(_col) {
 		with(_this.owner) {
 			if(sticking) {
@@ -240,7 +240,7 @@ function TopDownStrat() constructor {
 	}
 	
 	/// @func	_stick(_col);
-	/// @param	{obj}	_col	the object collider to check for
+	/// @param	{object}	_col	the object collider to check for
 	_stick = function(_col) {
 		with(_this.owner) {
 			if(sliding) {
