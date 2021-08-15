@@ -348,11 +348,11 @@ function TopDownStrat() constructor {
 			if(_this.is_complex) {
 				if(abs(_this.owner.spd.x) < abs(x_dir * _this.owner.max_spd))_this.owner.spd.x += x_dir * _this.owner.accel;
 				else _this.owner.spd.x -= sign(_this.owner.spd.x) * _this.owner.frict;
-				if(x_dir = 0 && abs(_this.owner.spd.x) < 0.1)_this.owner.spd.x = 0;
+				if(x_dir == 0 && abs(_this.owner.spd.x) < 0.1)_this.owner.spd.x = 0;
 				
 				if(abs(_this.owner.spd.y) < abs(y_dir * _this.owner.max_spd))_this.owner.spd.y += y_dir * _this.owner.accel;
 				else _this.owner.spd.y -= sign(_this.owner.spd.y) * _this.owner.frict;
-				if(y_dir = 0 && abs(_this.owner.spd.y) < 0.1)_this.owner.spd.y = 0;
+				if(y_dir == 0 && abs(_this.owner.spd.y) < 0.1)_this.owner.spd.y = 0;
 			} else {
 				_this.owner.spd.x = x_dir * _this.owner.max_spd;
 				_this.owner.spd.y = y_dir * _this.owner.max_spd;
