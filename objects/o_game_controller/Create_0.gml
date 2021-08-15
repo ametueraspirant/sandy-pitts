@@ -18,7 +18,7 @@ game = new SnowState("test");
 
 // define default events
 game.event_set_default_function("step", function() {});
-game.event_set_default_function("drawGUI", function() {});
+game.event_set_default_function("draw_gui", function() {});
 
 // define states
 game.add("test", {
