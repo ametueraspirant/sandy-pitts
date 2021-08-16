@@ -68,6 +68,8 @@ player.event_set_default_function("draw", function() {
 	if(curr_bod != noone)draw_sprite_ext(curr_bod, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
 });
 
+	// #ENDTEST
+
 // idle state
 player.add("idle", {
 	enter: function() {
