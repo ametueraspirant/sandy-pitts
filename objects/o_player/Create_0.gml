@@ -36,16 +36,17 @@ player.event_set_default_function("gstep", function() {
 	timer.check();
 	class.acheck();
 	
-	var mv_dir = input_direction(Verb.left,	Verb.right, Verb.up, Verb.down);
+	var mv_dir = input_direction(Verb.move_left,	Verb.move_right, Verb.move_up, Verb.move_down);
 	if(mv_dir == undefined)mv_dir = 0;
-	var mv_mag = input_distance(Verb.left,	Verb.right, Verb.up, Verb.down);
+	var mv_mag = input_distance(Verb.move_left,	Verb.move_right, Verb.move_up, Verb.move_down);
 	if(mv_mag == undefined)mv_mag = 0;
 	
 	mstrat.move(mv_dir, mv_mag);
 	
 	// #TEST pretty much all of this is going to be replaced with something better.
-	var mouse_dir = point_direction(x, y, mouse_x, mouse_y);
-	if(mouse_dir > 90 && mouse_dir <= 270)mv_sign = -1;
+	if(input_source_get_name(0) == "keyboard and mouse")var look_dir = point_direction(x, y, mouse_x, mouse_y);
+	else var look_dir = input_direction(Verb.aim_left, Verb.aim_right, Verb.aim_up, Verb.aim_down)
+	if(look_dir > 90 && look_dir <= 270)mv_sign = -1;
 	else mv_sign = 1;
 
 	if(!instance_exists(curr_weapon))instance_create_layer(x, x, _entity_layer, curr_weapon); // #TEST
