@@ -8,6 +8,8 @@ look into function chaining for timers using return self or something like that.
 
 movement compatability with controller inputs which do not max out to 1.
 
+compensate for choppy controller connection somehow.
+
 item #1: attacking.
 make attacks more concise.
 make combo system.
