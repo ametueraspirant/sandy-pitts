@@ -14,7 +14,7 @@ instance_create_layer(0, 0, _entity_layer, o_menu_controller);
 
 #region // set up state machine
 // define new state machine
-game = new SnowState("startup");
+game = new SnowState("test");
 
 // define default events
 game.event_set_default_function("step", function() {});
@@ -22,7 +22,7 @@ game.event_set_default_function("draw_gui", function() {});
 
 // define states
 
-/*game.add("test", {
+game.add("test", {
 	enter: function() {
 		if(!instance_exists(o_player)) {
 			instance_create_layer(700, 300, _entity_layer, o_player);
@@ -32,7 +32,7 @@ game.event_set_default_function("draw_gui", function() {});
 	step: function() {
 		
 	}
-});*/
+});
 #endregion
 
 randomise();

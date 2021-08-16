@@ -6,6 +6,7 @@ curr_bod = s_heavy_bod;
 curr_weapon = o_sword;
 mv_sign = 1;
 look_dir = 0;
+look_dir_saved = 0;
 #endregion
 
 #region // set up motion strat
@@ -45,8 +46,13 @@ player.event_set_default_function("gstep", function() {
 	mstrat.move(mv_dir, mv_mag);
 	
 	// #TEST pretty much all of this is going to be replaced with something better.
-	if(input_source_get_name(0) == "keyboard and mouse")look_dir = point_direction(x, y, mouse_x, mouse_y);
-	else look_dir = input_direction(Verb.aim_left, Verb.aim_right, Verb.aim_up, Verb.aim_down);
+	
+	if(input_player_source_get(0) == INPUT_SOURCE.KEYBOARD_AND_MOUSE)look_dir = point_direction(x, y, mouse_x, mouse_y);
+	else if(input_player_source_get(0) == INPUT_SOURCE.GAMEPAD) look_dir = input_direction(Verb.aim_left, Verb.aim_right, Verb.aim_up, Verb.aim_down);
+	
+	if(look_dir == undefined)look_dir = look_dir_saved;
+	look_dir_saved = look_dir;
+	
 	if(look_dir > 90 && look_dir <= 270)mv_sign = -1;
 	else mv_sign = 1;
 
