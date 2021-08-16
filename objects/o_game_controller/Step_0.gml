@@ -1,1 +1,1 @@
-game.step();
+state.step();

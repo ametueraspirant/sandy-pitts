@@ -1,1 +1,1 @@
-game.draw_gui();
+state.draw_gui();

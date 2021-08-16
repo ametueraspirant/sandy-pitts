@@ -14,24 +14,24 @@ instance_create_layer(0, 0, _entity_layer, o_menu_controller);
 
 #region // set up state machine
 // define new state machine
-game = new SnowState("test");
+state = new SnowState("test");
 
 // define default events
-game.event_set_default_function("step", function() {});
-game.event_set_default_function("draw_gui", function() {});
+state.event_set_default_function("step", function() {});
+state.event_set_default_function("draw_gui", function() {});
 
 // define states
-game.add("start_up", {
+state.add("start_up", {
 	enter: function() {
 		show_debug_message("game is starting");
 	},
 	step: function() {
 		show_debug_message("placeholder for starting logos");
-		game.change("main_menu");
+		state.change("main_menu");
 	}
 });
 
-game.add("main_menu", {
+state.add("menu", {
 	enter: function() {
 		show_debug_message("main menu");
 	},
@@ -41,7 +41,7 @@ game.add("main_menu", {
 });
 
 // #TEST
-game.add("test", {
+state.add("test", {
 	enter: function() {
 		if(!instance_exists(o_player)) {
 			instance_create_layer(700, 300, _entity_layer, o_player);

@@ -38,7 +38,7 @@ player.event_set_default_function("gstep", function() {
 	timer.check();
 	class.acheck();
 	
-	var mv_dir = input_direction(Verb.move_left,	Verb.move_right, Verb.move_up, Verb.move_down);
+	var mv_dir = input_direction(Verb.move_left, Verb.move_right, Verb.move_up, Verb.move_down);
 	if(mv_dir == undefined)mv_dir = 0;
 	var mv_mag = input_distance(Verb.move_left,	Verb.move_right, Verb.move_up, Verb.move_down);
 	if(mv_mag == undefined)mv_mag = 0;
