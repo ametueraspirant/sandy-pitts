@@ -79,7 +79,7 @@ player.add("moving", {
 	},
 	step: function() {
 		var mv_spd = point_distance(0, 0, spd.x, spd.y) + 1;
-		image_speed = ((mv_spd + 1) / max_spd) * sign(mv_sign * spd.x + 1); // I don't know why this works but it does.
+		image_speed = ((mv_spd + 1) / max_spd) * sign(mv_sign * spd.x + 1); // I don't know why this works but it does so DON'T TOUCH IT.
 		if(!mstrat.is_moving())player.change("idle");
 	}
 });
