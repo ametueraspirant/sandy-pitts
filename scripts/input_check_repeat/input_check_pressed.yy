@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Keyboard (Direct)",
-    "path": "folders/Scripts/Input/Keyboard (Direct).yy",
+    "name": "Checkers",
+    "path": "folders/Input/Checkers.yy",
   },
   "resourceVersion": "1.0",
-  "name": "input_keyboard_get_string_diff",
+  "name": "input_check_pressed",
   "tags": [],
   "resourceType": "GMScript",
 }

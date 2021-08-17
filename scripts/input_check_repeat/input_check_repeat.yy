@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "(System)",
-    "path": "folders/Scripts/Input/(System).yy",
+    "name": "Checkers",
+    "path": "folders/Scripts/Input/Checkers.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snap_to_csv",
+  "name": "input_check_repeat",
   "tags": [],
   "resourceType": "GMScript",
 }
