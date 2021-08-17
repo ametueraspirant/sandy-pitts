@@ -4,6 +4,7 @@
 
 global.debug = false;
 global.inputs = false;
+global.players = [];
 #endregion
 
 #region // create other game instances
@@ -43,6 +44,15 @@ state.add("menu", {
 	},
 	draw_gui: function() {
 		draw_text(20, 20, "lol menu");
+	}
+});
+
+state.add("ingame", {
+	enter: function() {
+		
+	},
+	step: function() {
+		
 	}
 });
 
