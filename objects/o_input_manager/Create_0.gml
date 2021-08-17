@@ -5,8 +5,7 @@ enum Verb {
 	menu, swap_complex
 }
 
-#region // set default inputs
-// set default keyboard inputs
+#region // set default keyboard inputs
 input_default_key(ord("W"), Verb.move_up);
 input_default_key(ord("S"), Verb.move_down);
 input_default_key(ord("A"), Verb.move_left);
@@ -16,8 +15,9 @@ input_default_mouse_button(mb_left, Verb.attack);
 input_default_mouse_button(mb_right, Verb.defend);
 input_default_key(vk_escape, Verb.menu);
 input_default_key(vk_lcontrol, Verb.swap_complex); // #TEST
+#endregion
 
-// set default controller inputs
+#region // set default controller inputs
 input_default_gamepad_axis(gp_axislv, 1, Verb.move_up);
 input_default_gamepad_axis(gp_axislv, 0, Verb.move_down);
 input_default_gamepad_axis(gp_axislh, 1, Verb.move_left);
@@ -31,7 +31,48 @@ input_default_gamepad_button(gp_shoulderrb, Verb.attack);
 input_default_gamepad_button(gp_shoulderr, Verb.defend);
 input_default_gamepad_button(gp_start, Verb.menu);
 input_default_gamepad_button(gp_select, Verb.swap_complex); // #TEST
+#endregion
 
-// input player source
+#region // input player source
 input_player_source_set(INPUT_SOURCE.KEYBOARD_AND_MOUSE);
+#endregion
+
+#region // set up state machine
+state = new SnowState("passive");
+
+state.event_set_default_function("begin_step", function() { input_tick(); });
+state.event_set_default_function("step", function() {});
+
+state.add("passive", {
+	enter: function() {
+		
+	},
+	step: function() {
+		var _input = input_source_detect_any();
+		if(_input.source != INPUT_SOURCE.NONE) {
+			input_player_source_set(_input.source);
+			if(_input.source == INPUT_SOURCE.GAMEPAD) {
+				input_player_gamepad_set(_input.gamepad);
+			}
+		}
+	}
+});
+
+state.add("listening", {
+	enter: function() {
+		
+	},
+	step: function() {
+		
+	}
+});
+
+state.add("rebinding", {
+	enter: function() {
+		
+	},
+	step: function() {
+		
+	}
+});
 #endregion

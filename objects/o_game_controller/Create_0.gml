@@ -28,6 +28,9 @@ state.add("start_up", {
 	step: function() {
 		show_debug_message("placeholder for starting logos");
 		state.change("main_menu");
+	},
+	draw_gui: function() {
+		draw_text(20, 20, "lol starting logos");
 	}
 });
 
@@ -37,6 +40,9 @@ state.add("menu", {
 	},
 	step: function() {
 		
+	},
+	draw_gui: function() {
+		draw_text(20, 20, "lol menu");
 	}
 });
 
