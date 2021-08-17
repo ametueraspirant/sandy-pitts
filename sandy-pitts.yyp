@@ -179,7 +179,6 @@
     {"id":{"name":"input_value_is_binding","path":"scripts/input_value_is_binding/input_value_is_binding.yy",},"order":8,},
     {"id":{"name":"o_door","path":"objects/o_door/o_door.yy",},"order":2,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
-    {"id":{"name":"rebind_player_to_gamepad","path":"scripts/rebind_player_to_gamepad/rebind_player_to_gamepad.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Amazon Fire","path":"options/amazonfire/options_amazonfire.yy",},
@@ -244,7 +243,6 @@
     {"folderPath":"folders/Scripts/Input/Other.yy","order":11,"resourceVersion":"1.0","name":"Other","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Input/Players.yy","order":12,"resourceVersion":"1.0","name":"Players","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Input/Source Assignment.yy","order":13,"resourceVersion":"1.0","name":"Source Assignment","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Scripts/Input Rebinding Functions.yy","order":4,"resourceVersion":"1.0","name":"Input Rebinding Functions","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
