@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Rebind.yy",
   },
   "resourceVersion": "1.0",
-  "name": "input_rebind_tick",
+  "name": "rebind_gamepad_tick",
   "tags": [],
   "resourceType": "GMScript",
 }

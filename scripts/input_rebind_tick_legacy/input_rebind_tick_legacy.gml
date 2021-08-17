@@ -266,7 +266,7 @@ function input_rebind_tick_legacy(_in_verb, _player_index = 0, _alternate = 0)
     return INPUT_REBIND_EVENT.WAITING;
 }
 
-function input_rebind_tick(_verb, _player_index = 0, _alternate = 0)
+function rebind_gamepad_tick(_verb, _player_index = 0, _alternate = 0)
 {
     __input_error("input_rebind_tick() has been deprecated, please use input_rebind_tick_legacy() instead\nThis feature will be replaced in a future update");
     

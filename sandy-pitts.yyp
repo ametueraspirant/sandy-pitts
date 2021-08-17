@@ -179,7 +179,7 @@
     {"id":{"name":"input_value_is_binding","path":"scripts/input_value_is_binding/input_value_is_binding.yy",},"order":8,},
     {"id":{"name":"o_door","path":"objects/o_door/o_door.yy",},"order":2,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
-    {"id":{"name":"input_rebind_tick","path":"scripts/input_rebind_tick/input_rebind_tick.yy",},"order":0,},
+    {"id":{"name":"rebind_gamepad_tick","path":"scripts/rebind_gamepad_tick/rebind_gamepad_tick.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Amazon Fire","path":"options/amazonfire/options_amazonfire.yy",},

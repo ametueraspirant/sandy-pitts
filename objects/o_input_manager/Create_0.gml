@@ -49,16 +49,7 @@ state.add("listening", {
 		
 	},
 	step: function() {
-		var _input = input_source_detect_any();
-		if(_input.source != INPUT_SOURCE.NONE) {
-			for(var int = 0; int < INPUT_MAX_PLAYERS; int++) {
-				
-			}
-			input_player_source_set(_input.source);
-			if(_input.source == INPUT_SOURCE.GAMEPAD) {
-				input_player_gamepad_set(_input.gamepad);
-			}
-		}
+		rebind_gamepad_tick();
 	},
 	leave: function() {
 		
