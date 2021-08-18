@@ -58,7 +58,7 @@ player.event_set_default_function("gstep", function() {
 
 	if(!instance_exists(curr_weapon))instance_create_layer(x, x, _entity_layer, curr_weapon); // #TEST
 	
-	if(input_check_pressed(Verb.attack) && player.get_current_state() != "attack")player.change("attack"); // #TODO flesh out attack system
+	if(input_check_pressed(Verb.attack) && player.get_current_state() != "attack")player.change("attack"); // #TODO flesh out attack system using add_child(); and inherit();
 	
 	if(input_check_pressed(Verb.swap_complex))mstrat.is_complex_toggle(); // #TEST
 });
