@@ -181,6 +181,7 @@
     {"id":{"name":"__input_class_gamepad_mapping","path":"scripts/__input_class_gamepad_mapping/__input_class_gamepad_mapping.yy",},"order":7,},
     {"id":{"name":"__input_gamepad_set_blacklist","path":"scripts/__input_gamepad_set_blacklist/__input_gamepad_set_blacklist.yy",},"order":14,},
     {"id":{"name":"rebind_gamepad_tick","path":"scripts/rebind_gamepad_tick/rebind_gamepad_tick.yy",},"order":0,},
+    {"id":{"name":"rebind_all_players","path":"scripts/rebind_all_players/rebind_all_players.yy",},"order":1,},
   ],
   "Options": [
     {"name":"Amazon Fire","path":"options/amazonfire/options_amazonfire.yy",},

@@ -49,8 +49,9 @@ state.add("listening", {
 		
 	},
 	step: function() {
-		//input_assignment_tick(1, 4, Verb.swap_complex);
 		rebind_gamepad_tick();
+		
+		
 	},
 	leave: function() {
 		
