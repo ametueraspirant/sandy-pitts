@@ -48,7 +48,7 @@ player.event_set_default_function("gstep", function() {
 	// #TEST pretty much all of this is going to be replaced with something better.
 	
 	if(input_player_source_get(0) == INPUT_SOURCE.KEYBOARD_AND_MOUSE)look_dir = point_direction(x, y, mouse_x, mouse_y);
-	else if(input_player_source_get(0) == INPUT_SOURCE.GAMEPAD) look_dir = input_direction(Verb.aim_left, Verb.aim_right, Verb.aim_up, Verb.aim_down);
+	else if(input_player_source_get(0) == INPUT_SOURCE.GAMEPAD)look_dir = input_direction(Verb.aim_left, Verb.aim_right, Verb.aim_up, Verb.aim_down);
 	
 	if(look_dir == undefined)look_dir = look_dir_saved;
 	look_dir_saved = look_dir;
