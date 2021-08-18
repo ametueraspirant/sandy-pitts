@@ -54,9 +54,6 @@ state.event_set_default_function("begin_step", function() { input_tick(); })
 		},
 		step: function() {
 			rebind_gamepad_tick();
-		},
-		leave: function() {
-			
 		}
 	});
 #endregion
