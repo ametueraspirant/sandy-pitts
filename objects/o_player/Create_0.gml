@@ -7,6 +7,7 @@ curr_weapon = o_sword;
 mv_sign = 1;
 look_dir = 0;
 look_dir_saved = 0;
+player_num = 0;
 #endregion
 
 #region // set up motion strat
@@ -38,17 +39,17 @@ player.event_set_default_function("gstep", function() {
 	timer.check();
 	class.acheck();
 	
-	var mv_dir = input_direction(Verb.move_left, Verb.move_right, Verb.move_up, Verb.move_down);
+	var mv_dir = input_direction(Verb.move_left, Verb.move_right, Verb.move_up, Verb.move_down, player_num);
 	if(mv_dir == undefined)mv_dir = 0;
-	var mv_mag = input_distance(Verb.move_left,	Verb.move_right, Verb.move_up, Verb.move_down);
+	var mv_mag = input_distance(Verb.move_left,	Verb.move_right, Verb.move_up, Verb.move_down, player_num);
 	if(mv_mag == undefined)mv_mag = 0;
 	
 	mstrat.move(mv_dir, mv_mag);
 	
 	// #TEST pretty much all of this is going to be replaced with something better.
 	
-	if(input_player_source_get(0) == INPUT_SOURCE.KEYBOARD_AND_MOUSE)look_dir = point_direction(x, y, mouse_x, mouse_y);
-	else if(input_player_source_get(0) == INPUT_SOURCE.GAMEPAD)look_dir = input_direction(Verb.aim_left, Verb.aim_right, Verb.aim_up, Verb.aim_down);
+	if(input_player_source_get(player_num) == INPUT_SOURCE.KEYBOARD_AND_MOUSE)look_dir = point_direction(x, y, mouse_x, mouse_y);
+	else if(input_player_source_get(player_num) == INPUT_SOURCE.GAMEPAD)look_dir = input_direction(Verb.aim_left, Verb.aim_right, Verb.aim_up, Verb.aim_down, player_num);
 	
 	if(look_dir == undefined)look_dir = look_dir_saved;
 	look_dir_saved = look_dir;
@@ -58,9 +59,9 @@ player.event_set_default_function("gstep", function() {
 
 	if(!instance_exists(curr_weapon))instance_create_layer(x, x, _entity_layer, curr_weapon); // #TEST
 	
-	if(input_check_pressed(Verb.attack) && player.get_current_state() != "attack")player.change("attack"); // #TODO flesh out attack system using add_child(); and inherit();
+	if(input_check_pressed(Verb.attack, player_num) && player.get_current_state() != "attack")player.change("attack"); // #TODO flesh out attack system using add_child(); and inherit();
 	
-	if(input_check_pressed(Verb.swap_complex))mstrat.is_complex_toggle(); // #TEST
+	if(input_check_pressed(Verb.swap_complex, player_num))mstrat.is_complex_toggle(); // #TEST
 });
 player.event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
