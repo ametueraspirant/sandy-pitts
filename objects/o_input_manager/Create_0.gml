@@ -45,7 +45,6 @@ state
 .event_set_default_function("step", function() { rebind_gamepad_tick(); })
 .add("listening", { // default input mode. new inputs will be slotted to the lowest slot available, and disconnected players will attempt to be reconnected to their respective slot.
 	step: function() {
-		//rebind_gamepad_tick();
 		input_assignment_tick(1, 4, -1, false);
 	}
 })
