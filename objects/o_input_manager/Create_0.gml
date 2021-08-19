@@ -40,20 +40,21 @@ input_player_source_set(INPUT_SOURCE.KEYBOARD_AND_MOUSE);
 #region // set up state machine
 state = new SnowState("listening");
 
-state.event_set_default_function("begin_step", function() { input_tick(); })
-	.event_set_default_function("step", function() { rebind_gamepad_tick(); })
-	.add("listening", { // default input mode. new inputs will be slotted to the lowest slot available, and disconnected players will attempt to be reconnected to their respective slot.
-		step: function() {
-			rebind_gamepad_tick();
-		}
-	})
-	.add("rebinding", { // the input rebinding mode. automatically clears any filled player slots and ask them to press a button to join that slot.
-		enter: function() {
-			rebind_all_players();
-			global.players = [];
-		},
-		step: function() {
-			rebind_gamepad_tick();
-		}
-	});
+state
+.event_set_default_function("begin_step", function() { input_tick(); })
+.event_set_default_function("step", function() { rebind_gamepad_tick(); })
+.add("listening", { // default input mode. new inputs will be slotted to the lowest slot available, and disconnected players will attempt to be reconnected to their respective slot.
+	step: function() {
+		rebind_gamepad_tick();
+	}
+})
+.add("rebinding", { // the input rebinding mode. automatically clears any filled player slots and ask them to press a button to join that slot.
+	enter: function() {
+		rebind_all_players();
+		global.players = [];
+	},
+	step: function() {
+		rebind_gamepad_tick();
+	}
+});
 #endregion

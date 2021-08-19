@@ -18,11 +18,10 @@ instance_create_layer(0, 0, _entity_layer, o_menu_controller);
 state = new SnowState("test");
 
 // define default events
-state.event_set_default_function("step", function() {});
-state.event_set_default_function("draw_gui", function() {});
-
-// define states
-state.add("start_up", {
+state
+.event_set_default_function("step", function() {})
+.event_set_default_function("draw_gui", function() {})
+.add("start_up", {
 	enter: function() {
 		show_debug_message("game is starting");
 	},
@@ -33,9 +32,8 @@ state.add("start_up", {
 	draw_gui: function() {
 		draw_text(20, 20, "lol starting logos");
 	}
-});
-
-state.add("menu", {
+})
+.add("menu", {
 	enter: function() {
 		show_debug_message("main menu");
 	},
@@ -45,16 +43,15 @@ state.add("menu", {
 	draw_gui: function() {
 		draw_text(20, 20, "lol menu");
 	}
-});
-
-state.add("ingame", {
+})
+.add("ingame", {
 	enter: function() {
 		
 	},
 	step: function() {
 		
 	}
-});
+})
 
 // #TEST
 state.add("test", {
