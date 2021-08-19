@@ -3,7 +3,7 @@
 #macro _env_layer "Environment"
 
 global.debug = false;
-global.inputs = false;
+global.inputs = false; // ah fuck why'd I create this variable again
 global.players = [];
 #endregion
 
