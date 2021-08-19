@@ -59,9 +59,12 @@ state.add("ingame", {
 // #TEST
 state.add("test", {
 	enter: function() {
-		if(!instance_exists(o_player)) {
-			instance_create_layer(700, 300, _entity_layer, o_player);
-			show_debug_message("player spawned");
+		var num = 0;
+		repeat(4) {
+			var player = instance_create_layer(700 + num*10, 300, _entity_layer, o_player);
+			player.player_num = num;
+			show_debug_message("player " + string(num) + " spawned");
+			num++;
 		}
 	},
 	step: function() {
