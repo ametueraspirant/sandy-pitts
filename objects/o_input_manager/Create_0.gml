@@ -55,7 +55,7 @@ state
 		global.players = [];
 	},
 	step: function() {
-		rebind_gamepad_tick();
+		input_assignment_tick(1, 4, -1, false);
 	}
 });
 #endregion
