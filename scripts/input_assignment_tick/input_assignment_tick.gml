@@ -1,10 +1,14 @@
 /// @param minPlayers
 /// @param maxPlayers
-/// @param leaveVerb
+/// @param [leaveVerb]
+/// @param [sortPlayers]
 
-function input_assignment_tick(_min_players, _max_players, _leave_verb)
+function input_assignment_tick(_min_players, _max_players)
 {
-    if (_max_players < 1)
+    var _leave_verb = (argument_count > 2) ? argument[2] : -1;
+	var _sort_players = (argument_count > 3) ? argument[3] : true;
+	
+	if (_max_players < 1)
     {
         __input_error("Invalid maximum player count provided (", _max_players, ")");
         return undefined;
@@ -31,27 +35,29 @@ function input_assignment_tick(_min_players, _max_players, _leave_verb)
     var _abort = false;
     
     //Drop players down into empty spaces
-    do
-    {
-        var _fail = false;
-        var _p = INPUT_MAX_PLAYERS-1;
-        repeat(INPUT_MAX_PLAYERS-1)
-        {
-            if (input_player_connected(_p) && !input_player_connected(_p-1))
-            {
-                __input_trace("Assignment: Moving player ", _p, " (connected) to ", _p-1, " (disconnected)");
-                
-                _fail = true;
-                
-                var _temp = global.__input_players[_p-1];
-                global.__input_players[_p-1] = global.__input_players[_p];
-                global.__input_players[_p] = _temp;
-            }
-            
-            --_p;
-        }
-    }
-    until (!_fail);
+	if(_sort_players) {
+		do
+		{
+		    var _fail = false;
+		    var _p = INPUT_MAX_PLAYERS-1;
+		    repeat(INPUT_MAX_PLAYERS-1)
+		    {
+		        if (input_player_connected(_p) && !input_player_connected(_p-1))
+		        {
+		            __input_trace("Assignment: Moving player ", _p, " (connected) to ", _p-1, " (disconnected)");
+		            
+		            _fail = true;
+		            
+		            var _temp = global.__input_players[_p-1];
+		            global.__input_players[_p-1] = global.__input_players[_p];
+		            global.__input_players[_p] = _temp;
+		        }
+		        
+		        --_p;
+		    }
+		}
+		until (!_fail);
+	}
     
     //Disconnect all extraneous players
     var _p = _max_players;
@@ -75,7 +81,7 @@ function input_assignment_tick(_min_players, _max_players, _leave_verb)
                 
                 global.__input_players[_p].tick();
                 
-                if (input_check_pressed(_leave_verb) && (input_players_connected() < _min_players) && (_min_players > 1))
+                if (_leave_verb != -1 && input_check_pressed(_leave_verb) && (input_players_connected() < _min_players) && (_min_players > 1))
                 {
                     __input_trace("Assignment: Player ", _p, " aborted source assignment");
                     _abort = true;
@@ -94,17 +100,19 @@ function input_assignment_tick(_min_players, _max_players, _leave_verb)
     }
     
     //Allow players to leave the game
-    var _p = 0;
-    repeat(_max_players)
-    {
-        if (input_check_pressed(_leave_verb, _p))
-        {
-            __input_trace("Assignment: Player ", _p, " left");
-            input_player_source_set(INPUT_SOURCE.NONE, _p);
-        }
-        
-        ++_p;
-    }
+	if(_leave_verb != -1) {
+		var _p = 0;
+		repeat(_max_players)
+		{
+		    if (input_check_pressed(_leave_verb, _p))
+		    {
+		        __input_trace("Assignment: Player ", _p, " left");
+		        input_player_source_set(INPUT_SOURCE.NONE, _p);
+		    }
+		    
+		    ++_p;
+		}
+	}
     
     return _abort;
 }

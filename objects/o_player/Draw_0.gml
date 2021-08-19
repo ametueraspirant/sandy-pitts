@@ -1,1 +1,1 @@
-player.draw();
+state.draw();

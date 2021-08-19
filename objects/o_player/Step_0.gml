@@ -1,2 +1,2 @@
-player.gstep();
-player.step();
+state.gstep();
+state.step();
