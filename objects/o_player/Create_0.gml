@@ -35,7 +35,7 @@ state = new SnowState("idle");
 // define default events
 state
 .event_set_default_function("step", function() {})
-.event_set_default_function("gstep", function() {
+.event_set_default_function("g_step", function() {
 	depth = -bbox_bottom;
 	
 	timer.check();
@@ -57,7 +57,8 @@ state
 	if(look_dir > 90 && look_dir <= 270)mv_sign = -1;
 	else mv_sign = 1;
 
-	if(!instance_exists(curr_weapon))instance_create_layer(x, x, _entity_layer, curr_weapon); // #TEST
+	if(!instance_exists(curr_weapon))instance_create_layer(x, y, _entity_layer, curr_weapon); // #TEST
+	if(!instance_exists(o_dir_indicator))instance_create_layer(x, y, _entity_layer, o_dir_indicator); // #TEST
 	
 	if(input_check_pressed(Verb.attack, player_num) && state.get_current_state() != "attack")state.change("attack"); // #TODO flesh out attack system using add_child(); and inherit();
 	
