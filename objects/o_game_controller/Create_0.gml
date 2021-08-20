@@ -1,4 +1,5 @@
 #region // global innate variables
+#macro _col_layer "Colliders"
 #macro _entity_layer "Entities"
 #macro _fore_layer "Foreground"
 #macro _back_layer "Background"
