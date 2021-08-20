@@ -1,3 +1,5 @@
+#macro _env_layer "Entities"
+
 set_base_stats(5, 0.6, 0.3);
 
 mstrat = new TopDownStrat();

@@ -1,7 +1,5 @@
 #region // global innate variables
 #macro _entity_layer "Entities"
-#macro _obj_layer "Objects"
-#macro _env_layer "Environment"
 
 global.debug = false;
 global.players = [];
