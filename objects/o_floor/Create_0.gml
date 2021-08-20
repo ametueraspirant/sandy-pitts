@@ -1,1 +1,0 @@
-depth = layer_get_depth(_env_layer) - y;
