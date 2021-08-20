@@ -1,5 +1,6 @@
 #region // global innate variables
 #macro _entity_layer "Entities"
+#macro _obj_layer "Objects"
 #macro _env_layer "Environment"
 
 global.debug = false;
@@ -57,7 +58,7 @@ state.add("test", {
 	enter: function() {
 		var num = 0;
 		repeat(4) {
-			var player = instance_create_layer(700 + num*10, 300, _entity_layer, o_player);
+			var player = instance_create_layer(240 + num*20, 160, _entity_layer, o_player);
 			player.player_num = num;
 			show_debug_message("player " + string(num) + " spawned");
 			num++;
