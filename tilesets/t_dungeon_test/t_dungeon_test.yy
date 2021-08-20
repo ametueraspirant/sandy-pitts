@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_env_test",
-    "path": "sprites/s_env_test/s_env_test.yy",
+    "name": "s_dungeon_test",
+    "path": "sprites/s_dungeon_test/s_dungeon_test.yy",
   },
   "tileWidth": 16,
   "tileHeight": 16,
@@ -164,7 +164,7 @@
     "path": "folders/test.yy",
   },
   "resourceVersion": "1.0",
-  "name": "t_env_test",
+  "name": "t_dungeon_test",
   "tags": [],
   "resourceType": "GMTileSet",
 }

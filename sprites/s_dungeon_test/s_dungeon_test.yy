@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"731be1e7-4db0-4256-82e9-12ac56948765","path":"sprites/s_env_test/s_env_test.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"731be1e7-4db0-4256-82e9-12ac56948765","path":"sprites/s_env_test/s_env_test.yy",},"LayerId":{"name":"d5926466-4ff2-486c-944a-d99cb431db33","path":"sprites/s_env_test/s_env_test.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_env_test","path":"sprites/s_env_test/s_env_test.yy",},"resourceVersion":"1.0","name":"731be1e7-4db0-4256-82e9-12ac56948765","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"731be1e7-4db0-4256-82e9-12ac56948765","path":"sprites/s_dungeon_test/s_dungeon_test.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"731be1e7-4db0-4256-82e9-12ac56948765","path":"sprites/s_dungeon_test/s_dungeon_test.yy",},"LayerId":{"name":"d5926466-4ff2-486c-944a-d99cb431db33","path":"sprites/s_dungeon_test/s_dungeon_test.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_dungeon_test","path":"sprites/s_dungeon_test/s_dungeon_test.yy",},"resourceVersion":"1.0","name":"731be1e7-4db0-4256-82e9-12ac56948765","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_env_test","path":"sprites/s_env_test/s_env_test.yy",},
+    "spriteId": {"name":"s_dungeon_test","path":"sprites/s_dungeon_test/s_dungeon_test.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"ff7995a8-9f77-4882-ac9b-29d1094d4a2a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"731be1e7-4db0-4256-82e9-12ac56948765","path":"sprites/s_env_test/s_env_test.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"ff7995a8-9f77-4882-ac9b-29d1094d4a2a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"731be1e7-4db0-4256-82e9-12ac56948765","path":"sprites/s_dungeon_test/s_dungeon_test.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_env_test","path":"sprites/s_env_test/s_env_test.yy",},
+    "parent": {"name":"s_dungeon_test","path":"sprites/s_dungeon_test/s_dungeon_test.yy",},
     "resourceVersion": "1.3",
-    "name": "s_env_test",
+    "name": "s_dungeon_test",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -73,7 +73,7 @@
     "path": "folders/test.yy",
   },
   "resourceVersion": "1.0",
-  "name": "s_env_test",
+  "name": "s_dungeon_test",
   "tags": [],
   "resourceType": "GMSprite",
 }
