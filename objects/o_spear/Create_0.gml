@@ -1,1 +1,1 @@
-depth = -y -6;
+owner = noone;

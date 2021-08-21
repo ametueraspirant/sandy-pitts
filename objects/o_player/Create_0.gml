@@ -1,5 +1,5 @@
 #region // set stats
-set_base_stats(5, 0.6, 0.3);
+set_base_stats(3, 0.7, 0.5);
 set_combat_stats(5, 1, 1, 1);
 curr_helm = s_heavy_helm;
 curr_bod = s_heavy_bod;
@@ -39,7 +39,6 @@ state
 	depth = -bbox_bottom;
 	
 	timer.check();
-	class.acheck();
 	
 	var mv_dir = input_direction(Verb.move_left, Verb.move_right, Verb.move_up, Verb.move_down, player_num);
 	if(mv_dir == undefined)mv_dir = 0;
@@ -56,14 +55,12 @@ state
 	
 	if(look_dir > 90 && look_dir <= 270)mv_sign = -1;
 	else mv_sign = 1;
-
-	if(!instance_exists(curr_weapon))instance_create_layer(x, y, _entity_layer, curr_weapon); // #TEST
-	if(!instance_exists(o_dir_indicator))instance_create_layer(x, y, _entity_layer, o_dir_indicator); // #TEST
 	
 	if(input_check_pressed(Verb.attack, player_num) && state.get_current_state() != "attack")state.change("attack"); // #TODO flesh out attack system using add_child(); and inherit();
 	
 	if(input_check_pressed(Verb.swap_complex, player_num))mstrat.is_complex_toggle(); // #TEST
 })
+.event_set_default_function("end_step", function() { class.acheck(); })
 .event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
 	if(curr_helm != noone)draw_sprite_ext(curr_helm, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
