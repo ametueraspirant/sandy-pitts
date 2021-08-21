@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "sandy-pitts",
-    "path": "sandy-pitts.yyp",
+    "name": "Star Wizard",
+    "path": "folders/Entities/Sets/Wizard/Star Wizard.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_star_wizard_weapon",

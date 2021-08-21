@@ -359,10 +359,8 @@ function TopDownStrat() constructor {
 			}
 		}
 		
-		if(mv_mag == 0) {
-			if(abs(_this.owner.spd.x) < 0.2)_this.owner.spd.x = 0;
-			if(abs(_this.owner.spd.y) < 0.2)_this.owner.spd.y = 0;
-		}
+		if(lengthdir_x(mv_mag, mv_dir) == 0 && abs(_this.owner.spd.x) < 0.2)_this.owner.spd.x = 0;
+		if(lengthdir_y(mv_mag, mv_dir) == 0 && abs(_this.owner.spd.y) < 0.2)_this.owner.spd.y = 0;
 
 		for(var int = 0; int < array_length(_this.colliders); int++) {
 			var _col = _this.colliders[int];
