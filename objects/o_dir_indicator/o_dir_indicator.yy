@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_dir_indicator",
-    "path": "sprites/s_dir_indicator/s_dir_indicator.yy",
+    "name": "small_circle",
+    "path": "sprites/small_circle/small_circle.yy",
   },
   "solid": false,
   "visible": true,
