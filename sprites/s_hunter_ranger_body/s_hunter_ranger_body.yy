@@ -9,7 +9,7 @@
   "swfPrecision": 2.525,
   "bbox_left": 9,
   "bbox_right": 14,
-  "bbox_top": 16,
+  "bbox_top": 17,
   "bbox_bottom": 19,
   "HTile": false,
   "VTile": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"f2ec7d39-3984-4494-96ed-93d6637be783","path":"sprites/s_santa_priest_body/s_santa_priest_body.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f2ec7d39-3984-4494-96ed-93d6637be783","path":"sprites/s_santa_priest_body/s_santa_priest_body.yy",},"LayerId":{"name":"92c344aa-51f0-4ad3-994d-ee4a7a286acf","path":"sprites/s_santa_priest_body/s_santa_priest_body.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_santa_priest_body","path":"sprites/s_santa_priest_body/s_santa_priest_body.yy",},"resourceVersion":"1.0","name":"f2ec7d39-3984-4494-96ed-93d6637be783","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"fa555def-c6e0-4694-be67-d2e57825e514","path":"sprites/s_hunter_ranger_body/s_hunter_ranger_body.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"fa555def-c6e0-4694-be67-d2e57825e514","path":"sprites/s_hunter_ranger_body/s_hunter_ranger_body.yy",},"LayerId":{"name":"11398b43-840c-47cc-a1b1-0e20f7570e0d","path":"sprites/s_hunter_ranger_body/s_hunter_ranger_body.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_hunter_ranger_body","path":"sprites/s_hunter_ranger_body/s_hunter_ranger_body.yy",},"resourceVersion":"1.0","name":"fa555def-c6e0-4694-be67-d2e57825e514","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_santa_priest_body","path":"sprites/s_santa_priest_body/s_santa_priest_body.yy",},
+    "spriteId": {"name":"s_hunter_ranger_body","path":"sprites/s_hunter_ranger_body/s_hunter_ranger_body.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"b824c96b-9ec3-4ef4-ae9f-699d70a2a1d8","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f2ec7d39-3984-4494-96ed-93d6637be783","path":"sprites/s_santa_priest_body/s_santa_priest_body.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b5b3acb4-972e-48f2-a4d6-293702637db1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fa555def-c6e0-4694-be67-d2e57825e514","path":"sprites/s_hunter_ranger_body/s_hunter_ranger_body.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,22 +58,22 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_santa_priest_body","path":"sprites/s_santa_priest_body/s_santa_priest_body.yy",},
+    "parent": {"name":"s_hunter_ranger_body","path":"sprites/s_hunter_ranger_body/s_hunter_ranger_body.yy",},
     "resourceVersion": "1.3",
-    "name": "s_santa_priest_body",
+    "name": "s_hunter_ranger_body",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"92c344aa-51f0-4ad3-994d-ee4a7a286acf","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"11398b43-840c-47cc-a1b1-0e20f7570e0d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Santa Priest",
-    "path": "folders/Entities/Sets/Priest/Santa Priest.yy",
+    "name": "Hunter Ranger",
+    "path": "folders/Entities/Sets/Ranger/Hunter Ranger.yy",
   },
   "resourceVersion": "1.0",
-  "name": "s_santa_priest_body",
+  "name": "s_hunter_ranger_body",
   "tags": [],
   "resourceType": "GMSprite",
 }

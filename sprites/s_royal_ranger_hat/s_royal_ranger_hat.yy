@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 4,
+  "bbox_left": 7,
   "bbox_right": 16,
-  "bbox_top": 8,
-  "bbox_bottom": 14,
+  "bbox_top": 6,
+  "bbox_bottom": 15,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"9af3f5a7-027d-4ad0-8c09-46f2f4b407e8","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9af3f5a7-027d-4ad0-8c09-46f2f4b407e8","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},"LayerId":{"name":"6b532519-1355-49c6-b7f6-f462181d26bc","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_santa_priest_hat","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},"resourceVersion":"1.0","name":"9af3f5a7-027d-4ad0-8c09-46f2f4b407e8","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"1da090c0-c6eb-45ed-9c5b-f2845b35d118","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"1da090c0-c6eb-45ed-9c5b-f2845b35d118","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},"LayerId":{"name":"18cbddaf-56f9-4bc0-a5f0-399bec22a67d","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"s_royal_ranger_hat","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},"resourceVersion":"1.0","name":"1da090c0-c6eb-45ed-9c5b-f2845b35d118","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_santa_priest_hat","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},
+    "spriteId": {"name":"s_royal_ranger_hat","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"f9424add-55e8-4d63-97f1-b974fe16625b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9af3f5a7-027d-4ad0-8c09-46f2f4b407e8","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"cb061b09-2c57-4931-86f2-477c7cdb1723","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1da090c0-c6eb-45ed-9c5b-f2845b35d118","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,22 +58,22 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_santa_priest_hat","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},
+    "parent": {"name":"s_royal_ranger_hat","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},
     "resourceVersion": "1.3",
-    "name": "s_santa_priest_hat",
+    "name": "s_royal_ranger_hat",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6b532519-1355-49c6-b7f6-f462181d26bc","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"18cbddaf-56f9-4bc0-a5f0-399bec22a67d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Santa Priest",
-    "path": "folders/Entities/Sets/Priest/Santa Priest.yy",
+    "name": "Royal Ranger",
+    "path": "folders/Entities/Sets/Ranger/Royal Ranger.yy",
   },
   "resourceVersion": "1.0",
-  "name": "s_santa_priest_hat",
+  "name": "s_royal_ranger_hat",
   "tags": [],
   "resourceType": "GMSprite",
 }

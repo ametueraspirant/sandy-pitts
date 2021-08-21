@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "sandy-pitts",
-    "path": "sandy-pitts.yyp",
+    "name": "Santa Priest",
+    "path": "folders/Entities/Sets/Priest/Santa Priest.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_santa_priest_weapon",
