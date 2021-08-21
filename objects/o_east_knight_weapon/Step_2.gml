@@ -3,6 +3,6 @@ if(instance_exists(owner)) {
 		x = owner.x;
 		y = owner.y +2;
 		depth = -y -10;
-		image_angle = owner.look_dir + 30;
+		image_angle = owner.look_dir - 105;
 	}
 }
