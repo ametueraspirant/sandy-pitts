@@ -1,9 +1,12 @@
 #region // set stats
 set_base_stats(3, 0.7, 0.5);
 set_combat_stats(5, 1, 1, 1);
-curr_helm = s_heavy_helm;
-curr_bod = s_heavy_bod;
-curr_weapon = o_sword;
+gear = {
+	cur_helm: s_east_knight_hat,
+	cur_bod: s_east_knight_body,
+	cur_shield: s_east_knight_shield,
+	cur_weapon: o_east_knight_weapon
+}
 mv_sign = 1;
 look_dir = 0;
 look_dir_saved = 0;
@@ -63,8 +66,9 @@ state
 .event_set_default_function("end_step", function() { class.acheck(); })
 .event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	if(curr_helm != noone)draw_sprite_ext(curr_helm, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	if(curr_bod != noone)draw_sprite_ext(curr_bod, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
+	if(gear.cur_helm != noone)draw_sprite_ext(gear.cur_helm, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
+	if(gear.cur_bod != noone)draw_sprite_ext(gear.cur_bod, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
+	if(gear.cur_shield != noone)draw_sprite_ext(gear.cur_shield, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
 })
 
 // define states

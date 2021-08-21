@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Spear",
-    "path": "folders/Entities/Weapons/Spear.yy",
+    "path": "folders/Entities/Weapons - to remove/Spear.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_spear",

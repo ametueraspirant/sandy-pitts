@@ -1,0 +1,1 @@
+if(instance_exists(owner) && !owner.class.is_attacking())draw_self();

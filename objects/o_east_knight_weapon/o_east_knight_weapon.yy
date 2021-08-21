@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_sword",
-    "path": "sprites/s_sword/s_sword.yy",
+    "name": "s_east_knight_weapon",
+    "path": "sprites/s_east_knight_weapon/s_east_knight_weapon.yy",
   },
   "solid": false,
   "visible": true,
@@ -22,17 +22,17 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Sword",
-    "path": "folders/Entities/Weapons - to remove/Sword.yy",
+    "name": "East Knight",
+    "path": "folders/Entities/Sets/Knight/East Knight.yy",
   },
   "resourceVersion": "1.0",
-  "name": "o_sword",
+  "name": "o_east_knight_weapon",
   "tags": [],
   "resourceType": "GMObject",
 }

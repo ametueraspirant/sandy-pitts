@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Weapons",
-    "path": "folders/Entities/Weapons.yy",
+    "name": "Sets",
+    "path": "folders/Entities/Sets.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_hitbox",

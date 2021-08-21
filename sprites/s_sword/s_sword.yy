@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Sword",
-    "path": "folders/Entities/Weapons/Sword.yy",
+    "path": "folders/Entities/Weapons - to remove/Sword.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_sword",

@@ -132,7 +132,7 @@
   "eventStubScript": null,
   "parent": {
     "name": "Sword",
-    "path": "folders/Entities/Weapons/Sword.yy",
+    "path": "folders/Entities/Weapons - to remove/Sword.yy",
   },
   "resourceVersion": "1.3",
   "name": "q_sword_1",
