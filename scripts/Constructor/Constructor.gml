@@ -359,9 +359,9 @@ function TopDownStrat() constructor {
 			}
 		}
 		
-		if(lengthdir_x(mv_mag, mv_dir) == 0 && abs(_this.owner.spd.x) < 0.2)_this.owner.spd.x = 0;
-		if(lengthdir_y(mv_mag, mv_dir) == 0 && abs(_this.owner.spd.y) < 0.2)_this.owner.spd.y = 0;
-
+		if(abs(_this.owner.spd.x) < (0.1 * _this.owner.max_spd))_this.owner.spd.x = 0;
+		if(abs(_this.owner.spd.y) < (0.1 * _this.owner.max_spd))_this.owner.spd.y = 0;
+		
 		for(var int = 0; int < array_length(_this.colliders); int++) {
 			var _col = _this.colliders[int];
 			if(_col.slide)_slide(_col.obj);
