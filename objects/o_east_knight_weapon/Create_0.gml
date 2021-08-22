@@ -1,1 +1,13 @@
 owner = noone;
+
+attack_list = [];
+
+/* example: act stores the sequence of the current attack. link_light points to the array value for a chainable light attack
+while link_heavy points to the array value for a chainable heavy attack. if false, reset the combo and add a cooldown.
+attack_list = [
+	{ act: q_light_1, link_light: 1, link_heavy: 3 },
+	{ act: q_light_2, link_light: 2, link_heavy: 4 },
+	{ act: q_light_3, link_light: false, link_heavy: 4 },
+	{ act: q_heavy_1, link_light: false, link_heavy: 4 },
+	{ act: q_heavy_ 2, link_light: false, link_heavy: false }
+];
