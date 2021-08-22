@@ -96,7 +96,7 @@ state
 	enter: function() {
 		if(!timer.exists("attack")) {
 			show_debug_message("swoooosh!");
-			class.attack(q_sword_1);
+			class.attack(q_ek_light_1);
 			timer.set(1000, "attack", function() {
 				state.change("idle");
 			});

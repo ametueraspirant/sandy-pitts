@@ -79,7 +79,7 @@ function CombatClass() constructor {
 			
 			layer_sequence_x(cur_seq, owner.x);
 			layer_sequence_y(cur_seq, owner.y);
-			layer_depth(cur_layer, owner.depth);
+			layer_depth(cur_layer, owner.depth - 10);
 			
 			other.timer.check();
 			
