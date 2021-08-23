@@ -77,6 +77,7 @@ function CombatClass() constructor {
 		with(_this) {
 			if(cur_seq == noone)return;
 			
+			layer_sequence_angle(cur_seq, owner.look_dir);
 			layer_sequence_x(cur_seq, owner.x);
 			layer_sequence_y(cur_seq, owner.y);
 			layer_depth(cur_layer, owner.depth - 10);
