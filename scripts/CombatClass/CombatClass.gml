@@ -10,6 +10,7 @@ function CombatClass() constructor {
 		gear = { cur_helm: noone, cur_bod: noone, cur_weapon: noone, cur_shield: noone };
 		items = [];
 		cur_attack = noone;
+		attack_index = 0;
 		cur_layer = noone;
 		cur_seq = noone;
 		attacking = false;
@@ -123,4 +124,12 @@ function set_combat_stats(_hp, _dam, _act_spd, _size) {
 		act_spd = _act_spd;
 		size = _size;
 	}
+}
+
+function AttackList(_struct) constructor {
+	
+}
+
+function Attack(_struct) constructor {
+	
 }
