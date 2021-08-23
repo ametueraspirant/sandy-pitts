@@ -67,7 +67,10 @@
             ],"resourceVersion":"1.0","resourceType":"KeyframeStore<RealKeyframe>",},"trackColour":4282948594,"inheritsTrackColour":true,"builtinName":15,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":true,"resourceVersion":"1.0","name":"scale","tags":[],"resourceType":"GMRealTrack",},
       ],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","name":"o_hitbox","tags":[],"resourceType":"GMInstanceTrack",},
   ],
-  "visibleRange": null,
+  "visibleRange": {
+    "x": 0.0,
+    "y": 33.9999,
+  },
   "lockOrigin": false,
   "showBackdrop": true,
   "showBackdropImage": false,
@@ -86,7 +89,7 @@
     "path": "folders/Entities/Sets/Knight/East Knight/attacks.yy",
   },
   "resourceVersion": "1.3",
-  "name": "q_ek_light_2",
+  "name": "q_ek_heavy",
   "tags": [],
   "resourceType": "GMSequence",
 }

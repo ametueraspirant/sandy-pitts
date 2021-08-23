@@ -68,6 +68,7 @@
     {"id":{"name":"input_history_start","path":"scripts/input_history_start/input_history_start.yy",},"order":4,},
     {"id":{"name":"__input_sdl2_database_funcs","path":"scripts/__input_sdl2_database_funcs/__input_sdl2_database_funcs.yy",},"order":25,},
     {"id":{"name":"s_dungeon_test","path":"sprites/s_dungeon_test/s_dungeon_test.yy",},"order":0,},
+    {"id":{"name":"q_ek_heavy","path":"sequences/q_ek_heavy/q_ek_heavy.yy",},"order":2,},
     {"id":{"name":"input_cursor_limit_box","path":"scripts/input_cursor_limit_box/input_cursor_limit_box.yy",},"order":1,},
     {"id":{"name":"o_bush2_test","path":"objects/o_bush2_test/o_bush2_test.yy",},"order":10,},
     {"id":{"name":"input_default_gamepad_swap_ab","path":"scripts/input_default_gamepad_swap_ab/input_default_gamepad_swap_ab.yy",},"order":2,},
