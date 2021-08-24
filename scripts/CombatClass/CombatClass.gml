@@ -127,16 +127,37 @@ function set_combat_stats(_hp, _dam, _act_spd, _size) {
 }
 
 function AttackList(_struct) constructor {
-	#region // set attack stats
+	#region // instantate variables
 	stats = _struct.stats;
 	
 	if(!variable_struct_exists(stats, "end_lag"))stats.end_lag = 0;
 	if(!variable_struct_exists(stats, "reset_time"))stats.reset_time = 0;
+	
+	if(!variable_struct_exists(stats, "light_start"))stats.light_start = noone;
+	if(!variable_struct_exists(stats, "heavy_start"))stats.heavy_start = noone;
 	#endregion
 	
-	#region // check through attack list and convert linked sequences into where they exist on the array.
-	list = _struct.list;
+	#region // create list with an extra object at array 0 that contains an empty attack with only link variables.
+	list = [];
 	
+	array_push(list, new Attack({ act: noone,	
+								  link_light: stats.light_start,
+								  link_heavy: stats.heavy_start,
+								  cancel_threshold: 0,
+								  rotation_lock_threshold: 0,
+								  rotation_unlock_threshold: 0,
+								  charge_time: 0,
+								  damage_multi: 1 }));
+	
+	var _i = 0;
+	repeat(array_length(_struct.list)) {
+		array_push(list, _struct.list[_i]);
+		_i++;
+	}
+	#endregion
+	
+	
+	#region // loop through the list, converting link sequences to the index of that sequence in the array.
 	var _i = 0;
 	repeat(array_length(list)) {
 		if(list[_i].link_light != noone) {					//	make sure that link_light isn't noone.
