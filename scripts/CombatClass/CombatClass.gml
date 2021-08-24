@@ -147,6 +147,7 @@ function AttackList(_struct) constructor {
 								  rotation_lock_threshold: 0,
 								  rotation_unlock_threshold: 0,
 								  charge_time: 0,
+								  charge_min: 0,
 								  damage_multi: 1 }));
 	
 	var _i = 0;
@@ -292,6 +293,23 @@ function Attack(_struct) constructor {
 		charge_time = 0;
 	} else {
 		charge_time = _struct.charge_time;
+	}
+	#endregion
+	
+	#region // check that charge_min exists and is a real positive integer and set it.
+	if(!variable_struct_exists(_struct, "charge_min")) {
+		charge_min = 0;
+	} else if(!is_real(_struct.charge_min)) {
+		show_debug_message("charge_min must be real. setting to 0.");
+		charge_min = 0;
+	} else if(frac(_struct.charge_min) != 0) {
+		show_debug_message("charge_min must be an integer. rounding down.");
+		cancel_treshold = int64(_struct.charge_min);
+	} else if(_struct.charge_min < 0) {
+		show_debug_message("charge_min must be positive. setting to 0.");
+		charge_min = 0;
+	} else {
+		charge_min = _struct.charge_min;
 	}
 	#endregion
 	
