@@ -127,7 +127,22 @@ function set_combat_stats(_hp, _dam, _act_spd, _size) {
 }
 
 function AttackList(_struct) constructor {
+	#region // set attack stats
+	stats = _struct.stats;
 	
+	if(!variable_struct_exists(stats, "end_lag"))stats.end_lag = 0;
+	if(!variable_struct_exists(stats, "reset_time"))stats.reset_time = 0;
+	#endregion
+	
+	#region // check through attack list and convert linked sequences into where they exist on the array.
+	list = _struct.list;
+	
+	var inc = 0;
+	repeat(array_length(list)) {
+		
+		inc++
+	}
+	#endregion
 }
 
 function Attack(_struct) constructor {
