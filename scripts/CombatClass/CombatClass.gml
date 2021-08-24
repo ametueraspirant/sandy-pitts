@@ -156,7 +156,6 @@ function AttackList(_struct) constructor {
 	}
 	#endregion
 	
-	
 	#region // loop through the list, converting link sequences to the index of that sequence in the array.
 	var _i = 0;
 	repeat(array_length(list)) {
