@@ -2,8 +2,7 @@
 /// @desc	a constructor containing many functions. It is state machine and input system agnostic, and works well with most existing ones that I know of.
 /// @func	TopDownStrat(colliders, [is_complex], [accel], [frict])
 /// @param	{bool}	[is_complex]		whether to use simple or complex movement
-function TopDownStrat() constructor {
-	var _is_complex = (argument_count > 0) ? argument[0] : TDS_DEFAULT_COMPLEXITY;
+function TopDownStrat(_is_complex = TDS_DEFAULT_COMPLEXITY) constructor {
 	var _owner = other;
 	
 	_this = {};

@@ -26,3 +26,5 @@ attacks = new AttackList({
 					 charge_time: 15 }) //# seq is unfinished
 	]
 });
+
+show_debug_message(attacks);

@@ -137,15 +137,37 @@ function AttackList(_struct) constructor {
 	#region // check through attack list and convert linked sequences into where they exist on the array.
 	list = _struct.list;
 	
-	var inc = 0;
+	var _i = 0;
 	repeat(array_length(list)) {
+		if(list[_i].link_light != noone) {					//	make sure that link_light isn't noone.
+			var _l = 0;
+			repeat(array_length(list)) {
+				if(list[_l].act == list[_i].link_light) {	//	check to see if the current index contains the sequence in the link_light reference.
+					list[_i].link_light = _l;				//	set link_light to equal the index of the attack sequence that matches.
+					break;
+				}
+				_l++;
+			}
+		}
 		
-		inc++
+		if(list[_i].link_heavy != noone) {					//	make sure that link_heavy isn't noone.
+			var _h = 0;
+			repeat(array_length(list)) {
+				if(list[_h].act == list[_i].link_heavy) {	//	check to see if the current index contains the sequence in the link_heavy reference.
+					list[_i].link_heavy = _h;				//	set link_heavy to equal the index of the attack sequence that matches.
+					break;
+				}
+				_h++;
+			}
+		}
+		_i++;
 	}
 	#endregion
 }
 
 function Attack(_struct) constructor {
+	type = "attack";
+	
 	#region // check that act exists and is a sequence and set it.
 	if(!variable_struct_exists(_struct, "act")) {
 		show_debug_message("attacks require an act variable. make sure act exists and is a valid sequence id.");
@@ -161,7 +183,7 @@ function Attack(_struct) constructor {
 	#region // check that link_light exists and is a sequence and set it.
 	if(!variable_struct_exists(_struct, "link_light")) {
 		link_light = noone;
-	} else if(sequence_exists(_struct.link_light)) {
+	} else if(!sequence_exists(_struct.link_light)) {
 		show_debug_message("link_light must be a valid sequence or 'noone.' setting to 'noone.'");
 		link_light = noone;
 	} else {
@@ -172,7 +194,7 @@ function Attack(_struct) constructor {
 	#region // check that link_heavy exists and is a sequence and set it.
 	if(!variable_struct_exists(_struct, "link_heavy")) {
 		link_heavy = noone;
-	} else if(sequence_exists(_struct.link_heavy)) {
+	} else if(!sequence_exists(_struct.link_heavy)) {
 		show_debug_message("link_heavy must be a valid sequence or 'noone.' setting to 'noone.'");
 		link_heavy = noone;
 	} else {
@@ -250,5 +272,7 @@ function Attack(_struct) constructor {
 }
 
 function Skill(_struct) constructor {
+	type = "skill";
+	
 	
 }
