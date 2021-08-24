@@ -131,5 +131,78 @@ function AttackList(_struct) constructor {
 }
 
 function Attack(_struct) constructor {
+	// check that act exists and is a sequence. and set it.
+	if(!variable_struct_exists(_struct, "act")) {
+		show_debug_message("attacks require an act variable. make sure act exists and is a valid sequence id.");
+		act = "error";
+	} else if(!sequence_exists(_struct.act)) {
+		show_debug_message("act must be a sequence. make sure act is a valid sequence id.");
+		act = "error";
+	} else {
+		act = _struct.act;
+	}
+	
+	// check that link_light exists and is a sequence. and set it.
+	if(!variable_struct_exists(_struct, "link_light")) {
+		link_light = noone;
+	} else if(sequence_exists(_struct.link_light)) {
+		show_debug_message("link_light must be a valid sequence or 'noone.' setting to 'noone.'");
+		link_light = noone;
+	} else {
+		link_light = _struct.link_light;
+	}
+	
+	// check that link_heavy exists and is a sequence. and set it.
+	if(!variable_struct_exists(_struct, "link_heavy")) {
+		link_heavy = noone;
+	} else if(sequence_exists(_struct.link_heavy)) {
+		show_debug_message("link_heavy must be a valid sequence or 'noone.' setting to 'noone.'");
+		link_heavy = noone;
+	} else {
+		link_heavy = _struct.link_heavy;
+	}
+	
+	// check that cancel_threshold exists and is a positive integer and set it.
+	if(!variable_struct_exists(_struct, "cancel_threshold")) {
+		cancel_threshold = 0;
+	} else if(!is_real(_struct.cancel_threshold) && frac(_struct.cancel_threshold) != 0 && _struct.cancel_threshold < 0) {
+		show_debug_message("cancel_threshold must be a real positive integer. setting to 0.");
+		cancel_threshold = 0;
+	} else {
+		cancel_threshold = _struct.cancel_threshold;
+	}
+	
+	// check that rotation_lock_threshold exists and is a positive integer and set it.
+	if(!variable_struct_exists(_struct, "rotation_lock_threshold")) {
+		rotation_lock_threshold = 0;
+	} else if(!is_real(_struct.rotation_lock_threshold) && frac(_struct.rotation_lock_threshold) != 0 && _struct.rotation_lock_threshold < 0) {
+		show_debug_message("rotation_lock_threshold must be a real positive integer. setting to 0.");
+		rotation_lock_threshold = 0;
+	} else {
+		rotation_lock_threshold = _struct.rotation_lock_threshold;
+	}
+	
+	// check that rotation_unlock_threshold exists and is a positive integer and set it.
+	if(!variable_struct_exists(_struct, "rotation_unlock_threshold")) {
+		rotation_unlock_threshold = 0;
+	} else if(!is_real(_struct.rotation_unlock_threshold) && frac(_struct.rotation_unlock_threshold) != 0 && _struct.rotation_unlock_threshold < 0) {
+		show_debug_message("rotation_unlock_threshold must be a real positive integer. setting to 0.");
+		rotation_unlock_threshold = 0;
+	} else {
+		rotation_unlock_threshold = _struct.rotation_unlock_threshold;
+	}
+	
+	// check that charge_time exists and is a positive integer and set it.
+	if(!variable_struct_exists(_struct, "charge_time")) {
+		charge_time = 0;
+	} else if(!is_real(_struct.charge_time) && frac(_struct.charge_time) != 0 && _struct.charge_time < 0) {
+		show_debug_message("charge_time must be a real positive integer. setting to 0.");
+		charge_time = 0;
+	} else {
+		charge_time = _struct.charge_time;
+	}
+}
+
+function Skill(_struct) constructor {
 	
 }
