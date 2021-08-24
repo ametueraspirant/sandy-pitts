@@ -170,11 +170,12 @@ function Attack(_struct) constructor {
 	
 	#region // check that act exists and is a sequence and set it.
 	if(!variable_struct_exists(_struct, "act")) {
-		show_debug_message("attacks require an act variable. make sure act exists and is a valid sequence id.");
-		act = "error";
+		act = noone;
+	} else if(_struct.act == noone) {
+		act = _struct.act;
 	} else if(!sequence_exists(_struct.act)) {
-		show_debug_message("act must be a sequence. make sure act is a valid sequence id.");
-		act = "error";
+		show_debug_message("act must be a sequence or 'noone.' setting to 'noone.'");
+		act = noone;
 	} else {
 		act = _struct.act;
 	}
@@ -183,6 +184,8 @@ function Attack(_struct) constructor {
 	#region // check that link_light exists and is a sequence and set it.
 	if(!variable_struct_exists(_struct, "link_light")) {
 		link_light = noone;
+	} else if(_struct.link_light == noone) {
+		link_light = _struct.link_light;
 	} else if(!sequence_exists(_struct.link_light)) {
 		show_debug_message("link_light must be a valid sequence or 'noone.' setting to 'noone.'");
 		link_light = noone;
@@ -194,6 +197,8 @@ function Attack(_struct) constructor {
 	#region // check that link_heavy exists and is a sequence and set it.
 	if(!variable_struct_exists(_struct, "link_heavy")) {
 		link_heavy = noone;
+	} else if(_struct.link_heavy == noone) {
+		link_heavy = _struct.link_heavy;
 	} else if(!sequence_exists(_struct.link_heavy)) {
 		show_debug_message("link_heavy must be a valid sequence or 'noone.' setting to 'noone.'");
 		link_heavy = noone;
@@ -267,6 +272,20 @@ function Attack(_struct) constructor {
 		charge_time = 0;
 	} else {
 		charge_time = _struct.charge_time;
+	}
+	#endregion
+	
+	#region // check that damage_multi exists and is a real number that is 1 or greater and set it.
+	if(!variable_struct_exists(_struct, "damage_multi")) {
+		damage_multi = 1;
+	} else if(!is_real(_struct.damage_multi)) {
+		show_debug_message("damage_multi must be real. setting to 1.");
+		damage_multi = 1;
+	} else if(_struct.damage_multi < 1) {
+		show_debug_message("damage_multi must be more than 1. setting to 1.");
+		damage_multi = 1;
+	} else {
+		damage_multi = _struct.damage_multi;
 	}
 	#endregion
 }
