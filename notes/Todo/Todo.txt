@@ -12,13 +12,6 @@ compensate for choppy controller connection somehow.
 
 find a way to switch attacks from manually coded keyframes to sequence events or moments or something.
 
-item #1: attacking.
-make attacks more concise.
-make combo system.
-make sword match with sequences.
-make sword circle player better.
-
-
 binding steps:
 - main menu -
 all players will be bound ascending from 1 in the order they press the bind key.
@@ -44,3 +37,5 @@ living players can sacrifice some hp or something to revive dead players.
 waiting time after player disconnection to kill the character automatically.
 if players come out of rebinding all controllers with a missing slot, kill that character.
 - again, perhaps -
+
+attacks, combos, n' shit:
