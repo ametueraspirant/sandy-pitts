@@ -1,5 +1,5 @@
 if(instance_exists(owner)) {
-	if(!owner.class.is_attacking()) {
+	if(!owner.player.is_attacking()) {
 		x = owner.x;
 		y = owner.y +2;
 		depth = -y -10;

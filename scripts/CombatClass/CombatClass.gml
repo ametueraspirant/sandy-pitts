@@ -42,9 +42,19 @@ function CombatClass() constructor {
 	damage_set = function(_damage) {
 		_this.owner.dam = _damage;
 	}
+	
+		/// @func	look_dir_lock();
+	look_dir_lock = function() {
+		_this.owner.look_dir_locked = true;
+	}
+	
+	///	@func	look_dir_unlock();
+	look_dir_unlock = function() {
+		_this.owner.look_dir_locked = false;
+	}
 	#endregion
 	
-	#region // gear changing functions
+	#region // gear changing functions #UNFINISHED
 	
 	#endregion
 	
@@ -98,7 +108,7 @@ function CombatClass() constructor {
 	}
 	#endregion
 	
-	#region // i-frame functions
+	#region // i-frame functions #UNFINISHED
 	
 	#endregion
 	
@@ -107,6 +117,33 @@ function CombatClass() constructor {
 	is_attacking = function() {
 		return _this.attacking;
 	}
+	
+	/// @func	look_dir_is_locked();
+	look_dir_is_locked = function() {
+		return _this.owner.look_dir_locked;
+	}
+	#endregion
+	
+	#region // functions for controlling look direction and angle
+	/// @func look();
+	look = function() {
+		with(_this.owner) {
+			if(!look_dir_is_locked()) {
+				if(input_player_source_get(player_num) == INPUT_SOURCE.KEYBOARD_AND_MOUSE)look_dir = point_direction(x, y, mouse_x, mouse_y);
+				else if(input_player_source_get(player_num) == INPUT_SOURCE.GAMEPAD)look_dir = input_direction(Verb.aim_left, Verb.aim_right, Verb.aim_up, Verb.aim_down, player_num);
+			}
+			
+			if(look_dir == undefined)look_dir = look_dir_saved;
+			look_dir_saved = look_dir;
+			
+			if(look_dir > 90 && look_dir <= 270)mv_sign = -1;
+			else mv_sign = 1;
+		}
+	}
+	#endregion
+	
+	#region // attack combo manager #UNFINISHED
+	
 	#endregion
 }
 
@@ -123,6 +160,10 @@ function set_combat_stats(_hp, _dam, _act_spd, _size) {
 		damage = _dam;
 		act_spd = _act_spd;
 		size = _size;
+		mv_sign = 1;
+		look_dir = 0;
+		look_dir_saved = 0;
+		look_dir_locked = false;
 	}
 }
 

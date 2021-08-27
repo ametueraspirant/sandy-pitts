@@ -7,9 +7,6 @@ gear = {
 	cur_shield: s_east_knight_shield,
 	cur_weapon: o_east_knight_weapon
 }
-mv_sign = 1;
-look_dir = 0;
-look_dir_saved = 0;
 player_num = 0;
 #endregion
 
@@ -23,7 +20,7 @@ mstrat = new TopDownStrat();
 #endregion
 
 #region // set up combat strat
-class = new CombatClass();
+player = new CombatClass();
 #endregion
 
 #region // set up timer
@@ -50,20 +47,13 @@ state
 	
 	mstrat.move(mv_dir, mv_mag);
 	
-	if(input_player_source_get(player_num) == INPUT_SOURCE.KEYBOARD_AND_MOUSE)look_dir = point_direction(x, y, mouse_x, mouse_y);
-	else if(input_player_source_get(player_num) == INPUT_SOURCE.GAMEPAD)look_dir = input_direction(Verb.aim_left, Verb.aim_right, Verb.aim_up, Verb.aim_down, player_num);
-	
-	if(look_dir == undefined)look_dir = look_dir_saved;
-	look_dir_saved = look_dir;
-	
-	if(look_dir > 90 && look_dir <= 270)mv_sign = -1;
-	else mv_sign = 1;
+	player.look();
 	
 	if(input_check_pressed(Verb.attack, player_num) && state.get_current_state() != "attack")state.change("attack"); // #TODO flesh out attack system using add_child(); and inherit();
 	
 	if(input_check_pressed(Verb.swap_complex, player_num))mstrat.is_complex_toggle(); // #TEST
 })
-.event_set_default_function("end_step", function() { class.acheck(); })
+.event_set_default_function("end_step", function() { player.acheck(); })
 .event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
 	if(gear.cur_helm != noone)draw_sprite_ext(gear.cur_helm, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
@@ -96,7 +86,7 @@ state
 	enter: function() {
 		if(!timer.exists("attack")) {
 			show_debug_message("swoooosh!");
-			class.attack(q_ek_light_1);
+			player.attack(q_ek_light_1);
 			timer.set(1000, "attack", function() {
 				state.change("idle");
 			});
