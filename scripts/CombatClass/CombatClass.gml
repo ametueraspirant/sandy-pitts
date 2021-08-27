@@ -147,6 +147,7 @@ function CombatClass() constructor {
 	#endregion
 }
 
+#region // combat handler functions
 /// @func	set_combat_stats(_hp, _dam, _act_spd, _size);
 /// @param	{int}	_hp			hitpoints
 /// @param	{int}	_dam		attack damage
@@ -374,3 +375,4 @@ function Skill(_struct) constructor {
 	
 	
 }
+#endregion
