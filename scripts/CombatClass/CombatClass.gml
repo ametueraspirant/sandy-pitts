@@ -128,7 +128,7 @@ function CombatClass() constructor {
 	/// @func look();
 	look = function() {
 		with(_this.owner) {
-			if(!look_dir_is_locked()) {
+			if(!other.look_dir_is_locked()) {
 				if(input_player_source_get(player_num) == INPUT_SOURCE.KEYBOARD_AND_MOUSE)look_dir = point_direction(x, y, mouse_x, mouse_y);
 				else if(input_player_source_get(player_num) == INPUT_SOURCE.GAMEPAD)look_dir = input_direction(Verb.aim_left, Verb.aim_right, Verb.aim_up, Verb.aim_down, player_num);
 			}
