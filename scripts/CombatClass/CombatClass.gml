@@ -104,7 +104,7 @@ function CombatClass(_side) constructor {
 				cur_attack = noone;
 				cur_layer = noone;
 				cur_seq = noone;
-				attacking = false;
+				attacking = false; /// hey dumbo put some timers with end_lag and reset_time and loop combo count to zero.
 			}
 		}
 	}
@@ -112,13 +112,15 @@ function CombatClass(_side) constructor {
 	/// @func	attack(_input);
 	/// @param	{enum}	_input	takes in a verb enum for light or heavy.
 	attack = function(_input) {
-		var _att = _this.owner.gear.cur_weapon.attacks;
-		if(_input == Verb.lattack) {
-			_this.attack_index = _att.list[attack_index].link_light;
-			astart(_att.list[attack_index].act);
-		} else if(_input == Verb.hattack) {
-			_this.attack_index = _att.list[attack_index].link_heavy;
-			astart(_att.list[attack_index].act);
+		with(_this) {
+			var _att = owner.gear.cur_weapon.attacks;
+			if(_input == Verb.lattack && _att.list[attack_index].link_light != noone) {
+				attack_index = _att.list[attack_index].link_light;
+				other.astart(_att.list[attack_index].act);
+			} else if(_input == Verb.hattack && _att.list[attack_index].link_heavy != noone) {
+				attack_index = _att.list[attack_index].link_heavy;
+				other.astart(_att.list[attack_index].act);
+			}
 		}
 	}
 	#endregion

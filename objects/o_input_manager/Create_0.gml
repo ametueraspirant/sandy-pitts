@@ -12,7 +12,7 @@ input_default_key(ord("A"), Verb.move_left);
 input_default_key(ord("D"), Verb.move_right);
 input_default_key(vk_space, Verb.dash);
 input_default_mouse_button(mb_left, Verb.lattack);
-input_default_mouse_button(mb_side1, Verb.lattack); // #TEST
+input_default_mouse_button(mb_side1, Verb.hattack); // #TEST
 input_default_mouse_button(mb_right, Verb.defend);
 input_default_key(vk_escape, Verb.menu);
 #endregion

@@ -50,6 +50,8 @@ state
 	player.look();
 	
 	if(input_check_pressed(Verb.lattack, player_num) && state.get_current_state() != "attack")state.change("attack"); // #TODO flesh out attack system using add_child(); and inherit();
+	
+	if(input_check_pressed(Verb.lattack, player_num))show_debug_message("attacked");
 })
 .event_set_default_function("end_step", function() { player.acheck(); })
 .event_set_default_function("draw", function() {
@@ -83,7 +85,6 @@ state
 .add("attack", {
 	enter: function() {
 		if(!timer.exists("attack")) {
-			show_debug_message("swoooosh!");
 			player.attack(Verb.lattack);
 			timer.set(1000, "attack", function() {
 				state.change("idle");
