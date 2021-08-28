@@ -1,11 +1,12 @@
 /// @func	CombatClass();
-function CombatClass() constructor {
+function CombatClass(_side) constructor {
 	var _owner = other;
 	
 	_this = {};
 	
 	with(_this) {
 		owner = _owner;
+		side = _side;
 		attacks = [];
 		gear = { cur_helm: noone, cur_bod: noone, cur_weapon: noone, cur_shield: noone };
 		items = [];
@@ -75,6 +76,7 @@ function CombatClass() constructor {
 				
 				var _box = instance_create_layer(-1000, -1000, cur_layer, o_hitbox);
 				_box.damage = owner.damage;
+				_box.side = side;
 				_box.image_angle = owner.look_dir;
 				sequence_instance_override_object(layer_sequence_get_instance(cur_seq), o_hitbox, _box);
 				

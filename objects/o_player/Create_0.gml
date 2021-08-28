@@ -20,7 +20,7 @@ mstrat = new TopDownStrat();
 #endregion
 
 #region // set up combat strat
-player = new CombatClass();
+player = new CombatClass("hero");
 #endregion
 
 #region // set up timer
