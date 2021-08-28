@@ -60,10 +60,11 @@ function CombatClass(_side) constructor {
 	#endregion
 	
 	#region // attacking functions
-	/// @func	astart(_seq);
+	/// @func	start(_seq);
 	/// @param	{sequence}	_seq	the input sequence
-	astart = function(_seq) {
+	start = function(_seq) {
 		with(_this) {
+			attacking = true;
 			cur_attack = _seq;
 			cur_layer = layer_create(owner.depth);
 			cur_seq = layer_sequence_create(cur_layer, owner.x, owner.y, cur_attack);
@@ -79,14 +80,12 @@ function CombatClass(_side) constructor {
 				_box.side = side;
 				_box.image_angle = owner.look_dir;
 				sequence_instance_override_object(layer_sequence_get_instance(cur_seq), o_hitbox, _box);
-				
-				attacking = true;
 			});
 		}
 	}
 	
-	/// @func	acheck();
-	acheck = function() {
+	/// @func	check();
+	check = function() {
 		with(_this) {
 			if(cur_seq == noone)return;
 			
@@ -104,7 +103,7 @@ function CombatClass(_side) constructor {
 				cur_attack = noone;
 				cur_layer = noone;
 				cur_seq = noone;
-				attacking = false; /// hey dumbo put some timers with end_lag and reset_time and loop combo count to zero.
+				attacking = false;
 			}
 		}
 	}
@@ -112,14 +111,16 @@ function CombatClass(_side) constructor {
 	/// @func	attack(_input);
 	/// @param	{enum}	_input	takes in a verb enum for light or heavy.
 	attack = function(_input) {
-		with(_this) {
-			var _att = owner.gear.cur_weapon.attacks;
-			if(_input == Verb.lattack && _att.list[attack_index].link_light != noone) {
-				attack_index = _att.list[attack_index].link_light;
-				other.astart(_att.list[attack_index].act);
-			} else if(_input == Verb.hattack && _att.list[attack_index].link_heavy != noone) {
-				attack_index = _att.list[attack_index].link_heavy;
-				other.astart(_att.list[attack_index].act);
+		if(!is_attacking()) {
+			with(_this) {
+				var _att = owner.gear.cur_weapon.attacks;
+				if(_input == Verb.lattack && _att.list[attack_index].link_light != noone) {
+					attack_index = _att.list[attack_index].link_light;
+					other.start(_att.list[attack_index].act);
+				} else if(_input == Verb.hattack && _att.list[attack_index].link_heavy != noone) {
+					attack_index = _att.list[attack_index].link_heavy;
+					other.start(_att.list[attack_index].act);
+				}
 			}
 		}
 	}
