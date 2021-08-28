@@ -17,6 +17,7 @@ function CombatClass(_side) constructor {
 		}
 		attacking = false;
 		attack_index = 0;
+		stats = noone;
 	}
 	
 	if(!_this.owner.has_combat_stats) {
@@ -79,6 +80,7 @@ function CombatClass(_side) constructor {
 				var _weapon = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
 				_weapon.owner = owner.id;
 				gear.cur_weapon = _weapon;
+				stats = _weapon.attacks.stats;
 				break;
 				
 				case "shield":
@@ -153,14 +155,20 @@ function CombatClass(_side) constructor {
 			layer_depth(seq._layer, owner.depth - 10);
 			
 			if(layer_sequence_is_finished(seq._cur)) {
-				//other.timer.set()									// <-------------- HERE DOOFUS
-				layer_sequence_destroy(seq._cur);
-				layer_destroy(seq._layer);
-				
-				seq._attack = noone;
-				seq._layer = noone;
-				seq._cur = noone;
-				attacking = false;
+				layer_sequence_pause(seq._cur);
+				if(other.timer.exists("end_lag") && other.timer.exists("reset_time")) {
+					other.timer.set(stats.end_lag, "end_lag", function() {
+						other.timer.set(stats.reset_time, "reset_time", function() {
+							layer_sequence_destroy(seq._cur);
+							layer_destroy(seq._layer);
+							
+							seq._attack = noone;
+							seq._layer = noone;
+							seq._cur = noone;
+							attacking = false;
+						});
+					});
+				}
 			}
 		}
 	}
