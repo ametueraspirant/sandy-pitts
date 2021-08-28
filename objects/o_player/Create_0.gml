@@ -15,10 +15,10 @@ mstrat = new TopDownStrat();
 
 #region // set up combat strat
 player = new CombatClass("hero");
-player.set_default_gear("helm", s_east_knight_hat);
-player.set_default_gear("bod", s_east_knight_body);
-player.set_default_gear("shield", s_east_knight_shield);
-player.set_default_gear("weapon", o_east_knight_weapon);
+player.set_gear("helm", s_east_knight_hat);
+player.set_gear("bod", s_east_knight_body);
+player.set_gear("shield", s_east_knight_shield);
+player.set_gear("weapon", o_east_knight_weapon);
 #endregion
 
 #region // set up timer
@@ -52,9 +52,9 @@ state
 .event_set_default_function("end_step", function() { player.check(); })
 .event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	if(gear.cur_helm != noone)draw_sprite_ext(gear.cur_helm, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	if(gear.cur_bod != noone)draw_sprite_ext(gear.cur_bod, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	if(gear.cur_shield != noone)draw_sprite_ext(gear.cur_shield, 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
+	if(player.get_gear("helm") != noone)draw_sprite_ext(player.get_gear("helm"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
+	if(player.get_gear("bod") != noone)draw_sprite_ext(player.get_gear("bod"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
+	if(player.get_gear("shield") != noone)draw_sprite_ext(player.get_gear("shield"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
 })
 
 // define states

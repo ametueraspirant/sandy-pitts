@@ -58,7 +58,7 @@ function CombatClass(_side) constructor {
 	#endregion
 	
 	#region // gear changing functions #UNFINISHED
-	/// @func	set_default_gear(_type, _id);
+	/// @func	set_gear(_type, _id);
 	///	@param	{string}	_type	gear type input.
 	/// @param	{id}		_id		gear id input.
 	set_gear = function(_type, _id) {
@@ -76,14 +76,34 @@ function CombatClass(_side) constructor {
 				if(gear.cur_weapon != noone) {
 					with(gear.cur_weapon)instance_destroy(); // #TEST probably remove later with weapon swapping.
 				}
-				var _weapon = instance_create_layer(x, y, _entity_layer, _id);
-				gear.cur_weapon = _weapon;
+				var _weapon = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
 				_weapon.owner = owner.id;
+				gear.cur_weapon = _weapon;
 				break;
 				
 				case "shield":
 				gear.cur_shield = _id;
 				break;
+			}
+		}
+	}
+	
+	/// @func	get_gear(_type);
+	/// @param	{string}	_type	gear type input.
+	get_gear = function(_type) {
+		with(_this) {
+			switch(_type) {
+				case "helm":
+				return gear.cur_helm;
+				
+				case "bod":
+				return gear.cur_bod;
+				
+				case "weapon":
+				return gear.cur_weapon;
+				
+				case "shield":
+				return gear.cur_shield;
 			}
 		}
 	}
@@ -133,7 +153,7 @@ function CombatClass(_side) constructor {
 			layer_depth(seq._layer, owner.depth - 10);
 			
 			if(layer_sequence_is_finished(seq._cur)) {
-				other.timer.set()									// <-------------- HERE DOOFUS
+				//other.timer.set()									// <-------------- HERE DOOFUS
 				layer_sequence_destroy(seq._cur);
 				layer_destroy(seq._layer);
 				
@@ -150,7 +170,7 @@ function CombatClass(_side) constructor {
 	attack = function(_input) {
 		if(!is_attacking() && !timer.exists("end_lag")) {
 			with(_this) {
-				var _att = owner.gear.cur_weapon.attacks;
+				var _att = other.get_gear("weapon").attacks;
 				if(_input == Verb.lattack && _att.list[attack_index].link_light != noone) {
 					attack_index = _att.list[attack_index].link_light;
 					other.start(_att.list[attack_index].act);
