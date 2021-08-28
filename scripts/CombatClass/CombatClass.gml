@@ -59,9 +59,9 @@ function CombatClass() constructor {
 	#endregion
 	
 	#region // attacking functions
-	/// @func	attack(_seq);
+	/// @func	astart(_seq);
 	/// @param	{sequence}	_seq	the input sequence
-	attack = function(_seq) {
+	astart = function(_seq) {
 		with(_this) {
 			cur_attack = _seq;
 			cur_layer = layer_create(owner.depth);
@@ -106,6 +106,19 @@ function CombatClass() constructor {
 			}
 		}
 	}
+	
+	/// @func	attack(_input);
+	/// @param	{enum}	_input	takes in a verb enum for light or heavy.
+	attack = function(_input) {
+		var _att = _this.owner.gear.cur_weapon.attacks;
+		if(_input == Verb.lattack) {
+			_this.attack_index = _att.list[attack_index].link_light;
+			astart(_att.list[attack_index].act);
+		} else if(_input == Verb.hattack) {
+			_this.attack_index = _att.list[attack_index].link_heavy;
+			astart(_att.list[attack_index].act);
+		}
+	}
 	#endregion
 	
 	#region // i-frame functions #UNFINISHED
@@ -140,10 +153,6 @@ function CombatClass() constructor {
 			else mv_sign = 1;
 		}
 	}
-	#endregion
-	
-	#region // attack combo manager #UNFINISHED
-	
 	#endregion
 }
 
