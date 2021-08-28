@@ -18,6 +18,7 @@ function CombatClass(_side) constructor {
 		attacking = false;
 		attack_index = 0;
 		stats = noone;
+		list = noone;
 	}
 	
 	if(!_this.owner.has_combat_stats) {
@@ -47,7 +48,7 @@ function CombatClass(_side) constructor {
 		_this.owner.dam = _damage;
 	}
 	
-		/// @func	look_dir_lock();
+	/// @func	look_dir_lock();
 	look_dir_lock = function() {
 		_this.owner.look_dir_locked = true;
 	}
@@ -81,6 +82,7 @@ function CombatClass(_side) constructor {
 				_weapon.owner = owner.id;
 				gear.cur_weapon = _weapon;
 				stats = _weapon.attacks.stats;
+				list = _weapon.attacks.list;
 				break;
 				
 				case "shield":
@@ -153,6 +155,14 @@ function CombatClass(_side) constructor {
 			layer_sequence_x(seq._cur, owner.x);
 			layer_sequence_y(seq._cur, owner.y);
 			layer_depth(seq._layer, owner.depth - 10);
+			
+			if(layer_sequence_get_headpos(seq._cur) == list[attack_index].rotation_lock_threshold) {
+				other.look_dir_lock();
+			}
+			
+			if(layer_sequence_get_headpos(seq._cur) == list[attack_index].rotation_unlock_threshold) {
+				other.look_dir_unlock();
+			}
 			
 			if(layer_sequence_is_finished(seq._cur)) {
 				layer_sequence_pause(seq._cur);
