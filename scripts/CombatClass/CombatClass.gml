@@ -158,6 +158,7 @@ function CombatClass(_side) constructor {
 				layer_sequence_pause(seq._cur);
 				if(!other.timer.exists("end_lag") && !other.timer.exists("reset_time")) {
 					other.timer.set(stats.end_lag, "end_lag", function() {
+						
 						other.timer.set(stats.reset_time, "reset_time", function() {
 							layer_sequence_destroy(seq._cur);
 							layer_destroy(seq._layer);
@@ -165,6 +166,7 @@ function CombatClass(_side) constructor {
 							seq._attack = noone;
 							seq._layer = noone;
 							seq._cur = noone;
+							attack_index = 0;
 							attacking = false;
 						});
 					});
@@ -176,6 +178,26 @@ function CombatClass(_side) constructor {
 	/// @func	attack(_input);
 	/// @param	{enum}	_input	takes in a verb enum for light or heavy.
 	attack = function(_input) {
+		if(timer.exists("reset_time")) {
+			timer.cancel("reset_time");
+			with(_this) {
+				layer_sequence_destroy(seq._cur);
+				layer_destroy(seq._layer);
+				
+				seq._attack = noone;
+				seq._layer = noone;
+				seq._cur = noone;
+				
+				var _att = other.get_gear("weapon").attacks;
+				if(_input == Verb.lattack && _att.list[attack_index].link_light != noone) {
+					attack_index = _att.list[attack_index].link_light;
+					other.start(_att.list[attack_index].act);
+				} else if(_input == Verb.hattack && _att.list[attack_index].link_heavy != noone) {
+					attack_index = _att.list[attack_index].link_heavy;
+					other.start(_att.list[attack_index].act);
+				}
+			}
+		}
 		if(!is_attacking() && !timer.exists("end_lag")) {
 			with(_this) {
 				var _att = other.get_gear("weapon").attacks;
