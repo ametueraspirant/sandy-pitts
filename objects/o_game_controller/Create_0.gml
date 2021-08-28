@@ -59,9 +59,7 @@ state.add("test", {
 			var _player = instance_create_layer(240 + num*20, 160, _entity_layer, o_player);
 			_player.player_num = num;
 			show_debug_message("player " + string(num) + " spawned");
-			var _weapon = instance_create_layer(x, y, _entity_layer, _player.gear.cur_weapon); // #TEST
-			_weapon.owner = _player.id;
-			var _dir = instance_create_layer(x, y, _entity_layer, o_dir_indicator); // #TEST
+			var _dir = instance_create_layer(x, y, _entity_layer, o_dir_indicator);
 			_dir.owner = _player.id;
 			num++;
 		}

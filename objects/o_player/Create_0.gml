@@ -1,12 +1,6 @@
 #region // set stats
 set_base_stats(3, 0.7, 0.5);
 set_combat_stats(5, 1, 1, 1);
-gear = {
-	cur_helm: s_east_knight_hat,
-	cur_bod: s_east_knight_body,
-	cur_shield: s_east_knight_shield,
-	cur_weapon: o_east_knight_weapon
-}
 player_num = 0;
 #endregion
 
@@ -21,6 +15,10 @@ mstrat = new TopDownStrat();
 
 #region // set up combat strat
 player = new CombatClass("hero");
+player.set_default_gear("helm", s_east_knight_hat);
+player.set_default_gear("bod", s_east_knight_body);
+player.set_default_gear("shield", s_east_knight_shield);
+player.set_default_gear("weapon", o_east_knight_weapon);
 #endregion
 
 #region // set up timer

@@ -10,11 +10,13 @@ function CombatClass(_side) constructor {
 		attacks = [];
 		gear = { cur_helm: noone, cur_bod: noone, cur_weapon: noone, cur_shield: noone };
 		items = [];
-		cur_attack = noone;
-		attack_index = 0;
-		cur_layer = noone;
-		cur_seq = noone;
+		seq = {
+			_attack: noone,
+			_layer: noone,
+			_cur: noone
+		}
 		attacking = false;
+		attack_index = 0;
 	}
 	
 	if(!_this.owner.has_combat_stats) {
@@ -56,7 +58,41 @@ function CombatClass(_side) constructor {
 	#endregion
 	
 	#region // gear changing functions #UNFINISHED
+	/// @func	set_default_gear(_type, _id);
+	///	@param	{string}	_type	gear type input.
+	/// @param	{id}		_id		gear id input.
+	set_gear = function(_type, _id) {
+		with(_this) {
+			switch(_type) {
+				case "helm":
+				gear.cur_helm = _id;
+				break;
+				
+				case "bod":
+				gear.cur_bod = _id;
+				break;
+				
+				case "weapon":
+				if(gear.cur_weapon != noone) {
+					with(gear.cur_weapon)instance_destroy(); // #TEST probably remove later with weapon swapping.
+				}
+				var _weapon = instance_create_layer(x, y, _entity_layer, _id);
+				gear.cur_weapon = _weapon;
+				_weapon.owner = owner.id;
+				break;
+				
+				case "shield":
+				gear.cur_shield = _id;
+				break;
+			}
+		}
+	}
 	
+	///	@func	swap_gear(_id);
+	/// @param	{id}	_id	gear id input.
+	swap_gear = function(_id) {
+		
+	}
 	#endregion
 	
 	#region // attacking functions
@@ -65,21 +101,21 @@ function CombatClass(_side) constructor {
 	start = function(_seq) {
 		with(_this) {
 			attacking = true;
-			cur_attack = _seq;
-			cur_layer = layer_create(owner.depth);
-			cur_seq = layer_sequence_create(cur_layer, owner.x, owner.y, cur_attack);
+			seq._attack = _seq;
+			seq._layer = layer_create(owner.depth);
+			seq._cur = layer_sequence_create(seq._layer, owner.x, owner.y, seq._attack);
 			
 			other.timer.set(1, "set attack", function() {
-				layer_sequence_angle(cur_seq, owner.look_dir);
-				layer_sequence_speedscale(cur_seq, 0.9 + owner.act_spd * 0.1);
-				layer_sequence_xscale(cur_seq, 0.9 + owner.size * 0.1);
-				layer_sequence_yscale(cur_seq, 0.9 + owner.size * 0.1);
+				layer_sequence_angle(seq._cur, owner.look_dir);
+				layer_sequence_speedscale(seq._cur, 0.9 + owner.act_spd * 0.1);
+				layer_sequence_xscale(seq._cur, 0.9 + owner.size * 0.1);
+				layer_sequence_yscale(seq._cur, 0.9 + owner.size * 0.1);
 				
-				var _box = instance_create_layer(-1000, -1000, cur_layer, o_hitbox);
+				var _box = instance_create_layer(-1000, -1000, seq._layer, o_hitbox);
 				_box.damage = owner.damage;
 				_box.side = side;
 				_box.image_angle = owner.look_dir;
-				sequence_instance_override_object(layer_sequence_get_instance(cur_seq), o_hitbox, _box);
+				sequence_instance_override_object(layer_sequence_get_instance(seq._cur), o_hitbox, _box);
 			});
 		}
 	}
@@ -87,22 +123,23 @@ function CombatClass(_side) constructor {
 	/// @func	check();
 	check = function() {
 		with(_this) {
-			if(cur_seq == noone)return;
-			
-			layer_sequence_angle(cur_seq, owner.look_dir);
-			layer_sequence_x(cur_seq, owner.x);
-			layer_sequence_y(cur_seq, owner.y);
-			layer_depth(cur_layer, owner.depth - 10);
-			
 			other.timer.check();
 			
-			if(layer_sequence_is_finished(cur_seq)) {
-				layer_sequence_destroy(cur_seq);
-				layer_destroy(cur_layer);
+			if(seq._cur == noone)return;
+			
+			layer_sequence_angle(seq._cur, owner.look_dir);
+			layer_sequence_x(seq._cur, owner.x);
+			layer_sequence_y(seq._cur, owner.y);
+			layer_depth(seq._layer, owner.depth - 10);
+			
+			if(layer_sequence_is_finished(seq._cur)) {
+				other.timer.set()									// <-------------- HERE DOOFUS
+				layer_sequence_destroy(seq._cur);
+				layer_destroy(seq._layer);
 				
-				cur_attack = noone;
-				cur_layer = noone;
-				cur_seq = noone;
+				seq._attack = noone;
+				seq._layer = noone;
+				seq._cur = noone;
 				attacking = false;
 			}
 		}
@@ -111,7 +148,7 @@ function CombatClass(_side) constructor {
 	/// @func	attack(_input);
 	/// @param	{enum}	_input	takes in a verb enum for light or heavy.
 	attack = function(_input) {
-		if(!is_attacking()) {
+		if(!is_attacking() && !timer.exists("end_lag")) {
 			with(_this) {
 				var _att = owner.gear.cur_weapon.attacks;
 				if(_input == Verb.lattack && _att.list[attack_index].link_light != noone) {
