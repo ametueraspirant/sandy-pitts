@@ -3,6 +3,12 @@
 
 global.debug = false;
 global.players = [];
+
+enum team {
+	heroes,
+	villains,
+	breakables
+}
 #endregion
 
 #region // create other game instances

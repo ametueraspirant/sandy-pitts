@@ -14,7 +14,7 @@ mstrat = new TopDownStrat();
 #endregion
 
 #region // set up combat strat
-player = new CombatClass("hero");
+player = new CombatClass(team.heroes);
 player.set_gear("helm", s_east_knight_hat);
 player.set_gear("bod", s_east_knight_body);
 player.set_gear("shield", s_east_knight_shield);
