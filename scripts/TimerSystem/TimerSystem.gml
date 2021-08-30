@@ -9,16 +9,6 @@ function TimerSystem() constructor {
 		name = "__timersystem__";
 	}
 	
-	/// @func	set(_dur, _name, _func);
-	/// @param	{int}	_dur	the duration of the timer to set
-	/// @param	{any}	_name	the name of the timer
-	/// @param	{func}	_func	the function to run when the timer runs out
-	set = function(_dur, _name, _func) {
-		if(index(_name) != undefined)array_push(_this.timers, new __timer(_dur, _name, _func));
-		show_debug_message(_name);
-		return true;
-	}
-	
 	/// @func	get(_name);
 	/// @param	{any}	_name	the name of the timer
 	get = function(_name) {
@@ -39,6 +29,15 @@ function TimerSystem() constructor {
 			}
 		}
 		return undefined;
+	}
+	
+	/// @func	set(_dur, _name, _func);
+	/// @param	{int}	_dur	the duration of the timer to set
+	/// @param	{any}	_name	the name of the timer
+	/// @param	{func}	_func	the function to run when the timer runs out
+	set = function(_dur, _name, _func) {
+		if(index(_name) == undefined)array_push(_this.timers, new __timer(_dur, _name, _func));
+		return true;
 	}
 	
 	/// @func	execute(_name);
