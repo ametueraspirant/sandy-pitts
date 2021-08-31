@@ -1,5 +1,5 @@
 Somsahaun's SnowState - https://github.com/sohomsahaun/SnowState/wiki
 
-JujuAdams' Input Manager - https://github.com/JujuAdams/Input/wiki/Quick-Start-Guide
+JujuAdams' Input Manager - https://github.com/JujuAdams/Input/
 
 This Project - https://github.com/ametueraspirant/sandy-pitts
