@@ -1,0 +1,29 @@
+to set it up simply call `timer = new TimerSystem();`
+I use timer as the variable name but it can be anything.
+the default timers use milliseconds, but can be changed during creation such as `new TimerSystem(TICK_SETTING.FRAMES);` using the provided enum.
+ 
+what I like about this is it can be created inside other structs and objects to have multiple local timers, or it can be assigned to a global variable for a game wide timer system.
+ 
+here's an example timer set:
+if(!place_meeting(x, y - 1, o_floor)) {
+	timer.set(100, "coyote_time", function() {
+		change_state("falling"); // I dunno just some state machine 
+	}
+}
+sets a timer for 100 milliseconds, and then executes a state change to falling. basic coyote time.
+ 
+just a note, I'm using a string name for "coyote_time" here, but the input name can be anything, so long as it doesn't already exist in the timer object. so you can use enums, macros, or even the result of math equations, so long as when you're checking you use the same notation as what was set.
+ 
+it also supports timers that create other timers and even timers that create themselves for a looping timer execution.
+ 
+timer.set(dur, name, func, [dur_type]); input the duration, timer name, and the function to execute once the timer has run out. [dur_type] can optionally be called to input the timer with a specific type, but it will default to the timer object's default setting specified on creation.
+ 
+timer.check(); should be called every frame, in order to check a timer has run its course and execute and delete it.
+ 
+timer.exists(name); returns true if a timer of that name is currently running.
+ 
+timer.execute(name); finds the timer, and executes it early before deleting it.
+ 
+timer.cancel(name); finds the timer, and cancels it without executing it. useful if you've made a timer that executes itself and you want to break out of the loop.
+ 
+timer.time(name, [type]); returns the remaining time the timer has before execution. by default it will return with the same duration type the timer was created in, but you can input [type] using the TIMER_TYPE enum to return as that type instead.

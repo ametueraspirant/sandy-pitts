@@ -1,4 +1,5 @@
-/// @func TimerSystem();
+/// @author	Amet
+/// @func	TimerSystem();
 /// @param	{int}	[_default_type]	default timer input type. defaults to milliseconds.
 function TimerSystem(_default_type = TIMER_DEFAULT_SETTING) constructor {
 	var _owner = other;
@@ -51,8 +52,9 @@ function TimerSystem(_default_type = TIMER_DEFAULT_SETTING) constructor {
 	execute = function(_name) {
 		var _i = index(_name);
 		if(_i != undefined) {
-			_this.timers[_i].func();
-			array_delete(_this.timers, _i, 1);
+			var _t = _this.timers[int];
+			array_delete(_this.timers, int, 1);
+			_t.func();
 			show_debug_message("timer has been executed early and deleted from the list.");
 			return true;
 		} else {
@@ -89,10 +91,10 @@ function TimerSystem(_default_type = TIMER_DEFAULT_SETTING) constructor {
 	/// @func	time(_name);
 	/// @param	{any}	_name		the name of the timer
 	/// @param	{int}	[_type]		the optional type to return time in. returns based on what type the timer was created with.
-	time = function(_name, _type) {
+	time = function(_name, _type = undefined) {
 		var _t = get(_name);
 		if(_t != undefined) {
-			return __decode_time(_t.start_time + __encode_time(_t) - current_time, _t.dur_type);
+			return __decode_time(_t.start_time + __encode_time(_t) - current_time, (_type != undefined) ? _type : _t.dur_type);
 		} else {
 			show_debug_message("no timer exists with this name.");
 			return false;
@@ -103,8 +105,10 @@ function TimerSystem(_default_type = TIMER_DEFAULT_SETTING) constructor {
 	check = function() {
 		for(var int = 0; int < array_length(_this.timers); int++) {
 			if(_this.timers[int].start_time + __encode_time(_this.timers[int]) <= current_time) {
-				_this.timers[int].func();
+				var _t = _this.timers[int];
 				array_delete(_this.timers, int, 1);
+				_t.func();
+				
 			}
 		}
 	}
@@ -115,13 +119,13 @@ function TimerSystem(_default_type = TIMER_DEFAULT_SETTING) constructor {
 	/// @param	{struct}	_timer	the input timer
 	__encode_time = function(_timer) {
 		switch(_timer.dur_type) {
-			case TICK_SETTING.MILLISECONDS:
+			case TIMER_TYPE.MILLISECONDS:
 			return _timer.dur;
 			
-			case TICK_SETTING.SECONDS:
+			case TIMER_TYPE.SECONDS:
 			return (_timer.dur * 1000);
 			
-			case TICK_SETTING.FRAMES:
+			case TIMER_TYPE.FRAMES:
 			return ((_timer.dur * 1000) / (room_speed));
 		}
 	}
@@ -131,13 +135,13 @@ function TimerSystem(_default_type = TIMER_DEFAULT_SETTING) constructor {
 	/// @param	{int}	_type	the type to convert to
 	__decode_time = function(_time, _type) {
 		switch(_type) {
-			case TICK_SETTING.MILLISECONDS:
+			case TIMER_TYPE.MILLISECONDS:
 			return _time;
 			
-			case TICK_SETTING.SECONDS:
+			case TIMER_TYPE.SECONDS:
 			return (_time / 1000);
 			
-			case TICK_SETTING.FRAMES:
+			case TIMER_TYPE.FRAMES:
 			return ((_time / 1000) * (room_speed));
 			
 		}
@@ -159,11 +163,11 @@ function __timer(_dur, _name, _func, _dur_type) constructor {
 }
 
 #region // Settings
-enum TICK_SETTING {
+enum TIMER_TYPE {
 	MILLISECONDS,
 	SECONDS,
 	FRAMES
 }
 
-#macro TIMER_DEFAULT_SETTING TICK_SETTING.MILLISECONDS
+#macro TIMER_DEFAULT_SETTING TIMER_TYPE.MILLISECONDS
 #endregion

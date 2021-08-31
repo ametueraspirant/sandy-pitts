@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Functions",
-    "path": "folders/Scripts/MotionStrat/Functions.yy",
+    "name": "timer",
+    "path": "folders/Scripts/MotionStrat/Functions/timer.yy",
   },
   "resourceVersion": "1.0",
   "name": "TimerSystem",
