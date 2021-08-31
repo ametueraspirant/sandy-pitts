@@ -2,12 +2,10 @@
 /// @func	TimerSystem();
 /// @param	{int}	[_default_type]	default timer input type. defaults to milliseconds.
 function TimerSystem(_default_type = TIMER_DEFAULT_SETTING) constructor {
-	var _owner = other;
 	
 	_this = {};
 	
 	with(_this) {
-		owner = _owner;
 		default_type = _default_type;
 		timers = [];
 		name = "__timersystem__";
