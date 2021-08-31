@@ -1,10 +1,13 @@
-function TimerSystem() constructor {
+/// @func TimerSystem();
+/// @param	{int}	[_type]	default timer input type. defaults to milliseconds.
+function TimerSystem(_type = TIMER_DEFAULT_SETTING) constructor {
 	var _owner = other;
 	
 	_this = {};
 	
 	with(_this) {
 		owner = _owner;
+		type = _type;
 		timers = [];
 		name = "__timersystem__";
 	}
@@ -85,7 +88,7 @@ function TimerSystem() constructor {
 	time = function(_name) {
 		var _t = get(_name);
 		if(_t != undefined) {
-			return _t.time + _t.dur - current_time;
+			return _t.start_time + _t.dur - current_time;
 		} else {
 			show_debug_message("no timer exists with this name.");
 			return false;
@@ -95,7 +98,7 @@ function TimerSystem() constructor {
 	/// @func	check();
 	check = function() {
 		for(var int = 0; int < array_length(_this.timers); int++) {
-			if(_this.timers[int].time + _this.timers[int].dur <= current_time) {
+			if(_this.timers[int].start_time + _this.timers[int].dur <= current_time) {
 				_this.timers[int].func();
 				array_delete(_this.timers, int, 1);
 			}
@@ -108,8 +111,18 @@ function TimerSystem() constructor {
 /// @param	{str}	_name	the name of the timer
 /// @aparam	{func}	_func	the function to run when the timer duration runs out
 function __timer(_dur, _name, _func) constructor {
-	time = current_time;
+	start_time = current_time;
 	name = _name;
 	dur = _dur;
 	func = _func;
 }
+
+#region // Settings
+enum TICK_SETTING {
+	MILLISECONDS,
+	SECONDS,
+	FRAMES
+}
+
+#macro TIMER_DEFAULT_SETTING TICK_SETTING.MILLISECONDS
+#endregion
