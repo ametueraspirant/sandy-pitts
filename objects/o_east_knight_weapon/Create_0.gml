@@ -9,7 +9,7 @@ attacks = new AttackList({
 					 cancel_threshold: 5,
 					 rotation_lock_threshold: 5,
 					 rotation_unlock_threshold: 18,
-					 charge_time: 0,
+					 charge_end_frame: 0,
 					 charge_min: 0,
 					 damage_multi: 1 }),
 		new Attack({ act: q_ek_light_2,
@@ -18,7 +18,7 @@ attacks = new AttackList({
 					 cancel_threshold: 5,
 					 rotation_lock_threshold: 5,
 					 rotation_unlock_threshold: 18,
-					 charge_time: 0,
+					 charge_end_frame: 0,
 					 charge_min: 0,
 					 damage_multi: 1 }),
 		new Attack({ act: q_ek_heavy,
@@ -27,7 +27,7 @@ attacks = new AttackList({
 					 cancel_threshold: 0,
 					 rotation_lock_threshold: 5,
 					 rotation_unlock_threshold: 18,
-					 charge_time: 15,
+					 charge_end_frame: 15,
 					 charge_min: 8,
 					 damage_multi: 1.5 }) //# seq is unfinished
 	]
