@@ -89,9 +89,9 @@
                       ],"parent":{"name":"position","path":"sequences/q_ek_heavy/q_ek_heavy.yy",},"resourceVersion":"1.2","name":null,"tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
             ],"resourceVersion":"1.0","resourceType":"KeyframeStore<RealKeyframe>",},"trackColour":4282970712,"inheritsTrackColour":true,"builtinName":14,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","name":"position","tags":[],"resourceType":"GMRealTrack",},
         {"keyframes":{"Keyframes":[
-              {"id":"2a4e5d07-1265-4921-bdc4-e88f73a1b3c6","Key":0.0,"Length":34.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"EmbeddedAnimCurve":{"function":1,"channels":[
+              {"id":"cac6dbe7-333d-4f2a-8338-66e2f9effdfa","Key":0.0,"Length":34.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"EmbeddedAnimCurve":{"function":1,"channels":[
                         {"colour":4290799884,"visible":true,"points":[
-                            {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.0,"y":-95.0,},
+                            {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.0,"y":-90.0,},
                             {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.5294118,"y":0.0,},
                             {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":1.0,"y":0.0,},
                           ],"resourceVersion":"1.0","name":"angle","tags":[],"resourceType":"GMAnimCurveChannel",},
