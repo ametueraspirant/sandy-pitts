@@ -299,7 +299,7 @@ function AttackList(_struct) constructor {
 								  cancel_threshold: 0,
 								  rotation_lock_threshold: 0,
 								  rotation_unlock_threshold: 0,
-								  charge_time: 0,
+								  charge_end_frame: 0,
 								  charge_min: 0,
 								  damage_multi: 1 }));
 	
@@ -432,20 +432,20 @@ function Attack(_struct) constructor {
 	}
 	#endregion
 	
-	#region // check that charge_time exists and is a real positive integer and set it.
+	#region // check that charge_end_frame exists and is a real positive integer and set it.
 	if(!variable_struct_exists(_struct, "charge_time")) {
-		charge_time = 0;
-	} else if(!is_real(_struct.charge_time)) {
+		charge_end_frame = 0;
+	} else if(!is_real(_struct.charge_end_frame)) {
 		show_debug_message("charge_time must be real. setting to 0.");
-		charge_time = 0;
-	} else if(frac(_struct.charge_time) != 0) {
+		charge_end_frame = 0;
+	} else if(frac(_struct.charge_end_frame) != 0) {
 		show_debug_message("charge_time must be an integer. rounding down.");
-		cancel_treshold = int64(_struct.charge_time);
-	} else if(_struct.charge_time < 0) {
-		show_debug_message("charge_time must be positive. setting to 0.");
-		charge_time = 0;
+		cancel_treshold = int64(_struct.charge_end_frame);
+	} else if(_struct.charge_end_frame < 0) {
+		show_debug_message("charge_end_frame must be positive. setting to 0.");
+		charge_end_frame = 0;
 	} else {
-		charge_time = _struct.charge_time;
+		charge_end_frame = _struct.charge_end_frame;
 	}
 	#endregion
 	
