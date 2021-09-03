@@ -164,6 +164,8 @@ function CombatClass(_side) constructor {
 				other.look_dir_unlock();
 			}
 			
+			
+			
 			if(layer_sequence_is_finished(seq._cur)) {
 				layer_sequence_pause(seq._cur);
 				if(!other.timer.exists("end_lag") && !other.timer.exists("reset_time")) {
@@ -198,25 +200,25 @@ function CombatClass(_side) constructor {
 				seq._layer = noone;
 				seq._cur = noone;
 				
-				var _att = other.get_gear("weapon").attacks;
-				if(_input == Verb.lattack && _att.list[attack_index].link_light != noone) {
-					attack_index = _att.list[attack_index].link_light;
-					other.start(_att.list[attack_index].act);
-				} else if(_input == Verb.hattack && _att.list[attack_index].link_heavy != noone) {
-					attack_index = _att.list[attack_index].link_heavy;
-					other.start(_att.list[attack_index].act);
+				var _att = other.get_gear("weapon").attacks.list;
+				if(_input == Verb.lattack && _att[attack_index].link_light != noone) {
+					attack_index = _att[attack_index].link_light;
+					other.start(_att[attack_index].act);
+				} else if(_input == Verb.hattack && _att[attack_index].link_heavy != noone) {
+					attack_index = _att[attack_index].link_heavy;
+					other.start(_att[attack_index].act);
 				}
 			}
 		}
 		if(!is_attacking() && !timer.exists("end_lag")) {
 			with(_this) {
-				var _att = other.get_gear("weapon").attacks;
-				if(_input == Verb.lattack && _att.list[attack_index].link_light != noone) {
-					attack_index = _att.list[attack_index].link_light;
-					other.start(_att.list[attack_index].act);
-				} else if(_input == Verb.hattack && _att.list[attack_index].link_heavy != noone) {
-					attack_index = _att.list[attack_index].link_heavy;
-					other.start(_att.list[attack_index].act);
+				var _att = other.get_gear("weapon").attacks.list;
+				if(_input == Verb.lattack && _att[attack_index].link_light != noone) {
+					attack_index = _att[attack_index].link_light;
+					other.start(_att[attack_index].act);
+				} else if(_input == Verb.hattack && _att[attack_index].link_heavy != noone) {
+					attack_index = _att[attack_index].link_heavy;
+					other.start(_att[attack_index].act);
 				}
 			}
 		}
