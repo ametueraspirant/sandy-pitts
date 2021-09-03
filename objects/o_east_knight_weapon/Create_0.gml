@@ -3,7 +3,8 @@ owner = noone;
 attacks = new AttackList({
 	stats: { end_lag: 50, reset_time: 500, light_start: q_ek_light_1, heavy_start: q_ek_heavy },
 	list: [
-		new Attack({ act: q_ek_light_1,	
+		new Attack({ type: 
+					 act: q_ek_light_1,	
 					 link_light: q_ek_light_2,
 					 link_heavy: q_ek_heavy,
 					 cancel_threshold: 5,

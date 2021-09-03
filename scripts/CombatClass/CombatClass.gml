@@ -340,7 +340,31 @@ function AttackList(_struct) constructor {
 }
 
 function Attack(_struct) constructor {
-	type = "attack";
+	#region // check and set input type.
+	if(!variable_struct_exists(_struct, "type")) {
+		show_debug_message("variable type does not exist or is misnamed. setting type to INSTANT.");
+		type = ACTIONTYPE.INSTANT;
+	} else {
+		switch(_struct.type) {
+			case ACTIONTYPE.INSTANT:
+			type = ACTIONTYPE.INSTANT;
+			break;
+			
+			case ACTIONTYPE.HELD:
+			type = ACTIONTYPE.HELD;
+			break;
+			
+			case ACTIONTYPE.CHARGE:
+			type = ACTIONTYPE.CHARGE;
+			break;
+			
+			default:
+			show_debug_message("type must use the ACTIONTYPE enum. setting to INSTANT.");
+			type = ACTIONTYPE.INSTANT;
+			break;
+		}
+	}
+	#endregion
 	
 	#region // check that act exists and is a sequence and set it.
 	if(!variable_struct_exists(_struct, "act")) {
@@ -482,8 +506,40 @@ function Attack(_struct) constructor {
 }
 
 function Skill(_struct) constructor {
-	type = "skill";
+	#region // check and set input type.
+	if(!variable_struct_exists(_struct, "type")) {
+		show_debug_message("variable type does not exist or is misnamed. setting type to INSTANT.");
+		type = ACTIONTYPE.INSTANT;
+	} else {
+		switch(_struct.type) {
+			case ACTIONTYPE.INSTANT:
+			type = ACTIONTYPE.INSTANT;
+			break;
+			
+			case ACTIONTYPE.HELD:
+			type = ACTIONTYPE.HELD;
+			break;
+			
+			case ACTIONTYPE.CHARGE:
+			type = ACTIONTYPE.CHARGE;
+			break;
+			
+			default:
+			show_debug_message("type must use the ACTIONTYPE enum. setting to INSTANT.");
+			type = ACTIONTYPE.INSTANT;
+			break;
+		}
+	}
+	#endregion
 	
 	
+}
+#endregion
+
+#region // attack/skill type enum
+enum ACTIONTYPE {
+  INSTANT,
+  HELD,
+  CHARGE
 }
 #endregion
