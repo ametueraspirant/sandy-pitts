@@ -28,5 +28,3 @@ attacks = new AttackList({
 					 damage_multi: 0.2 })
 	]
 });
-
-show_debug_message(attacks);
