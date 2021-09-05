@@ -156,15 +156,26 @@ function CombatClass(_side) constructor {
 			layer_sequence_y(seq._cur, owner.y);
 			layer_depth(seq._layer, owner.depth - 10);
 			
-			if(layer_sequence_get_headpos(seq._cur) == list[attack_index].rotation_lock_threshold) {
+			if(layer_sequence_get_headpos(seq._cur) == list[attack_index].attack_frame) {
 				other.look_dir_lock();
 			}
 			
-			if(layer_sequence_get_headpos(seq._cur) == list[attack_index].rotation_unlock_threshold) {
+			if(layer_sequence_get_headpos(seq._cur) == list[attack_index].reset_frame) {
 				other.look_dir_unlock();
 			}
 			
+			if(list[attack_index].type == ACTIONTYPE.HELD) {
+				
+			}
 			
+			if(list[attack_index].type == ACTIONTYPE.CHARGE) {
+				if(layer_sequence_get_headpos(seq.cur) == list[attack_index].charge_min) {
+					
+				}
+				if(layer_sequence_get_headpos(seq.cur) == list[attack_index].charge_frame) {
+					
+				}
+			}
 			
 			if(layer_sequence_is_finished(seq._cur)) {
 				layer_sequence_pause(seq._cur);
