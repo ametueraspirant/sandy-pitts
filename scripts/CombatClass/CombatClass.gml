@@ -429,7 +429,7 @@ function Attack(_struct) constructor {
 		show_debug_message("attack_frame must be an integer. rounding down.");
 		attack_frame = int64(_struct.attack_frame);
 	} else if(_struct.attack_frame < 0) {
-		show_debug_message("rotation_lock_threshold must be positive. setting to 0.");
+		show_debug_message("attack_frame must be positive. setting to 0.");
 		attack_frame = 0;
 	} else {
 		attack_frame = _struct.attack_frame;
