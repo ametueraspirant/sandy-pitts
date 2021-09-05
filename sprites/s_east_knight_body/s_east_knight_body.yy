@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "items",
-    "path": "folders/Entities/Sets/Knight/East Knight/items.yy",
+    "name": "body",
+    "path": "folders/Entities/Sets/Knight/East Knight/items/body.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_east_knight_body",

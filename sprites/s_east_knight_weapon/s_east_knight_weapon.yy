@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "items",
-    "path": "folders/Entities/Sets/Knight/East Knight/items.yy",
+    "name": "weapon",
+    "path": "folders/Entities/Sets/Knight/East Knight/items/weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_east_knight_weapon",

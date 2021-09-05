@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "items",
-    "path": "folders/Entities/Sets/Knight/East Knight/items.yy",
+    "name": "weapon",
+    "path": "folders/Entities/Sets/Knight/East Knight/items/weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_east_knight_weapon",
