@@ -23,8 +23,8 @@ attacks = new AttackList({
 					 link_heavy: noone,
 					 attack_frame: 5,
 					 reset_frame: 18,
-					 charge_end_frame: 15,
 					 charge_min: 8,
+					 charge_end: 15,
 					 damage_multi: 0.2 }) //# seq is unfinished
 	]
 });

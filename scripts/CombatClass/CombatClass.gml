@@ -172,7 +172,7 @@ function CombatClass(_side) constructor {
 				if(layer_sequence_get_headpos(seq.cur) == list[attack_index].charge_min) {
 					
 				}
-				if(layer_sequence_get_headpos(seq.cur) == list[attack_index].charge_frame) {
+				if(layer_sequence_get_headpos(seq.cur) == list[attack_index].charge_end) {
 					
 				}
 			}
@@ -467,25 +467,6 @@ function Attack(_struct) constructor {
 	}
 	#endregion
 	
-	#region // check that attack_type = CHARGE, that charge_end_frame exists, and that it is a real positive integer, then set it.
-	if(_struct.type = ACTIONTYPE.CHARGE) {
-		if(!variable_struct_exists(_struct, "charge_time")) {
-			charge_end_frame = 0;
-		} else if(!is_real(_struct.charge_end_frame)) {
-			show_debug_message("charge_time must be real. setting to 0.");
-			charge_end_frame = 0;
-		} else if(frac(_struct.charge_end_frame) != 0) {
-			show_debug_message("charge_time must be an integer. rounding down.");
-			cancel_treshold = int64(_struct.charge_end_frame);
-		} else if(_struct.charge_end_frame < 0) {
-			show_debug_message("charge_end_frame must be positive. setting to 0.");
-			charge_end_frame = 0;
-		} else {
-			charge_end_frame = _struct.charge_end_frame;
-		}
-	}
-	#endregion
-	
 	#region // check that attack_type = CHARGE, that charge_min exists, and that it is a real positive integer, then set it.
 	if(_struct.type = ACTIONTYPE.CHARGE) {
 		if(!variable_struct_exists(_struct, "charge_min")) {
@@ -501,6 +482,25 @@ function Attack(_struct) constructor {
 			charge_min = 0;
 		} else {
 			charge_min = _struct.charge_min;
+		}
+	}
+	#endregion
+	
+	#region // check that attack_type = CHARGE, that charge_end exists, and that it is a real positive integer, then set it.
+	if(_struct.type = ACTIONTYPE.CHARGE) {
+		if(!variable_struct_exists(_struct, "charge_end")) {
+			charge_end = 0;
+		} else if(!is_real(_struct.charge_end)) {
+			show_debug_message("charge_end must be real. setting to 0.");
+			charge_end = 0;
+		} else if(frac(_struct.charge_end) != 0) {
+			show_debug_message("charge_end must be an integer. rounding down.");
+			charge_end = int64(_struct.charge_end);
+		} else if(_struct.charge_end < 0) {
+			show_debug_message("charge_end must be positive. setting to 0.");
+			charge_end = 0;
+		} else {
+			charge_end = _struct.charge_end;
 		}
 	}
 	#endregion
