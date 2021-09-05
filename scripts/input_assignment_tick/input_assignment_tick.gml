@@ -3,11 +3,8 @@
 /// @param [leaveVerb]
 /// @param [sortPlayers]
 
-function input_assignment_tick(_min_players, _max_players)
-{
-    var _leave_verb = (argument_count > 2) ? argument[2] : -1;
-	var _sort_players = (argument_count > 3) ? argument[3] : true;
-	
+function input_assignment_tick(_min_players, _max_players, _leave_verb = -1, _sort_players = true)
+{	
 	if (_max_players < 1)
     {
         __input_error("Invalid maximum player count provided (", _max_players, ")");

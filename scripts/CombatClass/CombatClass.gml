@@ -151,28 +151,37 @@ function CombatClass(_side) constructor {
 			
 			if(seq._cur == noone)return;
 			
+			var _att = list[attack_index]
+			
 			layer_sequence_angle(seq._cur, owner.look_dir);
 			layer_sequence_x(seq._cur, owner.x);
 			layer_sequence_y(seq._cur, owner.y);
 			layer_depth(seq._layer, owner.depth - 10);
 			
-			if(layer_sequence_get_headpos(seq._cur) == list[attack_index].attack_frame) {
+			if(layer_sequence_get_headpos(seq._cur) == _att.attack_frame) {
 				other.look_dir_lock();
 			}
 			
-			if(layer_sequence_get_headpos(seq._cur) == list[attack_index].reset_frame) {
+			if(layer_sequence_get_headpos(seq._cur) == _att.reset_frame) {
 				other.look_dir_unlock();
 			}
 			
-			if(list[attack_index].type == ACTIONTYPE.HELD) {
-				
+			if(_att.type == ACTIONTYPE.HELD) {
+				// add aiming line that extends with hold time.
+				if(layer_sequence_get_headpos(seq._cur) == _att.hold_frame) {
+					if(input_check(Verb.hattack)) {
+						layer_sequence_pause(seq._cur);
+					} else {
+						layer_sequence_play(seq._cur);
+					}
+				}
 			}
 			
-			if(list[attack_index].type == ACTIONTYPE.CHARGE) {
-				if(layer_sequence_get_headpos(seq.cur) == list[attack_index].charge_min) {
-					
+			if(_att.type == ACTIONTYPE.CHARGE) {
+				if(layer_sequence_get_headpos(seq._cur) == _att.charge_min) {
+					layer_sequence_headpos(seq._cur, _att.charge_end);
 				}
-				if(layer_sequence_get_headpos(seq.cur) == list[attack_index].charge_end) {
+				if(layer_sequence_get_headpos(seq._cur) == _att.charge_end) {
 					
 				}
 			}
