@@ -178,6 +178,7 @@ function CombatClass(_side) constructor {
 			}
 			
 			if(_att.type == ACTIONTYPE.CHARGE) {
+				// add charge vibration scaling up with charge time.
 				if(layer_sequence_get_headpos(seq._cur) == _att.charge_min) {
 					layer_sequence_headpos(seq._cur, _att.charge_end);
 				}

@@ -25,7 +25,7 @@ attacks = new AttackList({
 					 reset_frame: 18,
 					 charge_min: 8,
 					 charge_end: 15,
-					 damage_multi: 0.2 }) //# seq is unfinished
+					 damage_multi: 0.2 })
 	]
 });
 
