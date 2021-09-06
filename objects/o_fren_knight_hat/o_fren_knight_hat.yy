@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "s_fren_knight_hat",
+    "path": "sprites/s_fren_knight_hat/s_fren_knight_hat.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

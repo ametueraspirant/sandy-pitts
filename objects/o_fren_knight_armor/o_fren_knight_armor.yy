@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "s_fren_knight_armor",
+    "path": "sprites/s_fren_knight_armor/s_fren_knight_armor.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
