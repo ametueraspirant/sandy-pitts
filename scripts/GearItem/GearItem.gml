@@ -1,5 +1,5 @@
 /// @func Gear(_struct);
-function Gear(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0, _z_displace = 0) constructor {
+function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0, _z_displace = 0) constructor {
 	var _owner = other.id;
 	
 	_this = {};
@@ -32,10 +32,14 @@ function Gear(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0, _z_
 	.event_set_default_function("draw", function() {
 		if(instance_exists(_this.wielder) && !_this.wielder.player.is_attacking())draw_self();
 	})
+	
+	// follow, follow_locked, and ground states, as well as "put into backpack/attach stats to player and self destroy.
 	#endregion
 }
 
-/// @func Item(_struct);
-function Item() constructor {
-	
+enum GEARTYPES {
+	WEAPON,
+	ARMOR,
+	ITEM,
+	SKILL
 }
