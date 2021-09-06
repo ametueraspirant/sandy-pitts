@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Gear and Combat.yy",
   },
   "resourceVersion": "1.0",
-  "name": "ItemClass",
+  "name": "GearItem",
   "tags": [],
   "resourceType": "GMScript",
 }

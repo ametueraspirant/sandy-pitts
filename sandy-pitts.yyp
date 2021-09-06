@@ -210,7 +210,7 @@
     {"id":{"name":"s_spanghem_knight_weapon","path":"sprites/s_spanghem_knight_weapon/s_spanghem_knight_weapon.yy",},"order":2,},
     {"id":{"name":"s_hunter_ranger_body","path":"sprites/s_hunter_ranger_body/s_hunter_ranger_body.yy",},"order":0,},
     {"id":{"name":"o_tree2_test","path":"objects/o_tree2_test/o_tree2_test.yy",},"order":13,},
-    {"id":{"name":"ItemClass","path":"scripts/ItemClass/ItemClass.yy",},"order":1,},
+    {"id":{"name":"GearItem","path":"scripts/GearItem/GearItem.yy",},"order":1,},
     {"id":{"name":"input_binding_scan_tick","path":"scripts/input_binding_scan_tick/input_binding_scan_tick.yy",},"order":4,},
     {"id":{"name":"s_grass_test","path":"sprites/s_grass_test/s_grass_test.yy",},"order":4,},
     {"id":{"name":"SnowState","path":"scripts/SnowState/SnowState.yy",},"order":1,},
