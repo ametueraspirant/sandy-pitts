@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Fren Knight",
-    "path": "folders/Entities/Sets/Knight/Fren Knight.yy",
+    "name": "weapon",
+    "path": "folders/Entities/Sets/Knight/Fren Knight/items/weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_fren_knight_weapon",
