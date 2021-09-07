@@ -41,7 +41,6 @@ function TimerSystem(_default_type = TIMER_DEFAULT_SETTING) constructor {
 	/// @param	{int}	[_dur_type]	the type of timer to set. defaults to global timer type.
 	set = function(_dur, _name, _func, _dur_type = _this.default_type) {
 		if(index(_name) == undefined)array_push(_this.timers, new __timer(_dur, _name, _func, _dur_type));
-		show_debug_message(time(_name));
 		return true;
 	}
 	
@@ -53,7 +52,6 @@ function TimerSystem(_default_type = TIMER_DEFAULT_SETTING) constructor {
 			var _t = _this.timers[int];
 			array_delete(_this.timers, int, 1);
 			_t.func();
-			show_debug_message("timer has been executed early and deleted from the list.");
 			return true;
 		} else {
 			show_debug_message("no timer exists with this name.");
@@ -67,7 +65,6 @@ function TimerSystem(_default_type = TIMER_DEFAULT_SETTING) constructor {
 		var _i = index(_name);
 		if(_i != undefined) {
 			array_delete(_this.timers, _i, 1);
-			show_debug_message("timer has been cancelled, it will not execute.");
 			return true;
 		} else {
 			show_debug_message("no timer exists with this name.");
