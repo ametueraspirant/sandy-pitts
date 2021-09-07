@@ -45,8 +45,12 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 	}
 	#endregion
 	
+	#region // timer system
+	timer = new TimerSystem();
+	#endregion
+	
 	#region // state machine
-	state = new SnowState("dropped");
+	state = new SnowState("ground");
 	
 	state
 	.event_set_default_function("step", function() {
@@ -65,7 +69,19 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 		if(instance_exists(_this.wielder) && !_this.wielder.player.is_attacking())draw_self();
 	})
 	
-	// follow, follow_locked, and ground states, as well as "put into backpack/attach stats to player and self destroy.
+	// ground state. weapon drops to ground if moving from other states.
+	.add("ground", {
+		
+	})
+	.add("follow", {
+		
+	})
+	.add("follow_locked", {
+		
+	})
+	.add("backpack", {
+		
+	});
 	#endregion
 }
 
