@@ -13,6 +13,38 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 		z_displace = _z_displace;
 	}
 	
+	#region // base variable alter functions
+	/// @func	set_wielder(_wielder);
+	/// @param	{id}	_wielder	the current holder of the weapon. noone for dropped.
+	set_wielder = function(_wielder) {
+		_this.wielder = _wielder;
+	}
+	
+	/// @func	set_follow_angle(_angle);
+	/// @param	{int}	_angle	the angle to follow at. default 0.
+	set_follow_angle = function(_angle) {
+		_this.follow_angle = _angle;
+	}
+	
+	/// @func	set_x_displace(_displace);
+	/// @param	{int}	_displace	the x displace value to set. default 0.
+	set_x_displace = function(_displace) {
+		_this.x_displace = _displace;
+	}
+	
+	/// @func	set_y_displace(_displace);
+	/// @param	{int}	_displace	the y displace value to set. default 0.
+	set_y_displace = function(_displace) {
+		_this.y_displace = _displace;
+	}
+	
+	/// @func	set_z_displace(_displace);
+	/// @param	{int}	_displace	the z displace value to set. default 0.
+	set_z_displace = function(_displace) {
+		_this.z_displace = _displace;
+	}
+	#endregion
+	
 	#region // state machine
 	state = new SnowState("dropped");
 	
