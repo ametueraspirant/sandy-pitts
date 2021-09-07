@@ -13,6 +13,10 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 		z_displace = _z_displace;
 	}
 	
+	#region // timer system
+	timer = new TimerSystem();
+	#endregion
+	
 	#region // base variable alter functions
 	/// @func	set_wielder(_wielder);
 	/// @param	{id}	_wielder	the current holder of the weapon. noone for dropped.
@@ -45,26 +49,11 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 	}
 	#endregion
 	
-	#region // timer system
-	timer = new TimerSystem();
-	#endregion
-	
 	#region // state machine
 	state = new SnowState("ground");
 	
 	state
-	.event_set_default_function("step", function() {
-		with(_this) {
-			if(wielder != noone) {
-				if(wielder.player.is_attacking()) {
-					owner.x = wielder.x + x_displace;
-					owner.y = wielder.y + y_displace;
-					owner.depth = -owner.y - z_displace;
-					owner.image_angle = wielder.look_dir + follow_angle;
-				}
-			}
-		}
-	})
+	.event_set_default_function("end_step", function() {})
 	.event_set_default_function("draw", function() {
 		if(instance_exists(_this.wielder) && !_this.wielder.player.is_attacking())draw_self();
 	})
@@ -74,13 +63,42 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 		
 	})
 	.add("follow", {
-		
+		end_step: function() {
+			with(_this) {
+				if(wielder != noone) {
+					owner.x = wielder.x + x_displace;
+					owner.y = wielder.y + y_displace;
+					owner.depth = -owner.y - z_displace;
+					owner.image_angle = wielder.look_dir + follow_angle;
+				}
+			}
+		}
 	})
 	.add("follow_locked", {
-		
+		end_step: function() {
+			with(_this) {
+				if(wielder != noone) {
+					owner.x = wielder.x + x_displace;
+					owner.y = wielder.y + y_displace;
+					owner.depth = -owner.y - z_displace;
+				}
+			}
+		}
 	})
 	.add("backpack", {
-		
+		enter: function() { //TODO add enter code if needed
+			
+		},
+		end_step: function() {
+			with(_this) {
+				if(wielder != noone) {
+					owner.x = wielder.x + x_displace;
+					owner.y = wielder.y + y_displace;
+					owner.depth = -owner.y - z_displace;
+				}
+			}
+		},
+		draw: function() {}
 	});
 	#endregion
 }
