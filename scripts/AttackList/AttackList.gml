@@ -34,7 +34,8 @@ function AttackList(_struct) constructor {
 	#region // create list with an extra object at array 0 that contains an empty attack with only link variables.
 	list = [];
 	
-	array_push(list, new Attack({ act: noone,	
+	array_push(list, new Attack({ type: noone,
+								  action: noone,	
 								  link_light: stats.light_start,
 								  link_heavy: stats.heavy_start,
 								  attack_frame: 0,
@@ -54,7 +55,7 @@ function AttackList(_struct) constructor {
 		if(list[_i].link_light != noone) {					//	make sure that link_light isn't noone.
 			var _l = 0;
 			repeat(array_length(list)) {
-				if(list[_l].act == list[_i].link_light) {	//	check to see if the current index contains the sequence in the link_light reference.
+				if(list[_l].action == list[_i].link_light) {	//	check to see if the current index contains the sequence in the link_light reference.
 					list[_i].link_light = _l;				//	set link_light to equal the index of the attack sequence that matches.
 					break;
 				}
@@ -65,7 +66,7 @@ function AttackList(_struct) constructor {
 		if(list[_i].link_heavy != noone) {					//	make sure that link_heavy isn't noone.
 			var _h = 0;
 			repeat(array_length(list)) {
-				if(list[_h].act == list[_i].link_heavy) {	//	check to see if the current index contains the sequence in the link_heavy reference.
+				if(list[_h].action == list[_i].link_heavy) {	//	check to see if the current index contains the sequence in the link_heavy reference.
 					list[_i].link_heavy = _h;				//	set link_heavy to equal the index of the attack sequence that matches.
 					break;
 				}
@@ -106,16 +107,16 @@ function Attack(_struct) constructor {
 	}
 	#endregion
 	
-	#region // check that act exists and is a sequence and set it.
-	if(!variable_struct_exists(_struct, "act")) {
-		act = noone;
-	} else if(_struct.act == noone) {
-		act = _struct.act;
-	} else if(!sequence_exists(_struct.act)) {
-		show_debug_message("act must be a sequence or 'noone.' setting to 'noone.'");
-		act = noone;
+	#region // check that action exists and is a sequence and set it.
+	if(!variable_struct_exists(_struct, "action")) {
+		action = noone;
+	} else if(_struct.action == noone) {
+		action = _struct.action;
+	} else if(!sequence_exists(_struct.action)) {
+		show_debug_message("action must be a sequence or 'noone.' setting to 'noone.'");
+		action = noone;
 	} else {
-		act = _struct.act;
+		action = _struct.action;
 	}
 	#endregion
 	
@@ -194,7 +195,7 @@ function Attack(_struct) constructor {
 	#endregion
 	
 	#region // check that attack_type = CHARGE, that charge_min exists, and that it is a real positive integer, then set it.
-	if(_struct.type = ACTIONTYPE.CHARGE) {
+	if(variable_struct_exists(_struct, "type") && _struct.type == ACTIONTYPE.CHARGE) {
 		if(!variable_struct_exists(_struct, "charge_min")) {
 			charge_min = 0;
 		} else if(!is_real(_struct.charge_min)) {
@@ -213,7 +214,7 @@ function Attack(_struct) constructor {
 	#endregion
 	
 	#region // check that attack_type = CHARGE, that charge_end exists, and that it is a real positive integer, then set it.
-	if(_struct.type = ACTIONTYPE.CHARGE) {
+	if(variable_struct_exists(_struct, "type") && _struct.type == ACTIONTYPE.CHARGE) {
 		if(!variable_struct_exists(_struct, "charge_end")) {
 			charge_end = 0;
 		} else if(!is_real(_struct.charge_end)) {
@@ -232,7 +233,7 @@ function Attack(_struct) constructor {
 	#endregion
 	
 	#region // check that attack_type = HELD, that hold_frame exists, and that it is a real positive integer, then set it.
-	if(_struct.type = ACTIONTYPE.CHARGE) {
+	if(variable_struct_exists(_struct, "type") && _struct.type == ACTIONTYPE.CHARGE) {
 		if(!variable_struct_exists(_struct, "hold_frame")) {
 			hold_frame = 0;
 		} else if(!is_real(_struct.hold_frame)) {

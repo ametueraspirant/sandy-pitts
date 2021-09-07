@@ -225,10 +225,10 @@ function CombatClass(_side) constructor {
 				var _att = other.get_gear("weapon").attacks.list;
 				if(_input == Verb.lattack && _att[attack_index].link_light != noone) {
 					attack_index = _att[attack_index].link_light;
-					other.start(_att[attack_index].act);
+					other.start(_att[attack_index].action);
 				} else if(_input == Verb.hattack && _att[attack_index].link_heavy != noone) {
 					attack_index = _att[attack_index].link_heavy;
-					other.start(_att[attack_index].act);
+					other.start(_att[attack_index].action);
 				}
 			}
 		}
@@ -237,10 +237,10 @@ function CombatClass(_side) constructor {
 				var _att = other.get_gear("weapon").attacks.list;
 				if(_input == Verb.lattack && _att[attack_index].link_light != noone) {
 					attack_index = _att[attack_index].link_light;
-					other.start(_att[attack_index].act);
+					other.start(_att[attack_index].action);
 				} else if(_input == Verb.hattack && _att[attack_index].link_heavy != noone) {
 					attack_index = _att[attack_index].link_heavy;
-					other.start(_att[attack_index].act);
+					other.start(_att[attack_index].action);
 				}
 			}
 		}
