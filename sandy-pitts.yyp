@@ -32,6 +32,7 @@
     {"id":{"name":"o_player","path":"objects/o_player/o_player.yy",},"order":0,},
     {"id":{"name":"__input_csv_to_array","path":"scripts/__input_csv_to_array/__input_csv_to_array.yy",},"order":10,},
     {"id":{"name":"input_bindings_read","path":"scripts/input_bindings_read/input_bindings_read.yy",},"order":1,},
+    {"id":{"name":"c_drop_bounce","path":"animcurves/c_drop_bounce/c_drop_bounce.yy",},"order":7,},
     {"id":{"name":"o_demo_cam","path":"objects/o_demo_cam/o_demo_cam.yy",},"order":5,},
     {"id":{"name":"input_axis_threshold_get","path":"scripts/input_axis_threshold_get/input_axis_threshold_get.yy",},"order":0,},
     {"id":{"name":"s_fire_wizard_body","path":"sprites/s_fire_wizard_body/s_fire_wizard_body.yy",},"order":0,},

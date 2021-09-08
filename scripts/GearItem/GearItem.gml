@@ -11,6 +11,7 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 		x_displace = _x_displace;
 		y_displace = _y_displace;
 		z_displace = _z_displace;
+		curve = noone;
 	}
 	
 	#region // timer system
