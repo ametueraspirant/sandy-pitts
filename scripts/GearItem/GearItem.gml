@@ -1,4 +1,9 @@
-/// @func Gear(_struct);
+/// @func	Gear(_struct);
+/// @param	{id}	_wielder		the wielder or user of the item.
+/// @param	{int}	_follow_angle	the angle offset to follow at. 0 for image_angle.
+/// @param	{int}	_x_displace		the x to displace where the item follows at. default 0.
+/// @param	{int}	_y_displace		the y to displace where the item follows at. default 0.
+/// @param	{int}	_z_displace		the z to displace where the item follows at. default 0.
 function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0, _z_displace = 0) constructor {
 	var _owner = other.id;
 	
@@ -102,11 +107,61 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 		draw: function() {}
 	});
 	#endregion
+	
+	#region // state wrapper functions
+	pick_up = function(_id) {
+		set_wielder(_id);
+		switch(_this.owner.gear_type) {
+			case GEARTYPES.WEAPON:
+			
+			break;
+			
+			case GEARTYPES.ARMOuR:
+			
+			break;
+			
+			case GEARTYPES.ITEM:
+			
+			break;
+			
+			case GEARTYPES.SKILL:
+			
+			break;
+		}
+	}
+	
+	drop = function() {
+		
+	}
+	#endregion
+}
+
+function set_item_stats(_struct) {
+	with(other) {
+		gear_type = _struct.type;
+		switch(gear_type) {
+			case GEARTYPES.WEAPON:
+			
+			break;
+			
+			case GEARTYPES.ARMOuR:
+			
+			break;
+			
+			case GEARTYPES.ITEM:
+			
+			break;
+			
+			case GEARTYPES.SKILL:
+			
+			break;
+		}
+	}
 }
 
 enum GEARTYPES {
 	WEAPON,
-	ARMOR,
+	ARMOuR,
 	ITEM,
 	SKILL
 }

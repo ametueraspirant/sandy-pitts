@@ -1,4 +1,8 @@
-owner = noone;
+set_item_stats({ type: GEARTYPES.WEAPON });
+
+gear = new GearItem(noone, -95);
+
+owner = noone; // #TODO remove
 
 attacks = new AttackList({
 	stats: { end_lag: 50, reset_time: 500, light_start: q_ek_light_1, heavy_start: q_ek_heavy },
