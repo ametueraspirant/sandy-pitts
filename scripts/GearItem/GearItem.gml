@@ -98,7 +98,8 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 				if(wielder != noone) {
 					owner.x = wielder.x + x_displace;
 					owner.y = wielder.y + y_displace;
-					owner.depth = -owner.y - z_displace;
+					owner.image_xscale = wielder.mv_sign;
+					owner.depth = -owner.y + z_displace;
 				}
 			}
 		},
@@ -115,7 +116,7 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 				if(wielder != noone) {
 					owner.x = wielder.x + x_displace;
 					owner.y = wielder.y + y_displace;
-					owner.depth = -owner.y - z_displace;
+					owner.depth = -owner.y + z_displace;
 				}
 			}
 		},
