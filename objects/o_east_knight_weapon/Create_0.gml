@@ -6,7 +6,7 @@ attacks = new AttackList({
 	stats: { end_lag: 50, reset_time: 500, light_start: q_ek_inst_1, heavy_start: q_ek_charge },
 	list: [
 		new Attack({ type: ACTIONTYPE.INSTANT,
-					 action: q_ek_light_1,
+					 action: q_ek_inst_1,
 					 link_light: q_ek_inst_2,
 					 link_heavy: q_ek_charge,
 					 attack_frame: 5,
