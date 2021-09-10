@@ -54,9 +54,9 @@ state
 })
 .event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	if(player.get_gear("helm") != noone)draw_sprite_ext(player.get_gear("helm"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
+	/*if(player.get_gear("helm") != noone)draw_sprite_ext(player.get_gear("helm"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
 	if(player.get_gear("bod") != noone)draw_sprite_ext(player.get_gear("bod"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	if(player.get_gear("shield") != noone)draw_sprite_ext(player.get_gear("shield"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
+	if(player.get_gear("shield") != noone)draw_sprite_ext(player.get_gear("shield"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);*/
 })
 
 // define states

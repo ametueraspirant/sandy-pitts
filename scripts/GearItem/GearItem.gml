@@ -1,4 +1,4 @@
-/// @func	Gear(_struct);
+/// @func	GearItem(_wielder, _follow_angle, _x_displace, _y_displace, _z_displace);
 /// @param	{id}	_wielder		the wielder or user of the item.
 /// @param	{int}	_follow_angle	the angle offset to follow at. 0 for image_angle.
 /// @param	{int}	_x_displace		the x to displace where the item follows at. default 0.
@@ -60,9 +60,7 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 	
 	state
 	.event_set_default_function("end_step", function() {})
-	.event_set_default_function("draw", function() {
-		if(instance_exists(_this.wielder) && !_this.wielder.player.is_attacking())draw_self();
-	})
+	.event_set_default_function("draw", function() {})
 	
 	// ground state. weapon drops to ground if moving from other states.
 	.add("ground", {
@@ -82,10 +80,13 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 				if(wielder != noone) {
 					owner.x = wielder.x + x_displace;
 					owner.y = wielder.y + y_displace;
-					owner.depth = -owner.y - z_displace;
+					owner.depth = -owner.y + z_displace;
 					owner.image_angle = wielder.look_dir + follow_angle;
 				}
 			}
+		},
+		draw: function() {
+			if(instance_exists(_this.wielder) && !_this.wielder.player.is_attacking())with(_this.owner)draw_self();
 		},
 		leave: function() {
 			owner.image_angle = 0;
@@ -100,10 +101,13 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 					owner.depth = -owner.y - z_displace;
 				}
 			}
+		},
+		draw: function() {
+			with(_this.owner)draw_self();
 		}
 	})
 	.add("backpack", {
-		enter: function() { //TODO add enter code if needed
+		enter: function() {
 			
 		},
 		end_step: function() {
@@ -127,7 +131,15 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 			state.change("follow");
 			break;
 			
-			case GEARTYPES.ARMOuR:
+			case GEARTYPES.HELM:
+			state.change("follow_locked");
+			break;
+			
+			case GEARTYPES.BODY:
+			state.change("follow_locked");
+			break;
+			
+			case GEARTYPES.SHIELD:
 			state.change("follow_locked");
 			break;
 			
@@ -143,6 +155,14 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 	drop = function() {
 		set_wielder(noone);
 		state.change("ground");
+	}
+	
+	end_step = function() {
+		state.end_step();
+	}
+	
+	draw = function() {
+		state.draw();
 	}
 	#endregion
 }
@@ -160,7 +180,9 @@ function set_item_stats(_struct) {
 
 enum GEARTYPES {
 	WEAPON,
-	ARMOuR,
+	HELM,
+	BODY,
+	SHIELD,
 	ITEM,
 	SKILL
 }

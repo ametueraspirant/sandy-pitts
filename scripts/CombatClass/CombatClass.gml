@@ -64,30 +64,41 @@ function CombatClass(_side) constructor {
 	/// @func	set_gear(_type, _id);
 	///	@param	{string}	_type	gear type input.
 	/// @param	{id}		_id		gear id input.
-	set_gear = function(_type, _id) {
+	set_gear = function(_type, _id) { // #WARNING. this functions is only to be used once, to create any initial gear the players start with. use swap_gear() instead to change gear.
 		with(_this) {
 			switch(_type) {
 				case "helm":
-				gear.cur_helm = _id;
+				if(gear.cur_helm == noone) {
+					var _helm = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
+					_helm.gear.pick_up(owner.id);
+					gear.cur_helm = _helm;
+				}
 				break;
 				
 				case "bod":
-				gear.cur_bod = _id;
+				if(gear.cur_bod == noone) {
+					var _bod = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
+					_bod.gear.pick_up(owner.id);
+					gear.cur_bod = _bod;
+				}
 				break;
 				
 				case "weapon":
-				if(gear.cur_weapon != noone) {
-					with(gear.cur_weapon)instance_destroy(); // #TEST probably remove later with weapon swapping.
+				if(gear.cur_weapon == noone) {
+					var _weapon = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
+					_weapon.gear.pick_up(owner.id);
+					gear.cur_weapon = _weapon;
+					stats = _weapon.attacks.stats;
+					list = _weapon.attacks.list;
 				}
-				var _weapon = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
-				_weapon.owner = owner.id;
-				gear.cur_weapon = _weapon;
-				stats = _weapon.attacks.stats;
-				list = _weapon.attacks.list;
 				break;
 				
 				case "shield":
-				gear.cur_shield = _id;
+				if(gear.cur_shield == noone) {
+					var _shield = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
+					_shield.gear.pick_up(owner.id);
+					gear.cur_shield = _shield;
+				}
 				break;
 			}
 		}
@@ -125,23 +136,25 @@ function CombatClass(_side) constructor {
 	/// @param	{sequence}	_seq	the input sequence
 	start = function(_seq) {
 		with(_this) {
-			attacking = true;
-			seq._attack = _seq;
-			seq._layer = layer_create(owner.depth);
-			seq._cur = layer_sequence_create(seq._layer, owner.x, owner.y, seq._attack);
-			
-			other.timer.set(1, "set attack", function() {
-				layer_sequence_angle(seq._cur, owner.look_dir);
-				layer_sequence_speedscale(seq._cur, 0.9 + owner.act_spd * 0.1);
-				layer_sequence_xscale(seq._cur, 0.9 + owner.size * 0.1);
-				layer_sequence_yscale(seq._cur, 0.9 + owner.size * 0.1);
+			if(gear.cur_weapon != noone) {
+				attacking = true;
+				seq._attack = _seq;
+				seq._layer = layer_create(owner.depth);
+				seq._cur = layer_sequence_create(seq._layer, owner.x, owner.y, seq._attack);
 				
-				var _box = instance_create_layer(-1000, -1000, seq._layer, o_hitbox);
-				_box.damage = owner.damage;
-				_box.side = side;
-				_box.image_angle = owner.look_dir;
-				sequence_instance_override_object(layer_sequence_get_instance(seq._cur), o_hitbox, _box);
-			});
+				other.timer.set(1, "set attack", function() {
+					layer_sequence_angle(seq._cur, owner.look_dir);
+					layer_sequence_speedscale(seq._cur, 0.9 + owner.act_spd * 0.1);
+					layer_sequence_xscale(seq._cur, 0.9 + owner.size * 0.1);
+					layer_sequence_yscale(seq._cur, 0.9 + owner.size * 0.1);
+					
+					var _box = instance_create_layer(-1000, -1000, seq._layer, o_hitbox);
+					_box.damage = owner.damage;
+					_box.side = side;
+					_box.image_angle = owner.look_dir;
+					sequence_instance_override_object(layer_sequence_get_instance(seq._cur), o_hitbox, _box);
+				});
+			}
 		}
 	}
 	
