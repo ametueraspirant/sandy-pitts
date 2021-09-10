@@ -77,7 +77,7 @@
                             {"th0":0.0,"th1":0.2,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
                             {"th0":-0.2,"th1":0.0,"tv0":0.0,"tv1":0.0,"x":1.0,"y":0.0,},
                           ],"resourceVersion":"1.0","name":"y","tags":[],"resourceType":"GMAnimCurveChannel",},
-                      ],"parent":{"name":"position","path":"sequences/q_ek_light_2/q_ek_light_2.yy",},"resourceVersion":"1.2","name":"Position","tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},"1":{"EmbeddedAnimCurve":{"function":1,"channels":[
+                      ],"parent":{"name":"position","path":"sequences/q_ek_inst_2/q_ek_inst_2.yy",},"resourceVersion":"1.2","name":"Position","tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},"1":{"EmbeddedAnimCurve":{"function":1,"channels":[
                         {"colour":4290799884,"visible":true,"points":[
                             {"th0":0.0,"th1":0.0294,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
                             {"th0":-0.0294,"th1":0.1706,"tv0":0.0,"tv1":0.0,"x":0.15,"y":-4.0,},
@@ -90,7 +90,7 @@
                             {"th0":0.0,"th1":0.2,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
                             {"th0":-0.2,"th1":0.0,"tv0":0.0,"tv1":0.0,"x":1.0,"y":0.0,},
                           ],"resourceVersion":"1.0","name":"y","tags":[],"resourceType":"GMAnimCurveChannel",},
-                      ],"parent":{"name":"position","path":"sequences/q_ek_light_2/q_ek_light_2.yy",},"resourceVersion":"1.2","name":null,"tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
+                      ],"parent":{"name":"position","path":"sequences/q_ek_inst_2/q_ek_inst_2.yy",},"resourceVersion":"1.2","name":null,"tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
             ],"resourceVersion":"1.0","resourceType":"KeyframeStore<RealKeyframe>",},"trackColour":4282970712,"inheritsTrackColour":true,"builtinName":14,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","name":"position","tags":[],"resourceType":"GMRealTrack",},
         {"keyframes":{"Keyframes":[
               {"id":"faadbc97-708c-444c-9691-1a4b829c6d42","Key":0.0,"Length":34.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"EmbeddedAnimCurve":{"function":1,"channels":[
@@ -102,7 +102,7 @@
                             {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.5,"y":-95.0,},
                             {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":1.0,"y":-95.0,},
                           ],"resourceVersion":"1.0","name":"angle","tags":[],"resourceType":"GMAnimCurveChannel",},
-                      ],"parent":{"name":"rotation","path":"sequences/q_ek_light_2/q_ek_light_2.yy",},"resourceVersion":"1.2","name":"Rotation","tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
+                      ],"parent":{"name":"rotation","path":"sequences/q_ek_inst_2/q_ek_inst_2.yy",},"resourceVersion":"1.2","name":"Rotation","tags":[],"resourceType":"GMAnimCurve",},"RealValue":0.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
             ],"resourceVersion":"1.0","resourceType":"KeyframeStore<RealKeyframe>",},"trackColour":4282970712,"inheritsTrackColour":true,"builtinName":8,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","name":"rotation","tags":[],"resourceType":"GMRealTrack",},
         {"keyframes":{"Keyframes":[
               {"id":"b4ba7538-c467-4bca-af42-4b7fc0314dba","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":true,"Channels":{"0":{"EmbeddedAnimCurve":null,"RealValue":1.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},"1":{"EmbeddedAnimCurve":null,"RealValue":1.0,"AnimCurveId":null,"resourceVersion":"1.0","resourceType":"RealKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<RealKeyframe>",},
@@ -128,7 +128,7 @@
     "path": "folders/Entities/Sets/Knight/East Knight/attacks.yy",
   },
   "resourceVersion": "1.3",
-  "name": "q_ek_light_2",
+  "name": "q_ek_inst_2",
   "tags": [],
   "resourceType": "GMSequence",
 }

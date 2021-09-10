@@ -121,7 +121,7 @@
     "path": "folders/Entities/Sets/Knight/East Knight/attacks.yy",
   },
   "resourceVersion": "1.3",
-  "name": "q_ek_heavy",
+  "name": "q_ek_charge",
   "tags": [],
   "resourceType": "GMSequence",
 }
