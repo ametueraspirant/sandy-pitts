@@ -16,7 +16,7 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 		x_displace = _x_displace;
 		y_displace = _y_displace;
 		z_displace = _z_displace;
-		curve = noone;
+		curve = c_drop_bounce;
 	}
 	
 	#region // timer system
@@ -66,9 +66,17 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 	
 	// ground state. weapon drops to ground if moving from other states.
 	.add("ground", {
-		
+		enter: function() {
+			
+		},
+		end_step: function() {
+			
+		}
 	})
 	.add("follow", {
+		enter: function() {
+			
+		},
 		end_step: function() {
 			with(_this) {
 				if(wielder != noone) {
@@ -78,6 +86,9 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 					owner.image_angle = wielder.look_dir + follow_angle;
 				}
 			}
+		},
+		leave: function() {
+			owner.image_angle = 0;
 		}
 	})
 	.add("follow_locked", {
@@ -113,25 +124,25 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 		set_wielder(_id);
 		switch(_this.owner.gear_type) {
 			case GEARTYPES.WEAPON:
-			
+			state.change("follow");
 			break;
 			
 			case GEARTYPES.ARMOuR:
-			
+			state.change("follow_locked");
 			break;
 			
 			case GEARTYPES.ITEM:
-			
+			state.change("backpack");
 			break;
-			
 			case GEARTYPES.SKILL:
-			
+			state.change("backpack");
 			break;
 		}
 	}
 	
 	drop = function() {
-		
+		set_wielder(noone);
+		state.change("ground");
 	}
 	#endregion
 }
@@ -139,23 +150,11 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 function set_item_stats(_struct) {
 	with(other) {
 		gear_type = _struct.type;
-		switch(gear_type) {
-			case GEARTYPES.WEAPON:
-			
-			break;
-			
-			case GEARTYPES.ARMOuR:
-			
-			break;
-			
-			case GEARTYPES.ITEM:
-			
-			break;
-			
-			case GEARTYPES.SKILL:
-			
-			break;
-		}
+		if(variable_struct_exists(_struct, "damage"))gear_damage = _struct.damage;
+		if(variable_struct_exists(_struct, "armour"))gear_defense = _struct.defense;
+		if(variable_struct_exists(_struct, "hp"))gear_hp = _struct.hp;
+		if(variable_struct_exists(_struct, "spd"))gear_spd = _struct.spd;
+		if(variable_struct_exists(_struct, "size"))gear_size = _struct.size;
 	}
 }
 

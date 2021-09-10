@@ -37,7 +37,6 @@ state
 	depth = -bbox_bottom;
 	
 	timer.check();
-	player.look();
 	
 	var mv_dir = input_direction(Verb.move_left, Verb.move_right, Verb.move_up, Verb.move_down, player_num);
 	if(mv_dir == undefined)mv_dir = 0;
@@ -49,7 +48,10 @@ state
 	if(input_check_pressed(Verb.lattack, player_num, 5))player.attack(Verb.lattack);
 	if(input_check_pressed(Verb.hattack, player_num, 5))player.attack(Verb.hattack);
 })
-.event_set_default_function("end_step", function() { player.check(); })
+.event_set_default_function("end_step", function() { 
+	player.check(); 
+	player.look();
+})
 .event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
 	if(player.get_gear("helm") != noone)draw_sprite_ext(player.get_gear("helm"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
