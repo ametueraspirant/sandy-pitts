@@ -1,11 +1,14 @@
 {
   "spriteId": {
-    "name": "s_fren_knight_armor",
-    "path": "sprites/s_fren_knight_armor/s_fren_knight_armor.yy",
+    "name": "s_hitbox_1",
+    "path": "sprites/s_hitbox_1/s_hitbox_1.yy",
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "s_hitbox_1",
+    "path": "sprites/s_hitbox_1/s_hitbox_1.yy",
+  },
   "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,
@@ -20,15 +23,17 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "body",
-    "path": "folders/Entities/Sets/Knight/Fren Knight/items/body.yy",
+    "name": "Sets",
+    "path": "folders/Entities/Sets.yy",
   },
   "resourceVersion": "1.0",
-  "name": "o_fren_knight_armor",
+  "name": "o_hitbox_1",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -1,11 +1,14 @@
 {
   "spriteId": {
-    "name": "s_fren_knight_hat",
-    "path": "sprites/s_fren_knight_hat/s_fren_knight_hat.yy",
+    "name": "s_hitbox",
+    "path": "sprites/s_hitbox/s_hitbox.yy",
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "s_hitbox",
+    "path": "sprites/s_hitbox/s_hitbox.yy",
+  },
   "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,
@@ -22,17 +25,15 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "hat",
-    "path": "folders/Entities/Sets/Knight/Fren Knight/items/hat.yy",
+    "name": "Sets",
+    "path": "folders/Entities/Sets.yy",
   },
   "resourceVersion": "1.0",
-  "name": "o_fren_knight_hat",
+  "name": "o_hitbox",
   "tags": [],
   "resourceType": "GMObject",
 }

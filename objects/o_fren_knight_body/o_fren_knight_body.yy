@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_fren_knight_hat",
-    "path": "sprites/s_fren_knight_hat/s_fren_knight_hat.yy",
+    "name": "s_fren_knight_body",
+    "path": "sprites/s_fren_knight_body/s_fren_knight_body.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,11 +28,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "hat",
-    "path": "folders/Entities/Sets/Knight/Fren Knight/items/hat.yy",
+    "name": "body",
+    "path": "folders/Entities/Sets/Knight/Fren Knight/items/body.yy",
   },
   "resourceVersion": "1.0",
-  "name": "o_fren_knight_hat",
+  "name": "o_fren_knight_body",
   "tags": [],
   "resourceType": "GMObject",
 }
