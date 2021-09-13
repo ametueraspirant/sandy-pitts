@@ -165,7 +165,8 @@ function CombatClass(_side) constructor {
 			
 			if(seq._cur == noone)return;
 			
-			var _att = list[attack_index]
+			var _att = list[attack_index];
+			var _frame = layer_sequence_get_headpos(seq._cur);
 			
 			layer_sequence_angle(seq._cur, owner.look_dir);
 			layer_sequence_x(seq._cur, owner.x);
@@ -182,7 +183,7 @@ function CombatClass(_side) constructor {
 			
 			if(_att.type == ACTIONTYPE.HELD) {
 				// add aiming line that extends with hold time.
-				if(layer_sequence_get_headpos(seq._cur) == _att.hold_frame) {
+				if(_frame >= _att.hold_frame && _frame < _att.hold_frame + 1) {
 					if(input_check(Verb.hattack)) {
 						layer_sequence_pause(seq._cur);
 					} else {
@@ -193,10 +194,10 @@ function CombatClass(_side) constructor {
 			
 			if(_att.type == ACTIONTYPE.CHARGE) {
 				// add charge vibration scaling up with charge time.
-				if(layer_sequence_get_headpos(seq._cur) == _att.charge_min) {
+				if(_frame >= _att.charge_min && _frame < _att.charge_min + 1) {
 					layer_sequence_headpos(seq._cur, _att.charge_end);
 				}
-				if(layer_sequence_get_headpos(seq._cur) == _att.charge_end) {
+				if(_frame >= _att.charge_end && _frame < _att.charge_end + 1) {
 					
 				}
 			}
