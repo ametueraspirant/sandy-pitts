@@ -125,6 +125,7 @@
     {"id":{"name":"s_cross_priest_body","path":"sprites/s_cross_priest_body/s_cross_priest_body.yy",},"order":0,},
     {"id":{"name":"__input_gamepad_find_in_sdl2_database","path":"scripts/__input_gamepad_find_in_sdl2_database/__input_gamepad_find_in_sdl2_database.yy",},"order":13,},
     {"id":{"name":"input_string_dialog_async_event","path":"scripts/input_string_dialog_async_event/input_string_dialog_async_event.yy",},"order":4,},
+    {"id":{"name":"o_item_parent","path":"objects/o_item_parent/o_item_parent.yy",},"order":6,},
     {"id":{"name":"s_sader_knight_body","path":"sprites/s_sader_knight_body/s_sader_knight_body.yy",},"order":0,},
     {"id":{"name":"s_stump_test","path":"sprites/s_stump_test/s_stump_test.yy",},"order":6,},
     {"id":{"name":"o_demo_player","path":"objects/o_demo_player/o_demo_player.yy",},"order":6,},
