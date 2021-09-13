@@ -3,8 +3,7 @@
 /// @param	{int}	_follow_angle	the angle offset to follow at. 0 for image_angle.
 /// @param	{int}	_x_displace		the x to displace where the item follows at. default 0.
 /// @param	{int}	_y_displace		the y to displace where the item follows at. default 0.
-/// @param	{int}	_z_displace		the z to displace where the item follows at. default 0.
-function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0, _z_displace = 0) constructor {
+function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0) constructor {
 	var _owner = other.id;
 	
 	_this = {};
@@ -15,7 +14,15 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0,
 		follow_angle = _follow_angle;
 		x_displace = _x_displace;
 		y_displace = _y_displace;
-		z_displace = _z_displace;
+		switch(owner.gear_type) {
+			case GEARTYPES.WEAPON:
+			z_displace = -20;
+			break;
+			
+			default:
+			z_displace = -10;
+			break;
+		}
 		curve = c_drop_bounce;
 	}
 	

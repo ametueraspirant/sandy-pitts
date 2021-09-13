@@ -1,3 +1,3 @@
 set_item_stats({ type: GEARTYPES.SHIELD });
 
-gear = new GearItem(noone, 0, 0, 0, -10);
+gear = new GearItem(noone);
