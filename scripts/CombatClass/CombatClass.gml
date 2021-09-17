@@ -61,13 +61,18 @@ function CombatClass(_side) constructor {
 	#endregion
 	
 	#region // gear changing functions #UNFINISHED
+	/// @func	scan();
+	scan = function() {
+		
+	}
+	
 	/// @func	set_gear(_type, _id);
-	///	@param	{string}	_type	gear type input.
+	///	@param	{enum}		_type	gear type input.
 	/// @param	{id}		_id		gear id input.
 	set_gear = function(_type, _id) { // #WARNING. this functions is only to be used once, to create any initial gear the players start with. use swap_gear() instead to change gear.
 		with(_this) {
 			switch(_type) {
-				case "helm":
+				case GEARTYPES.HELM:
 				if(gear.cur_helm == noone) {
 					var _helm = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
 					_helm.gear.pick_up(owner.id);
@@ -75,7 +80,7 @@ function CombatClass(_side) constructor {
 				}
 				break;
 				
-				case "bod":
+				case GEARTYPES.BODY:
 				if(gear.cur_bod == noone) {
 					var _bod = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
 					_bod.gear.pick_up(owner.id);
@@ -83,7 +88,7 @@ function CombatClass(_side) constructor {
 				}
 				break;
 				
-				case "weapon":
+				case GEARTYPES.WEAPON:
 				if(gear.cur_weapon == noone) {
 					var _weapon = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
 					_weapon.gear.pick_up(owner.id);
@@ -93,7 +98,7 @@ function CombatClass(_side) constructor {
 				}
 				break;
 				
-				case "shield":
+				case GEARTYPES.SHIELD:
 				if(gear.cur_shield == noone) {
 					var _shield = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
 					_shield.gear.pick_up(owner.id);
@@ -105,27 +110,27 @@ function CombatClass(_side) constructor {
 	}
 	
 	/// @func	get_gear(_type);
-	/// @param	{string}	_type	gear type input.
+	/// @param	{enum}	_type	gear type input.
 	get_gear = function(_type) {
 		with(_this) {
 			switch(_type) {
-				case "helm":
+				case GEARTYPES.HELM:
 				return gear.cur_helm;
 				
-				case "bod":
+				case GEARTYPES.BODY:
 				return gear.cur_bod;
 				
-				case "weapon":
+				case GEARTYPES.WEAPON:
 				return gear.cur_weapon;
 				
-				case "shield":
+				case GEARTYPES.SHIELD:
 				return gear.cur_shield;
 			}
 		}
 	}
 	
 	///	@func	swap_gear(_id);
-	/// @param	{id}	_id	gear id input.
+	/// @param	{id}	_id		gear id input.
 	swap_gear = function(_id) {
 		
 	}
@@ -236,7 +241,7 @@ function CombatClass(_side) constructor {
 				seq._layer = noone;
 				seq._cur = noone;
 				
-				var _att = other.get_gear("weapon").attacks.list;
+				var _att = other.get_gear(GEARTYPES.WEAPON).attacks.list;
 				if(_input == Verb.lattack && _att[attack_index].link_light != noone) {
 					attack_index = _att[attack_index].link_light;
 					other.start(_att[attack_index].action);
@@ -248,7 +253,7 @@ function CombatClass(_side) constructor {
 		}
 		if(!is_attacking() && !timer.exists("end_lag")) {
 			with(_this) {
-				var _att = other.get_gear("weapon").attacks.list;
+				var _att = other.get_gear(GEARTYPES.WEAPON).attacks.list;
 				if(_input == Verb.lattack && _att[attack_index].link_light != noone) {
 					attack_index = _att[attack_index].link_light;
 					other.start(_att[attack_index].action);
