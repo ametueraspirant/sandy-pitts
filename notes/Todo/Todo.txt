@@ -1,16 +1,6 @@
 add sliding to move/collide function.
 
-make with the  ysort system maybe instance_find will help you.
-
-remember to use var = instance_create to save the instance id.
-
 look into function chaining for timers using return self or something like that.
-
-movement compatability with controller inputs which do not max out to 1.
-
-compensate for choppy controller connection somehow.
-
-find a way to switch attacks from manually coded keyframes to sequence events or moments or something.
 
 binding steps:
 - main menu -
@@ -37,5 +27,3 @@ living players can sacrifice some hp or something to revive dead players.
 waiting time after player disconnection to kill the character automatically.
 if players come out of rebinding all controllers with a missing slot, kill that character.
 - again, perhaps -
-
-attacks, combos, n' shit:

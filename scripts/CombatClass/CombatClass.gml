@@ -68,11 +68,12 @@ function CombatClass(_side) constructor {
 			with(owner) {
 				var _tx = 0;
 				var _ty = 0;
+				var _toffset = 20;
 				repeat(3) {
 					_tx = 0;
 					repeat(3) {
-						if(instance_place(x, y, o_item_parent) != noone) {
-							instance_place_list(x + (20 * _tx), y + (20 * _ty), o_item_parent, other.gear_pickup_list, true);
+						if(instance_place(x + (_toffset * _tx), y + (_toffset * _ty), o_item_parent) != noone) {
+							instance_place_list(x + (_toffset * _tx), y + (_toffset * _ty), o_item_parent, other.gear_pickup_list, true);
 							break;
 						}
 						// repeat inner scope
