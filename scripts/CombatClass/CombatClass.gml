@@ -20,6 +20,7 @@ function CombatClass(_side) constructor {
 		attack_index = 0;
 		stats = noone;
 		list = noone;
+		gear_pickup_list = ds_list_create();
 	}
 	
 	if(!_this.owner.has_combat_stats) {
@@ -132,7 +133,23 @@ function CombatClass(_side) constructor {
 	///	@func	swap_gear(_id);
 	/// @param	{id}	_id		gear id input.
 	swap_gear = function(_id) {
-		
+		switch(_id.gear_type) {
+			case GEARTYPES.HELM:
+			
+			break;
+			
+			case GEARTYPES.BODY:
+			
+			break;
+			
+			case GEARTYPES.WEAPON:
+			
+			break;
+			
+			case GEARTYPES.SHIELD:
+			
+			break;
+		}
 	}
 	#endregion
 	
