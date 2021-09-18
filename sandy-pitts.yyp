@@ -2,7 +2,6 @@
   "resources": [
     {"id":{"name":"input_player_gamepad_get_type","path":"scripts/input_player_gamepad_get_type/input_player_gamepad_get_type.yy",},"order":4,},
     {"id":{"name":"__input_gamepad_set_mapping","path":"scripts/__input_gamepad_set_mapping/__input_gamepad_set_mapping.yy",},"order":16,},
-    {"id":{"name":"get_weapon_id","path":"scripts/get_weapon_id/get_weapon_id.yy",},"order":7,},
     {"id":{"name":"__input_load_blacklist_csv","path":"scripts/__input_load_blacklist_csv/__input_load_blacklist_csv.yy",},"order":22,},
     {"id":{"name":"s_sader_knight_hat","path":"sprites/s_sader_knight_hat/s_sader_knight_hat.yy",},"order":1,},
     {"id":{"name":"s_woodsman_ranger_weapon","path":"sprites/s_woodsman_ranger_weapon/s_woodsman_ranger_weapon.yy",},"order":4,},
