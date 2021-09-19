@@ -20,7 +20,10 @@ function CombatClass(_side) constructor {
 		attack_index = 0;
 		stats = noone;
 		list = noone;
-		gear_pickup_list = ds_list_create();
+		pickup = {
+			list: noone,
+			nearest: noone
+		}
 	}
 	
 	if(!_this.owner.has_combat_stats) {
@@ -62,18 +65,19 @@ function CombatClass(_side) constructor {
 	#endregion
 	
 	#region // gear changing functions #UNFINISHED
-	/// @func	scan();
-	scan = function() {
+	/// @func	scan_for_items();
+	scan_for_items = function() {
 		with(_this) {
 			with(owner) {
 				var _tx = 0;
 				var _ty = 0;
 				var _toffset = 20;
+				var _list = ds_list_create(); // there's probably an easier way to do this...
 				repeat(3) {
 					_tx = 0;
 					repeat(3) {
 						if(instance_place(x + (_toffset * _tx), y + (_toffset * _ty), o_item_parent) != noone) {
-							instance_place_list(x + (_toffset * _tx), y + (_toffset * _ty), o_item_parent, other.gear_pickup_list, true);
+							instance_place_list(x + (_toffset * _tx), y + (_toffset * _ty), o_item_parent, _list, true);
 							break;
 						}
 						// repeat inner scope
@@ -151,6 +155,11 @@ function CombatClass(_side) constructor {
 				return gear.cur_shield;
 			}
 		}
+	}
+	
+	/// @func cycle_pickup();
+	cycle_pickup = function() {
+		
 	}
 	
 	///	@func	swap_gear(_id);
