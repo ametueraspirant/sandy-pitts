@@ -21,8 +21,8 @@ function CombatClass(_side) constructor {
 		stats = noone;
 		list = noone;
 		pickup = {
-			list: noone,
-			nearest: noone
+			list: ds_list_create(),
+			selection: noone
 		}
 	}
 	
@@ -69,28 +69,8 @@ function CombatClass(_side) constructor {
 	scan_for_items = function() {
 		with(_this) {
 			with(owner) {
-				var _tx = 0;
-				var _ty = 0;
-				var _toffset = 20;
-				var _list = ds_list_create(); // there's probably an easier way to do this...
-				repeat(3) {
-					_tx = 0;
-					repeat(3) {
-						if(instance_place(x + (_toffset * _tx), y + (_toffset * _ty), o_item_parent) != noone) {
-							instance_place_list(x + (_toffset * _tx), y + (_toffset * _ty), o_item_parent, _list, true);
-							break;
-						}
-						// repeat inner scope
-						if(_tx == 0)_tx = -1;
-						if(_tx == -1)_tx = 1;
-					}
-					// repeat outer scope
-					if(_ty == 0)_ty = -1;
-					if(_ty == -1)_ty = 1;
-				}
+				collision_circle_list(x, y, 20, o_item_parent, false, true, other.pickup.list, true);
 			}
-			// with _this scope
-			
 		}
 	}
 	
