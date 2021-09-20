@@ -145,7 +145,7 @@ function CombatClass(_side) constructor {
 	
 	/// @func	get_gear(_type);
 	/// @param	{enum}	_type	gear type input.
-	get_gear = function(_type) {
+	get_gear = function(_type) { // #NOTE meant for internal use.
 		with(_this) {
 			switch(_type) {
 				case GEARTYPES.HELM:
