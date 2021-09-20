@@ -79,9 +79,6 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0)
 		}
 	})
 	.add("follow", {
-		enter: function() {
-			
-		},
 		end_step: function() {
 			with(_this) {
 				if(wielder != noone) {
