@@ -175,8 +175,8 @@ function CombatClass(_side) constructor {
 	}
 	
 	///	@func	swap_gear(_id);
-	/// @param	{id}	_id		gear id input.
-	swap_gear = function(_id) {
+	swap_gear = function() {
+		var _id = _this.pickup.list[|selection];
 		switch(_id.gear_type) {
 			case GEARTYPES.HELM:
 			
