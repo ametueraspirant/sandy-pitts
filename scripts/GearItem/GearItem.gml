@@ -67,7 +67,7 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0)
 	
 	state
 	.event_set_default_function("end_step", function() {})
-	.event_set_default_function("draw", function() {})
+	.event_set_default_function("draw", function() { with(_this.owner)draw_self(); })
 	
 	// ground state. weapon drops to ground if moving from other states.
 	.add("ground", {
