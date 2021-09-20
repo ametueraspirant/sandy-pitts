@@ -62,7 +62,7 @@ state.add("test", {
 	enter: function() {
 		var num = 0;
 		repeat(4) {
-			var _player = instance_create_layer(240 + num*20, 160, _entity_layer, o_player);
+			var _player = instance_create_layer(240 + num*50, 160, _entity_layer, o_player);
 			_player.player_num = num;
 			show_debug_message("player " + string(num) + " spawned");
 			var _dir = instance_create_layer(x, y, _entity_layer, o_dir_indicator);

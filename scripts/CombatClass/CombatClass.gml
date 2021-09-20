@@ -21,8 +21,9 @@ function CombatClass(_side) constructor {
 		stats = noone;
 		list = noone;
 		pickup = {
-			list: ds_list_create(),
-			selection: noone
+			list: noone,
+			selection: noone,
+			max_select: 3
 		}
 	}
 	
@@ -68,10 +69,35 @@ function CombatClass(_side) constructor {
 	/// @func	scan_for_items();
 	scan_for_items = function() {
 		with(_this) {
-			with(owner) {
-				collision_circle_list(x, y, 20, o_item_parent, false, true, other.pickup.list, true);
+			var _wep_list = ds_list_create();
+			var _exc_list = ds_list_create();
+			
+			with(owner)collision_circle_list(x, y, 20, o_item_parent, false, true, _wep_list, true);
+			
+			var _int = 0;
+			repeat(ds_list_size(_wep_list)) {
+				var _item = _wep_list[|_int];
+				if(_item.gear.state.get_current_state() == "ground") {
+					ds_list_add(_exc_list, _item);
+				}
+				_int++;
 			}
+			
+			if(ds_list_size(_exc_list) > 0) {
+				pickup.list = _exc_list;
+			} else {
+				pickup.list = noone;
+				pickup.selection = 0;
+			}
+			
+			ds_list_destroy(_wep_list);
+			ds_list_destroy(_exc_list);
 		}
+	}
+	
+	/// @func draw_item_hud();
+	draw_item_hud = function() {
+		
 	}
 	
 	/// @func	set_gear(_type, _id);
@@ -139,7 +165,13 @@ function CombatClass(_side) constructor {
 	
 	/// @func cycle_pickup();
 	cycle_pickup = function() {
-		
+		with(_this) {
+			if(selection < max_select) {
+				selection++;
+			} else {
+				selection = 0;
+			}
+		}
 	}
 	
 	///	@func	swap_gear(_id);
