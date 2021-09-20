@@ -65,7 +65,7 @@ function CombatClass(_side) constructor {
 	}
 	#endregion
 	
-	#region // gear changing functions #UNFINISHED
+	#region // gear changing functions #IN PROGRESS
 	/// @func	scan_for_items();
 	scan_for_items = function() {
 		with(_this) {
