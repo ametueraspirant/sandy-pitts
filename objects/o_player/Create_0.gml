@@ -15,10 +15,10 @@ mstrat = new TopDownStrat();
 
 #region // set up combat strat
 player = new CombatClass(team.heroes);
-player.set_gear(GEARTYPES.HELM, o_east_knight_hat);
-player.set_gear(GEARTYPES.BODY, o_east_knight_body);
-player.set_gear(GEARTYPES.SHIELD, o_east_knight_shield);
-player.set_gear(GEARTYPES.WEAPON, o_east_knight_weapon);
+player.set_init_helm(o_east_knight_hat);
+player.set_init_body(o_east_knight_body);
+player.set_init_shield(o_east_knight_shield);
+player.set_init_weapon(o_east_knight_weapon);
 #endregion
 
 #region // set up timer

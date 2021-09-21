@@ -9,6 +9,7 @@ function CombatClass(_side) constructor {
 		owner = _owner;
 		side = _side;
 		attacks = [];
+		can_attack = false;
 		gear = { cur_helm: noone, cur_bod: noone, cur_weapon: noone, cur_shield: noone };
 		items = [];
 		seq = {
@@ -63,9 +64,40 @@ function CombatClass(_side) constructor {
 	look_dir_unlock = function() {
 		_this.owner.look_dir_locked = false;
 	}
+	
+	/// @func	enable_attacking();
+	enable_attacking = function() {
+		_this.can_attack = true;
+	}
+	
+	/// @func	disable_attacking();
+	disable_attacking = function() {
+		_this.can_attack = false;
+	}
 	#endregion
 	
-	#region // gear changing functions #IN PROGRESS
+	#region // state change listener functions
+	/// @func	is_attacking();
+	is_attacking = function() {
+		return _this.attacking;
+	}
+	
+	/// @func	look_dir_is_locked();
+	look_dir_is_locked = function() {
+		return _this.owner.look_dir_locked;
+	}
+	
+	/// @func	can_attack();
+	can_attack = function() {
+		return _this.can_attack;
+	}
+	#endregion
+	
+	#region // i-frame functions #UNFINISHED
+	
+	#endregion
+	
+	#region // step functions for searching and displaying weapons #UNFINISHED
 	/// @func	scan_for_items();
 	scan_for_items = function() {
 		with(_this) {
@@ -99,50 +131,61 @@ function CombatClass(_side) constructor {
 	draw_item_hud = function() {
 		
 	}
+	#endregion
 	
-	/// @func	set_gear(_type, _id);
-	///	@param	{enum}		_type	gear type input.
-	/// @param	{id}		_id		gear id input.
-	set_gear = function(_type, _id) { // #WARNING. this functions is only to be used once, to create any initial gear the players start with. use swap_gear() instead to change gear.
+	#region // set init gear functions
+	/// @func	set_init_helm(_id);
+	/// @param	{id}	_id		gear id input.
+	set_init_helm = function(_id) {
 		with(_this) {
-			switch(_type) {
-				case GEARTYPES.HELM:
-				if(gear.cur_helm == noone) {
-					var _helm = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
-					_helm.gear.pick_up(owner.id);
-					gear.cur_helm = _helm;
-				}
-				break;
-				
-				case GEARTYPES.BODY:
-				if(gear.cur_bod == noone) {
-					var _bod = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
-					_bod.gear.pick_up(owner.id);
-					gear.cur_bod = _bod;
-				}
-				break;
-				
-				case GEARTYPES.WEAPON:
-				if(gear.cur_weapon == noone) {
-					var _weapon = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
-					_weapon.gear.pick_up(owner.id);
-					gear.cur_weapon = _weapon;
-					stats = _weapon.attacks.stats;
-					list = _weapon.attacks.list;
-				}
-				break;
-				
-				case GEARTYPES.SHIELD:
-				if(gear.cur_shield == noone) {
-					var _shield = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
-					_shield.gear.pick_up(owner.id);
-					gear.cur_shield = _shield;
-				}
-				break;
+			if(gear.cur_helm == noone) {
+				var _helm = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
+				_helm.gear.pick_up(owner.id);
+				gear.cur_helm = _helm;
 			}
 		}
 	}
 	
+	/// @func	set_init_body(_id);
+	/// @param	{id}	_id		gear id input.
+	set_init_body = function(_id) {
+		with(_this) {
+			if(gear.cur_bod == noone) {
+				var _bod = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
+				_bod.gear.pick_up(owner.id);
+				gear.cur_bod = _bod;
+			}
+		}
+	}
+	
+	/// @func	set_init_weapon(_id);
+	/// @param	{id}	_id		gear id input.
+	set_init_weapon = function(_id) {
+		with(_this) {
+			if(gear.cur_weapon == noone) {
+				var _weapon = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
+				_weapon.gear.pick_up(owner.id);
+				gear.cur_weapon = _weapon;
+				stats = _weapon.attacks.stats;
+				list = _weapon.attacks.list;
+			}
+		}
+	}
+	
+	/// @func	set_init_shield(_id);
+	/// @param	{id}	_id		gear id input.
+	set_init_shield = function(_id) {
+		with(_this) {
+			if(gear.cur_shield == noone) {
+				var _shield = instance_create_layer(owner.x, owner.y, _entity_layer, _id);
+				_shield.gear.pick_up(owner.id);
+				gear.cur_shield = _shield;
+			}
+		}
+	}
+	#endregion
+	
+	#region // gear swap management functions
 	/// @func	get_gear(_type);
 	/// @param	{enum}	_type	gear type input.
 	get_gear = function(_type) { // #NOTE meant for internal use.
@@ -163,6 +206,36 @@ function CombatClass(_side) constructor {
 		}
 	}
 	
+	/// @func	pickup_gear(_id);
+	/// @param	{id}	_item		gear input id.
+	pickup_gear = function(_item) { // #NOTE meant for internal use.
+		with(_this) {
+			switch(_item.gear_type) {
+				case GEARTYPES.HELM:
+				_item.gear.pick_up(owner.id);
+				gear.cur_helm = _item;
+				break;
+				
+				case GEARTYPES.BODY:
+				_item.gear.pick_up(owner.id);
+				gear.cur_body = _item;
+				break;
+				
+				case GEARTYPES.WEAPON:
+				_item.gear.pick_up(owner.id);
+				stats = _item.attacks.stats;
+				list = _item.attacks.list;
+				gear.cur_weapon = _item;
+				break;
+				
+				case GEARTYPES.SHIELD:
+				_item.gear.pick_up(owner.id);
+				gear.cur_shield = _item;
+				break;
+			}
+		}
+	}
+	
 	/// @func cycle_pickup();
 	cycle_pickup = function() {
 		with(_this) {
@@ -176,22 +249,63 @@ function CombatClass(_side) constructor {
 	
 	///	@func	swap_gear(_id);
 	swap_gear = function() {
-		var _id = _this.pickup.list[|selection];
-		switch(_id.gear_type) {
+		var _item = _this.pickup.list[|selection];
+		switch(_item.gear_type) {
 			case GEARTYPES.HELM:
-			
+			if(get_gear(GEARTYPES.HELM) != noone)get_gear(GEARTYPES.HELM).gear.drop();
+			set_gear(_item);
 			break;
 			
 			case GEARTYPES.BODY:
-			
+			if(get_gear(GEARTYPES.BODY) != noone)get_gear(GEARTYPES.HELM).gear.drop();
+			set_gear(_item);
 			break;
 			
 			case GEARTYPES.WEAPON:
-			
+			if(get_gear(GEARTYPES.WEAPON) != noone)get_gear(GEARTYPES.WEAPON).gear.drop();
+			set_gear(_item);
 			break;
 			
 			case GEARTYPES.SHIELD:
+			if(get_gear(GEARTYPES.SHIELD) != noone)get_gear(GEARTYPES.SHIELD).gear.drop();
+			set_gear(_item);
+			break;
+		}
+	}
+	
+	/// @func	drop_gear(_type);
+	/// @param	{type}	_type	the type of gear to drop.
+	drop_gear = function(_type) {
+		switch(_type) {
+			case GEARTYPES.HELM:
+			if(get_gear(GEARTYPES.HELM) != noone) {
+				get_gear(GEARTYPES.HELM).gear.drop();
+				_this.gear.cur_helm = noone;
+			}
+			break;
 			
+			case GEARTYPES.BODY:
+			if(get_gear(GEARTYPES.BODY) != noone) {
+				get_gear(GEARTYPES.BODY).gear.drop();
+				_this.gear.cur_bod = noone;
+			}
+			break;
+			
+			case GEARTYPES.WEAPON:
+			if(get_gear(GEARTYPES.WEAPON) != noone) {
+				get_gear(GEARTYPES.WEAPON).gear.drop();
+				_this.gear.cur_weapon = noone;
+				_this.stats = noone;
+				_this.attacks = noone;
+				disable_attacking();
+			}
+			break;
+			
+			case GEARTYPES.SHIELD:
+			if(get_gear(GEARTYPES.SHIELD) != noone) {
+				get_gear(GEARTYPES.SHIELD).gear.drop();
+				_this.gear.cur_shield = noone;
+			}
 			break;
 		}
 	}
@@ -324,22 +438,6 @@ function CombatClass(_side) constructor {
 				}
 			}
 		}
-	}
-	#endregion
-	
-	#region // i-frame functions #UNFINISHED
-	
-	#endregion
-	
-	#region // state change listener functions
-	/// @func	is_attacking();
-	is_attacking = function() {
-		return _this.attacking;
-	}
-	
-	/// @func	look_dir_is_locked();
-	look_dir_is_locked = function() {
-		return _this.owner.look_dir_locked;
 	}
 	#endregion
 	
