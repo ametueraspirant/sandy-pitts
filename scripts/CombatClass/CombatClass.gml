@@ -311,7 +311,7 @@ function CombatClass(_side) constructor {
 	}
 	#endregion
 	
-	#region // attacking functions
+	#region // attacking functions #UNFINISHED
 	/// @func	start(_seq);
 	/// @param	{sequence}	_seq	the input sequence
 	start = function(_seq) {
