@@ -2,6 +2,7 @@ enum Verb {
 	move_up, move_down, move_left, move_right,
 	aim_up, aim_down, aim_left, aim_right,
 	dash, lattack, hattack, defend,
+	interact,
 	menu, swap_complex
 }
 
@@ -11,6 +12,7 @@ input_default_key(ord("S"), Verb.move_down);
 input_default_key(ord("A"), Verb.move_left);
 input_default_key(ord("D"), Verb.move_right);
 input_default_key(vk_space, Verb.dash);
+input_default_key(ord("E"), Verb.interact);
 input_default_mouse_button(mb_left, Verb.lattack);
 input_default_mouse_button(mb_side1, Verb.hattack); // #TEST
 input_default_mouse_button(mb_right, Verb.defend);
@@ -27,6 +29,7 @@ input_default_gamepad_axis(gp_axisrv, 0, Verb.aim_down);
 input_default_gamepad_axis(gp_axisrh, 1, Verb.aim_left);
 input_default_gamepad_axis(gp_axisrh, 0, Verb.aim_right);
 input_default_gamepad_button(gp_face2, Verb.dash);
+input_default_gamepad_button(gp_face4, Verb.interact);
 input_default_gamepad_button(gp_shoulderrb, Verb.lattack);
 input_default_gamepad_button(gp_shoulderlb, Verb.hattack);
 input_default_gamepad_button(gp_shoulderr, Verb.defend);

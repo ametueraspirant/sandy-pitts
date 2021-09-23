@@ -23,7 +23,7 @@ function CombatClass(_side) constructor {
 		list = noone;
 		pickup = {
 			list: noone,
-			selection: noone,
+			selection: 0,
 			max_select: 3
 		}
 	}
@@ -247,9 +247,9 @@ function CombatClass(_side) constructor {
 		}
 	}
 	
-	///	@func	swap_gear(_id);
+	///	@func	swap_gear();
 	swap_gear = function() {
-		var _item = _this.pickup.list[|selection];
+		var _item = _this.pickup.list[|_this.pickup.selection];
 		switch(_item.gear_type) {
 			case GEARTYPES.HELM:
 			if(get_gear(GEARTYPES.HELM) != noone)get_gear(GEARTYPES.HELM).gear.drop();
