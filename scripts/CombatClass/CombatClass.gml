@@ -22,7 +22,7 @@ function CombatClass(_side) constructor {
 		stats = noone;
 		list = noone;
 		pickup = {
-			list: noone,
+			list: ds_list_create(),
 			selection: 0,
 			max_select: 3
 		}
@@ -102,7 +102,7 @@ function CombatClass(_side) constructor {
 	scan_for_items = function() {
 		with(_this) {
 			var _wep_list = ds_list_create();
-			var _exc_list = ds_list_create();
+			ds_list_empty(pickup.list);
 			
 			with(owner)collision_circle_list(x, y, 20, o_item_parent, false, true, _wep_list, true);
 			
@@ -110,20 +110,14 @@ function CombatClass(_side) constructor {
 			repeat(ds_list_size(_wep_list)) {
 				var _item = _wep_list[|_int];
 				if(_item.gear.state.get_current_state() == "ground") {
-					ds_list_add(_exc_list, _item);
+					ds_list_add(pickup.list, _item);
 				}
 				_int++;
 			}
 			
-			if(ds_list_size(_exc_list) > 0) {
-				pickup.list = _exc_list;
-			} else {
-				pickup.list = noone;
-				pickup.selection = 0;
-			}
+			if(ds_list_size(pickup.list) == 0)pickup.selection = 0;
 			
 			ds_list_destroy(_wep_list);
-			ds_list_destroy(_exc_list);
 		}
 	}
 	
@@ -249,27 +243,29 @@ function CombatClass(_side) constructor {
 	
 	///	@func	swap_gear();
 	swap_gear = function() {
-		var _item = _this.pickup.list[|_this.pickup.selection];
-		switch(_item.gear_type) {
-			case GEARTYPES.HELM:
-			if(get_gear(GEARTYPES.HELM) != noone)get_gear(GEARTYPES.HELM).gear.drop();
-			set_gear(_item);
-			break;
-			
-			case GEARTYPES.BODY:
-			if(get_gear(GEARTYPES.BODY) != noone)get_gear(GEARTYPES.HELM).gear.drop();
-			set_gear(_item);
-			break;
-			
-			case GEARTYPES.WEAPON:
-			if(get_gear(GEARTYPES.WEAPON) != noone)get_gear(GEARTYPES.WEAPON).gear.drop();
-			set_gear(_item);
-			break;
-			
-			case GEARTYPES.SHIELD:
-			if(get_gear(GEARTYPES.SHIELD) != noone)get_gear(GEARTYPES.SHIELD).gear.drop();
-			set_gear(_item);
-			break;
+		if(_this.pickup.list != noone) {
+			var _item = _this.pickup.list[|_this.pickup.selection];
+			switch(_item.gear_type) {
+				case GEARTYPES.HELM:
+				if(get_gear(GEARTYPES.HELM) != noone)get_gear(GEARTYPES.HELM).gear.drop();
+				pickup_gear(_item);
+				break;
+				
+				case GEARTYPES.BODY:
+				if(get_gear(GEARTYPES.BODY) != noone)get_gear(GEARTYPES.HELM).gear.drop();
+				pickup_gear(_item);
+				break;
+				
+				case GEARTYPES.WEAPON:
+				if(get_gear(GEARTYPES.WEAPON) != noone)get_gear(GEARTYPES.WEAPON).gear.drop();
+				pickup_gear(_item);
+				break;
+				
+				case GEARTYPES.SHIELD:
+				if(get_gear(GEARTYPES.SHIELD) != noone)get_gear(GEARTYPES.SHIELD).gear.drop();
+				pickup_gear(_item);
+				break;
+			}
 		}
 	}
 	
