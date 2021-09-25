@@ -47,7 +47,7 @@ state
 	
 	if(input_check_pressed(Verb.lattack, player_num, 5))player.attack(Verb.lattack);
 	if(input_check_pressed(Verb.hattack, player_num, 5))player.attack(Verb.hattack);
-	if(input_check_pressed(Verb.interact, player_num, 5))player.swap_gear();
+	if(input_check_pressed(Verb.interact, player_num))player.swap_gear();
 })
 .event_set_default_function("end_step", function() { 
 	player.check(); 
@@ -56,9 +56,6 @@ state
 })
 .event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	/*if(player.get_gear("helm") != noone)draw_sprite_ext(player.get_gear("helm"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	if(player.get_gear("bod") != noone)draw_sprite_ext(player.get_gear("bod"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
-	if(player.get_gear("shield") != noone)draw_sprite_ext(player.get_gear("shield"), 0, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);*/
 })
 
 // define states

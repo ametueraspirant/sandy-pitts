@@ -102,7 +102,7 @@ function CombatClass(_side) constructor {
 	scan_for_items = function() {
 		with(_this) {
 			var _wep_list = ds_list_create();
-			ds_list_empty(pickup.list);
+			ds_list_clear(pickup.list);
 			
 			with(owner)collision_circle_list(x, y, 20, o_item_parent, false, true, _wep_list, true);
 			
@@ -252,7 +252,7 @@ function CombatClass(_side) constructor {
 				break;
 				
 				case GEARTYPES.BODY:
-				if(get_gear(GEARTYPES.BODY) != noone)get_gear(GEARTYPES.HELM).gear.drop();
+				if(get_gear(GEARTYPES.BODY) != noone)get_gear(GEARTYPES.BODY).gear.drop();
 				pickup_gear(_item);
 				break;
 				
