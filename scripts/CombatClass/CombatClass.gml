@@ -355,6 +355,7 @@ function CombatClass(_side) constructor {
 			
 			if(layer_sequence_get_headpos(seq._cur) == _att.reset_frame) {
 				other.look_dir_unlock();
+				other.timer.set(stats.end_lag, "end_lag", function() {});
 			}
 			
 			if(_att.type == ACTIONTYPE.HELD) {
@@ -380,21 +381,16 @@ function CombatClass(_side) constructor {
 			
 			if(layer_sequence_is_finished(seq._cur)) {
 				layer_sequence_pause(seq._cur);
-				if(!other.timer.exists("end_lag") && !other.timer.exists("reset_time")) {
-					other.timer.set(stats.end_lag, "end_lag", function() {
-						
-						other.timer.set(stats.reset_time, "reset_time", function() {
-							layer_sequence_destroy(seq._cur);
-							layer_destroy(seq._layer);
-							
-							seq._attack = noone;
-							seq._layer = noone;
-							seq._cur = noone;
-							attack_index = 0;
-							attacking = false;
-						});
-					});
-				}
+				other.timer.set(stats.reset_time, "reset_time", function() {
+					layer_sequence_destroy(seq._cur);
+					layer_destroy(seq._layer);
+					
+					seq._attack = noone;
+					seq._layer = noone;
+					seq._cur = noone;
+					attack_index = 0;
+					attacking = false;
+				});
 			}
 		}
 	}
