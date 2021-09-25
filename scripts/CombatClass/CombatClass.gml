@@ -97,7 +97,7 @@ function CombatClass(_side) constructor {
 	
 	#endregion
 	
-	#region // step functions for searching and displaying weapons #UNFINISHED
+	#region // functions for searching and displaying weapons #UNFINISHED
 	/// @func	scan_for_items();
 	scan_for_items = function() {
 		with(_this) {
@@ -337,8 +337,6 @@ function CombatClass(_side) constructor {
 	/// @func	check();
 	check = function() {
 		with(_this) {
-			other.timer.check();
-			
 			if(seq._cur == noone)return;
 			
 			var _att = list[attack_index];
@@ -434,6 +432,16 @@ function CombatClass(_side) constructor {
 				}
 			}
 		}
+	}
+	#endregion
+	
+	#region // player step event, please call this and not check, look, timer.check, or scan_for_items.
+	/// @func	step();
+	step = function() {
+		timer.check();
+		check();
+		look();
+		scan_for_items();
 	}
 	#endregion
 	

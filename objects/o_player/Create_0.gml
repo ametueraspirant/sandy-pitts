@@ -51,9 +51,7 @@ state
 	show_debug_message(player.get_gear(GEARTYPES.BODY));
 })
 .event_set_default_function("end_step", function() { 
-	player.check(); 
-	player.look();
-	player.scan_for_items();
+	player.step();
 })
 .event_set_default_function("draw", function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale * mv_sign, image_yscale, image_angle, image_blend, image_alpha);
