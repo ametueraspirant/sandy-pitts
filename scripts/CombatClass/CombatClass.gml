@@ -337,6 +337,8 @@ function CombatClass(_side) constructor {
 	/// @func	check();
 	check = function() {
 		with(_this) {
+			other.timer.check();
+			
 			if(seq._cur == noone)return;
 			
 			var _att = list[attack_index];
@@ -435,10 +437,9 @@ function CombatClass(_side) constructor {
 	}
 	#endregion
 	
-	#region // player step event, please call this and not check, look, timer.check, or scan_for_items.
+	#region // player step event, please call this and not check, look, or scan_for_items.
 	/// @func	step();
 	step = function() {
-		timer.check();
 		check();
 		look();
 		scan_for_items();
