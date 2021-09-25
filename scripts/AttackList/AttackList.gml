@@ -24,7 +24,6 @@ function AttackList(_struct) constructor {
 	#region // instantate variables
 	stats = _struct.stats;
 	
-	if(!variable_struct_exists(stats, "end_lag"))stats.end_lag = 0;
 	if(!variable_struct_exists(stats, "reset_time"))stats.reset_time = 0;
 	
 	if(!variable_struct_exists(stats, "light_start"))stats.light_start = noone;

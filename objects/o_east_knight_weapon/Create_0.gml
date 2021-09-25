@@ -3,7 +3,7 @@ set_item_stats({ type: GEARTYPES.WEAPON, damage: 10 });
 gear = new GearItem(noone, -95);
 
 attacks = new AttackList({
-	stats: { end_lag: 50, reset_time: 500, light_start: q_ek_inst_1, heavy_start: q_ek_charge },
+	stats: { reset_time: 500, light_start: q_ek_inst_1, heavy_start: q_ek_charge },
 	list: [
 		new Attack({ type: ACTIONTYPE.INSTANT,
 					 action: q_ek_inst_1,

@@ -87,8 +87,8 @@ function CombatClass(_side) constructor {
 		return _this.owner.look_dir_locked;
 	}
 	
-	/// @func	can_attack();
-	can_attack = function() {
+	/// @func	attack_is_enabled();
+	attack_is_enabled = function() {
 		return _this.can_attack;
 	}
 	#endregion
@@ -329,6 +329,8 @@ function CombatClass(_side) constructor {
 					_box.side = side;
 					_box.image_angle = owner.look_dir;
 					sequence_instance_override_object(layer_sequence_get_instance(seq._cur), o_hitbox, _box);
+					
+					other.get_gear(GEARTYPES.WEAPON).gear.disable();
 				});
 			}
 		}
@@ -349,13 +351,13 @@ function CombatClass(_side) constructor {
 			layer_sequence_y(seq._cur, owner.y);
 			layer_depth(seq._layer, owner.depth - 10);
 			
-			if(layer_sequence_get_headpos(seq._cur) == _att.attack_frame) {
+			if(_frame >= _att.attack_frame && _frame < _att.attack_frame + 1) {
 				other.look_dir_lock();
 			}
 			
-			if(layer_sequence_get_headpos(seq._cur) == _att.reset_frame) {
+			if(_frame >= _att.reset_frame && _frame < _att.reset_frame + 1) {
 				other.look_dir_unlock();
-				other.timer.set(stats.end_lag, "end_lag", function() {});
+				attacking = false;
 			}
 			
 			if(_att.type == ACTIONTYPE.HELD) {
@@ -389,7 +391,7 @@ function CombatClass(_side) constructor {
 					seq._layer = noone;
 					seq._cur = noone;
 					attack_index = 0;
-					attacking = false;
+					other.get_gear(GEARTYPES.WEAPON).gear.enable();
 				});
 			}
 		}
@@ -398,7 +400,32 @@ function CombatClass(_side) constructor {
 	/// @func	attack(_input);
 	/// @param	{enum}	_input	takes in a verb enum for light or heavy.
 	attack = function(_input) {
-		if(timer.exists("reset_time")) {
+		if(!is_attacking()) {
+			with(_this) {
+				if(seq._cur != noone) {
+					layer_sequence_destroy(seq._cur);
+					layer_destroy(seq._layer);
+					
+					seq._attack = noone;
+					seq._layer = noone;
+					seq._cur = noone;
+					other.get_gear(GEARTYPES.WEAPON).gear.enable();
+				}
+				
+				if(_input == Verb.lattack && list[attack_index].link_light != noone) {
+					attack_index = list[attack_index].link_light;
+					other.start(list[attack_index].action);
+				} else if(_input = Verb.hattack && list[attack_index].link_heavy != noone) {
+					attack_index = list[attack_index].link_heavy;
+					other.start(list[attack_index].action);
+				}
+				
+			}
+		}
+		
+		
+		
+		/*if(timer.exists("reset_time")) {
 			timer.cancel("reset_time");
 			with(_this) {
 				layer_sequence_destroy(seq._cur);
@@ -429,7 +456,7 @@ function CombatClass(_side) constructor {
 					other.start(_att[attack_index].action);
 				}
 			}
-		}
+		}*/
 	}
 	#endregion
 	

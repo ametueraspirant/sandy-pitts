@@ -14,6 +14,7 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0)
 		follow_angle = _follow_angle;
 		x_displace = _x_displace;
 		y_displace = _y_displace;
+		_enabled = true;
 		switch(owner.gear_type) {
 			case GEARTYPES.WEAPON:
 			z_displace = -20;
@@ -60,6 +61,16 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0)
 	set_z_displace = function(_displace) {
 		_this.z_displace = _displace;
 	}
+		
+	/// @func	enable();
+	enable = function() {
+		_this._enabled = true;
+	}
+	
+	/// @func	disable();
+	disable = function() {
+		_this._enabled = false;
+	}
 	#endregion
 	
 	#region // state machine
@@ -90,7 +101,7 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0)
 			}
 		},
 		draw: function() {
-			if(instance_exists(_this.wielder) && !_this.wielder.player.is_attacking())with(_this.owner)draw_self();
+			if(instance_exists(_this.wielder) && _this._enabled)with(_this.owner)draw_self();
 		},
 		leave: function() {
 			_this.owner.image_angle = 0;
