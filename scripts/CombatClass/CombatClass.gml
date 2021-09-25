@@ -401,6 +401,8 @@ function CombatClass(_side) constructor {
 	/// @param	{enum}	_input	takes in a verb enum for light or heavy.
 	attack = function(_input) {
 		if(!is_attacking()) {
+			/*if(timer.exists("rest_time"))timer.cancel("reset_time");
+			lok_dir_unlock();*/ // #TESTING
 			with(_this) {
 				if(seq._cur != noone) {
 					layer_sequence_destroy(seq._cur);
