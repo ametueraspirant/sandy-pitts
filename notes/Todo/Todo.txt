@@ -4,28 +4,5 @@ look into function chaining for timers using return self or something like that.
 
 add gear stats and gear stat swapping.
 
-binding steps:
-- main menu -
-all players will be bound ascending from 1 in the order they press the bind key.
-if a player presses the key again, they will be unbound, but slots will be conserved for players already bound.
-randomly choose player to be villain or allow players to choose.
+do some sequence bullshit so weapon swooshes are anchored to the world and not the player.
 
-- transition: start game -
-spawn players up to the number of players connected, with each to their own individual control.
-if a player disconnects, keep players in the same slots and show an opening for the disconnected player's slot.
-anyone who joins or connects at the time will be added to the lowest slow available.
-
-- menu: rebind all players -
-menu button that will pause the game and allow rebinding of controllers.
-villain slot will be preserved to whoever loads in.
-warn if villain slot is not filled it will be reassigned randomly.
-
-- ingame: characters -
-if a player disconnects, the character will wait around until reconnected. If the character dies before the player is reconnected, they will connect as a ghost.
-new connections will always connect as a ghost.
-living players can sacrifice some hp or something to revive dead players.
-
-- perhaps -
-waiting time after player disconnection to kill the character automatically.
-if players come out of rebinding all controllers with a missing slot, kill that character.
-- again, perhaps -
