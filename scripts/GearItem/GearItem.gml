@@ -93,7 +93,7 @@ function GearItem(_wielder, _follow_angle = 0, _x_displace = 0, _y_displace = 0)
 			if(instance_exists(_this.wielder) && !_this.wielder.player.is_attacking())with(_this.owner)draw_self();
 		},
 		leave: function() {
-			owner.image_angle = 0;
+			_this.owner.image_angle = 0;
 		}
 	})
 	.add("follow_locked", {
