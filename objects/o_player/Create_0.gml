@@ -48,6 +48,7 @@ state
 	if(input_check_pressed(Verb.lattack, player_num, 5))player.attack(Verb.lattack);
 	if(input_check_pressed(Verb.hattack, player_num, 5))player.attack(Verb.hattack);
 	if(input_check_pressed(Verb.interact, player_num))player.swap_gear();
+	show_debug_message(player.get_gear(GEARTYPES.BODY));
 })
 .event_set_default_function("end_step", function() { 
 	player.check(); 

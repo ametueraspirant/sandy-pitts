@@ -212,7 +212,7 @@ function CombatClass(_side) constructor {
 				
 				case GEARTYPES.BODY:
 				_item.gear.pick_up(owner.id);
-				gear.cur_body = _item;
+				gear.cur_bod = _item;
 				break;
 				
 				case GEARTYPES.WEAPON:
