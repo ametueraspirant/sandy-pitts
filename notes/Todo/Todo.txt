@@ -2,6 +2,8 @@ add sliding to move/collide function.
 
 look into function chaining for timers using return self or something like that.
 
+add gear stats and gear stat swapping.
+
 binding steps:
 - main menu -
 all players will be bound ascending from 1 in the order they press the bind key.

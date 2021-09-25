@@ -179,7 +179,7 @@ function CombatClass(_side) constructor {
 	}
 	#endregion
 	
-	#region // gear swap management functions
+	#region // gear swap management functions #UNFINISHED
 	/// @func	get_gear(_type);
 	/// @param	{enum}	_type	gear type input.
 	get_gear = function(_type) { // #NOTE meant for internal use.
