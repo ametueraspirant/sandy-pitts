@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "sandy-pitts",
-    "path": "sandy-pitts.yyp",
+    "name": "Lifters",
+    "path": "folders/Entities/Enemies/Lifters.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_lifter_fist_with_weight",

@@ -1,0 +1,57 @@
+Light Weapon
+______________________________
+
+instant attack:
+windup				2 frames
+attack				1 frame
+follow through		1 frame
+reset				10 frames
+
+total time			15 frames
+
+charge attack:
+windup				10 frames
+attack				1 frame per attack
+follow through		1-2 frames
+reset				10 frames
+
+total time			22-23 frames
+
+
+Medium Weapon
+______________________________
+
+instant attack:
+windup				5 frames
+attack				1 frame
+follow through		3 frames
+reset				25 frames
+
+total time			34 frames
+
+charge attack:
+windup				30 frames
+attack				1 frame per attack
+follow through		3-5 frames
+reset				25 frames
+
+total time			59-61 frames
+
+Heavy Weapon
+______________________________
+
+instant attack:
+windup				10 frames
+attack				2-3 frame
+follow through		8 frames
+reset				30 frames
+
+total time			50-51 frames
+
+charge attack:
+windup				35 frames
+attack				2-3 frames per attack
+follow through		8-10 frames
+reset				30 frames
+
+total time			75-78 frames
