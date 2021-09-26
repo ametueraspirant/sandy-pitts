@@ -420,7 +420,6 @@ function CombatClass(_side) constructor {
 					attack_index = list[attack_index].link_heavy;
 					other.start(list[attack_index].action);
 				}
-				
 			}
 		}
 	}
