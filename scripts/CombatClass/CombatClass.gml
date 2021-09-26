@@ -401,8 +401,7 @@ function CombatClass(_side) constructor {
 	/// @param	{enum}	_input	takes in a verb enum for light or heavy.
 	attack = function(_input) {
 		if(!is_attacking()) {
-			/*if(timer.exists("rest_time"))timer.cancel("reset_time");
-			lok_dir_unlock();*/ // #TESTING
+			if(timer.exists("reset_time"))timer.cancel("reset_time");
 			with(_this) {
 				if(seq._cur != noone) {
 					layer_sequence_destroy(seq._cur);
@@ -424,41 +423,6 @@ function CombatClass(_side) constructor {
 				
 			}
 		}
-		
-		
-		
-		/*if(timer.exists("reset_time")) {
-			timer.cancel("reset_time");
-			with(_this) {
-				layer_sequence_destroy(seq._cur);
-				layer_destroy(seq._layer);
-				
-				seq._attack = noone;
-				seq._layer = noone;
-				seq._cur = noone;
-				
-				var _att = other.get_gear(GEARTYPES.WEAPON).attacks.list;
-				if(_input == Verb.lattack && _att[attack_index].link_light != noone) {
-					attack_index = _att[attack_index].link_light;
-					other.start(_att[attack_index].action);
-				} else if(_input == Verb.hattack && _att[attack_index].link_heavy != noone) {
-					attack_index = _att[attack_index].link_heavy;
-					other.start(_att[attack_index].action);
-				}
-			}
-		}
-		if(!is_attacking() && !timer.exists("end_lag")) {
-			with(_this) {
-				var _att = other.get_gear(GEARTYPES.WEAPON).attacks.list;
-				if(_input == Verb.lattack && _att[attack_index].link_light != noone) {
-					attack_index = _att[attack_index].link_light;
-					other.start(_att[attack_index].action);
-				} else if(_input == Verb.hattack && _att[attack_index].link_heavy != noone) {
-					attack_index = _att[attack_index].link_heavy;
-					other.start(_att[attack_index].action);
-				}
-			}
-		}*/
 	}
 	#endregion
 	

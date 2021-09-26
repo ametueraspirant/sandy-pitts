@@ -7,7 +7,3 @@ add gear stats and gear stat swapping.
 do some sequence bullshit so weapon swooshes are anchored to the world and not the player.
 
 add player/gear bounce.
-
-fix animation cancelling causing random breaks but only sometimes.
-
-bugs manifest as either weapon locks in rotation and refuses to attack again, or _box suddenly becomes instance id -4 "noone"
