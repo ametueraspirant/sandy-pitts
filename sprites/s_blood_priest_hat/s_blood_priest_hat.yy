@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Blood Priest",
-    "path": "folders/Entities/Sets/Priest/Blood Priest.yy",
+    "path": "folders/Entities/Players/Sets/Priest/Blood Priest.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_blood_priest_hat",

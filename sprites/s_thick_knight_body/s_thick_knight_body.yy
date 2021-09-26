@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Thick Knight",
-    "path": "folders/Entities/Sets/Knight/Thick Knight.yy",
+    "path": "folders/Entities/Players/Sets/Knight/Thick Knight.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_thick_knight_body",

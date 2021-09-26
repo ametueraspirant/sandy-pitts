@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Org Priest",
-    "path": "folders/Entities/Sets/Priest/Org Priest.yy",
+    "path": "folders/Entities/Players/Sets/Priest/Org Priest.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_org_priest_weapon",

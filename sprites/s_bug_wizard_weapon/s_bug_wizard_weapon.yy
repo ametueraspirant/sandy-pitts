@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Bug Wizard",
-    "path": "folders/Entities/Sets/Wizard/Bug Wizard.yy",
+    "path": "folders/Entities/Players/Sets/Wizard/Bug Wizard.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_bug_wizard_weapon",

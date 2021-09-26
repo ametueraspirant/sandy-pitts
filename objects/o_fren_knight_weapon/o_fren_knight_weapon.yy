@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "weapon",
-    "path": "folders/Entities/Sets/Knight/Fren Knight/items/weapon.yy",
+    "path": "folders/Entities/Players/Sets/Knight/Fren Knight/items/weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_fren_knight_weapon",

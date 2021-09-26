@@ -89,8 +89,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Player",
-    "path": "folders/Entities/Player.yy",
+    "name": "Players",
+    "path": "folders/Entities/Players.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_player_run",

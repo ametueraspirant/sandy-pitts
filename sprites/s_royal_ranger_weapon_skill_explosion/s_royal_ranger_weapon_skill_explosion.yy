@@ -118,7 +118,7 @@
   },
   "parent": {
     "name": "Royal Ranger",
-    "path": "folders/Entities/Sets/Ranger/Royal Ranger.yy",
+    "path": "folders/Entities/Players/Sets/Ranger/Royal Ranger.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_royal_ranger_weapon_skill_explosion",

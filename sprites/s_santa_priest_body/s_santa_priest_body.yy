@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Santa Priest",
-    "path": "folders/Entities/Sets/Priest/Santa Priest.yy",
+    "path": "folders/Entities/Players/Sets/Priest/Santa Priest.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_santa_priest_body",

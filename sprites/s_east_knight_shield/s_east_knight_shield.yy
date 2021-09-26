@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "shield",
-    "path": "folders/Entities/Sets/Knight/East Knight/items/shield.yy",
+    "path": "folders/Entities/Players/Sets/Knight/East Knight/items/shield.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_east_knight_shield",

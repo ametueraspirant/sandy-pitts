@@ -14,8 +14,8 @@
       ],"resourceVersion":"1.0","name":"X","tags":[],"resourceType":"GMAnimCurveChannel",},
   ],
   "parent": {
-    "name": "Entities",
-    "path": "folders/Entities.yy",
+    "name": "Players",
+    "path": "folders/Entities/Players.yy",
   },
   "resourceVersion": "1.2",
   "name": "c_drop_bounce",

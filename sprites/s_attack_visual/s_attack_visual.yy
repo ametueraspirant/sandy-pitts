@@ -82,7 +82,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Sets",
-    "path": "folders/Entities/Sets.yy",
+    "path": "folders/Entities/Players/Sets.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_attack_visual",

@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Deep Priest",
-    "path": "folders/Entities/Sets/Priest/Deep Priest.yy",
+    "path": "folders/Entities/Players/Sets/Priest/Deep Priest.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_deep_priest_hat",

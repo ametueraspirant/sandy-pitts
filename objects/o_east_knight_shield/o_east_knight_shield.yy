@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "shield",
-    "path": "folders/Entities/Sets/Knight/East Knight/items/shield.yy",
+    "path": "folders/Entities/Players/Sets/Knight/East Knight/items/shield.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_east_knight_shield",

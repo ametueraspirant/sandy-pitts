@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "body",
-    "path": "folders/Entities/Sets/Knight/East Knight/items/body.yy",
+    "path": "folders/Entities/Players/Sets/Knight/East Knight/items/body.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_east_knight_body",

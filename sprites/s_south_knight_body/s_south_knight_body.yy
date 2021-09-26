@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "South Knight",
-    "path": "folders/Entities/Sets/Knight/South Knight.yy",
+    "path": "folders/Entities/Players/Sets/Knight/South Knight.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_south_knight_body",

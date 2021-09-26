@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Sader Knight",
-    "path": "folders/Entities/Sets/Knight/Sader Knight.yy",
+    "path": "folders/Entities/Players/Sets/Knight/Sader Knight.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_sader_knight_weapon",

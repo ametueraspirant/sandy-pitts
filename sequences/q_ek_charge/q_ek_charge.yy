@@ -115,7 +115,7 @@
   "eventStubScript": null,
   "parent": {
     "name": "attacks",
-    "path": "folders/Entities/Sets/Knight/East Knight/attacks.yy",
+    "path": "folders/Entities/Players/Sets/Knight/East Knight/attacks.yy",
   },
   "resourceVersion": "1.3",
   "name": "q_ek_charge",

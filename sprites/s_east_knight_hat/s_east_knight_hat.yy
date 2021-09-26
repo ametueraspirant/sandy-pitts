@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "hat",
-    "path": "folders/Entities/Sets/Knight/East Knight/items/hat.yy",
+    "path": "folders/Entities/Players/Sets/Knight/East Knight/items/hat.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_east_knight_hat",

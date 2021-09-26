@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Star Wizard",
-    "path": "folders/Entities/Sets/Wizard/Star Wizard.yy",
+    "path": "folders/Entities/Players/Sets/Wizard/Star Wizard.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_star_wizard_weapon",

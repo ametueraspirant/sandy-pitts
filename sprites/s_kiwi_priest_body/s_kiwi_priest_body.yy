@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Kiwi Priest",
-    "path": "folders/Entities/Sets/Priest/Kiwi Priest.yy",
+    "path": "folders/Entities/Players/Sets/Priest/Kiwi Priest.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_kiwi_priest_body",

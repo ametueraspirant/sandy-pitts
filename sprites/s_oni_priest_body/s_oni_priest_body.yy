@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Oni Priest",
-    "path": "folders/Entities/Sets/Priest/Oni Priest.yy",
+    "path": "folders/Entities/Players/Sets/Priest/Oni Priest.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_oni_priest_body",

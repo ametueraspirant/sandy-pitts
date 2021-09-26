@@ -74,7 +74,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Hunter Ranger",
-    "path": "folders/Entities/Sets/Ranger/Hunter Ranger.yy",
+    "path": "folders/Entities/Players/Sets/Ranger/Hunter Ranger.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_hunter_ranger_weapon",

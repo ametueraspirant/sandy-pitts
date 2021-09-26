@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "body",
-    "path": "folders/Entities/Sets/Knight/Fren Knight/items/body.yy",
+    "path": "folders/Entities/Players/Sets/Knight/Fren Knight/items/body.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_fren_knight_body",

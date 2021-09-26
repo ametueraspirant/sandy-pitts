@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Black Priest",
-    "path": "folders/Entities/Sets/Priest/Black Priest.yy",
+    "path": "folders/Entities/Players/Sets/Priest/Black Priest.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_black_priest_body",

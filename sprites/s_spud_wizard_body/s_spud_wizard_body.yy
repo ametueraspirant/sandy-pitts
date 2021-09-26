@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Spud Wizard",
-    "path": "folders/Entities/Sets/Wizard/Spud Wizard.yy",
+    "path": "folders/Entities/Players/Sets/Wizard/Spud Wizard.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_spud_wizard_body",

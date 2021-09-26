@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "hat",
-    "path": "folders/Entities/Sets/Knight/Fren Knight/items/hat.yy",
+    "path": "folders/Entities/Players/Sets/Knight/Fren Knight/items/hat.yy",
   },
   "resourceVersion": "1.0",
   "name": "o_fren_knight_hat",

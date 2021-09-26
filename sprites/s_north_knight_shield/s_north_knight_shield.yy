@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "North Knight",
-    "path": "folders/Entities/Sets/Knight/North Knight.yy",
+    "path": "folders/Entities/Players/Sets/Knight/North Knight.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_north_knight_shield",

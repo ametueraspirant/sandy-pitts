@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Watchman Ranger",
-    "path": "folders/Entities/Sets/Ranger/Watchman Ranger.yy",
+    "path": "folders/Entities/Players/Sets/Ranger/Watchman Ranger.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_watchman_ranger_hat",

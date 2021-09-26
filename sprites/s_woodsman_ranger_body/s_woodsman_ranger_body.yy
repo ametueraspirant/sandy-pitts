@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Woodsman Ranger",
-    "path": "folders/Entities/Sets/Ranger/Woodsman Ranger.yy",
+    "path": "folders/Entities/Players/Sets/Ranger/Woodsman Ranger.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_woodsman_ranger_body",

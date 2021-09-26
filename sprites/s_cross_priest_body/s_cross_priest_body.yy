@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Cross Priest",
-    "path": "folders/Entities/Sets/Priest/Cross Priest.yy",
+    "path": "folders/Entities/Players/Sets/Priest/Cross Priest.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_cross_priest_body",

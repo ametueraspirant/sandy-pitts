@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Spanghem Knight",
-    "path": "folders/Entities/Sets/Knight/Spanghem Knight.yy",
+    "path": "folders/Entities/Players/Sets/Knight/Spanghem Knight.yy",
   },
   "resourceVersion": "1.0",
   "name": "s_spanghem_knight_hat",
