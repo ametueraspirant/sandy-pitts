@@ -7,3 +7,8 @@ add gear stats and gear stat swapping.
 do some sequence bullshit so weapon swooshes are anchored to the world and not the player.
 
 add player/gear bounce.
+
+add attack influencing the player's position.
+
+add boglin goss.
+
