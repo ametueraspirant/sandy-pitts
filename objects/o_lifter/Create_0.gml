@@ -13,11 +13,11 @@ mstrat = new TopDownStrat();
 #endregion
 
 #region // set up combat strat
-player = new CombatClass(team.heroes);
-player.set_init_helm(o_east_knight_hat);
+player = new CombatClass(team.villains);
+/*player.set_init_helm(o_east_knight_hat);
 player.set_init_body(o_east_knight_body);
 player.set_init_shield(o_east_knight_shield);
-player.set_init_weapon(o_east_knight_weapon);
+player.set_init_weapon(o_east_knight_weapon);*/
 #endregion
 
 #region // set up timer
@@ -28,7 +28,7 @@ timer = new TimerSystem();
 // create new state machine
 state = new SnowState("idle");
 
-// define default events
+// define default states
 state
 .event_set_default_function("step", function() {})
 .event_set_default_function("g_step", function() {
@@ -45,7 +45,6 @@ state
 	
 	if(input_check_pressed(Verb.lattack, player_num, 5))player.attack(Verb.lattack);
 	if(input_check_pressed(Verb.hattack, player_num, 5))player.attack(Verb.hattack);
-	if(input_check_pressed(Verb.interact, player_num))player.swap_gear();
 })
 .event_set_default_function("end_step", function() { 
 	player.step();
@@ -57,7 +56,7 @@ state
 // define states
 .add("idle", {
 	enter: function() {
-		sprite_index = s_player_idle;
+		sprite_index = s_lifter_idle;
 		image_index = 0;
 		image_speed = 0;
 	},
@@ -67,7 +66,7 @@ state
 })
 .add("moving", {
 	enter: function() {
-		sprite_index = s_player_run;
+		sprite_index = s_lifter_run;
 	},
 	step: function() {
 		var mv_spd = point_distance(0, 0, spd.x, spd.y) + 1;
