@@ -162,6 +162,7 @@
     {"id":{"name":"s_fire_wizard_hat","path":"sprites/s_fire_wizard_hat/s_fire_wizard_hat.yy",},"order":1,},
     {"id":{"name":"input_string_set","path":"scripts/input_string_set/input_string_set.yy",},"order":6,},
     {"id":{"name":"Game Loop","path":"notes/Game Loop/Game Loop.yy",},"order":5,},
+    {"id":{"name":"o_weights","path":"objects/o_weights/o_weights.yy",},"order":7,},
     {"id":{"name":"s_spud_wizard_hat","path":"sprites/s_spud_wizard_hat/s_spud_wizard_hat.yy",},"order":1,},
     {"id":{"name":"readme","path":"notes/readme/readme.yy",},"order":3,},
     {"id":{"name":"input_distance","path":"scripts/input_distance/input_distance.yy",},"order":1,},
