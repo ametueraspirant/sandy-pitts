@@ -12,3 +12,7 @@ add attack influencing the player's position.
 
 add boglin goss.
 
+change gear types to "rotation type" "follow type" and "visibility type"
+
+add follow point
+
