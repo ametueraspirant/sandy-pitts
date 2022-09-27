@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_fire_wizard_weapon",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"2cd882ea-f447-417c-a4d7-5800cc6314be","path":"sprites/s_fire_wizard_weapon/s_fire_wizard_weapon.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"2cd882ea-f447-417c-a4d7-5800cc6314be","path":"sprites/s_fire_wizard_weapon/s_fire_wizard_weapon.yy",},"LayerId":{"name":"77323fed-e2f9-4f5d-ae0d-fe6033955f49","path":"sprites/s_fire_wizard_weapon/s_fire_wizard_weapon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_fire_wizard_weapon","path":"sprites/s_fire_wizard_weapon/s_fire_wizard_weapon.yy",},"resourceVersion":"1.0","name":"2cd882ea-f447-417c-a4d7-5800cc6314be","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2cd882ea-f447-417c-a4d7-5800cc6314be",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_fire_wizard_weapon","path":"sprites/s_fire_wizard_weapon/s_fire_wizard_weapon.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_fire_wizard_weapon",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"c1bebfa6-8239-45cd-8fb7-1759345c5c41","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2cd882ea-f447-417c-a4d7-5800cc6314be","path":"sprites/s_fire_wizard_weapon/s_fire_wizard_weapon.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_fire_wizard_weapon","path":"sprites/s_fire_wizard_weapon/s_fire_wizard_weapon.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_fire_wizard_weapon",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"77323fed-e2f9-4f5d-ae0d-fe6033955f49","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"77323fed-e2f9-4f5d-ae0d-fe6033955f49","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Fire Wizard",
     "path": "folders/Entities/Players/Sets/Wizard/Fire Wizard.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_fire_wizard_weapon",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

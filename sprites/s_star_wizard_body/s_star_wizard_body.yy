@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_star_wizard_body",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"f967453d-16c1-4533-a86e-7acf074c5cfb","path":"sprites/s_star_wizard_body/s_star_wizard_body.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f967453d-16c1-4533-a86e-7acf074c5cfb","path":"sprites/s_star_wizard_body/s_star_wizard_body.yy",},"LayerId":{"name":"11c9a008-fd74-4e79-a8bb-e7805c6898f4","path":"sprites/s_star_wizard_body/s_star_wizard_body.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_star_wizard_body","path":"sprites/s_star_wizard_body/s_star_wizard_body.yy",},"resourceVersion":"1.0","name":"f967453d-16c1-4533-a86e-7acf074c5cfb","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f967453d-16c1-4533-a86e-7acf074c5cfb",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_star_wizard_body","path":"sprites/s_star_wizard_body/s_star_wizard_body.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_star_wizard_body",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"984065a7-df73-4434-85c9-8aca4922de10","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f967453d-16c1-4533-a86e-7acf074c5cfb","path":"sprites/s_star_wizard_body/s_star_wizard_body.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_star_wizard_body","path":"sprites/s_star_wizard_body/s_star_wizard_body.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_star_wizard_body",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"11c9a008-fd74-4e79-a8bb-e7805c6898f4","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"11c9a008-fd74-4e79-a8bb-e7805c6898f4","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Star Wizard",
     "path": "folders/Entities/Players/Sets/Wizard/Star Wizard.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_star_wizard_body",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

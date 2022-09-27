@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_spanghem_knight_body",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"6d9c253f-8d02-41c1-b9cf-7d91c5f907a9","path":"sprites/s_spanghem_knight_body/s_spanghem_knight_body.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6d9c253f-8d02-41c1-b9cf-7d91c5f907a9","path":"sprites/s_spanghem_knight_body/s_spanghem_knight_body.yy",},"LayerId":{"name":"e5a9c202-eb09-4846-8f0e-5e8a0d31dd56","path":"sprites/s_spanghem_knight_body/s_spanghem_knight_body.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_spanghem_knight_body","path":"sprites/s_spanghem_knight_body/s_spanghem_knight_body.yy",},"resourceVersion":"1.0","name":"6d9c253f-8d02-41c1-b9cf-7d91c5f907a9","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6d9c253f-8d02-41c1-b9cf-7d91c5f907a9",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_spanghem_knight_body","path":"sprites/s_spanghem_knight_body/s_spanghem_knight_body.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_spanghem_knight_body",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"efc192e9-6d32-4341-b1aa-5350edb2813d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6d9c253f-8d02-41c1-b9cf-7d91c5f907a9","path":"sprites/s_spanghem_knight_body/s_spanghem_knight_body.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_spanghem_knight_body","path":"sprites/s_spanghem_knight_body/s_spanghem_knight_body.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_spanghem_knight_body",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e5a9c202-eb09-4846-8f0e-5e8a0d31dd56","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e5a9c202-eb09-4846-8f0e-5e8a0d31dd56","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Spanghem Knight",
     "path": "folders/Entities/Players/Sets/Knight/Spanghem Knight.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_spanghem_knight_body",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

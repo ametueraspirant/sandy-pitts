@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_cross_priest_hat",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"6b97612f-13ab-4616-8422-1e09a43863ac","path":"sprites/s_cross_priest_hat/s_cross_priest_hat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6b97612f-13ab-4616-8422-1e09a43863ac","path":"sprites/s_cross_priest_hat/s_cross_priest_hat.yy",},"LayerId":{"name":"6c5c1d70-b3c2-456a-8964-8d0d5abeca3d","path":"sprites/s_cross_priest_hat/s_cross_priest_hat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_cross_priest_hat","path":"sprites/s_cross_priest_hat/s_cross_priest_hat.yy",},"resourceVersion":"1.0","name":"6b97612f-13ab-4616-8422-1e09a43863ac","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6b97612f-13ab-4616-8422-1e09a43863ac",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_cross_priest_hat","path":"sprites/s_cross_priest_hat/s_cross_priest_hat.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_cross_priest_hat",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"e995e14d-183e-4bd2-9188-7d2bf43770dd","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6b97612f-13ab-4616-8422-1e09a43863ac","path":"sprites/s_cross_priest_hat/s_cross_priest_hat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_cross_priest_hat","path":"sprites/s_cross_priest_hat/s_cross_priest_hat.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_cross_priest_hat",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6c5c1d70-b3c2-456a-8964-8d0d5abeca3d","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6c5c1d70-b3c2-456a-8964-8d0d5abeca3d","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Cross Priest",
     "path": "folders/Entities/Players/Sets/Priest/Cross Priest.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_cross_priest_hat",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

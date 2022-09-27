@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_black_priest_hat",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"24746ab0-c5f5-4ee5-a4f5-6725a3e3d1b5","path":"sprites/s_black_priest_hat/s_black_priest_hat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"24746ab0-c5f5-4ee5-a4f5-6725a3e3d1b5","path":"sprites/s_black_priest_hat/s_black_priest_hat.yy",},"LayerId":{"name":"86aaf68b-aa48-416b-a1b9-1f1059af5275","path":"sprites/s_black_priest_hat/s_black_priest_hat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_black_priest_hat","path":"sprites/s_black_priest_hat/s_black_priest_hat.yy",},"resourceVersion":"1.0","name":"24746ab0-c5f5-4ee5-a4f5-6725a3e3d1b5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"24746ab0-c5f5-4ee5-a4f5-6725a3e3d1b5",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_black_priest_hat","path":"sprites/s_black_priest_hat/s_black_priest_hat.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_black_priest_hat",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"854817b1-1299-474b-b770-a4eddd87ace3","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"24746ab0-c5f5-4ee5-a4f5-6725a3e3d1b5","path":"sprites/s_black_priest_hat/s_black_priest_hat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_black_priest_hat","path":"sprites/s_black_priest_hat/s_black_priest_hat.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_black_priest_hat",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"86aaf68b-aa48-416b-a1b9-1f1059af5275","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"86aaf68b-aa48-416b-a1b9-1f1059af5275","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Black Priest",
     "path": "folders/Entities/Players/Sets/Priest/Black Priest.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_black_priest_hat",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

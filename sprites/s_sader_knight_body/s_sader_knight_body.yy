@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_sader_knight_body",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"21df2939-4693-4406-afe6-322aad41d0ec","path":"sprites/s_sader_knight_body/s_sader_knight_body.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"21df2939-4693-4406-afe6-322aad41d0ec","path":"sprites/s_sader_knight_body/s_sader_knight_body.yy",},"LayerId":{"name":"46913b14-0b93-4dc5-8755-794c3776b211","path":"sprites/s_sader_knight_body/s_sader_knight_body.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_sader_knight_body","path":"sprites/s_sader_knight_body/s_sader_knight_body.yy",},"resourceVersion":"1.0","name":"21df2939-4693-4406-afe6-322aad41d0ec","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"21df2939-4693-4406-afe6-322aad41d0ec",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_sader_knight_body","path":"sprites/s_sader_knight_body/s_sader_knight_body.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_sader_knight_body",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"b937efc8-75e7-4d5e-99bc-2c9d5efa64ee","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"21df2939-4693-4406-afe6-322aad41d0ec","path":"sprites/s_sader_knight_body/s_sader_knight_body.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_sader_knight_body","path":"sprites/s_sader_knight_body/s_sader_knight_body.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_sader_knight_body",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"46913b14-0b93-4dc5-8755-794c3776b211","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"46913b14-0b93-4dc5-8755-794c3776b211","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Sader Knight",
     "path": "folders/Entities/Players/Sets/Knight/Sader Knight.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_sader_knight_body",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

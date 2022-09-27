@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_woodsman_ranger_skill_run",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,18 +27,14 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"be6b00b4-9d53-4073-90d3-6f22dcd779f7","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"be6b00b4-9d53-4073-90d3-6f22dcd779f7","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"LayerId":{"name":"e96ea000-e305-4e3e-aa0c-0c6ee1b9062a","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_woodsman_ranger_skill_run","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"resourceVersion":"1.0","name":"be6b00b4-9d53-4073-90d3-6f22dcd779f7","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"9eb556a4-f948-4659-8a41-d057909a3487","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9eb556a4-f948-4659-8a41-d057909a3487","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"LayerId":{"name":"e96ea000-e305-4e3e-aa0c-0c6ee1b9062a","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_woodsman_ranger_skill_run","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"resourceVersion":"1.0","name":"9eb556a4-f948-4659-8a41-d057909a3487","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"53ceeab5-a56a-43f5-89be-ead2b6711b2c","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"53ceeab5-a56a-43f5-89be-ead2b6711b2c","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"LayerId":{"name":"e96ea000-e305-4e3e-aa0c-0c6ee1b9062a","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_woodsman_ranger_skill_run","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"resourceVersion":"1.0","name":"53ceeab5-a56a-43f5-89be-ead2b6711b2c","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"be6b00b4-9d53-4073-90d3-6f22dcd779f7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9eb556a4-f948-4659-8a41-d057909a3487",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"53ceeab5-a56a-43f5-89be-ead2b6711b2c",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_woodsman_ranger_skill_run","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_woodsman_ranger_skill_run",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -46,11 +45,11 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"02102665-9cfe-4712-b4bc-52b88bb5c8ee","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"be6b00b4-9d53-4073-90d3-6f22dcd779f7","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"a2db9456-a79d-4865-8a4b-44450f6f3e05","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9eb556a4-f948-4659-8a41-d057909a3487","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"c009bbfb-9d9f-4e9d-9bbe-d284b3bc6625","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"53ceeab5-a56a-43f5-89be-ead2b6711b2c","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -66,22 +65,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_woodsman_ranger_skill_run","path":"sprites/s_woodsman_ranger_skill_run/s_woodsman_ranger_skill_run.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_woodsman_ranger_skill_run",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e96ea000-e305-4e3e-aa0c-0c6ee1b9062a","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e96ea000-e305-4e3e-aa0c-0c6ee1b9062a","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Woodsman Ranger",
     "path": "folders/Entities/Players/Sets/Ranger/Woodsman Ranger.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_woodsman_ranger_skill_run",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

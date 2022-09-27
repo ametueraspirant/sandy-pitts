@@ -36,7 +36,7 @@
     "name": "attacks",
     "path": "folders/Entities/Players/Sets/Knight/Fren Knight/attacks.yy",
   },
-  "resourceVersion": "1.3",
+  "resourceVersion": "1.4",
   "name": "q_fk_inst_1",
   "tags": [],
   "resourceType": "GMSequence",

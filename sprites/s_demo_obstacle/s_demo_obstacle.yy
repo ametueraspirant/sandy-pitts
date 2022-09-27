@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_demo_obstacle",
   "bboxMode": 2,
   "collisionKind": 5,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"aeef93d3-d69d-4939-aafa-5ca1f5d0744c","path":"sprites/s_demo_obstacle/s_demo_obstacle.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"aeef93d3-d69d-4939-aafa-5ca1f5d0744c","path":"sprites/s_demo_obstacle/s_demo_obstacle.yy",},"LayerId":{"name":"364a96f8-f644-4492-a6f1-ec8ab17d7610","path":"sprites/s_demo_obstacle/s_demo_obstacle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_demo_obstacle","path":"sprites/s_demo_obstacle/s_demo_obstacle.yy",},"resourceVersion":"1.0","name":"aeef93d3-d69d-4939-aafa-5ca1f5d0744c","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"aeef93d3-d69d-4939-aafa-5ca1f5d0744c",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_demo_obstacle","path":"sprites/s_demo_obstacle/s_demo_obstacle.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_demo_obstacle",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"8ceba371-f859-4c5c-97ba-376872eee138","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"aeef93d3-d69d-4939-aafa-5ca1f5d0744c","path":"sprites/s_demo_obstacle/s_demo_obstacle.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 32,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_demo_obstacle","path":"sprites/s_demo_obstacle/s_demo_obstacle.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_demo_obstacle",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"364a96f8-f644-4492-a6f1-ec8ab17d7610","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"364a96f8-f644-4492-a6f1-ec8ab17d7610","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "sprites",
     "path": "folders/Scripts/MotionStrat/Demo Room/sprites.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_demo_obstacle",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

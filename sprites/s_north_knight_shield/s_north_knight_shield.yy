@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_north_knight_shield",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"44f3cb3a-8864-459f-acc9-f9d6ed95de10","path":"sprites/s_north_knight_shield/s_north_knight_shield.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"44f3cb3a-8864-459f-acc9-f9d6ed95de10","path":"sprites/s_north_knight_shield/s_north_knight_shield.yy",},"LayerId":{"name":"adbf0b02-95dc-4215-88f7-e7ed25aa827f","path":"sprites/s_north_knight_shield/s_north_knight_shield.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_north_knight_shield","path":"sprites/s_north_knight_shield/s_north_knight_shield.yy",},"resourceVersion":"1.0","name":"44f3cb3a-8864-459f-acc9-f9d6ed95de10","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"44f3cb3a-8864-459f-acc9-f9d6ed95de10",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_north_knight_shield","path":"sprites/s_north_knight_shield/s_north_knight_shield.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_north_knight_shield",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"17f157c0-8793-48ea-a45e-343638c882b0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"44f3cb3a-8864-459f-acc9-f9d6ed95de10","path":"sprites/s_north_knight_shield/s_north_knight_shield.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_north_knight_shield","path":"sprites/s_north_knight_shield/s_north_knight_shield.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_north_knight_shield",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"adbf0b02-95dc-4215-88f7-e7ed25aa827f","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"adbf0b02-95dc-4215-88f7-e7ed25aa827f","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "North Knight",
     "path": "folders/Entities/Players/Sets/Knight/North Knight.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_north_knight_shield",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

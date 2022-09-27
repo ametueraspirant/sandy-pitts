@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_santa_priest_hat",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"9af3f5a7-027d-4ad0-8c09-46f2f4b407e8","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9af3f5a7-027d-4ad0-8c09-46f2f4b407e8","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},"LayerId":{"name":"6b532519-1355-49c6-b7f6-f462181d26bc","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_santa_priest_hat","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},"resourceVersion":"1.0","name":"9af3f5a7-027d-4ad0-8c09-46f2f4b407e8","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9af3f5a7-027d-4ad0-8c09-46f2f4b407e8",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_santa_priest_hat","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_santa_priest_hat",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"f9424add-55e8-4d63-97f1-b974fe16625b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9af3f5a7-027d-4ad0-8c09-46f2f4b407e8","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_santa_priest_hat","path":"sprites/s_santa_priest_hat/s_santa_priest_hat.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_santa_priest_hat",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6b532519-1355-49c6-b7f6-f462181d26bc","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6b532519-1355-49c6-b7f6-f462181d26bc","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Santa Priest",
     "path": "folders/Entities/Players/Sets/Priest/Santa Priest.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_santa_priest_hat",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

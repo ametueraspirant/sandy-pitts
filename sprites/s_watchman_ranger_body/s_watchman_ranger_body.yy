@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_watchman_ranger_body",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"d9be4ecf-bcd8-4006-bce4-e1ce43c91779","path":"sprites/s_watchman_ranger_body/s_watchman_ranger_body.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d9be4ecf-bcd8-4006-bce4-e1ce43c91779","path":"sprites/s_watchman_ranger_body/s_watchman_ranger_body.yy",},"LayerId":{"name":"da07baf5-aacf-4e59-a149-488a60ff2b93","path":"sprites/s_watchman_ranger_body/s_watchman_ranger_body.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_watchman_ranger_body","path":"sprites/s_watchman_ranger_body/s_watchman_ranger_body.yy",},"resourceVersion":"1.0","name":"d9be4ecf-bcd8-4006-bce4-e1ce43c91779","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d9be4ecf-bcd8-4006-bce4-e1ce43c91779",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_watchman_ranger_body","path":"sprites/s_watchman_ranger_body/s_watchman_ranger_body.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_watchman_ranger_body",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"17df7bfc-12b7-4b7f-b54a-1aceb9c07b9f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d9be4ecf-bcd8-4006-bce4-e1ce43c91779","path":"sprites/s_watchman_ranger_body/s_watchman_ranger_body.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_watchman_ranger_body","path":"sprites/s_watchman_ranger_body/s_watchman_ranger_body.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_watchman_ranger_body",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"da07baf5-aacf-4e59-a149-488a60ff2b93","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"da07baf5-aacf-4e59-a149-488a60ff2b93","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Watchman Ranger",
     "path": "folders/Entities/Players/Sets/Ranger/Watchman Ranger.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_watchman_ranger_body",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

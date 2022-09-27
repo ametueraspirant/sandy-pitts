@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_royal_ranger_hat",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"1da090c0-c6eb-45ed-9c5b-f2845b35d118","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1da090c0-c6eb-45ed-9c5b-f2845b35d118","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},"LayerId":{"name":"18cbddaf-56f9-4bc0-a5f0-399bec22a67d","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_royal_ranger_hat","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},"resourceVersion":"1.0","name":"1da090c0-c6eb-45ed-9c5b-f2845b35d118","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1da090c0-c6eb-45ed-9c5b-f2845b35d118",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_royal_ranger_hat","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_royal_ranger_hat",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"cb061b09-2c57-4931-86f2-477c7cdb1723","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1da090c0-c6eb-45ed-9c5b-f2845b35d118","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_royal_ranger_hat","path":"sprites/s_royal_ranger_hat/s_royal_ranger_hat.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_royal_ranger_hat",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"18cbddaf-56f9-4bc0-a5f0-399bec22a67d","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"18cbddaf-56f9-4bc0-a5f0-399bec22a67d","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Royal Ranger",
     "path": "folders/Entities/Players/Sets/Ranger/Royal Ranger.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_royal_ranger_hat",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

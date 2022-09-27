@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_watchman_ranger_weapon",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"78cb41ca-dcd5-40ee-a257-abc815978e48","path":"sprites/s_watchman_ranger_weapon/s_watchman_ranger_weapon.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"78cb41ca-dcd5-40ee-a257-abc815978e48","path":"sprites/s_watchman_ranger_weapon/s_watchman_ranger_weapon.yy",},"LayerId":{"name":"49c1e0c3-9574-4952-a489-263bf6bf334f","path":"sprites/s_watchman_ranger_weapon/s_watchman_ranger_weapon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_watchman_ranger_weapon","path":"sprites/s_watchman_ranger_weapon/s_watchman_ranger_weapon.yy",},"resourceVersion":"1.0","name":"78cb41ca-dcd5-40ee-a257-abc815978e48","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"78cb41ca-dcd5-40ee-a257-abc815978e48",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_watchman_ranger_weapon","path":"sprites/s_watchman_ranger_weapon/s_watchman_ranger_weapon.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_watchman_ranger_weapon",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"439341f1-ef8c-4c80-a178-9983fcf30420","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"78cb41ca-dcd5-40ee-a257-abc815978e48","path":"sprites/s_watchman_ranger_weapon/s_watchman_ranger_weapon.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_watchman_ranger_weapon","path":"sprites/s_watchman_ranger_weapon/s_watchman_ranger_weapon.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_watchman_ranger_weapon",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"49c1e0c3-9574-4952-a489-263bf6bf334f","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"49c1e0c3-9574-4952-a489-263bf6bf334f","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Watchman Ranger",
     "path": "folders/Entities/Players/Sets/Ranger/Watchman Ranger.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_watchman_ranger_weapon",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

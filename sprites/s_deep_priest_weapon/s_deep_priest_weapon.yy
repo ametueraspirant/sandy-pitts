@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_deep_priest_weapon",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"fae052a4-a8d8-47f5-bafa-29069d6dd94e","path":"sprites/s_deep_priest_weapon/s_deep_priest_weapon.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"fae052a4-a8d8-47f5-bafa-29069d6dd94e","path":"sprites/s_deep_priest_weapon/s_deep_priest_weapon.yy",},"LayerId":{"name":"a2e65166-3555-4f32-afbf-2b3865d00caa","path":"sprites/s_deep_priest_weapon/s_deep_priest_weapon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_deep_priest_weapon","path":"sprites/s_deep_priest_weapon/s_deep_priest_weapon.yy",},"resourceVersion":"1.0","name":"fae052a4-a8d8-47f5-bafa-29069d6dd94e","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fae052a4-a8d8-47f5-bafa-29069d6dd94e",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_deep_priest_weapon","path":"sprites/s_deep_priest_weapon/s_deep_priest_weapon.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_deep_priest_weapon",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"a2c49de8-e263-4b4c-aebd-2dcc9e845b97","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fae052a4-a8d8-47f5-bafa-29069d6dd94e","path":"sprites/s_deep_priest_weapon/s_deep_priest_weapon.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_deep_priest_weapon","path":"sprites/s_deep_priest_weapon/s_deep_priest_weapon.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_deep_priest_weapon",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a2e65166-3555-4f32-afbf-2b3865d00caa","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a2e65166-3555-4f32-afbf-2b3865d00caa","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Deep Priest",
     "path": "folders/Entities/Players/Sets/Priest/Deep Priest.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_deep_priest_weapon",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

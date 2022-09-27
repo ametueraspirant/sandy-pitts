@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_star_wizard_weapon",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"89251b9a-73a3-422b-a7da-d643fb3011b5","path":"sprites/s_star_wizard_weapon/s_star_wizard_weapon.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"89251b9a-73a3-422b-a7da-d643fb3011b5","path":"sprites/s_star_wizard_weapon/s_star_wizard_weapon.yy",},"LayerId":{"name":"02ebba48-0dbb-4d2a-8525-2961a1e190fb","path":"sprites/s_star_wizard_weapon/s_star_wizard_weapon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_star_wizard_weapon","path":"sprites/s_star_wizard_weapon/s_star_wizard_weapon.yy",},"resourceVersion":"1.0","name":"89251b9a-73a3-422b-a7da-d643fb3011b5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"89251b9a-73a3-422b-a7da-d643fb3011b5",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_star_wizard_weapon","path":"sprites/s_star_wizard_weapon/s_star_wizard_weapon.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_star_wizard_weapon",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"7e0c0c05-0c40-4713-8d75-929aee955a7d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"89251b9a-73a3-422b-a7da-d643fb3011b5","path":"sprites/s_star_wizard_weapon/s_star_wizard_weapon.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_star_wizard_weapon","path":"sprites/s_star_wizard_weapon/s_star_wizard_weapon.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_star_wizard_weapon",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"02ebba48-0dbb-4d2a-8525-2961a1e190fb","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"02ebba48-0dbb-4d2a-8525-2961a1e190fb","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Star Wizard",
     "path": "folders/Entities/Players/Sets/Wizard/Star Wizard.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_star_wizard_weapon",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

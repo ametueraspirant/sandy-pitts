@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_kiwi_priest_hat",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"140a450a-da5d-4990-95d1-6b82576e4832","path":"sprites/s_kiwi_priest_hat/s_kiwi_priest_hat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"140a450a-da5d-4990-95d1-6b82576e4832","path":"sprites/s_kiwi_priest_hat/s_kiwi_priest_hat.yy",},"LayerId":{"name":"014baf78-981a-4f78-8681-33c9897714a6","path":"sprites/s_kiwi_priest_hat/s_kiwi_priest_hat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_kiwi_priest_hat","path":"sprites/s_kiwi_priest_hat/s_kiwi_priest_hat.yy",},"resourceVersion":"1.0","name":"140a450a-da5d-4990-95d1-6b82576e4832","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"140a450a-da5d-4990-95d1-6b82576e4832",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_kiwi_priest_hat","path":"sprites/s_kiwi_priest_hat/s_kiwi_priest_hat.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_kiwi_priest_hat",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"310395d1-48d4-4670-b9bf-f59905f2f86a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"140a450a-da5d-4990-95d1-6b82576e4832","path":"sprites/s_kiwi_priest_hat/s_kiwi_priest_hat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_kiwi_priest_hat","path":"sprites/s_kiwi_priest_hat/s_kiwi_priest_hat.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_kiwi_priest_hat",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"014baf78-981a-4f78-8681-33c9897714a6","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"014baf78-981a-4f78-8681-33c9897714a6","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Kiwi Priest",
     "path": "folders/Entities/Players/Sets/Priest/Kiwi Priest.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_kiwi_priest_hat",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

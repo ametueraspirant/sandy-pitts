@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_south_knight_weapon",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"7aeab3a8-184a-47f7-8f40-b8bd2b2bfa7c","path":"sprites/s_south_knight_weapon/s_south_knight_weapon.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7aeab3a8-184a-47f7-8f40-b8bd2b2bfa7c","path":"sprites/s_south_knight_weapon/s_south_knight_weapon.yy",},"LayerId":{"name":"e1344d54-a0aa-4759-b0d2-6bf507fbdf28","path":"sprites/s_south_knight_weapon/s_south_knight_weapon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_south_knight_weapon","path":"sprites/s_south_knight_weapon/s_south_knight_weapon.yy",},"resourceVersion":"1.0","name":"7aeab3a8-184a-47f7-8f40-b8bd2b2bfa7c","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7aeab3a8-184a-47f7-8f40-b8bd2b2bfa7c",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_south_knight_weapon","path":"sprites/s_south_knight_weapon/s_south_knight_weapon.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_south_knight_weapon",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"540d3b0f-675c-472c-926e-a22273e29582","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7aeab3a8-184a-47f7-8f40-b8bd2b2bfa7c","path":"sprites/s_south_knight_weapon/s_south_knight_weapon.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_south_knight_weapon","path":"sprites/s_south_knight_weapon/s_south_knight_weapon.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_south_knight_weapon",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e1344d54-a0aa-4759-b0d2-6bf507fbdf28","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e1344d54-a0aa-4759-b0d2-6bf507fbdf28","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "South Knight",
     "path": "folders/Entities/Players/Sets/Knight/South Knight.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_south_knight_weapon",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

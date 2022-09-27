@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_fren_knight_hat",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"55431ea4-e5c8-416c-bb3c-b5355d8c4a6c","path":"sprites/s_fren_knight_hat/s_fren_knight_hat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"55431ea4-e5c8-416c-bb3c-b5355d8c4a6c","path":"sprites/s_fren_knight_hat/s_fren_knight_hat.yy",},"LayerId":{"name":"4035efb9-e226-41af-9db1-c81b1154d049","path":"sprites/s_fren_knight_hat/s_fren_knight_hat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_fren_knight_hat","path":"sprites/s_fren_knight_hat/s_fren_knight_hat.yy",},"resourceVersion":"1.0","name":"55431ea4-e5c8-416c-bb3c-b5355d8c4a6c","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"55431ea4-e5c8-416c-bb3c-b5355d8c4a6c",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_fren_knight_hat","path":"sprites/s_fren_knight_hat/s_fren_knight_hat.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_fren_knight_hat",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"b455ffa6-836f-4628-8bee-507a98c32236","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"55431ea4-e5c8-416c-bb3c-b5355d8c4a6c","path":"sprites/s_fren_knight_hat/s_fren_knight_hat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 20,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_fren_knight_hat","path":"sprites/s_fren_knight_hat/s_fren_knight_hat.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_fren_knight_hat",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4035efb9-e226-41af-9db1-c81b1154d049","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4035efb9-e226-41af-9db1-c81b1154d049","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "hat",
     "path": "folders/Entities/Players/Sets/Knight/Fren Knight/items/hat.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_fren_knight_hat",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

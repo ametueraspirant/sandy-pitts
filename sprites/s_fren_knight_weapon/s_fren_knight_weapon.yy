@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "s_fren_knight_weapon",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"afac8495-7d45-43c6-93a9-05a3728fbda6","path":"sprites/s_fren_knight_weapon/s_fren_knight_weapon.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"afac8495-7d45-43c6-93a9-05a3728fbda6","path":"sprites/s_fren_knight_weapon/s_fren_knight_weapon.yy",},"LayerId":{"name":"87612a51-3237-47f2-88ea-1d4031df785a","path":"sprites/s_fren_knight_weapon/s_fren_knight_weapon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"s_fren_knight_weapon","path":"sprites/s_fren_knight_weapon/s_fren_knight_weapon.yy",},"resourceVersion":"1.0","name":"afac8495-7d45-43c6-93a9-05a3728fbda6","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"afac8495-7d45-43c6-93a9-05a3728fbda6",},
   ],
   "sequence": {
-    "spriteId": {"name":"s_fren_knight_weapon","path":"sprites/s_fren_knight_weapon/s_fren_knight_weapon.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "s_fren_knight_weapon",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"3c8ef004-83b3-4c6b-bd20-49a6e07f00d2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"afac8495-7d45-43c6-93a9-05a3728fbda6","path":"sprites/s_fren_knight_weapon/s_fren_knight_weapon.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 27,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"s_fren_knight_weapon","path":"sprites/s_fren_knight_weapon/s_fren_knight_weapon.yy",},
-    "resourceVersion": "1.3",
-    "name": "s_fren_knight_weapon",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"87612a51-3237-47f2-88ea-1d4031df785a","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"87612a51-3237-47f2-88ea-1d4031df785a","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "weapon",
     "path": "folders/Entities/Players/Sets/Knight/Fren Knight/items/weapon.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "s_fren_knight_weapon",
-  "tags": [],
-  "resourceType": "GMSprite",
 }
